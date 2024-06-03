@@ -1,24 +1,12 @@
 <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
-            <div class="col-md-6">
-                <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/icon-1.png"
-                        alt="" style="width: 45px;">CryptoCoin</h1>
-                <span>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                    sed
-                    stet lorem sit clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-                    ipsum
-                    et lorem et sit.</span>
-            </div>
-            <div class="col-md-6">
-                <h5 class="mb-4">Newsletter</h5>
-                <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita.</p>
-                <div class="position-relative">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
+            <div class="col-md-12">
+                <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="{{ asset('assets/public/img/logo.png') }}"
+                        alt="" style="width: 85px;">{{ config('app.name') }}</h1>
+                <span>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ad praesentium beatae enim aliquid rem libero magni maiores debitis voluptate optio, molestiae iste quidem culpa, cumque laborum esse molestias impedit facere, nisi laboriosam sunt iusto? Deserunt obcaecati esse, cum corrupti blanditiis aperiam maxime error veniam voluptas pariatur, vel id autem. Amet placeat repellendus aliquam sequi accusantium sunt quo, nesciunt totam obcaecati ullam vitae labore ipsa distinctio vel perspiciatis ab! Placeat soluta minima et ullam corrupti libero fugiat quia molestias commodi, beatae ipsam ea omnis temporibus!
+                </span>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="mb-4">Get In Touch</h5>
@@ -59,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a href="#">{{ config('app.name') }}</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
