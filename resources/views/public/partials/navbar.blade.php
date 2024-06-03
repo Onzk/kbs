@@ -8,15 +8,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
-            <div class="nav-item dropdown dropend">
+            <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Accueil</a>
                 <div class="dropdown-menu shadow-sm m-0">
-                    <div class="nav-item dropdown dropend">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Présentation & Infromations clés</a>
-                        <div class="dropdown-menu shadow-sm m-0">
-                            <a href="{{ route('public.index') }}" class="dropdown-item active">Présentation de KAPI Consult</a>
-                            <a href="token.html" class="dropdown-item">Présentation de KBS</a>
-                            <a href="faq.html" class="dropdown-item">Informations clés KPC / KBS</a>
+                    <div href="token.html" class="">
+                        <a href="token.html" class="dropdown-item disabled">Présentations et Informations clés</a>
+                        <div>
+                            <a href="token.html" style="padding-left: 32px; border-left:solid 1px grey" class="dropdown-item border-left">- Présentation KAPI Consult</a>
+                            <a href="token.html" style="padding-left: 32px; border-left:solid 1px grey" class="dropdown-item border-left">- Présentation de KBS</a>
+                            <a href="token.html" style="padding-left: 32px; border-left:solid 1px grey" class="dropdown-item border-left">- Informations clés</a>
+                            
                         </div>
                     </div>
                     <a href="token.html" class="dropdown-item">Pour les cadres</a>
