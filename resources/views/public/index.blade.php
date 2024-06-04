@@ -8,16 +8,20 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Make Better Life With Trusted CryptoCoin</h1>
-                    <p class="animated slideInDown">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                        Aliqu
-                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
-                        magna dolore erat amet</p>
-                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Explore More</a>
+                    <h1 class="display-4 mb-3 animated slideInDown">
+                        Optimisez vos process de recrutement !
+                    </h1>
+                    <p class="animated slideInDown">
+                        Bienvenue sur la plateforme de recrutement des cadres d'entreprises et des membres de conseil
+                        d'administration.
+                        Commencez en tant que
+                    </p>
+                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Cadre</a>
+                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Entreprise</a>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-1.png"
-                        alt="">
+                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
+                        src="{{ asset('assets/public/img/hero-1.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -29,32 +33,33 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="img/about.png" alt="">
+                    <img class="img-fluid" src="{{ asset('assets/public/img/about.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <h1 class="display-6">About Us</h1>
-                        <p class="text-primary fs-5 mb-4">The Most Trusted Cryptocurrency Platform</p>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-                            Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
-                            amet
+                        <h1 class="display-6">A Propos de nous</h1>
+                        <p class="text-primary fs-5 mb-4">Plateforme de recrutement de cadres & hauts cadres</p>
+                        <p>
+                            Notre plateforme de recrutement spécialisée dans les cadres et hauts cadres est conçue pour vous
+                            aider à identifier, évaluer et attirer les leaders stratégiques dont votre entreprise a besoin
+                            pour prospérer dans un environnement professionnel compétitif.
                         </p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                            amet
-                            diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-4">
+                            Confiez-nous votre recherche de cadres et hauts cadres, nous vous trouverons les talents les plus brillants du marché.
+                        </p>
                         <div class="d-flex align-items-center mb-2">
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
+                            <span>Fiablité</span>
                         </div>
                         <div class="d-flex align-items-center mb-2">
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
+                            <span>Transparence</span>
                         </div>
                         <div class="d-flex align-items-center mb-4">
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
+                            <span>Partialité</span>
                         </div>
-                        <a class="btn btn-primary py-3 px-4" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-4" href="{{ route("public.about.society-presentation") }}">Lire plus</a>
                     </div>
                 </div>
             </div>
@@ -68,18 +73,18 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
                     <img class="img-fluid mb-4" src="img/icon-9.png" alt="">
-                    <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Today Transactions</p>
+                    <h1 class="display-4" data-toggle="counter-up">300</h1>
+                    <p class="fs-5 text-primary mb-0">Cadres & Hauts Cadres</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.3s">
                     <img class="img-fluid mb-4" src="img/icon-10.png" alt="">
-                    <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Monthly Transactions</p>
+                    <h1 class="display-4" data-toggle="counter-up">26</h1>
+                    <p class="fs-5 text-primary mb-0">Entreprises</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.5s">
                     <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                    <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Total Transactions</p>
+                    <h1 class="display-4" data-toggle="counter-up">80</h1>
+                    <p class="fs-5 text-primary mb-0">Agents KAPI</p>
                 </div>
             </div>
         </div>
@@ -90,8 +95,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Why Us!</h1>
-                <p class="text-primary fs-5 mb-5">The Best In The crypto Industry</p>
+                <h1 class="display-6">Pourquoi nous ?</h1>
+                <p class="text-primary fs-5 mb-5">Recrutez des cadres exceptionnels</p>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
