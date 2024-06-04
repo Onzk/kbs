@@ -45,7 +45,8 @@
                             pour prospérer dans un environnement professionnel compétitif.
                         </p>
                         <p class="mb-4">
-                            Confiez-nous votre recherche de cadres et hauts cadres, nous vous trouverons les talents les plus brillants du marché.
+                            Confiez-nous votre recherche de cadres et hauts cadres, nous vous trouverons les talents les
+                            plus brillants du marché.
                         </p>
                         <div class="d-flex align-items-center mb-2">
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
@@ -59,7 +60,8 @@
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
                             <span>Partialité</span>
                         </div>
-                        <a class="btn btn-primary py-3 px-4" href="{{ route("public.about.society-presentation") }}">Lire plus</a>
+                        <a class="btn btn-primary py-3 px-4" href="{{ route('public.about.society-presentation') }}">Lire
+                            plus</a>
                     </div>
                 </div>
             </div>
@@ -103,9 +105,14 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-7.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">Easy To Start</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Expertise Professionnelle</h5>
+                            <span>
+                                Notre plateforme offre une expertise professionnelle dans le recrutement de cadres et hauts
+                                cadres, avec une compréhension approfondie des attentes et des enjeux spécifiques à chaque
+                                poste. Les membres de notre équipe ont reçu des formations spécialisées dans ce domaine, ce
+                                qui leur permet de comprendre vos besoins et de mener des recherches efficaces pour trouver
+                                les candidats idéaux.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -113,9 +120,12 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-6.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">Safe & Secure</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Accès à un Réseau Exclusif</h5>
+                            <span>
+                                En recourant à notre plateforme, vous bénéficiez d'un accès à un réseau exclusif de talents,
+                                vous permettant de trouver des profils de haut niveau pour des postes stratégiques au sein
+                                de votre organisation.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -123,9 +133,12 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-5.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">Affordable Plans</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Gain de Temps et d'Effort </h5>
+                            <span>
+                                Ne perdez pas de temps à chercher un nouveau candidat. En utilisant notre plateforme, vous
+                                pouvez vous concentrer sur le développement de votre entreprise, tandis que nous nous
+                                chargeons de trouver les bons candidats pour vous.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -133,9 +146,12 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-4.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">Secure Storage</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Processus de Recrutement Amélioré</h5>
+                            <span>
+                                Notre approche personnalisée et nos méthodes de recrutement efficaces garantissent que vous
+                                trouverez des candidats qui non seulement répondent à vos exigences professionnelles, mais
+                                qui incarnent également la culture et les valeurs de votre entreprise.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -143,9 +159,12 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-3.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">Protected By Insurance</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Accompagnement et Suivi</h5>
+                            <span>
+                                Les candidats bénéficient d'un accompagnement tout au long du processus de recrutement,
+                                ainsi qu'un suivi durant leurs premiers mois dans l'entreprise, ce qui renforce leur
+                                engagement et fidélité envers votre organisation.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -153,9 +172,12 @@
                     <div class="d-flex align-items-start">
                         <img class="img-fluid flex-shrink-0" src="img/icon-8.png" alt="">
                         <div class="ps-4">
-                            <h5 class="mb-3">24/7 Support</h5>
-                            <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                clita duo justo</span>
+                            <h5 class="mb-3">Adaptabilité aux Nouveaux Modes de Travail</h5>
+                            <span>
+                                Nous comprenons l'importance pour les entreprises de prouver leur adaptabilité aux besoins
+                                et aux nouveaux modes de travail, en proposant par exemple du télétravail et des horaires
+                                flexibles, ce qui est essentiel pour attirer les meilleurs talents sur le marché actuel.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -168,67 +190,79 @@
     <div class="container-xxl bg-light py-5 my-5">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Services</h1>
-                <p class="text-primary fs-5 mb-5">Buy, Sell And Exchange Cryptocurrency</p>
+                <h1 class="display-6">Nos Services</h1>
+                <p class="text-primary fs-5 mb-5">Ce Que KBS Offre Comme Service</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-7.png" alt="">
-                        <h5 class="mb-3">Currency Wallet</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Recrutement ciblét</h5>
+                        <p>
+                            Trouvez des talents exceptionnels pour des postes stratégiques grâce à notre approche de
+                            recrutement ciblé, conçue pour répondre à vos besoins spécifiques en matière de recrutement de
+                            cadres et hauts cadres.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                        <h5 class="mb-3">Currency Transaction</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Analyse des besoins</h5>
+                        <p>
+                            Notre équipe expérimentée réalisera une analyse approfondie de vos besoins en recrutement, afin
+                            de vous présenter des profils correspondant parfaitement à vos attentes et à la culture de votre
+                            entreprise.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-9.png" alt="">
-                        <h5 class="mb-3">Bitcoin Investment</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Accès au réseau</h5>
+                        <p>
+                            Bénéficiez d'un accès exclusif à notre vaste réseau de professionnels qualifiés, vous permettant
+                            de trouver rapidement et efficacement les candidats les mieux adaptés à vos besoins en
+                            recrutement.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-5.png" alt="">
-                        <h5 class="mb-3">Currency Exchange</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Suivi personnalisé</h5>
+                        <p>
+                            Chaque entreprise bénéficie d'un suivi personnalisé tout au long du processus de recrutement,
+                            garantissant une expérience fluide et une intégration réussie des nouveaux cadres au sein de
+                            votre organisation.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                        <h5 class="mb-3">Bitcoin Escrow</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Expertise spécialisée</h5>
+                        <p>
+                            Profitez de l'expertise spécialisée de notre équipe de recrutement, qui possède une connaissance
+                            approfondie du marché des cadres et hauts cadres, vous garantissant des résultats de qualité et
+                            pertinents.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white p-5">
+                    <div class="service-item bg-white p-5 h-100">
                         <img class="img-fluid mb-4" src="img/icon-8.png" alt="">
-                        <h5 class="mb-3">Token Sale</h5>
-                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                            duo
-                            justo</p>
+                        <h5 class="mb-3">Évaluation approfondie</h5>
+                        <p>
+                            Nous réalisons des évaluations approfondies des candidats potentiels, en nous assurant qu'ils
+                            possèdent les compétences, l'expérience et la vision nécessaires pour répondre à vos exigences
+                            en matière de recrutement.
+                        </p>
                         <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -237,233 +271,50 @@
     </div>
     <!-- Service End -->
 
-    <!-- Roadmap Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Roadmap</h1>
-                <p class="text-primary fs-5 mb-5">We Translate Your Dream Into Reality</p>
-            </div>
-            <div class="owl-carousel roadmap-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>January 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>March 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>May 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>July 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>September 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-point"><span></span></div>
-                    <h5>November 2045</h5>
-                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Roadmap End -->
-
-    <!-- Token Sale Start -->
-    <div class="container-xxl bg-light py-5 my-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Token Sale</h1>
-                <p class="text-primary fs-5 mb-5">Token Sale Countdown</p>
-            </div>
-            <div class="row g-3">
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-white text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Days</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="bg-white text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Hours</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="bg-white text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Minutes</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="bg-white text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Seconds</span>
-                    </div>
-                </div>
-                <div class="col-12 text-center py-4">
-                    <a class="btn btn-primary py-3 px-4" href="">Buy Token</a>
-                </div>
-                <div class="col-12 text-center">
-                    <img class="img-fluid m-1" src="img/payment-1.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-2.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-3.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-4.png" alt="" style="width: 50px;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Token Sale Start -->
-
     <!-- FAQs Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">FAQs</h1>
-                <p class="text-primary fs-5 mb-5">Frequently Asked Questions</p>
+                <p class="text-primary fs-5 mb-5">Foire Aux Questions</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    How to build a website?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                        @php($i = 0)
+                        @foreach ([
+            'Quand recruter des cadres ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Pourquoi recruter des cadres en Afrique ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quel est notre taux de placement ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quel est le temps d\'insertion par poste ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Combien d\'entreprises clientes KBS possède ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quelles sont les références de KBS ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Y a t-il des profils publics ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Comment gérer les conflits d\'intérêts ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quelle est la rémunération et la durée des positions sur la plateforme ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Comment se présente la plateforme ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quels les délais ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quelle est la durée de l\'accord ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quelle est l\'adresse de la société ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+        ] as $title => $body)
+                            @php($i += 1)
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="{{ $i / 10 }}s">
+                                <h2 class="accordion-header" id="heading{{ $i }}">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ $i }}"
+                                        aria-expanded="false"
+                                        aria-controls="collapse{{ $i }}">
+                                        {{ $title }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $i }}" class="accordion-collapse collapse show"
+                                    aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ $body }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    How long will it take to get a new website?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Do you only create HTML websites?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                    Will my website be mobile-friendly?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Will you maintain my site for me?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    I’m on a strict budget. Do you have any low cost options?
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.7s">
-                            <h2 class="accordion-header" id="headingSeven">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                    Will you maintain my site for me?
-                                </button>
-                            </h2>
-                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-                            <h2 class="accordion-header" id="headingEight">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                    I’m on a strict budget. Do you have any low cost options?
-                                </button>
-                            </h2>
-                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et
-                                    magna
-                                    diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
