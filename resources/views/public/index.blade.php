@@ -12,12 +12,13 @@
                         Optimisez vos process de recrutement !
                     </h1>
                     <p class="animated slideInDown">
-                        Bienvenue sur la plateforme de recrutement des cadres d'entreprises et des membres de conseil
-                        d'administration.
-                        Commencez en tant que
+                        Bienvenue sur la plateforme de recrutement d'administrateurs indépendants
+                        et membres de conseil d'administration d'entreprises.
                     </p>
-                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Cadre</a>
-                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Entreprise</a>
+                    <a href="{{ route('public.home.executives') }}"
+                        class="btn btn-primary py-3 px-4 animated slideInDown">Section Administrateur</a>
+                    <a href="{{ route('public.home.entreprises') }}"
+                        class="btn btn-primary py-3 px-4 animated slideInDown">Section Entreprise</a>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
                     <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
@@ -38,15 +39,15 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6">A Propos de nous</h1>
-                        <p class="text-primary fs-5 mb-4">Plateforme de recrutement de cadres & hauts cadres</p>
+                        <p class="text-primary fs-5 mb-4">Plateforme de recrutement d'administrateurs indépendants</p>
                         <p>
-                            Notre plateforme de recrutement spécialisée dans les cadres et hauts cadres est conçue pour vous
-                            aider à identifier, évaluer et attirer les leaders stratégiques dont votre entreprise a besoin
-                            pour prospérer dans un environnement professionnel compétitif.
+                            Notre plateforme de recrutement spécialisée dans les membres de conseil d'administration
+                            est conçue pour vous aider à identifier, évaluer et attirer les leaders stratégiques
+                            dont votre entreprise a besoin pour prospérer dans un environnement professionnel compétitif.
                         </p>
                         <p class="mb-4">
-                            Confiez-nous votre recherche de cadres et hauts cadres, nous vous trouverons les talents les
-                            plus brillants du marché.
+                            Confiez-nous votre recherche de vos futurs membres de conseil d'administration,
+                            nous vous trouverons les talents les plus brillants du marché.
                         </p>
                         <div class="d-flex align-items-center mb-2">
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
@@ -60,7 +61,7 @@
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
                             <span>Partialité</span>
                         </div>
-                        <a class="btn btn-primary py-3 px-4" href="{{ route('public.about.society-presentation') }}">Lire
+                        <a class="btn btn-primary py-3 px-4" href="{{ route('public.home.kapi-presentation') }}">Lire
                             plus</a>
                     </div>
                 </div>
@@ -76,7 +77,7 @@
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
                     <img class="img-fluid mb-4" src="img/icon-9.png" alt="">
                     <h1 class="display-4" data-toggle="counter-up">300</h1>
-                    <p class="fs-5 text-primary mb-0">Cadres & Hauts Cadres</p>
+                    <p class="fs-5 text-primary mb-0">Administrateurs Indépendants</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.3s">
                     <img class="img-fluid mb-4" src="img/icon-10.png" alt="">
@@ -98,7 +99,7 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">Pourquoi nous ?</h1>
-                <p class="text-primary fs-5 mb-5">Recrutez des cadres exceptionnels</p>
+                <p class="text-primary fs-5 mb-5">Recrutez des administrateurs indépendants exceptionnels</p>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -107,8 +108,9 @@
                         <div class="ps-4">
                             <h5 class="mb-3">Expertise Professionnelle</h5>
                             <span>
-                                Notre plateforme offre une expertise professionnelle dans le recrutement de cadres et hauts
-                                cadres, avec une compréhension approfondie des attentes et des enjeux spécifiques à chaque
+                                Notre plateforme offre une expertise professionnelle dans le recrutement d'administrateurs
+                                indépendants, avec une compréhension approfondie des attentes et des enjeux spécifiques à
+                                chaque
                                 poste. Les membres de notre équipe ont reçu des formations spécialisées dans ce domaine, ce
                                 qui leur permet de comprendre vos besoins et de mener des recherches efficaces pour trouver
                                 les candidats idéaux.
@@ -187,88 +189,7 @@
     <!-- Features End -->
 
     <!-- Service Start -->
-    <div class="container-xxl bg-light py-5 my-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Nos Services</h1>
-                <p class="text-primary fs-5 mb-5">Ce Que KBS Offre Comme Service</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-7.png" alt="">
-                        <h5 class="mb-3">Recrutement ciblét</h5>
-                        <p>
-                            Trouvez des talents exceptionnels pour des postes stratégiques grâce à notre approche de
-                            recrutement ciblé, conçue pour répondre à vos besoins spécifiques en matière de recrutement de
-                            cadres et hauts cadres.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                        <h5 class="mb-3">Analyse des besoins</h5>
-                        <p>
-                            Notre équipe expérimentée réalisera une analyse approfondie de vos besoins en recrutement, afin
-                            de vous présenter des profils correspondant parfaitement à vos attentes et à la culture de votre
-                            entreprise.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-9.png" alt="">
-                        <h5 class="mb-3">Accès au réseau</h5>
-                        <p>
-                            Bénéficiez d'un accès exclusif à notre vaste réseau de professionnels qualifiés, vous permettant
-                            de trouver rapidement et efficacement les candidats les mieux adaptés à vos besoins en
-                            recrutement.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-5.png" alt="">
-                        <h5 class="mb-3">Suivi personnalisé</h5>
-                        <p>
-                            Chaque entreprise bénéficie d'un suivi personnalisé tout au long du processus de recrutement,
-                            garantissant une expérience fluide et une intégration réussie des nouveaux cadres au sein de
-                            votre organisation.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                        <h5 class="mb-3">Expertise spécialisée</h5>
-                        <p>
-                            Profitez de l'expertise spécialisée de notre équipe de recrutement, qui possède une connaissance
-                            approfondie du marché des cadres et hauts cadres, vous garantissant des résultats de qualité et
-                            pertinents.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white p-5 h-100">
-                        <img class="img-fluid mb-4" src="img/icon-8.png" alt="">
-                        <h5 class="mb-3">Évaluation approfondie</h5>
-                        <p>
-                            Nous réalisons des évaluations approfondies des candidats potentiels, en nous assurant qu'ils
-                            possèdent les compétences, l'expérience et la vision nécessaires pour répondre à vos exigences
-                            en matière de recrutement.
-                        </p>
-                        <a href="">Read More <i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('public.sections.kbs-services')
     <!-- Service End -->
 
     <!-- FAQs Start -->
@@ -276,15 +197,15 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">FAQs</h1>
-                <p class="text-primary fs-5 mb-5">Foire Aux Questions</p>
+                <p class="text-primary fs-5 mb-5">Questions Fréquemment Posées</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion" id="faqAccordion">
                         @php($i = 0)
                         @foreach ([
-            'Quand recruter des cadres ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
-            'Pourquoi recruter des cadres en Afrique ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Quand recruter des administrateurs indépentdants ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
+            'Pourquoi recruter des membres de conseil d\'administration en Afrique ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
             'Quel est notre taux de placement ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
             'Quel est le temps d\'insertion par poste ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
             'Combien d\'entreprises clientes KBS possède ?' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque iste quam.',
@@ -301,14 +222,13 @@
                             <div class="accordion-item wow fadeInUp" data-wow-delay="{{ $i / 10 }}s">
                                 <h2 class="accordion-header" id="heading{{ $i }}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse{{ $i }}"
-                                        aria-expanded="false"
+                                        data-bs-target="#collapse{{ $i }}" aria-expanded="false"
                                         aria-controls="collapse{{ $i }}">
                                         {{ $title }}
                                     </button>
                                 </h2>
                                 <div id="collapse{{ $i }}" class="accordion-collapse collapse show"
-                                    aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
+                                    aria-labelledby="heading{{ $i }}" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         {{ $body }}
                                     </div>

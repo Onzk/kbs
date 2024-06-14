@@ -31,10 +31,6 @@ class AppController extends Controller
     {
         return view('public.entreprises');
     }
-    public function society_presentation()
-    {
-        return view('public.society-presentation');
-    }
     public function mvv()
     {
         return view('public.mvv');
@@ -43,22 +39,6 @@ class AppController extends Controller
     {
         return view('public.teams');
     }
-    public function executives_prestation()
-    {
-        return view('public.executives-prestation');
-    }
-    public function entreprises_prestation()
-    {
-        return view('public.entreprises-prestation');
-    }
-    public function process_executives()
-    {
-        return view('public.executives-process');
-    }
-    public function process_entreprises()
-    {
-        return view('public.entreprises-process');
-    }
     public function webinaries()
     {
         return view('public.webinaries');
@@ -66,10 +46,6 @@ class AppController extends Controller
     public function questions()
     {
         return view('public.questions');
-    }
-    public function press()
-    {
-        return view('public.press');
     }
     public function blog()
     {

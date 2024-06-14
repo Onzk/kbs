@@ -23,24 +23,18 @@
                 <a class="btn btn-link" href="{{ route('public.home.key-information') }}">Informations clés</a>
                 <a class="btn btn-link" href="{{ route('public.home.executives') }}">Cadres & Hauts Cadres</a>
                 <a class="btn btn-link" href="{{ route('public.home.entreprises') }}">Entreprises</a>
-                <a class="btn btn-link" href="{{ route('public.about.society-presentation') }}">Présentation de la société</a>
                 <a class="btn btn-link" href="{{ route('public.about.mvv') }}">Mission - Vision - Valeurs</a>
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="mb-4">&nbsp;</h5>
                 <a class="btn btn-link" href="{{ route('public.about.teams') }}">Equipes</a>
-                <a class="btn btn-link" href="{{ route('public.about.executives-prestation') }}">Prestations pour les cadres</a>
-                <a class="btn btn-link" href="{{ route('public.about.entreprises-prestation') }}">Prestations pour les entreprises</a>
-                <a class="btn btn-link" href="{{ route('public.process.executives') }}">Process Pour les cadres</a>
-                <a class="btn btn-link" href="{{ route('public.process.entreprises') }}">Process Pour les entreprises</a>
                 <a class="btn btn-link" href="{{ route('public.media-news.webinaries') }}">Webinaires</a>
                 <a class="btn btn-link" href="{{ route('public.media-news.questions') }}">Questions réponses</a>
+            <a class="btn btn-link" href="{{ route('public.media-news.blog') }}">Blog</a>
+            <a class="btn btn-link" href="{{ route('public.recruitment') }}">Recrutements</a>
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="mb-4">&nbsp;</h5>
-                <a class="btn btn-link" href="{{ route('public.media-news.press') }}">Comminiqués</a>
-                <a class="btn btn-link" href="{{ route('public.media-news.blog') }}">Blog</a>
-                <a class="btn btn-link" href="{{ route('public.recruitment') }}">Recrutements</a>
                 <a class="btn btn-link" href="{{ route('public.faqs') }}">FAQs</a>
                 <a class="btn btn-link" href="{{ route('public.user-space') }}">Espace utilisateur</a>
                 <a class="btn btn-link" href="{{ route('public.data-protection') }}">Protection de données</a>

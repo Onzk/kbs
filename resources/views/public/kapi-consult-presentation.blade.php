@@ -210,13 +210,13 @@
             <div class="row g-5">
                 <div class="col-lg-4 wow fadeInUp text-center" data-wow-delay="0.1s">
                     <p class="mb-2">Adresse:</p>
-                    <h4>123 Street, New York, USA</h4>
+                    <h4>Agoè BKS 1, Bd Faure Gnassingbe, 08 BP 8535 Lomé - Togo</h4>
                     <hr class="w-100">
                     <p class="mb-2">Numéro de téléphone:</p>
-                    <h4>+012 345 6789</h4>
+                    <h4>+228 93 17 01 01</h4>
                     <hr class="w-100">
                     <p class="mb-2">Courriel:</p>
-                    <h4>info@example.com</h4>
+                    <h4>info@kapiconsult.tg</h4>
                     <hr class="w-100">
                     <p class="mb-2">Formulaire:</p>
                     <a href="https://kapiconsult.tg/#contact" class="btn btn-primary py-3 px-4" type="submit">

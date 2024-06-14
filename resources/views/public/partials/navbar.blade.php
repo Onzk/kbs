@@ -42,8 +42,7 @@
                     <a href="{{ route('public.home.executives') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.executives'),
-                    ])>Cadres & Hauts
-                        Cadres</a>
+                    ])>Administrateurs Indépendants</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.entreprises'),
@@ -59,12 +58,6 @@
                     <div class="">
                         <a href="#" class="dropdown-item disabled">Qui sommes-nous ?</a>
                         <div>
-                            <a href="{{ route('public.about.society-presentation') }}"
-                                style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
-                                    'active' => Route::is('public.about.society-presentation'),
-                                ])>-
-                                Présentation de la société</a>
                             <a href="{{ route('public.about.mvv') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
                                     'dropdown-item border-left',
@@ -79,36 +72,6 @@
                                 Equipes</a>
                         </div>
                     </div>
-                    <a href="{{ route('public.about.executives-prestation') }}" @class([
-                        'dropdown-item',
-                        'active' => Route::is('public.about.executives-prestation'),
-                    ])>
-                        Prestations pour les cadres
-                    </a>
-                    <a href="{{ route('public.about.entreprises-prestation') }}" @class([
-                        'dropdown-item',
-                        'active' => Route::is('public.about.entreprises-prestation'),
-                    ])>
-                        Prestations pour les entreprises
-                    </a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" @class([
-                    'nav-link dropdown-toggle',
-                    'active fw-bold' => Str::contains(Route::currentRouteName(), 'process'),
-                ]) data-bs-toggle="dropdown">Process Prestation</a>
-                <div class="dropdown-menu shadow-sm m-0">
-                    <a href="{{ route('public.process.executives') }}" @class([
-                        'dropdown-item',
-                        'active' => Route::is('public.process.executives'),
-                    ])>Pour les
-                        cadres</a>
-                    <a href="{{ route('public.process.entreprises') }}" @class([
-                        'dropdown-item',
-                        'active' => Route::is('public.process.entreprises'),
-                    ])>Pour les
-                        entreprises</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
@@ -126,32 +89,30 @@
                         'active' => Route::is('public.media-news.questions'),
                     ])>Questions
                         réponses</a>
-                    <a href="{{ route('public.media-news.press') }}" @class([
-                        'dropdown-item',
-                        'active' => Route::is('public.media-news.press'),
-                    ])>Comminiqués</a>
                     <a href="{{ route('public.media-news.blog') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.media-news.blog'),
                     ])>Blog</a>
                 </div>
             </div>
-            <a href="{{ route('public.recruitment') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.recruitment'),
-            ])>Recrutements</a>
             <a href="{{ route('public.faqs') }}" @class([
                 'nav-item nav-link',
                 'active fw-bold' => Route::is('public.faqs'),
             ])>FAQs</a>
-            <a href="{{ route('public.user-space') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.user-space'),
-            ])>Espace utilisateur</a>
             <a href="{{ route('public.data-protection') }}" @class([
                 'nav-item nav-link',
                 'active fw-bold' => Route::is('public.data-protection'),
             ])>Protection de données</a>
+
+            {{-- <a href="{{ route('public.user-space') }}" @class([
+                'nav-item nav-link',
+                'active fw-bold' => Route::is('public.user-space'),
+            ])>Espace utilisateur</a> --}}
+
+            <a href="{{ route('public.user-space') }}" @class([
+                'nav-item nav-link',
+                'active fw-bold' => Route::is('public.user-space'),
+            ])>Se connecter</a>
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
             <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="">
