@@ -23,3 +23,5 @@
 .dropdown-submenu:hover > .dropdown-menu {
     display: block;
 } */
+.hover-scale { transition: all .2s ease-in-out; }
+.hover-scale:hover { transform: scale(1.05); z-index: 30; }

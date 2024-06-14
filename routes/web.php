@@ -16,7 +16,7 @@ Route::controller(AppController::class)->name('public.')->prefix('/')->group(
         });
         Route::prefix('/a-propos')->name('about.')->group(function () {
             Route::get('mission-vision-valeurs', 'mvv')->name('mvv');
-            Route::get('équipes', 'teams')->name('teams');
+            Route::get('équipe', 'teams')->name('teams');
         });
         Route::prefix('/media-et-nouvelle')->name('media-news.')->group(function () {
             Route::get('/webinaires', 'webinaries')->name('webinaries');

@@ -4,27 +4,18 @@
 
 @section('public.base.body')
     <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">
+    <div class="container-fluid hero-header mb-5 px-0"
+        style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/executives.png') }}');">
+        <div class="py-5 col" style="background-color: rgba(0, 0, 0, 0.50)">
+            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 700px;">
+                <div class="col-md-12 col-lg-8 text-center">
+                    <h1 class="display-4 mb-3 animated slideInDown text-white fw-bold">
                         Informez le monde de vos compétences !
                     </h1>
                     <p class="animated slideInDown">
                         Bienvenue sur la plateforme de recrutement d'administrateurs indépendants
                         et membres de conseil d'administration d'entreprises.
                     </p>
-                    <nav aria-label="breadcrumb animated slideInDown">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home.index') }}">Accueil</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Administrateurs Indépendants</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
-                        src="{{ asset('assets/public/img/hero-1.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -73,94 +64,67 @@
     <!-- About End -->
 
     <!-- Features Start -->
+    @include('public.sections.kbs-why-us')
+    <!-- Features End -->
+
+    <!-- Contact Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Pourquoi nous ?</h1>
-                <p class="text-primary fs-5 mb-5">Trouvez facilement votre prochain siège dans un conseil d'administration</p>
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-8">
+                    <h1 class="display-6">Enregistrez-vous dès maintenant !</h1>
+                    <p class="text-primary fs-5 mb-0">
+                        Remplissez le formulaire pour être visible aux yeux de toutes les entreprises qui nous font
+                        confiance !
+                    </p>
+                </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-7.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Expertise Professionnelle</h5>
-                            <span>
-                                Notre plateforme offre une expertise professionnelle dans le recrutement d'administrateurs
-                                indépendants, avec une compréhension approfondie des attentes et des enjeux spécifiques à
-                                chaque poste.
-                            </span>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img src="{{ asset('assets/public/img/handshake.png') }}" class="col-lg-12 h-100 col-md-6 col-12 wow" style="object-fit: cover" alt="">
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-6.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Accès à un Réseau Exclusif</h5>
-                            <span>
-                                En recourant à notre plateforme, vous bénéficiez d'un accès à un réseau exclusif d'entreprises,
-                                vous permettant d'être visible aux yeux d'une panoplie d'entreprises.
-                            </span>
+                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
+                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
+                            href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-4" type="submit">Send Message</button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-5.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Gain de Temps et d'Effort </h5>
-                            <span>
-                                Ne perdez pas de temps à chercher où travailler ensuite. En utilisant notre plateforme, vous
-                                pouvez vous concentrer sur le développement de vos compétences, tandis que nous nous
-                                chargeons de vous mettre en relation avec les entreprises qui recherchent des profils
-                                comme le vôtre.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-4.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Processus de Recrutement Amélioré</h5>
-                            <span>
-                                Notre approche personnalisée et nos méthodes de recrutement efficaces garantissent que vous
-                                trouverez des entreprises qui non seulement ont besoin de vos compétences professionnelles,
-                                mais aussi qui incarnent également votre culture et vos valeurs.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-3.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Accompagnement et Suivi</h5>
-                            <span>
-                                Les candidats bénéficient d'un accompagnement tout au long du processus de recrutement,
-                                ainsi qu'un suivi durant leurs premiers mois dans l'entreprise, ce qui renforce leur
-                                engagement et fidélité envers leur organisation.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-start">
-                        <img class="img-fluid flex-shrink-0" src="img/icon-8.png" alt="">
-                        <div class="ps-4">
-                            <h5 class="mb-3">Adaptabilité aux Nouveaux Modes de Travail</h5>
-                            <span>
-                                Nous comprenons l'importance pour les entreprises de prouver leur adaptabilité aux besoins
-                                et aux nouveaux modes de travail, en proposant par exemple du télétravail et des horaires
-                                flexibles, ce qui est essentiel pour attirer les meilleurs talents sur le marché actuel.
-                            </span>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Features End -->
+    <!-- Contact End -->
 
+    <!-- Features Start -->
+    @include('public.sections.facts')
+    <!-- Features End -->
 @endsection

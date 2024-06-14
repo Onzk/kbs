@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
             <div class="nav-item dropdown">
-                <a href="#" @class([
+                <a href="{{ route('public.home.index') }}" @class([
                     'nav-link dropdown-toggle',
                     'active fw-bold' => Str::contains(Route::currentRouteName(), 'home'),
                 ]) data-bs-toggle="dropdown">Accueil</a>
@@ -69,7 +69,7 @@
                                     'dropdown-item border-left',
                                     'active' => Route::is('public.about.teams'),
                                 ])>-
-                                Equipes</a>
+                                Equipe</a>
                         </div>
                     </div>
                 </div>

@@ -21,13 +21,13 @@
                 <a class="btn btn-link" href="{{ route('public.home.kapi-presentation') }}">Présentation KAPI Consult</a>
                 <a class="btn btn-link" href="{{ route('public.home.kbs-presentation') }}">Présentation de KBS</a>
                 <a class="btn btn-link" href="{{ route('public.home.key-information') }}">Informations clés</a>
-                <a class="btn btn-link" href="{{ route('public.home.executives') }}">Cadres & Hauts Cadres</a>
-                <a class="btn btn-link" href="{{ route('public.home.entreprises') }}">Entreprises</a>
+                <a class="btn btn-link" href="{{ route('public.home.executives') }}">Section Administrateurs</a>
+                <a class="btn btn-link" href="{{ route('public.home.entreprises') }}">Section Entreprises</a>
                 <a class="btn btn-link" href="{{ route('public.about.mvv') }}">Mission - Vision - Valeurs</a>
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="mb-4">&nbsp;</h5>
-                <a class="btn btn-link" href="{{ route('public.about.teams') }}">Equipes</a>
+                <a class="btn btn-link" href="{{ route('public.about.teams') }}">Equipe</a>
                 <a class="btn btn-link" href="{{ route('public.media-news.webinaries') }}">Webinaires</a>
                 <a class="btn btn-link" href="{{ route('public.media-news.questions') }}">Questions réponses</a>
             <a class="btn btn-link" href="{{ route('public.media-news.blog') }}">Blog</a>
