@@ -14,7 +14,8 @@
                 <a href="{{ route('public.home.index') }}" @class([
                     'nav-link dropdown-toggle',
                     'active fw-bold' => Str::contains(Route::currentRouteName(), 'home'),
-                ]) data-bs-toggle="dropdown">Accueil</a>
+                ])
+                    data-bs-toggle="dropdown">Accueil</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <div class="">
                         <a href="#" class="dropdown-item disabled">Présentations et Informations clés</a>
@@ -42,7 +43,8 @@
                     <a href="{{ route('public.home.executives') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.executives'),
-                    ])>Administrateurs Indépendants</a>
+                    ])>Administrateurs
+                        Indépendants</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.entreprises'),
@@ -103,16 +105,19 @@
                 'nav-item nav-link',
                 'active fw-bold' => Route::is('public.data-protection'),
             ])>Protection de données</a>
+            @auth
+                <a href="{{ route('user-space.index') }}" @class([
+                    'nav-item nav-link',
+                    'active fw-bold' => Route::is('user-space.index'),
+                ])>Espace utilisateur</a>
+            @endauth
+            @guest
+                <a href="{{ route('user-space.login') }}" @class([
+                    'nav-item nav-link',
+                    'active fw-bold' => Route::is('user-space.login'),
+                ])>Se connecter</a>
+            @endguest
 
-            {{-- <a href="{{ route('public.user-space') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.user-space'),
-            ])>Espace utilisateur</a> --}}
-
-            <a href="{{ route('public.user-space') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.user-space'),
-            ])>Se connecter</a>
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
             <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="">

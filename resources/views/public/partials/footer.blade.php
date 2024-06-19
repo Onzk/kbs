@@ -36,7 +36,7 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="mb-4">&nbsp;</h5>
                 <a class="btn btn-link" href="{{ route('public.faqs') }}">FAQs</a>
-                <a class="btn btn-link" href="{{ route('public.user-space') }}">Espace utilisateur</a>
+                <a class="btn btn-link" href="{{ route('user-space.index') }}">Espace utilisateur</a>
                 <a class="btn btn-link" href="{{ route('public.data-protection') }}">Protection de données</a>
             </div>
             <div class="col-lg-6 col-md-6">

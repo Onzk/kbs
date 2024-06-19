@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\public\AppController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\UserSpaceController;
 
-Route::controller(AppController::class)->name('public.')->prefix('/')->group(
+Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     function () {
         Route::prefix('/')->name('home.')->group(function () {
             Route::get('/', 'index')->name('index');
@@ -27,5 +28,12 @@ Route::controller(AppController::class)->name('public.')->prefix('/')->group(
         Route::get('/faqs', 'faqs')->name('faqs');
         Route::get('/espace-utilisateur', 'user_space')->name('user-space');
         Route::get('/protection-de-données', 'data_protection')->name('data-protection');
+    }
+);
+Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
+    function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/se-connecter', 'login')->name('login');
+        Route::get('/mot-de-passe-oublie', 'forgot_password')->name('forgot_password');
     }
 );

@@ -1,5 +1,7 @@
 @extends('public.layout.base')
+
 @section('public.base.title', 'Equipes')
+
 @section('public.base.body')
     <div class="container-fluid hero-header bg-light py-5 mb-5">
         <div class="container py-5">

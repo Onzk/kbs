@@ -13,10 +13,18 @@
                     <h1 class="display-4 mb-3 animated slideInDown text-white fw-bold">
                         Trouvez vos futurs membres de conseil d'administration !
                     </h1>
-                    <p class="animated slideInDown">
+                    <p class="animated slideInDown text-white col-md-8 mx-auto" style="font-size: 18px">
                         Bienvenue sur la plateforme de recherche d'administrateurs indépendants
                         et membres de conseil d'administration d'entreprises.
                     </p>
+                    <a href="#creer-un-compte" class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="pb-1 mx-1" style="width:20px">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+                        S'enregistrer maintenant !
+                    </a>
                 </div>
             </div>
         </div>
@@ -69,7 +77,7 @@
     <!-- Features End -->
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="creer-un-compte">
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-8">
