@@ -3,21 +3,21 @@
 @section('public.base.title', 'Questions Réponses')
 
 @section('public.base.body')
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
+    <div class="container-fluid hero-header bg-dark py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Questions & Réponses</h1>
+                    <h1 class="display-4 mb-3 animated slideInDown text-white">Questions & Réponses</h1>
                     <nav aria-label="breadcrumb animated slideInDown">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home.index') }}">Médias & Nouvelles</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="{{ route('public.home.index') }}">Médias &
+                                    Nouvelles</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Questions & Réponses</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
-                        src="{{ asset('assets/public/img/questions.png') }}" alt="">
+                    <img class="img-fluid sideImage" src="{{ asset('assets/public/img/questions.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -71,19 +71,22 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Votre nom et prénoms">
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Votre nom et prénoms">
                                         <label for="name">Votre nom et prénoms</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Votre courriel">
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Votre courriel">
                                         <label for="email">Votre courriel</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Résumé de la question">
+                                        <input type="text" class="form-control" id="subject"
+                                            placeholder="Résumé de la question">
                                         <label for="subject">Résumé de la question</label>
                                     </div>
                                 </div>

@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('assets/public/img/about.png') }}" alt="">
+                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
@@ -89,8 +89,8 @@
             </div>
             <div class="row g-5">
                 <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="{{ asset('assets/public/img/handshake.png') }}" class="col-lg-12 h-100 col-md-6 col-12 wow"
-                        style="object-fit: cover" alt="">
+                    <img src="{{ asset('assets/public/img/handshake.png') }}"
+                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with

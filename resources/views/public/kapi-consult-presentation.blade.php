@@ -5,14 +5,14 @@
 @section('public.base.body')
 
     <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
+    <div class="container-fluid hero-header bg-dark py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Présentation de KAPI Consult</h1>
+                    <h1 class="display-4 mb-3 animated slideInDown text-white">Présentation de KAPI Consult</h1>
                     <nav aria-label="breadcrumb animated slideInDown">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home.index') }}">Accueil</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="{{ route('public.home.index') }}">Accueil</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Présentation de KAPI Consult
                             </li>
@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
+                    <img class="img-fluid infinite sideImage"
                         src="{{ asset('assets/public/img/present.png') }}" alt="">
                 </div>
             </div>
@@ -197,6 +197,22 @@
         </div>
     </div>
     <!-- Features End -->
+
+     <!-- Team Start -->
+     <div class="section md-padding">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Experts</h1>
+                <p class="text-primary fs-5 mb-5">Nos Experts De Chez KAPI Consult</p>
+            </div>
+            <div class="row mx-4">
+                @for ($i = 0; $i < 3; $i++)
+                    @include('public.components.team')
+                @endfor
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
 
     <!-- Contact Start -->
     @include('public.sections.kapi-contact')

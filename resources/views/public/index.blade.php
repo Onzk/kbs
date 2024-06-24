@@ -56,7 +56,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('assets/public/img/about.png') }}" alt="">
+                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
@@ -96,13 +96,29 @@
     @include('public.sections.facts')
     <!-- Facts End -->
 
-    <!-- Features Start -->
-    @include('public.sections.kbs-why-us')
-    <!-- Features End -->
+    <!-- Team Start -->
+    <div class="section md-padding">
+       <div class="container">
+           <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+               <h1 class="display-6">Experts</h1>
+               <p class="text-primary fs-5 mb-5">Nos Experts De Chez KAPI Consult</p>
+           </div>
+           <div class="row mx-4">
+               @for ($i = 0; $i < 3; $i++)
+                   @include('public.components.team')
+               @endfor
+           </div>
+       </div>
+   </div>
+   <!-- Team End -->
 
     <!-- Service Start -->
     @include('public.sections.kbs-services')
     <!-- Service End -->
+
+    <!-- Why Us Start -->
+    @include('public.sections.kbs-why-us')
+    <!-- Why Us End -->
 
     <!-- FAQs Start -->
     <div class="container-xxl py-5">
@@ -153,4 +169,8 @@
         </div>
     </div>
     <!-- FAQs Start -->
+
+    <!-- Contact Start -->
+    @include('public.sections.kapi-contact')
+    <!-- Contact End -->
 @endsection
