@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top p-0 px-4 px-lg-5">
     <a href="{{ route('public.home.index') }}" class="navbar-brand d-flex align-items-center">
-        <h2 class="m-0 text-primary">
+        <h2 class="m-0 text-white">
             <img class="img-fluid me-2" src="{{ asset('assets/public/img/logo.png') }}" alt="" style="width: 45px;">
             {{ config('app.name') }}
         </h2>
@@ -12,8 +12,8 @@
         <div class="navbar-nav ms-auto py-4 py-lg-0">
             <div class="nav-item dropdown">
                 <a href="{{ route('public.home.index') }}" @class([
-                    'nav-link dropdown-toggle',
-                    'active fw-bold' => Str::contains(Route::currentRouteName(), 'home'),
+                    'nav-link dropdown-toggle text-white',
+                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'home'),
                 ])
                     data-bs-toggle="dropdown">Accueil</a>
                 <div class="dropdown-menu shadow-sm m-0">
@@ -53,8 +53,8 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" @class([
-                    'nav-link dropdown-toggle',
-                    'active fw-bold' => Str::contains(Route::currentRouteName(), 'about'),
+                    'nav-link dropdown-toggle text-white',
+                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'about'),
                 ]) data-bs-toggle="dropdown">A Propos</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <div class="">
@@ -78,8 +78,8 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" @class([
-                    'nav-link dropdown-toggle',
-                    'active fw-bold' => Str::contains(Route::currentRouteName(), 'media-news'),
+                    'nav-link dropdown-toggle text-white',
+                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'media-news'),
                 ]) data-bs-toggle="dropdown">Médias & Nouvelles</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a href="{{ route('public.media-news.webinaries') }}" @class([
@@ -98,23 +98,23 @@
                 </div>
             </div>
             <a href="{{ route('public.faqs') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.faqs'),
+                'nav-item nav-link text-white',
+                'active border-bottom border-white border-3 px-4' => Route::is('public.faqs'),
             ])>FAQs</a>
             <a href="{{ route('public.data-protection') }}" @class([
-                'nav-item nav-link',
-                'active fw-bold' => Route::is('public.data-protection'),
+                'nav-item nav-link text-white',
+                'active border-bottom border-white border-3 px-4' => Route::is('public.data-protection'),
             ])>Protection de données</a>
             @auth
                 <a href="{{ route('user-space.index') }}" @class([
-                    'nav-item nav-link',
-                    'active fw-bold' => Route::is('user-space.index'),
+                    'nav-item nav-link text-white',
+                    'active border-bottom border-white border-3 px-4' => Route::is('user-space.index'),
                 ])>Espace utilisateur</a>
             @endauth
             @guest
                 <a href="{{ route('user-space.login') }}" @class([
-                    'nav-item nav-link',
-                    'active fw-bold' => Route::is('user-space.login'),
+                    'nav-item nav-link text-white',
+                    'active border-bottom border-white border-3 px-4' => Route::is('user-space.login'),
                 ])>Se connecter</a>
             @endguest
 

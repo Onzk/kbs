@@ -37,7 +37,7 @@ class PublicController extends Controller
     }
     public function teams()
     {
-        return view('public.teams');
+        return view('public.team');
     }
     public function webinaries()
     {

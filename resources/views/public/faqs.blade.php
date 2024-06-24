@@ -4,21 +4,21 @@
 
 @section('public.base.body')
     <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
+    <div class="container-fluid hero-header bg-dark py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Foire Aux Questions</h1>
+                    <h1 class="display-4 mb-3 animated slideInDown text-white">Foire Aux Questions</h1>
                     <nav aria-label="breadcrumb animated slideInDown">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home.index') }}">Accueil</a></li>
+                            <li class="breadcrumb-item"><a class="text-white"
+                                    href="{{ route('public.home.index') }}">Accueil</a></li>
                             <li class="breadcrumb-item active" aria-current="page">FAQs</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;" src="{{ asset('assets/public/img/faqs.png') }}"
-                        alt="">
+                    <img class="img-fluid sideImage" src="{{ asset('assets/public/img/faqs.png') }}" alt="">
                 </div>
             </div>
         </div>
