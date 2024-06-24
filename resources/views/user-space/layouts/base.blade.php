@@ -9,12 +9,17 @@
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/chartjs/Chart.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/user-space/css/custom.css') }}">
     <link href="{{ asset('assets/public/img/logo.png') }}" rel="icon">
 </head>
 
 <body>
     <div id="app">
-        @include('user-space.partials.sidebar')
+        @if ($isExecutive)
+            @include('user-space.executives.partials.sidebar')
+        @else
+            @include('user-space.entreprises.partials.sidebar')
+        @endif
         <div id="main">
             @include('user-space.partials.navbar')
             <div class="main-content container-fluid">
@@ -23,13 +28,13 @@
             @include('user-space.partials.footer')
         </div>
     </div>
-    <script src="{{asset('assets/user-space/js/feather-icons/feather.min.js')}}"></script>
-    <script src="{{asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('assets/user-space/js/app.js')}}"></script>
-    <script src="{{asset('assets/user-space/vendors/chartjs/Chart.min.js')}}"></script>
-    <script src="{{asset('assets/user-space/vendors/apexcharts/apexcharts.min.js')}}"></script>
-    <script src="{{asset('assets/user-space/js/pages/dashboard.js')}}"></script>
-    <script src="{{asset('assets/user-space/js/main.js')}}"></script>
+    <script src="{{ asset('assets/user-space/js/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/user-space/js/app.js') }}"></script>
+    <script src="{{ asset('assets/user-space/vendors/chartjs/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/user-space/vendors/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/user-space/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/user-space/js/main.js') }}"></script>
 </body>
 
 </html>

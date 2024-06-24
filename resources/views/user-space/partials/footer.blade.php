@@ -1,11 +1,8 @@
 <footer>
     <div class="footer clearfix mb-0 text-muted">
-        <div class="float-left">
-            <p>2020 &copy; Voler</p>
-        </div>
-        <div class="float-right">
-            <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
-                    href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
+        <div class="col-md-12 text-center text-md-center mb-3 mb-md-0">
+            {{ \Carbon\Carbon::now()->year }}
+            &copy; <a href="{{ route('public.home.index') }}" class="text-primary fw-bold">{{ config('app.name') }}</a>, Tout droit réservé.
         </div>
     </div>
 </footer>
