@@ -24,8 +24,8 @@
                         <span>Discussions</span>
                     </a>
                 </li>
-                <li @class(['sidebar-item', 'active' => false])>
-                    <a href="index.html" class="sidebar-link">
+                <li @class(['sidebar-item', 'active' => Route::is('user-space.contracts')])>
+                    <a href="{{ route('user-space.contracts') }}" class="sidebar-link">
                         <i data-feather="file-text" width="20"></i>
                         <span>Contrats</span>
                     </a>

@@ -3,10 +3,11 @@
 use App\Http\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
-use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Auth\ForgotPassword;
-use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
+use App\Http\Controllers\UserSpaceController;
+use App\Http\Livewire\UserSpace\Executives\ContractPage As ExecutivesContractPage;
 use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
+use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
 
 Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     function () {
@@ -38,6 +39,8 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
         Route::get('/', ExecutivesHomePage::class)->name('index');
         Route::get('/accueil', ExecutivesHomePage::class)->name('home');
         Route::get('/discussions', ExecutivesDiscussionPage::class)->name('discussions');
+        Route::get('/contrats', ExecutivesContractPage::class)->name('contracts');
+
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }

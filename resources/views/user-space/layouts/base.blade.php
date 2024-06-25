@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/simple-datatables/style.css') }}">
     <link href="{{ asset('assets/public/img/logo.png') }}" rel="icon">
     @livewireStyles
 </head>
@@ -32,10 +33,10 @@
     <script src="{{ asset('assets/user-space/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/app.js') }}"></script>
-    <script src="{{ asset('assets/user-space/vendors/chartjs/Chart.min.js') }}"></script>
-    <script src="{{ asset('assets/user-space/vendors/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/main.js') }}"></script>
+    <script src="{{ asset('assets/user-space/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/user-space/js/vendors.js') }}"></script>
     @livewireScripts
 </body>
 
