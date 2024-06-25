@@ -921,12 +921,12 @@ footer {
   margin-bottom: 2.2rem;
 }
 .card.card-statistic {
-  box-shadow: 1px 2px 5px rgba(47, 170, 244, 0.5);
-  background: linear-gradient(to bottom, #25a6f1, #54b9ff);
+  box-shadow: 1px 2px 5px gray;
+  background: linear-gradient(to bottom, var(--bs-blue), #055a93);
   border: none;
 }
 .card.card-statistic .card-title {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #fff;
   letter-spacing: 0.8px;
   font-weight: 400;

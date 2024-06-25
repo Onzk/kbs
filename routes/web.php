@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserSpaceController;
+use App\Http\Livewire\Auth\ForgotPassword;
+use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
 
 Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     function () {
@@ -32,8 +34,9 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
 );
 Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
-        Route::get('/', 'index')->name('index');
-        Route::get('/se-connecter', 'login')->name('login');
-        Route::get('/mot-de-passe-oublie', 'forgot_password')->name('forgot_password');
+        Route::get('/', ExecutivesHomePage::class)->name('index');
+        Route::get('/accueil', ExecutivesHomePage::class)->name('home');
+        Route::get('/se-connecter', Login::class)->name('login');
+        Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }
 );

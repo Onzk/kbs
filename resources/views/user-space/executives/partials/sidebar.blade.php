@@ -81,7 +81,7 @@
                 </li>
                 <li class="sidebar-title">Autres</li>
                 <li class="sidebar-item">
-                    <a href="form-editor.html" class="sidebar-link">
+                    <a href="{{ route('public.home.index') }}" class="sidebar-link">
                         <i data-feather="corner-down-right" width="20"></i>
                         <span>KBS Accueil</span>
                     </a>

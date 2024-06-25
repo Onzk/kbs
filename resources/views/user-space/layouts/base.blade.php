@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('user-space.base.title') - Espace Utilisateur - {{ config('app.name') }}</title>
+    <title>{{ $user_space_title }} - Espace Utilisateur - {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/chartjs/Chart.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/custom.css') }}">
     <link href="{{ asset('assets/public/img/logo.png') }}" rel="icon">
+    @livewireStyles
 </head>
 
 <body>
     <div id="app">
-        @if ($isExecutive)
+        @if ($is_executive)
             @include('user-space.executives.partials.sidebar')
         @else
             @include('user-space.entreprises.partials.sidebar')
@@ -35,6 +36,7 @@
     <script src="{{ asset('assets/user-space/vendors/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/main.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>
