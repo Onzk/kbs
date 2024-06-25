@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Auth\ForgotPassword;
+use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
 use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
 
 Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
@@ -36,6 +37,7 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
     function () {
         Route::get('/', ExecutivesHomePage::class)->name('index');
         Route::get('/accueil', ExecutivesHomePage::class)->name('home');
+        Route::get('/discussions', ExecutivesDiscussionPage::class)->name('discussions');
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }

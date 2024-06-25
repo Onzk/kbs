@@ -62,11 +62,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            @for ($i = 0; $i < 3; $i++)
-                @include('user-space.components.question')
-            @endfor
-        </div>
         <div class="page-title mt-4">
             <p class="text-subtitle text-muted">Nos nouveaux webinaires</p>
         </div>
