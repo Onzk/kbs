@@ -24,23 +24,42 @@
                         <span>Discussions</span>
                     </a>
                 </li>
-                <li @class(['sidebar-item', 'active' => Route::is('user-space.contracts')])>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.contracts'),
+                ])>
                     <a href="{{ route('user-space.contracts') }}" class="sidebar-link">
                         <i data-feather="file-text" width="20"></i>
                         <span>Contrats</span>
                     </a>
                 </li>
                 <li class="sidebar-title">Mon Compte</li>
-                <li @class(['sidebar-item', 'active' => false])>
-                    <a href="form-layout.html" class="sidebar-link">
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.profile'),
+                ])>
+                    <a href="{{ route('user-space.profile') }}" class="sidebar-link">
                         <i data-feather="user" width="20"></i>
                         <span>Profil</span>
                     </a>
                 </li>
                 <li @class(['sidebar-item', 'active' => false])>
                     <a href="form-editor.html" class="sidebar-link">
+                        <i data-feather="star" width="20"></i>
+                        <span>Notes & Avis</span>
+                    </a>
+                </li>
+                <li class="sidebar-title">Configurations</li>
+                <li @class(['sidebar-item', 'active' => false])>
+                    <a href="form-editor.html" class="sidebar-link">
                         <i data-feather="at-sign" width="20"></i>
                         <span>Contact</span>
+                    </a>
+                </li>
+                <li @class(['sidebar-item', 'active' => false])>
+                    <a href="form-editor.html" class="sidebar-link">
+                        <i data-feather="calendar" width="20"></i>
+                        <span>Disponibilité</span>
                     </a>
                 </li>
                 <li @class(['sidebar-item', 'active' => false])>
@@ -77,12 +96,6 @@
                     <a href="form-editor.html" class="sidebar-link">
                         <i data-feather="thumbs-up" width="20"></i>
                         <span>Centres d'Intérêts</span>
-                    </a>
-                </li>
-                <li @class(['sidebar-item', 'active' => false])>
-                    <a href="form-editor.html" class="sidebar-link">
-                        <i data-feather="star" width="20"></i>
-                        <span>CV</span>
                     </a>
                 </li>
                 <li class="sidebar-title">Autres</li>

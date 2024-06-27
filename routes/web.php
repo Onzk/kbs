@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
+use App\Http\Livewire\UserSpace\Executives\ProfilePage as ExecutivesProfilePage;
 use App\Http\Livewire\UserSpace\Executives\ContractPage As ExecutivesContractPage;
 use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
 use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
@@ -40,6 +41,7 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
         Route::get('/accueil', ExecutivesHomePage::class)->name('home');
         Route::get('/discussions', ExecutivesDiscussionPage::class)->name('discussions');
         Route::get('/contrats', ExecutivesContractPage::class)->name('contracts');
+        Route::get('/profil', ExecutivesProfilePage::class)->name('profile');
 
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
