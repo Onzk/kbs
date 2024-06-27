@@ -3,6 +3,24 @@
 @section('public.base.title', 'Mission - Vision - Valeurs')
 
 @section('public.base.body')
+{{--
+NOS VALEURS
+
+Intégrité  Nous faisons ce que nous avons dit.  Nous tenons nos engagements
+
+Engagement & Partenariat Nous sommes passionnés par votre succès,  Nous serons donc toujours Ià pour vous  accompagner vers le résultat
+
+Courage Parce que nous acceptons d'être jugés sur nos  résultats, nous assumons nos démarches et  nos recommandations
+
+Compassion  Nous reconnaissons que souvent le  changement peut être difficile, pour  certains. Et c'est notre rôle d 'être à  leurs côtés
+
+Responsabilité  Nous nous engageons sur ce que nous  pouvons faire pour délivrer vos attentes.
+
+Notre mission: Nous contribuons au développement à long terme de nos clients, en leur apportant des talents d'exception avec un leadership stratégique pour leur conseils d'administration.
+
+Notre vision: Incarner la référence incontournable  sous-régionale  en matière de placement d'Administrateurs haut de gamme, capable d'insuffler une dynamique de croissance pérenne aux organisations que nous accompagnons
+
+--}}
     <div class="container-fluid hero-header bg-dark py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">

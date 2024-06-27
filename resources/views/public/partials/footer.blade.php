@@ -5,7 +5,7 @@
                 <h1 class="text-white mb-4">
                     <img class="img-fluid me-2" src="{{ asset('assets/public/img/logo.png') }}" alt=""
                         style="width: 85px;">
-                    KAPI Board Select
+                    {{ config('app.name') }}
                 </h1>
                 <span>
                     En tant que <span class="text-white">cabinet d'étude spécialisé dans divers domaines</span>, dont le

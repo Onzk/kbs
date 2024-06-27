@@ -8,56 +8,35 @@
         <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
             <li class="dropdown nav-icon">
                 <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
-                    <div class="d-lg-inline-block">
-                        <i data-feather="bell"></i>
+                    <div class="d-lg-inline-block avatar">
+                        <i data-feather="mail"></i>
+                        <span class="avatar-status pulse"></span>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-large">
-                    <h6 class='py-2 px-4'>Notifications</h6>
-                    <ul class="list-group rounded-none">
+                    <h6 class="py-2 px-4" style="font-size: 12px; font-weight: bold">Nouveau(x) message(s)</h6>
+                    <ul class="list-group px-2 rounded-none">
                         <li class="list-group-item border-0 align-items-start">
-                            <div class="avatar bg-success mr-3">
-                                <span class="avatar-content"><i data-feather="shopping-cart"></i></span>
-                            </div>
                             <div>
-                                <h6 class='text-bold'>New Order</h6>
-                                <p class='text-xs'>
-                                    An order made by Ahmad Saugi for product Samsung Galaxy S69
+                                <h6 class="fw-bold" style="font-size: 12px">Il y a 2 heures</h6>
+                                <p class="text-xs">
+                                    Bienvenue sur KBS
                                 </p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="dropdown nav-icon mr-2">
-                <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
-                    <div class="d-lg-inline-block">
-                        <i data-feather="mail"></i>
-                    </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
-                    <a class="dropdown-item active" href="#"><i data-feather="mail"></i>
-                        Messages</a>
-                    <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
-                </div>
-            </li>
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <div class="avatar mr-1">
-                        <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                        <img src="{{ asset('assets/public/img/avatar.png') }}" style="object-fit: cover" alt="" srcset="">
                     </div>
-                    <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
+                    <div class="d-none d-md-block d-lg-inline-block">Frédéric DEGBE</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
-                    <a class="dropdown-item active" href="#"><i data-feather="mail"></i>
-                        Messages</a>
-                    <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                    <a class="dropdown-item" href="#"><i data-feather="user"></i> Profil</a>
+                    <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Se Déconnecter</a>
                 </div>
             </li>
         </ul>
