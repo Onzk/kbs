@@ -9,6 +9,7 @@ use App\Http\Livewire\UserSpace\Executives\ProfilePage as ExecutivesProfilePage;
 use App\Http\Livewire\UserSpace\Executives\ContractPage As ExecutivesContractPage;
 use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
 use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
+use App\Http\Livewire\UserSpace\Executives\MarkAndReviewsPage As ExecutivesMarkAndReviewsPage;
 
 Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     function () {
@@ -35,6 +36,7 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
         Route::get('/protection-de-données', 'data_protection')->name('data-protection');
     }
 );
+
 Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
         Route::get('/', ExecutivesHomePage::class)->name('index');
@@ -42,6 +44,7 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
         Route::get('/discussions', ExecutivesDiscussionPage::class)->name('discussions');
         Route::get('/contrats', ExecutivesContractPage::class)->name('contracts');
         Route::get('/profil', ExecutivesProfilePage::class)->name('profile');
+        Route::get('/notes-et-avis', ExecutivesMarkAndReviewsPage::class)->name('mark_and_reviews');
 
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');

@@ -9,24 +9,36 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Informations personnelles</h4>
+
+    <div class="col-12 mb-4">
+        <span class="badge bg-success rounded text-xs fw-bold">
+            COMPTE ACTIF
+        </span>
+        <span class="badge bg-success rounded text-xs fw-bold">
+            AUCUN CONTRAT EN COURS
+        </span>
+        <span class="badge bg-success rounded text-xs fw-bold">
+            ACTUELLEMENT DISPONIBLE
+        </span>
+    </div>
+
+    <!-- Personnal Informations start -->
+    <div class="col-12">
+        <div class="card h-100">
+            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                <h4 class="card-title text-white">Informations personnelles</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body pt-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="basicInput">Photo de Profil</label>
                             <p class="w-100">
                                 <img src="{{ asset('assets/public/img/avatar.png') }}"
-                                    class="border w-100 rounded-lg"
-                                    style="object-fit: cover;" alt=""
+                                    class="border w-100 rounded-lg h-100" style="object-fit: cover;" alt=""
                                     srcset="">
                             </p>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group h-100">
                             <span class="badge bg-primary rounded p-2 w-100">
                                 <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
                                 <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
@@ -50,11 +62,17 @@
                             </p>
                         </div>
                         <div class="form-group">
-                            <label for="firstname">Etats</label>
-                            <p id="firstname" class="form-control">
-                                <span class="badge bg-success rounded px-2 py-1 text-xs fw-bold">COMPTE ACTIF</span>
-                                <span class="badge bg-info rounded px-2 py-1 text-xs fw-bold">AUCUN CONTRAT EN COURS</span>
-                                <span class="badge bg-success rounded px-2 py-1 text-xs fw-bold">ACTUELLEMENT DISPONIBLE</span>
+                            <label for="firstname">A Propos</label>
+                            <p class="form-control" id="firstname">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
+                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
+                                earum reiciendis aut cum quis. Dignissimos, amet.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
+                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
+                                earum reiciendis aut cum quis. Dignissimos, amet.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
+                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
+                                earum reiciendis aut cum quis. Dignissimos, amet.
                             </p>
                         </div>
                     </div>
@@ -62,258 +80,356 @@
             </div>
         </div>
     </div>
+    <!-- Personnal Informations end -->
 
-    <!-- Basic Inputs end -->
+    <div class="row">
+        <!-- Contact start -->
+        <div class="col-12 mb-0">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                            <h4 class="card-title text-white">Contacts</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                @foreach ([
+        'Courriel' => 'degbe@gmail.com',
+        'Téléphone' => '+228 90900909',
+        'Linkedin' => 'https://linkedin.com/degbe_frederic',
+        'Facebook' => 'https://facebook.com/degbe_frederic',
+        'Twitter' => 'https://x.com/degbe_frederic',
+        'Whatsapp' => 'degbe@gmail.com',
+    ] as $key => $value)
+                                    <div class="col-md-6 col">
+                                        <div class="form-group">
+                                            <label>{{ $key }}</label>
+                                            <p type="text" class="form-control">
+                                                {{ $value }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact end -->
 
-    <!-- Input Style start -->
-    <section id="input-style">
-        <div class="row">
+            <!-- Availability start -->
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Input Styles</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>To set rounded border to input box, use <code>.round</code> class and
-                                    to set square border to input box, use <code>.sqaure</code> class
-                                    alongwith
-                                    <code>.form-control</code> class.
-                                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Disponibilités</h4>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="roundText">Rounded Input</label>
-                                    <input type="text" id="roundText" class="form-control round"
-                                        placeholder="Rounded Input">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="squareText">Square Input</label>
-                                    <input type="text" id="squareText" class="form-control square"
-                                        placeholder="Square Input">
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach (['02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024'] as $value)
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <p type="text" class="form-control text-center">
+                                                    {{ $value }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Input Style end -->
+            <!-- Availability end -->
 
-    <!-- Horizontal Input start -->
-    <section id="horizontal-input">
-        <div class="row">
+            <!-- Education start -->
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Horizontal Input</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>To make label in center of form-control, use <code>.col-form-label</code>
-                                    class with
-                                    <code>&lt;label&gt;</code> element. This is default bootstrap class.
-                                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Education</h4>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group row align-items-center">
-                                    <div class="col-lg-2 col-3">
-                                        <label class="col-form-label">First Name</label>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <input type="text" id="first-name" class="form-control" name="fname"
-                                            placeholder="First Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row align-items-center">
-                                    <div class="col-lg-2 col-3">
-                                        <label class="col-form-label">Last Name</label>
-                                    </div>
-                                    <div class="col-lg-10 col-9">
-                                        <input type="text" id="last-name" class="form-control" name="fname"
-                                            placeholder="Last Name">
-                                    </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ([
+        [
+            'degree' => 'Licence Professionnelle',
+            'institute' => 'ESGIS Business School',
+            'start_date' => '10 Septembre 2016',
+            'end_date' => '12 Juillet 2019',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
+        ],
+    ] as $value)
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <span
+                                                            class="badge bg-primary rounded">{{ $value['institute'] }}</span>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ $value['degree'] }}</h5>
+                                                        <p class="card-text">{{ $value['description'] }}</p>
+                                                        <p class="card-text text-xs">
+                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <span
+                                                            class="badge bg-primary rounded">{{ $value['institute'] }}</span>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ $value['degree'] }}</h5>
+                                                        <p class="card-text">{{ $value['description'] }}</p>
+                                                        <p class="card-text text-xs">
+                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Horizontal Input end -->
+            <!-- Education end -->
 
-    <!-- Basic File Browser start -->
-    <section id="input-file-browser">
-        <div class="row">
+            <!-- Professionnal experiences start -->
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">File Input</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <p>Default</p>
-                                <div class="form-file">
-                                    <input type="file" class="form-file-input" id="customFile">
-                                    <label class="form-file-label" for="customFile">
-                                        <span class="form-file-text">Choose file...</span>
-                                        <span class="form-file-button">Browse</span>
-                                    </label>
-                                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Expériences professionnelles</h4>
                             </div>
-                            <div class="col-lg-6 col-md-12">
-                                <p>With Icon And Button Color</p>
-                                <div class="form-file">
-                                    <input type="file" class="form-file-input" id="customFile">
-                                    <label class="form-file-label" for="customFile">
-                                        <span class="form-file-text">Choose file...</span>
-                                        <span class="form-file-button btn-primary "><i
-                                                data-feather="upload"></i></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Basic File Browser end -->
-
-    <!-- Input with Icons start -->
-    <section id="input-with-icons">
-        <div class="row match-height">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Input with Icons</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>For Input Box with icon use <code>.position-relative</code> class with
-                                    <code>.form-group</code> and use class <code>.has-icon-left</code> or
-                                    <code>.has-icon-right</code> class for icon on
-                                    left side.
-                                </p>
-                            </div>
-                            <div class="col-sm-6">
-                                <h6>Left Icon</h6>
-                                <div class="form-group position-relative has-icon-left">
-                                    <input type="text" class="form-control" placeholder="Input with icon left">
-                                    <div class="form-control-icon">
-                                        <i data-feather="user"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <h6>Right Icon</h6>
-                                <div class="form-group position-relative has-icon-right">
-                                    <input type="text" class="form-control"
-                                        placeholder="Icon Right, Default Input">
-                                    <div class="form-control-icon">
-                                        <i data-feather="file"></i>
-                                    </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ([
+        [
+            'title' => 'Directeur commercial',
+            'organization' => 'VLISCO Africa',
+            'start_date' => '23 Mai 2020',
+            'end_date' => '9 Novembre 2023',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
+        ],
+    ] as $value)
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <span
+                                                            class="badge bg-primary rounded">{{ $value['organization'] }}</span>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ $value['title'] }}</h5>
+                                                        <p class="card-text">{{ $value['description'] }}</p>
+                                                        <p class="card-text text-xs">
+                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <span
+                                                            class="badge bg-primary rounded">{{ $value['organization'] }}</span>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ $value['title'] }}</h5>
+                                                        <p class="card-text">{{ $value['description'] }}</p>
+                                                        <p class="card-text text-xs">
+                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Input with Icons end -->
+            <!-- Professionnal experiences end -->
 
-    <!-- Input Sizing start -->
-    <section id="input-sizing">
-        <div class="row match-height">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Control Sizing Option</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>For different sizes of Input, Use classes like
-                                    <code>.form-control-lg</code> &amp;
-                                    <code>.form-control-sm</code> for Large, Small input box.
-                                </p>
+            <!-- Projects start -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Projets</h4>
                             </div>
-                            <div class="col-sm-4">
-                                <h6>Large</h6>
-                                <input class="form-control form-control-lg" type="text" placeholder="Large Input">
-                            </div>
-                            <div class="col-sm-4">
-                                <h6>Default</h6>
-                                <input class="form-control" type="text" placeholder="Default Input">
-                            </div>
-                            <div class="col-sm-4">
-                                <h6>Small</h6>
-                                <input class="form-control form-control-sm" type="text" placeholder="Small Input">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Input Sizing end -->
-
-    <!-- validations start -->
-    <section id="input-validation">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Input Validation States</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>You can indicate invalid and valid form fields with
-                                    <code>.is-invalid</code> and
-                                    <code>.is-valid</code>. Note that <code>.invalid-feedback</code> is also
-                                    supported
-                                    with these classes.
-                                </p>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="valid-state">Valid State</label>
-                                <input type="text" class="form-control is-valid" id="valid-state"
-                                    placeholder="Valid" value="Valid" required>
-                                <div class="valid-feedback">
-                                    <i class="bx bx-radio-circle"></i>
-                                    This is valid state.
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="invalid-state">Invalid State</label>
-                                <input type="text" class="form-control is-invalid" id="invalid-state"
-                                    placeholder="Invalid" value="Invalid" required>
-                                <div class="invalid-feedback">
-                                    <i class="bx bx-radio-circle"></i>
-                                    This is invalid state.
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ([
+        [
+            'title' => 'Chaîne d\'approvisionnement de VLISCO',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
+        ],
+    ] as $value)
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header bg-primary">
+                                                        <span
+                                                            class="text-bold text-white rounded">{{ $value['title'] }}</span>
+                                                    </div>
+                                                    <div class="card-body pt-2">
+                                                        <p class="card-text">{{ $value['description'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Projects end -->
+
+            <!-- Skills start -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Compétences</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ([
+        [
+            'label' => 'Leadership & Management',
+            'percentage' => 99,
+        ],
+        [
+            'label' => 'Eloquence',
+            'percentage' => 80,
+        ],
+    ] as $value)
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <span class="text-bold rounded">{{ $value['label'] }}</span>
+                                                    </div>
+                                                    <div class="progress border-primary bg-gray rounded-0"
+                                                        style="height: 16px;">
+                                                        <div class="progress-bar progress-bar-striped"
+                                                            style="border-radius: 0px !important; width:{{ $value['percentage'] }}%"
+                                                            role="progressbar"
+                                                            aria-valuenow="{{ $value['percentage'] }}"
+                                                            aria-valuemin="0" aria-valuemax="100">
+                                                            {{ $value['percentage'] }}%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Skills end -->
+
+            <!-- Languages start -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Langues</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <ul class="list-group list-group-flush">
+                                        @foreach ([
+                                                [
+                                                    'label' => 'Français',
+                                                    'level' => 'native',
+                                                ],
+                                                [
+                                                    'label' => 'Anglais',
+                                                    'level' => 'advanced',
+                                                ],
+                                                [
+                                                    'label' => 'Ewe',
+                                                    'level' => 'intermediate',
+                                                ],
+                                                [
+                                                    'label' => 'Allemand',
+                                                    'level' => 'novice',
+                                                ],
+                                            ] as $value)
+                                            <li class="list-group-item">
+                                                <span class="d-flex justify-content-between align-items-center">
+                                                    {{ $value["label"] }}
+                                                    <span @class([
+                                                        "badge rounded",
+                                                        "bg-success" => $value["level"] == "advanced",
+                                                        "bg-danger" => $value["level"] == "novice",
+                                                        "bg-warning" => $value["level"] == "intermediate",
+                                                        "bg-info" => $value["level"] == "native",
+                                                        ])>
+                                                        @switch($value["level"])
+                                                            @case("advanced")Avancé @break
+                                                            @case("novice")Débutant @break
+                                                            @case("intermediate")Médium @break
+                                                            @case("native")Native @break
+                                                            @default -
+                                                        @endswitch
+                                                        </span>
+                                                </span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Centres d'intérêts</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="">
+                                        @foreach ([
+                                                ['label' => 'Football'],
+                                                ['label' => 'Jeux Vidéos'],
+                                                ['label' => 'Tennis'],
+                                                ['label' => 'Basket'],
+                                                ['label' => 'Boxe'],
+                                            ] as $value)
+                                            <span class="badge bg-primary py-2 mb-2 px-4 rounded">
+                                                {{ $value["label"] }}
+                                            </span>
+                                        @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Languages end -->
         </div>
-    </section>
+    </div>
+
 </div>

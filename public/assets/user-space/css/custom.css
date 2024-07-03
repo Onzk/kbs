@@ -26,3 +26,10 @@
     transform: scale(1.05);
     z-index: 30;
 }
+
+.star-xl {
+    height: 70px; width: 50px;
+}
+.star-md {
+    height: 50px; width: 30px;
+}
