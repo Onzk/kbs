@@ -25,7 +25,10 @@
     <!-- Personnal Informations start -->
     <div class="col-12">
         <div class="card h-100">
-            <div class="card-body">
+            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                <h4 class="card-title text-white">Informations personnelles</h4>
+            </div>
+            <div class="card-body pt-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
@@ -85,8 +88,8 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Contacts</h4>
+                        <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                            <h4 class="card-title text-white">Contacts</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -119,8 +122,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Disponibilités</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Disponibilités</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -146,8 +149,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Education</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Education</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -206,8 +209,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Expériences professionnelles</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Expériences professionnelles</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -266,8 +269,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Projets</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Projets</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -304,8 +307,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Compétences</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Compétences</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -351,8 +354,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Langues</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Langues</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -377,9 +380,9 @@
                                             ] as $value)
                                             <li class="list-group-item">
                                                 <span class="d-flex justify-content-between align-items-center">
-                                                    {{ $value["label"] }} 
+                                                    {{ $value["label"] }}
                                                     <span @class([
-                                                        "badge rounded", 
+                                                        "badge rounded",
                                                         "bg-success" => $value["level"] == "advanced",
                                                         "bg-danger" => $value["level"] == "novice",
                                                         "bg-warning" => $value["level"] == "intermediate",
@@ -403,8 +406,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Centres d'intérêts</h4>
+                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                                <h4 class="card-title text-white">Centres d'intérêts</h4>
                             </div>
                             <div class="card-body">
                                 <div class="">

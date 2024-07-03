@@ -34,17 +34,17 @@
                     </a>
                 </li>
                 <li class="sidebar-title">Mon Compte</li>
-                <li @class([
-                    'sidebar-item',
-                    'active' => Route::is('user-space.profile'),
-                ])>
+                <li @class(['sidebar-item', 'active' => Route::is('user-space.profile')])>
                     <a href="{{ route('user-space.profile') }}" class="sidebar-link">
                         <i data-feather="user" width="20"></i>
                         <span>Profil</span>
                     </a>
                 </li>
-                <li @class(['sidebar-item', 'active' => false])>
-                    <a href="form-editor.html" class="sidebar-link">
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.mark_and_reviews'),
+                ])>
+                    <a href="{{ route('user-space.mark_and_reviews') }}" class="sidebar-link">
                         <i data-feather="star" width="20"></i>
                         <span>Notes & Avis</span>
                     </a>
