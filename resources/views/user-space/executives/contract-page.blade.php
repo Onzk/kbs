@@ -11,26 +11,29 @@
     </div>
     <section class="section">
         <div class="card">
+            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                <h4 class="card-title text-white">Liste de vos contrats</h4>
+            </div>
             <div class="card-body p-0">
                 <table class='table border-bottom table-bordered table-striped' id="table1">
                     <thead class="bg-dark text-white pt-2">
                         <tr>
-                            <th>Fait le</th>
-                            <th>Libellé du poste</th>
-                            <th>Entreprise</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th class="py-1">Fait le</th>
+                            <th class="py-1">Libellé du poste</th>
+                            <th class="py-1">Entreprise</th>
+                            <th class="py-1">Status</th>
+                            <th class="py-1">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>12 Juin 2024</td>
-                            <td>Directeur des opérations</td>
-                            <td>KOLIBRI Entreprises Lomé</td>
-                            <td class="">
+                            <td class="py-1">12 Juin 2024</td>
+                            <td class="py-1">Directeur des opérations</td>
+                            <td class="py-1">KOLIBRI Entreprises Lomé</td>
+                            <td class="py-1">
                                 <span class="badge w-100 rounded bg-success">En cours</span>
                             </td>
-                            <td>
+                            <td class="py-1">
                                 <div class="d-inline-block">
                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                                         data-target="#exampleModalScrollable">
