@@ -1,5 +1,5 @@
 <div class="col-12 col-md-4">
-    <div class="card hover-scale mb-4">
+    <div class="card mb-4">
         <img src="{{ asset('assets/public/img/webinaires.png') }}" style="width:100%; height:200px; object-fit: cover"
             class="card-img-top" alt="...">
         <div class="card-body">

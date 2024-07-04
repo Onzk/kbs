@@ -1,6 +1,6 @@
 <div class="main-content container-fluid">
     <div class="page-title">
-        <h3>Accueil</h3>
+        <h3 class="text-primary">Accueil</h3>
         <p class="text-subtitle text-muted">Vos activités récentes sont indiquées ici.</p>
     </div>
     <section class="section">

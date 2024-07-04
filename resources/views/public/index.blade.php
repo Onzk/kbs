@@ -7,7 +7,7 @@
     <div class="container-fluid hero-header mb-5 px-0"
         style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/hero-1.png') }}')">
         <div class="py-5 col" style="background-color: rgba(0, 0, 0, 0.70)">
-            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 700px;">
+            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 90vh;">
                 <div class="col-md-12 col-lg-8 text-center">
                     <h1 class="display-4 mb-3 animated slideInDown text-white fw-bold">
                         Améliorez le potentiel de votre conseil d'administration
