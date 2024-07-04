@@ -2,9 +2,11 @@
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.4);
     }
+
     100% {
         transform: scale(1);
     }
@@ -28,8 +30,16 @@
 }
 
 .star-xl {
-    height: 70px; width: 50px;
+    height: 70px;
+    width: 50px;
 }
+
 .star-md {
-    height: 50px; width: 30px;
+    height: 50px;
+    width: 30px;
+}
+
+.label-indic {
+    text-transform: lowercase;
+    font-style: italic;
 }

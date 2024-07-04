@@ -2,7 +2,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Profil</h3>
+                <h3 class="text-primary">Profil</h3>
                 <p class="text-subtitle text-muted">
                     Voici les détails professionnels vous concernant.
                 </p>
@@ -10,14 +10,14 @@
         </div>
     </div>
 
-    <div class="col-12 mb-4">
-        <span class="badge bg-success rounded text-xs fw-bold">
+    <div class="col-12">
+        <span class="badge bg-success rounded text-xs fw-bold mb-3">
             COMPTE ACTIF
         </span>
-        <span class="badge bg-success rounded text-xs fw-bold">
+        <span class="badge bg-success rounded text-xs fw-bold mb-3">
             AUCUN CONTRAT EN COURS
         </span>
-        <span class="badge bg-success rounded text-xs fw-bold">
+        <span class="badge bg-success rounded text-xs fw-bold mb-3">
             ACTUELLEMENT DISPONIBLE
         </span>
     </div>
@@ -83,8 +83,8 @@
     <!-- Personnal Informations end -->
 
     <div class="row">
-        <!-- Contact start -->
         <div class="col-12 mb-0">
+            <!-- Contact start -->
             <div class="row">
                 <div class="col">
                     <div class="card">
@@ -99,7 +99,7 @@
         'Linkedin' => 'https://linkedin.com/degbe_frederic',
         'Facebook' => 'https://facebook.com/degbe_frederic',
         'Twitter' => 'https://x.com/degbe_frederic',
-        'Whatsapp' => 'degbe@gmail.com',
+        'Whatsapp' => '+228 90900909',
     ] as $key => $value)
                                     <div class="col-md-6 col">
                                         <div class="form-group">
