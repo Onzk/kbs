@@ -38,8 +38,37 @@
     height: 50px;
     width: 30px;
 }
-
+.fw-bold {
+    font-weight: bold;
+}
 .label-indic {
     text-transform: lowercase;
     font-style: italic;
 }
+
+.star-rating {
+    display:flex;
+    flex-direction: row-reverse;
+    font-size:1.5em;
+    justify-content:start;
+    text-align:center;
+  }
+
+  .star-rating input {
+    display:none;
+  }
+
+  .star-rating label {
+    color:#000;
+    background-clip: text;
+    cursor:pointer;
+  }
+
+  .star-rating :checked ~ label {
+    color:var(--bs-orange);
+  }
+
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color:var(--bs-orange);
+  }

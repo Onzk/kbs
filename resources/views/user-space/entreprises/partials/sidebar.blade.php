@@ -1,307 +1,109 @@
-<div id="sidebar" class='active'>
+<div id="sidebar" class="active">
     <div class="sidebar-wrapper bg-dark active">
-        <div class="sidebar-header text-primary">
+        <a href="{{ route('user-space.index') }}" class="d-block sidebar-header text-white fw-bold">
             <img src="{{ asset('assets/public/img/logo.png') }}" alt="" srcset=""> KBS
-        </div>
+        </a>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title text-white">Menus Principaux</li>
-                <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
+                <li class="sidebar-title">Menus Principaux</li>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.index') || Route::is('user-space.home'),
+                ])>
+                    <a href="{{ route('user-space.index') }}" class="sidebar-link">
                         <i data-feather="home" width="20"></i>
                         <span>Accueil</span>
                     </a>
                 </li>
-                <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
-                        <i data-feather="home" width="20"></i>
-                        <span>Discussion</span>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.search'),
+                ])>
+                    <a href="{{ route('user-space.search') }}" class="sidebar-link">
+                        <i data-feather="search" width="20"></i>
+                        <span>Recherche</span>
                     </a>
                 </li>
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i data-feather="triangle" width="20"></i>
-                        <span>Components</span>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.discussions'),
+                ])>
+                    <a href="{{ route('user-space.discussions') }}" class="sidebar-link">
+                        <i data-feather="message-circle" width="20"></i>
+                        <span>Discussions</span>
                     </a>
-                    <ul class="submenu ">
-                        <li>
-                            <a href="component-alert.html">Alert</a>
-                        </li>
-                        <li>
-                            <a href="component-badge.html">Badge</a>
-                        </li>
-                        <li>
-                            <a href="component-breadcrumb.html">Breadcrumb</a>
-                        </li>
-
-                        <li>
-                            <a href="component-buttons.html">Buttons</a>
-                        </li>
-
-                        <li>
-                            <a href="component-card.html">Card</a>
-                        </li>
-
-                        <li>
-                            <a href="component-carousel.html">Carousel</a>
-                        </li>
-
-                        <li>
-                            <a href="component-dropdowns.html">Dropdowns</a>
-                        </li>
-
-                        <li>
-                            <a href="component-list-group.html">List Group</a>
-                        </li>
-
-                        <li>
-                            <a href="component-modal.html">Modal</a>
-                        </li>
-
-                        <li>
-                            <a href="component-navs.html">Navs</a>
-                        </li>
-
-                        <li>
-                            <a href="component-pagination.html">Pagination</a>
-                        </li>
-
-                        <li>
-                            <a href="component-progress.html">Progress</a>
-                        </li>
-
-                        <li>
-                            <a href="component-spinners.html">Spinners</a>
-                        </li>
-
-                        <li>
-                            <a href="component-tooltips.html">Tooltips</a>
-                        </li>
-
-                    </ul>
-
                 </li>
-
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i data-feather="briefcase" width="20"></i>
-                        <span>Extra Components</span>
-                    </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="component-extra-avatar.html">Avatar</a>
-                        </li>
-
-                        <li>
-                            <a href="component-extra-divider.html">Divider</a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-
-
-                <li class='sidebar-title'>Forms &amp; Tables</li>
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.contracts'),
+                ])>
+                    <a href="{{ route('user-space.contracts') }}" class="sidebar-link">
                         <i data-feather="file-text" width="20"></i>
-                        <span>Form Elements</span>
+                        <span>Contrats</span>
                     </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="form-element-input.html">Input</a>
-                        </li>
-
-                        <li>
-                            <a href="form-element-input-group.html">Input Group</a>
-                        </li>
-
-                        <li>
-                            <a href="form-element-select.html">Select</a>
-                        </li>
-
-                        <li>
-                            <a href="form-element-radio.html">Radio</a>
-                        </li>
-
-                        <li>
-                            <a href="form-element-checkbox.html">Checkbox</a>
-                        </li>
-
-                        <li>
-                            <a href="form-element-textarea.html">Textarea</a>
-                        </li>
-
-                    </ul>
-
                 </li>
-
-
-
-
-                <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
-                        <i data-feather="layout" width="20"></i>
-                        <span>Form Layout</span>
-                    </a>
-
-                </li>
-
-
-
-
-                <li class="sidebar-item  ">
-                    <a href="form-editor.html" class='sidebar-link'>
-                        <i data-feather="layers" width="20"></i>
-                        <span>Form Editor</span>
-                    </a>
-
-                </li>
-
-
-
-
-                <li class="sidebar-item  ">
-                    <a href="table.html" class='sidebar-link'>
-                        <i data-feather="grid" width="20"></i>
-                        <span>Table</span>
-                    </a>
-
-                </li>
-
-
-
-
-                <li class="sidebar-item  ">
-                    <a href="table-datatable.html" class='sidebar-link'>
-                        <i data-feather="file-plus" width="20"></i>
-                        <span>Datatable</span>
-                    </a>
-
-                </li>
-
-
-
-
-                <li class='sidebar-title'>Extra UI</li>
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-title">Mon Compte</li>
+                <li @class(['sidebar-item', 'active' => Route::is('user-space.profile')])>
+                    <a href="{{ route('user-space.profile') }}" class="sidebar-link">
                         <i data-feather="user" width="20"></i>
-                        <span>Widgets</span>
+                        <span>Profil</span>
                     </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="ui-chatbox.html">Chatbox</a>
-                        </li>
-
-                        <li>
-                            <a href="ui-pricing.html">Pricing</a>
-                        </li>
-
-                        <li>
-                            <a href="ui-todolist.html">To-do List</a>
-                        </li>
-
-                    </ul>
-
                 </li>
-
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i data-feather="trending-up" width="20"></i>
-                        <span>Charts</span>
+                <li class="sidebar-title">Configurations</li>
+                <li @class([
+                    'sidebar-item',
+                    'active' => request()->fullUrlIs(
+                        route('user-space.configurations', [
+                            'config' => 'a-propos',
+                        ])),
+                ])>
+                    <a href="{{ route('user-space.configurations', ['config' => 'a-propos']) }}" class="sidebar-link">
+                        <i data-feather="bookmark" width="20"></i>
+                        <span>A propos</span>
                     </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="ui-chart-chartjs.html">ChartJS</a>
-                        </li>
-
-                        <li>
-                            <a href="ui-chart-apexchart.html">Apexchart</a>
-                        </li>
-
-                    </ul>
-
                 </li>
-
-
-
-
-                <li class='sidebar-title'>Pages</li>
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i data-feather="user" width="20"></i>
-                        <span>Authentication</span>
+                <li @class([
+                    'sidebar-item',
+                    'active' => request()->fullUrlIs(
+                        route('user-space.configurations', [
+                            'config' => 'contact',
+                        ])),
+                ])>
+                    <a href="{{ route('user-space.configurations', ['config' => 'contact']) }}" class="sidebar-link">
+                        <i data-feather="at-sign" width="20"></i>
+                        <span>Contact</span>
                     </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="auth-login.html">Login</a>
-                        </li>
-
-                        <li>
-                            <a href="auth-register.html">Register</a>
-                        </li>
-
-                        <li>
-                            <a href="auth-forgot-password.html">Forgot Password</a>
-                        </li>
-
-                    </ul>
-
                 </li>
-
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i data-feather="alert-circle" width="20"></i>
-                        <span>Errors</span>
+                <li class="sidebar-title">Autres</li>
+                <li @class(['sidebar-item', 'active' => false])>
+                    <a href="{{ route('public.home.index') }}" class="sidebar-link">
+                        <i data-feather="corner-down-right" width="20"></i>
+                        <span>KBS Accueil</span>
                     </a>
-
-                    <ul class="submenu ">
-
-                        <li>
-                            <a href="error-403.html">403</a>
-                        </li>
-
-                        <li>
-                            <a href="error-404.html">404</a>
-                        </li>
-
-                        <li>
-                            <a href="error-500.html">500</a>
-                        </li>
-
-                    </ul>
-
+                </li>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.terms_of_use'),
+                ])>
+                    <a href="{{ route('user-space.terms_of_use') }}" class="sidebar-link">
+                        <i data-feather="file-text" width="20"></i>
+                        <span>Conditions d'utilisation</span>
+                    </a>
+                </li>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('user-space.privacy_policy'),
+                ])>
+                    <a href="{{ route('user-space.privacy_policy') }}" class="sidebar-link">
+                        <i data-feather="info" width="20"></i>
+                        <span>Politique de Confidentialité</span>
+                    </a>
+                </li>
+                <li class="sidebar-item text-danger">
+                    <a href="{{ route('public.home.index') }}" class="text-danger sidebar-link">
+                        <i class="text-danger" data-feather="log-out" width="20"></i>
+                        <span class="text-danger">Se Déconnecter</span>
+                    </a>
                 </li>
             </ul>
         </div>

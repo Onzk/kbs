@@ -4,7 +4,7 @@
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3 class="text-primary">A propos</h3>
                 <p class="text-subtitle text-muted">
-                    Configurez ici les informations personnelles vous concernant.
+                    Configurez ici les informations professionnelles de votre entreprise.
                 </p>
             </div>
         </div>
@@ -15,13 +15,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                        <h4 class="card-title text-white">Informations personnelles</h4>
+                        <h4 class="card-title text-white">Informations professionnelles</h4>
                     </div>
                     <div class="card-body pt-3">
                         <form>
                             <div class="form-group">
                                 <div class="w-100 mb-2">
-                                    <img src="{{ asset('assets/public/img/avatar.png') }}"
+                                    <img src="{{ asset('assets/user-space/images/entreprise.png') }}"
                                         class="border w-25 rounded-lg h-25" style="object-fit: cover;" alt=""
                                         srcset="">
                                 </div>
@@ -39,18 +39,18 @@
                                     </span>
                                 </label>
                                 <p class="form-control" id="lastname">
-                                    DEGBE
+                                    POLARIS Transport
                                 </p>
                             </div>
                             <div class="form-group">
                                 <label for="firstname">
-                                    Prénoms
+                                    Secteur d'activité
                                     <span class="text-primary label-indic">
                                         (modification impossible)
                                     </span>
                                 </label>
                                 <p class="form-control" id="firstname">
-                                    Frédéric A.
+                                    Transport et Logistique
                                 </p>
                             </div>
                             <div class="form-group mb-4">

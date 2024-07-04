@@ -4,13 +4,13 @@ namespace App\Http\Livewire\UserSpace\Entreprises;
 
 use Livewire\Component;
 
-class ProfilePage extends Component
+class SearchPage extends Component
 {
     public function render()
     {
-        return view('.user-space.entreprises.profile-page')
+        return view('.user-space.entreprises.search-page')
             ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'Profil', 'is_executive' => false]);
+            ->layoutData(['user_space_title' => 'Recherche', 'is_executive' => false]);
     }
 }

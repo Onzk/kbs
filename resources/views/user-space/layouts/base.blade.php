@@ -19,16 +19,23 @@
     <div id="app">
         @if ($is_executive)
             @include('user-space.executives.partials.sidebar')
+            <div id="main">
+                @include('user-space.executives.partials.navbar')
+                <div class="main-content container-fluid">
+                    @yield('user-space.base.body')
+                </div>
+                @include('user-space.partials.footer')
+            </div>
         @else
             @include('user-space.entreprises.partials.sidebar')
-        @endif
-        <div id="main">
-            @include('user-space.partials.navbar')
-            <div class="main-content container-fluid">
-                @yield('user-space.base.body')
+            <div id="main">
+                @include('user-space.entreprises.partials.navbar')
+                <div class="main-content container-fluid">
+                    @yield('user-space.base.body')
+                </div>
+                @include('user-space.partials.footer')
             </div>
-            @include('user-space.partials.footer')
-        </div>
+        @endif
     </div>
     <script src="{{ asset('assets/user-space/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

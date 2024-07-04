@@ -28,7 +28,7 @@
             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                 <h4 class="card-title text-white">Informations personnelles</h4>
             </div>
-            <div class="card-body pt-3">
+            <div class="card-body pb-2 pt-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
@@ -91,7 +91,7 @@
                         <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                             <h4 class="card-title text-white">Contacts</h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body pb-2">
                             <div class="row">
                                 @foreach ([
         'Courriel' => 'degbe@gmail.com',
@@ -125,7 +125,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Disponibilités</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0">
                                 <div class="row">
                                     @foreach (['02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024'] as $value)
                                         <div class="col-sm-3">
@@ -152,7 +152,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Education</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0 pt-3">
                                 <div class="row">
                                     @foreach ([
         [
@@ -212,7 +212,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Expériences professionnelles</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0 pt-3">
                                 <div class="row">
                                     @foreach ([
         [
@@ -272,7 +272,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Projets</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0 pt-3">
                                 <div class="row">
                                     @foreach ([
         [
@@ -310,7 +310,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Compétences</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0 pt-3">
                                 <div class="row">
                                     @foreach ([
         [
@@ -357,7 +357,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Langues</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-2">
                                 <div class="row">
                                     <ul class="list-group list-group-flush">
                                         @foreach ([
@@ -409,7 +409,7 @@
                             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                                 <h4 class="card-title text-white">Centres d'intérêts</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-2 pt-2">
                                 <div class="">
                                         @foreach ([
                                                 ['label' => 'Football'],
