@@ -1,4 +1,4 @@
-@extends('user-space.layouts.base', ['is_executive' => true, 'user_space_title' => 'Politique de confidentialité'])
+@extends('user-space.layouts.base', ['is_executive' => Route::is('user-space.privacy_policy'), 'user_space_title' => 'Politique de confidentialité'])
 
 @section('user-space.base.body')
     <div class="main-content container-fluid">

@@ -25,34 +25,41 @@
                 <div class="card-body pt-4 bg-grey" style="height: 70vh; overflow-y: auto">
                     <div class="chat-content pb-4">
                         @for ($i = 0; $i < 8; $i++)
-                            <div class="chat">
-                                <div class="chat-body">
-                                    <div class="chat-message">
-                                        <p>
-                                            Hi Alfy, how can i help you?
-                                        </p>
-                                        <span class='text-xs' style="font-weight: bold">
-                                            Il y a 4min - <span class="fw-bold text-success">vu</span>
-                                        </span>
+                        <div class="chat my-2 float-right">
+                            <div class="chat-body float-right w-100">
+                                    <div class="chat-message col-12 col-md-6">
+                                            <p>
+                                                Bonjour, KAPI. Comme vous le savez, nous sommes une start-up toute
+                                                fraîche.
+                                                Nous n'avions pas une idée concrète de comment faire un contrat pour un
+                                                administrateur indépendant. Alors, merci pour le contrat d'hier.
+                                            </p>
+                                            <span class='text-xs' style="font-weight: bold">
+                                                Il y a 4min - <span class="fw-bold text-success">vu</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="chat chat-left col-12 col-md-6">
-                                <div class="chat-body">
-                                    <div class="chat-message">
-                                        <p>
-                                            I'm looking for the best admin dashboard template
-                                            I'm looking for the best admin dashboard template
-                                        </p>
-                                        <span class='text-xs' style="font-weight: bold">
-                                            Il y a 4min - <span class="fw-bold text-success">nouveau</span>
-                                        </span>
+                                <br>
+                                <div class="chat chat-left col-12 col-md-6">
+                                    <div class="chat-body">
+                                        <div class="chat-message">
+                                            <p>
+                                                Bonjour POLARIS Transport. Nous sommes heureux d'avoir pu vous aider.
+                                                Nous essayerons de toujours répondre à vos besoins dans le cadre du
+                                                possible
+                                                et du professionnel.
+                                            </p>
+                                            <span class='text-xs' style="font-weight: bold">
+                                                Il y a 4min - <span class="fw-bold text-success">nouveau</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         @endfor
                         <div class="chat bg-transparent">
-                            <div class="chat-message" style="background-color:transparent !important; box-shadow: none !important">
+                            <div class="chat-message"
+                                style="background-color:transparent !important; box-shadow: none !important">
                             </div>
                         </div>
                     </div>

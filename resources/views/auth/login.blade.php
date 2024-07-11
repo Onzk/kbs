@@ -1,4 +1,4 @@
-<form action="index.html">
+<form action="{{ route('user-space.home') }}">
     <div class="form-group position-relative has-icon-left">
         <label for="email">Courriel</label>
         <div class="position-relative">

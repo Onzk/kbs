@@ -21,28 +21,29 @@
                         <div class="py-3 px-2">
                             <div class="form-group">
                                 <label class="">
-                                    Degré
+                                    Formation suivie
                                 </label>
-                                <input type="text" placeholder="Degré" required class="form-control">
+                                <input type="text" placeholder="Recherchez par formation" required class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Institut</label>
-                                <input type="text" placeholder="A partir du" required class="form-control">
+                                <label class="">
+                                    Institut de formation
+                                </label>
+                                <input type="text" placeholder="Recherchez par institut" required class="form-control">
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label>Du </label>
+                                <div class="col-md-4 form-group">
+                                    <label>Disponible du </label>
                                     <input type="date" placeholder="" required class="form-control">
                                 </div>
-                                <div class="col-md-6 form-group">
+                                <div class="col-md-4 form-group">
                                     <label>Au </label>
-                                    <input type="date" placeholder="Jusqu'au" required class="form-control">
+                                    <input type="date" placeholder="" required class="form-control">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea type="text" rows="6" required class="form-control"
-                                    placeholder="Ajouter une description de la formation"></textarea>
+                                <div class="col-md-3 form-group">
+                                    <label>Années d'expérience minimum </label>
+                                    <input type="number" placeholder="" value="10" min="0" max="100" required class="form-control">
+                                </div>
                             </div>
                         </div>
                     </form>

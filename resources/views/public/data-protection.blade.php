@@ -33,8 +33,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6">Vos données sont protégées !</h1>
-                        <p class="text-primary fs-5 mb-4">Que ce soit vos données en tant qu'entreprises ou administrateurs
-                            indépendants, vos données sont sécurisées.</p>
+                        <p class="text-primary fs-5 mb-4">Que ce soit vos données en tant qu'entreprises ou candidat
+                            , vos données sont sécurisées.</p>
                         <p>
                             Notre plateforme de recrutement stocke uniquement les informations nécessaires à son
                             fonctionnement et dans l'atteinte de ses objectifs. De ce fait, nous ne gardons que l'essentiel

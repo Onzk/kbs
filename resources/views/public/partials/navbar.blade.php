@@ -1,13 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top p-0 px-4 px-lg-5">
     <a href="{{ route('public.home.index') }}" class="navbar-brand d-flex align-items-center">
-        <h2 class="m-0 text-white d-flex align-items-center justify-content-start">
+        <h2 class="m-0 text-white d-flex align-items-center justify-content-start h3">
             <img class="img-fluid me-2" src="{{ asset('assets/public/img/logo.png') }}" alt="" style="width: 45px;">
-            <span class="d-sm-flex d-lg-none">
-                KBS
-            </span>
-            <span class="d-lg-flex d-sm-none">
-                {{ config('app.name') }}
-            </span>
+            {{-- <span class="d-lg-flex d-sm-none">
+            </span> --}}
+            {{ config('app.name') }}
         </h2>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -48,8 +45,7 @@
                     <a href="{{ route('public.home.executives') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.executives'),
-                    ])>Administrateurs
-                        Indépendants</a>
+                    ])>Candidats</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.entreprises'),

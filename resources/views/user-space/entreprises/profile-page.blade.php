@@ -83,11 +83,11 @@
                         <div class="card-body pb-2">
                             <div class="row">
                                 @foreach ([
-        'Courriel' => 'degbe@gmail.com',
+        'Courriel' => 'GADJI@gmail.com',
         'Téléphone' => '+228 90900909',
-        'Linkedin' => 'https://linkedin.com/degbe_frederic',
-        'Facebook' => 'https://facebook.com/degbe_frederic',
-        'Twitter' => 'https://x.com/degbe_frederic',
+        'Linkedin' => 'https://linkedin.com/GADJI_frederic',
+        'Facebook' => 'https://facebook.com/GADJI_frederic',
+        'Twitter' => 'https://x.com/GADJI_frederic',
         'Whatsapp' => '+228 90900909',
     ] as $key => $value)
                                     <div class="col-md-6 col">
