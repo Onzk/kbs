@@ -25,11 +25,13 @@
                 <div class="card-body pt-4 bg-grey" style="height: 70vh; overflow-y: auto">
                     <div class="chat-content pb-4">
                         @for ($i = 0; $i < 8; $i++)
-                            <div class="chat">
-                                <div class="chat-body">
-                                    <div class="chat-message">
+                        <div class="chat my-2 float-right">
+                            <div class="chat-body float-right w-100">
+                                    <div class="chat-message col-12 col-md-11">
                                         <p>
-                                            Hi Alfy, how can i help you?
+                                            Bonjour à vous, KAPI. Comment puis-je rendre mon profil plus visible aux
+                                            yeux des entreprises ?
+                                            Merci.
                                         </p>
                                         <span class='text-xs' style="font-weight: bold">
                                             Il y a 4min - <span class="fw-bold text-success">vu</span>
@@ -37,12 +39,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="chat chat-left col-12 col-md-6">
                                 <div class="chat-body">
                                     <div class="chat-message">
                                         <p>
-                                            I'm looking for the best admin dashboard template
-                                            I'm looking for the best admin dashboard template
+                                            Bonjour Monsieur AMDJI. Nous n'avons qu'un conseil à vous donner : mettez à
+                                            jour régulièrement les informations de votre profil et assurez-vous d'avoir
+                                            une bonne évaluation de la part de vos prestataires.
                                         </p>
                                         <span class='text-xs' style="font-weight: bold">
                                             Il y a 4min - <span class="fw-bold text-success">nouveau</span>
@@ -52,7 +56,8 @@
                             </div>
                         @endfor
                         <div class="chat bg-transparent">
-                            <div class="chat-message" style="background-color:transparent !important; box-shadow: none !important">
+                            <div class="chat-message"
+                                style="background-color:transparent !important; box-shadow: none !important">
                             </div>
                         </div>
                     </div>

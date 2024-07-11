@@ -17,7 +17,7 @@
                     <h6 class="py-2 px-4" style="font-size: 12px; font-weight: bold">Nouveau(x) message(s)</h6>
                     <ul class="list-group px-2 rounded-none">
                         <li class="list-group-item border-0 align-items-start">
-                            <a href="{{ route('user-space.discussions') }}">
+                            <a href="{{ route('user-space.en.discussions') }}">
                                 <h6 class="fw-bold" style="font-size: 12px">Il y a 2 heures</h6>
                                 <p class="text-xs">
                                     Bienvenue sur KBS
@@ -39,7 +39,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ route('user-space.profile') }}"><i data-feather="user"></i> Profil</a>
+                    <a class="dropdown-item" href="{{ route('user-space.en.profile') }}"><i data-feather="user"></i> Profil</a>
                     <a class="dropdown-item" href="{{ route('public.home.index') }}"><i data-feather="log-out"></i> Se Déconnecter</a>
                 </div>
             </li>

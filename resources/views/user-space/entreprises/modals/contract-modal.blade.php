@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="exampleModalScrollableTitle">
-                    Contrat du 12 Juin 2024 - DEGBE Frédéric
+                    Contrat du 12 Juin 2024 - GADJI Maturin
                 </h5>
                 <button type="button" class="btn bg-white" data-dismiss="modal" aria-label="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"

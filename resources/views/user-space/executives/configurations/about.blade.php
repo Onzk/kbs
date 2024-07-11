@@ -39,7 +39,7 @@
                                     </span>
                                 </label>
                                 <p class="form-control" id="lastname">
-                                    DEGBE
+                                    GADJI
                                 </p>
                             </div>
                             <div class="form-group">
@@ -50,7 +50,7 @@
                                     </span>
                                 </label>
                                 <p class="form-control" id="firstname">
-                                    Frédéric A.
+                                    Maturin A.
                                 </p>
                             </div>
                             <div class="form-group mb-4">

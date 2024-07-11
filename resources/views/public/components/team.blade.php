@@ -4,8 +4,8 @@
             style="height: 300px; object-fit: cover;" alt="team">
         <div class="card-body">
             <h5 class="card-title text-center mt-4">
-                <span class="fw-bold text-primary">DEGBE</span>
-                Frédéric Junior
+                <span class="fw-bold text-primary">GADJI</span>
+                Maturin Kossi
             </h5>
             <p class="card-text text-center">Ingénieur Système Réseau</p>
         </div>
