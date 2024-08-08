@@ -14,7 +14,7 @@ class Payment extends Model
         "ref",
         "client",
         "amount",
-        "status",
+        "datas",
         "object",
     ];
 }

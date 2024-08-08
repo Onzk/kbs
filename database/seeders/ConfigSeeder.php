@@ -15,6 +15,8 @@ class ConfigSeeder extends Seeder
     {
         Config::create([
             "min_year" => 15,
+            "cantidate_cautious" => 30000,
+            "entreprise_cautious" => 20000,
         ]);
     }
 }

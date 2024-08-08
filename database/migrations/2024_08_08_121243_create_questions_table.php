@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create("questions", function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("last_name");
-            $table->string("first_name");
+            $table->string("lastname");
+            $table->string("firstname");
             $table->string("email");
             $table->string("title");
             $table->string("description");

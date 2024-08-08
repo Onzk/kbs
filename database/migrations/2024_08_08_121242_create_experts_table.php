@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('experts', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->text("photo");
-            $table->text("first_name");
-            $table->text("last_name");
+            $table->text("firstname");
+            $table->text("lastname");
             $table->text("speciality");
             $table->text("facebook")->nullable();
             $table->text("linkedin")->nullable();

@@ -1,6 +1,6 @@
 users :
-    first_name
-    last_name
+    firstname
+    lastname
     email
     password
     photo
@@ -10,12 +10,12 @@ payments :
     ref:unique
     client
     amount
-    status
+    datas
     object
 
 experts :
-    first_name
-    last_name
+    firstname
+    lastname
     speciality
     facebook?
     linkedin?
@@ -33,8 +33,8 @@ webinaries :
     description
 
 questions :
-    last_name
-    first_name
+    lastname
+    firstname
     email
     title
     description
@@ -44,7 +44,7 @@ posts :
     title
     image
     description
-    comments[{last_name first_name email content}]
+    comments[{lastname firstname email content}]
 
 configs :
     min_year=15
@@ -54,8 +54,8 @@ configs :
 
 
 candidate :
-    first_name
-    last_name
+    firstname
+    lastname
     email
     tel
     default_comment

@@ -11,8 +11,8 @@ class Question extends Model
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        "last_name",
-        "first_name",
+        "lastname",
+        "firstname",
         "email",
         "title",
         "description",

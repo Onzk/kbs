@@ -14,8 +14,8 @@ class UserSeeder extends Seeder
     {
         $password = "bSdD1ywXC1";
         $admin = \App\Models\User::create([
-            "last_name" => "SUPER",
-            "first_name" => "admin",
+            "lastname" => "SUPER",
+            "firstname" => "admin",
             "email" => "super.admin@kbs.com",
             "photo" => "storage/user/default.png",
             "password" => \Illuminate\Support\Facades\Hash::make($password),

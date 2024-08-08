@@ -12,8 +12,8 @@ class Expert extends Model
 
     protected $fillable = [
         "photo",
-        "first_name",
-        "last_name",
+        "firstname",
+        "lastname",
         "speciality",
         "facebook",
         "linkedin",

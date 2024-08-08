@@ -37,13 +37,13 @@
             </div>
         @endif
     </div>
+    @livewireScripts
     <script src="{{ asset('assets/user-space/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/app.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/main.js') }}"></script>
     <script src="{{ asset('assets/user-space/vendors/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/vendors.js') }}"></script>
-    @livewireScripts
 </body>
 
 </html>

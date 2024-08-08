@@ -12,6 +12,8 @@ class Config extends Model
 
     protected $fillable = [
         "min_year",
+        "cantidate_cautious",
+        "entreprise_cautious",
         "linkedin",
         "facebook",
         "tweeter",

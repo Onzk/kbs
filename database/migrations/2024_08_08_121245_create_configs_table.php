@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create("configs", function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->integer("min_year");
+            $table->float("cantidate_cautious");
+            $table->float("entreprise_cautious");
             $table->string("linkedin")->nullable();
             $table->string("facebook")->nullable();
             $table->string("tweeter")->nullable();

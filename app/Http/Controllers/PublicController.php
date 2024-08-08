@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
     public function index()
     {
+        Auth::login(Candidate::first(), true);
         return view('public.index');
     }
     public function kapi_presentation()

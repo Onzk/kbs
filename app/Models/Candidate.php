@@ -21,8 +21,8 @@ class Candidate extends Authenticatable
 
     protected $fillable = [
         "photo",
-        "last_name",
-        "first_name",
+        "lastname",
+        "firstname",
         "email",
         "tel",
         "linkedin",

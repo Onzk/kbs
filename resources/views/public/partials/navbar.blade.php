@@ -44,8 +44,6 @@
                     </div>
                     <a href="{{ route('public.home.candidates') }}" @class([
                         'dropdown-item',
-                        'active' => Route::is('public.home.executives'),
-                    ])>Candidats</a>
                         'active' => Route::is('public.home.candidates'),
                     ])>Candidats</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('candidates', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->text("photo")->nullable();
-            $table->string("last_name");
-            $table->string("first_name");
+            $table->string("lastname");
+            $table->string("firstname");
             $table->string("default_comment")->nullable();
             $table->float("default_rate")->nullable();
             $table->string("email")->unique();

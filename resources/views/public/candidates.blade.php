@@ -1,5 +1,7 @@
 @extends('public.layout.base')
 
+@use("\App\Models\Config")
+
 @section('public.base.title', 'Candidats')
 
 @section('public.base.body')
@@ -101,68 +103,10 @@
                                     d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                             </svg>
                         </span>
-                        Le nombre d'années d'expérience mimimum requis est de <span class="fw-bold text-danger"> 15 ans</span>.
+                        Le nombre d'années d'expérience mimimum requis est de <span class="fw-bold text-danger"> {{ Config::first()?->min_year ?? "15" }} ans</span>.
                         Toute candidature est automatique refusée si ce n'est pas le cas.
                     </p>
-                    <form method="GET" action="{{ route('user-space.home') }}">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="name" placeholder="Nom">
-                                    <label for="name">Nom <span class="text-primary">*</span> </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="name" placeholder="Prénoms">
-                                    <label for="name">Prénoms <span class="text-primary">*</span> </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="email" class="form-control" id="email" placeholder="Adresse mail">
-                                    <label for="email">Courriel <span class="text-primary">*</span> </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="email" class="form-control" id="email"
-                                        placeholder="Numéro de téléphone">
-                                    <label for="email">Numéro de téléphone <span class="text-primary">*</span> </label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Nationnalité <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Linkedin</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <select id="domain" name="domain" class="form-control input-select bg-white">
-                                        <option value="1" selected>Administration</option>
-                                        <option value="2">Energie et Ressources naturelles</option>
-                                        <option value="3">Mine</option>
-                                        <option value="4">Industries</option>
-                                        <option value="5">Services</option>
-                                        <option value="6">Agriculture</option>
-                                        <option value="7">Construction et Immobilier</option>
-                                        <option value="8">Secteur Public</option>
-                                    </select>
-                                    <label for="subject">Domaine d'expertise <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Créer mon compte</button>
-                            </div>
-                        </div>
-                    </form>
+                    @livewire('public.candidate-register')
                 </div>
             </div>
         </div>

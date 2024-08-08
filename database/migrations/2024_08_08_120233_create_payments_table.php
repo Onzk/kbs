@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text("ref")->unique();
             $table->text("client");
             $table->float("amount");
-            $table->text("status");
+            $table->json("datas");
             $table->text("object");
             $table->timestamps();
         });
