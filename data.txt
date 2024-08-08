@@ -1,0 +1,83 @@
+user:
+    firstname
+    lastname
+    email
+    contact
+    type:admin,exective,entreprise
+    status:active,pending,disable,in-paiement
+
+exective_datas: user_id[unique] cv data = [
+    "profile" => null,
+    "about" => null,
+    "calendar" => [
+        // sample
+        // ["from" => "to"],
+    ]
+    "contact" => [
+        "email" => null,
+        "tel" => null,
+        "linkedin" => null,
+        "facebook" => null,
+        "whatsapp" => null,
+        "twitter" => null,
+    ],
+    "education" => [
+        // sample
+        // [
+        //     "degree" => "",
+        //     "institute" => "",
+        //     "start_date" => "",
+        //     "end_date" => "",
+        //     "description" => "",
+        // ]
+    ],
+    "experience" => [
+        // sample
+        // [
+        //     "title" => "",
+        //     "organization" => "",
+        //     "start_date" => "",
+        //     "end_date" => "",
+        //     "description" => "",
+        // ]
+    ],
+    "projects" => [
+        // sample
+        // [
+        //     "title" => "",
+        //     "description" => "",
+        // ]
+    ],
+    "skills" => [
+        // sample
+        // [
+        //     "label" => "",
+        //     "percentage" => "",
+        // ]
+    ],
+    "langage" => [
+        // sample
+        // [
+        //     "label" => "",
+        //     "level" => "" , // native, novice, intermediate, advanced
+        // ]
+    ],
+    "interests" => [
+        // sample
+        // [
+        //     "label" => "",
+        // ]
+    ],
+
+]
+reviews: user_id entreprise_id? admin_id? stars:number(1-5) comment
+contract_model: id title description file
+contracts: user_id entreprise_id admin_id file? id_contract_model status:pending,ongoing,finished,aborted
+chat_subject: user_id title description
+chat_message: sender_id receiver_id content seen:boolean
+team: full_name grade twitter? facebook? linkedin?
+webinary: title description link date image movie? published:boolean=false
+post: title description tag published:boolean=false
+question: title description user_full_name user_email
+comment: commentable_id commentable_type[post,question] user_id content
+faq: question response

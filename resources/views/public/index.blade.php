@@ -7,7 +7,7 @@
     <div class="container-fluid hero-header mb-5 px-0"
         style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/hero-1.png') }}')">
         <div class="py-5 col" style="background-color: rgba(0, 0, 0, 0.70)">
-            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 700px;">
+            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 90vh;">
                 <div class="col-md-12 col-lg-8 text-center">
                     <h1 class="display-4 mb-3 animated slideInDown text-white fw-bold">
                         Améliorez le potentiel de votre conseil d'administration
@@ -34,14 +34,14 @@
                         <p class="col-md-5 animated slideInDown" style="font-size: 14px">
                             Des dirigeants à la recherche de postes au sein d'un conseil d'administration ?
                             <br>
-                            <a href="{{ route('public.home.executives') }}"
+                            <a href="{{ route('public.home.candidates') }}"
                                 class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                     stroke="currentColor" class="pb-1 mx-1" style="width:20px">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                 </svg>
-                                Administrateur
+                                Candidat
                             </a>
                         </p>
                     </div>
@@ -56,7 +56,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('assets/public/img/about.png') }}" alt="">
+                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
@@ -96,13 +96,29 @@
     @include('public.sections.facts')
     <!-- Facts End -->
 
-    <!-- Features Start -->
-    @include('public.sections.kbs-why-us')
-    <!-- Features End -->
+    <!-- Team Start -->
+    <div class="section md-padding">
+       <div class="container">
+           <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+               <h1 class="display-6">Experts</h1>
+               <p class="text-primary fs-5 mb-5">Nos Experts De Chez KAPI Consult</p>
+           </div>
+           <div class="row mx-4">
+               @for ($i = 0; $i < 3; $i++)
+                   @include('public.components.team')
+               @endfor
+           </div>
+       </div>
+   </div>
+   <!-- Team End -->
 
     <!-- Service Start -->
     @include('public.sections.kbs-services')
     <!-- Service End -->
+
+    <!-- Why Us Start -->
+    @include('public.sections.kbs-why-us')
+    <!-- Why Us End -->
 
     <!-- FAQs Start -->
     <div class="container-xxl py-5">
@@ -153,4 +169,8 @@
         </div>
     </div>
     <!-- FAQs Start -->
+
+    <!-- Contact Start -->
+    @include('public.sections.kapi-contact')
+    <!-- Contact End -->
 @endsection

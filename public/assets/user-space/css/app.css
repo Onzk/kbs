@@ -94,7 +94,7 @@
 }
 
 .color-dark {
-  color: #222f3e;
+  color:  #111;
 }
 
 .color-light {
@@ -115,12 +115,12 @@
 
 #main {
   margin-left: 260px;
-  background-color: #F7FAFF;
+  background-color: white;
   min-height: 100vh;
   transition: margin-left 0.6s ease-out;
 }
 #main .main-content {
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 #main .main-content .page-title h3 {
   font-size: 2rem;
@@ -636,8 +636,8 @@ footer {
   box-shadow: none;
 }
 .form-check .form-check-input.form-check-dark {
-  background-color: #222f3e;
-  border-color: #222f3e;
+  background-color:  #111;
+  border-color:  #111;
 }
 .form-check .form-check-input.form-check-dark:not(:checked) {
   background-color: transparent;
@@ -710,8 +710,8 @@ footer {
   border-color: #00CFDD;
 }
 .form-check.form-check-dark .form-check-input {
-  background-color: #222f3e;
-  border-color: #222f3e;
+  background-color:  #111;
+  border-color:  #111;
 }
 .form-check.form-check-light .form-check-input {
   background-color: #A3AFBD;
@@ -864,7 +864,16 @@ footer {
   display: block;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
-  background-color: #738dbf62;
+  background-color: white;
+  /* background-color: #738dbf62; */
+}
+.sidebar-wrapper .menu .sidebar-item.active > a > * {
+  color: var(--bs-blue);
+  font-weight: 800;
+}
+.sidebar-wrapper .menu .sidebar-item > a > * {
+  color: white;
+  /* font-weight: bold; */
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link:before {
   content: "";
@@ -912,12 +921,12 @@ footer {
   margin-bottom: 2.2rem;
 }
 .card.card-statistic {
-  box-shadow: 1px 2px 5px rgba(47, 170, 244, 0.5);
-  background: linear-gradient(to bottom, #25a6f1, #54b9ff);
+  box-shadow: 1px 2px 5px gray;
+  background: var(--bs-dark);
   border: none;
 }
 .card.card-statistic .card-title {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #fff;
   letter-spacing: 0.8px;
   font-weight: 400;
@@ -1121,8 +1130,8 @@ footer {
   box-shadow: 0 2px 5px rgba(0, 207, 221, 0.3);
 }
 .pagination.pagination-dark .page-item.active .page-link {
-  background-color: #222f3e;
-  border-color: #222f3e;
+  background-color:  #111;
+  border-color:  #111;
   box-shadow: 0 2px 5px rgba(34, 47, 62, 0.3);
 }
 .pagination.pagination-light .page-item.active .page-link {
@@ -1223,7 +1232,7 @@ footer {
   overflow: visible;
 }
 .progress.progress-dark .progress-bar {
-  background-color: #222f3e;
+  background-color:  #111;
   border-radius: 1rem;
   box-shadow: 0px 2px 3px rgba(34, 47, 62, 0.8);
 }
@@ -1274,7 +1283,7 @@ footer {
 .chat .chat-message {
   text-align: left !important;
   float: right !important;
-  margin: 0.2rem 0 1.8rem 0.2rem !important;
+  margin: 0.2rem 0 .5rem 0.2rem;
   color: #525361;
   background-color: #FAFBFB !important;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3) !important;

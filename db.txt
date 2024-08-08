@@ -1,0 +1,142 @@
+users :
+    firstname
+    lastname
+    email
+    password
+    photo
+    enabled[bool]=False
+
+payments :
+    ref:unique
+    client
+    amount
+    datas
+    object
+
+experts :
+    firstname
+    lastname
+    speciality
+    facebook?
+    linkedin?
+    tweeter?
+
+faqs :
+    question
+    answer
+
+webinaries :
+    title
+    image
+    video?
+    datetime
+    description
+
+questions :
+    lastname
+    firstname
+    email
+    title
+    description
+    answer?
+
+posts :
+    title
+    image
+    description
+    comments[{lastname firstname email content}]
+
+configs :
+    min_year=15
+    linkedin?
+    facebook?
+    tweeter?
+
+
+candidate :
+    firstname
+    lastname
+    email
+    tel
+    default_comment
+    default_rate
+    linkedin?
+    country
+    domain
+    photo?
+    enabled[bool]=False
+
+educations :
+    candidate_id
+    level
+    domain
+    insitute
+    year
+    country
+
+experiences :
+    candidate_id
+    actual_position?
+    actual_entreprise?
+    year
+    description:text
+    skills[]
+    domains[]
+    governance_experience:text?
+    motivation:text?
+
+documents :
+    candidate_id
+    cv
+    references[]?
+    realisations[]?
+    links[]?
+
+languages :
+    candidate_id
+    title
+    speaking
+    reading
+    writing
+
+entreprises :
+    name
+    sector
+    size
+    hq_address
+    website?
+    description
+    photo
+    presentation_movie?
+    links[]?
+    diversity_policy:text
+    enabled[bool]=False
+
+positions :
+    entreprise_id
+    title
+    description
+    skills
+    experiences
+    remuneration(salary_range|package)
+    workplace
+
+contracts_template :
+    title
+    description
+    file
+
+contracts :
+    contract_template_id?
+    candidate_id
+    entreprise_id
+    comment?
+    rate?
+    status:pending,ongoing,finished,aborted
+
+chats :
+    user_id?
+    candidate_id?
+    entreprise_id?
+    content
+    readed[False]=False

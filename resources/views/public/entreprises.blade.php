@@ -8,7 +8,7 @@
     <div class="container-fluid hero-header mb-5 px-0"
         style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/entreprises.png') }}');">
         <div class="py-5 col" style="background-color: rgba(0, 0, 0, 0.50)">
-            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 700px;">
+            <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 90vh;">
                 <div class="col-md-12 col-lg-8 text-center">
                     <h1 class="display-4 mb-3 animated slideInDown text-white fw-bold">
                         Trouvez vos futurs membres de conseil d'administration !
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('assets/public/img/about.png') }}" alt="">
+                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
@@ -83,47 +83,65 @@
                 <div class="col-lg-8">
                     <h1 class="display-6">Enregistrez-vous dès maintenant !</h1>
                     <p class="text-primary fs-5 mb-0">
-                        Remplissez le formulaire pour trouver facilement de nouveaux administrateurs indépendants !
+                        Remplissez le formulaire pour trouver facilement de nouveaux candidats !
                     </p>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="{{ asset('assets/public/img/handshake.png') }}" class="col-lg-12 h-100 col-md-6 col-12 wow"
-                        style="object-fit: cover" alt="">
+                    <img src="{{ asset('assets/public/img/handshake.png') }}"
+                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
-                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
-                            href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
+                    <form method="GET" action="{{ route('user-space.en.home') }}">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input required type="text" class="form-control" id="name" placeholder="Nom de l'entreprise">
+                                    <label for="name">Raison sociale <span class="text-primary">*</span></label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input required type="number" min="5" class="form-control" id="name" placeholder="Nombre d'employés">
+                                    <label for="name">Taille <span class="text-primary">*</span></label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                    <select id="domain" name="domain" class="form-control input-select bg-white">
+                                        <option value="1">Administration</option>
+                                        <option value="2">Energie et Ressources naturelles</option>
+                                        <option value="3">Mine</option>
+                                        <option value="4">Industries</option>
+                                        <option value="5">Services</option>
+                                        <option value="6">Agriculture</option>
+                                        <option value="7">Construction et Immobilier</option>
+                                        <option value="8">Secteur Public</option>
+                                    </select>
+                                    <label for="subject">Secteur d'Activité <span class="text-primary">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input required type="text" class="form-control" id="email" placeholder="Adresse du siège">
+                                    <label for="email">Adresse du siège <span class="text-primary">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input required type="url" class="form-control" id="email" placeholder="Site web">
+                                    <label for="email">Site web <span class="text-primary">*</span></label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea required class="form-control" placeholder="Activité, Missions, Visions, Valeurs, etc..." id="message" style="height: 100px"></textarea>
+                                    <label for="description">Activité, Missions, Visions, Valeurs, etc... <span class="text-primary">*</span></label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Send Message</button>
+                                <button class="btn btn-primary py-3 px-4" type="submit">Créer mon compte</button>
                             </div>
                         </div>
                     </form>

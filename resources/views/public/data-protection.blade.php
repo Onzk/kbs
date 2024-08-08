@@ -3,21 +3,22 @@
 @section('public.base.title', 'Protection de données')
 
 @section('public.base.body')
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
+    <div class="container-fluid hero-header bg-dark py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Protection de données</h1>
+                    <h1 class="display-4 mb-3 animated slideInDown text-white">Protection de données</h1>
                     <nav aria-label="breadcrumb animated slideInDown">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home.index') }}">Accueil</a></li>
+                            <li class="breadcrumb-item"><a class="text-white"
+                                    href="{{ route('public.home.index') }}">Accueil</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Protection de données</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 10s;"
-                        src="{{ asset('assets/public/img/data-protection.png') }}" alt="">
+                    <img class="img-fluid sideImage" src="{{ asset('assets/public/img/data-protection.png') }}"
+                        alt="">
                 </div>
             </div>
         </div>
@@ -27,14 +28,15 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('assets/public/img/key.png') }}" alt="">
+                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/key.png') }}" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6">Vos données sont protégées !</h1>
-                        <p class="text-primary fs-5 mb-4">Que ce soit vos données en tant qu'entreprises ou administrateurs indépendants, vos données sont sécurisées.</p>
+                        <p class="text-primary fs-5 mb-4">Que ce soit vos données en tant qu'entreprises ou candidat
+                            , vos données sont sécurisées.</p>
                         <p>
-                            Notre plateforme de recrutement stocke uniquement les informations nécessaires à son 
+                            Notre plateforme de recrutement stocke uniquement les informations nécessaires à son
                             fonctionnement et dans l'atteinte de ses objectifs. De ce fait, nous ne gardons que l'essentiel
                             des informations vous concernant et ce, sur une durée limité.
                         </p>

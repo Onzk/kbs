@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
     public function index()
     {
+        Auth::login(Candidate::first(), true);
         return view('public.index');
     }
     public function kapi_presentation()
@@ -23,9 +26,9 @@ class PublicController extends Controller
     {
         return view('public.key-information');
     }
-    public function executives()
+    public function candidates()
     {
-        return view('public.executives');
+        return view('public.candidates');
     }
     public function entreprises()
     {
@@ -37,7 +40,7 @@ class PublicController extends Controller
     }
     public function teams()
     {
-        return view('public.teams');
+        return view('public.team');
     }
     public function webinaries()
     {
