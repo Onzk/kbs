@@ -30,7 +30,7 @@
                         <tr>
                             <td class="py-1">12 Juin 2024</td>
                             <td class="py-1">Directeur des opérations</td>
-                            <td class="py-1">DEGBE Frédéric</td>
+                            <td class="py-1">GADJI Maturin</td>
                             <td class="py-1">
                                 <span class="badge w-100 rounded bg-success">En cours</span>
                             </td>

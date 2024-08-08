@@ -29,7 +29,7 @@
                     Consult</a>
                 <a class="btn btn-link text-white" href="{{ route('public.home.kbs-presentation') }}">Présentation de KBS</a>
                 <a class="btn btn-link text-white" href="{{ route('public.home.key-information') }}">Informations clés</a>
-                <a class="btn btn-link text-white" href="{{ route('public.home.candidates') }}">Section Candidats</a>
+                <a class="btn btn-link text-white" href="{{ route('public.home.executives') }}">Section Candidats</a>
                 <a class="btn btn-link text-white" href="{{ route('public.home.entreprises') }}">Section Entreprises</a>
             </div>
             <div class="col-lg-3 col-md-6">

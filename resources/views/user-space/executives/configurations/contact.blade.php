@@ -21,11 +21,11 @@
                         <form class="card-body">
                             <div class="row mb-4">
                                 @foreach ([
-        'Courriel' => ['email', 'degbe@gmail.com'],
+        'Courriel' => ['email', 'GADJI@gmail.com'],
         'Téléphone' => ['text', '+228 90900909'],
-        'Linkedin' => ['url', 'https://linkedin.com/degbe_frederic'],
-        'Facebook' => ['url', 'https://facebook.com/degbe_frederic'],
-        'Twitter' => ['url', 'https://x.com/degbe_frederic'],
+        'Linkedin' => ['url', 'https://linkedin.com/GADJI_frederic'],
+        'Facebook' => ['url', 'https://facebook.com/GADJI_frederic'],
+        'Twitter' => ['url', 'https://x.com/GADJI_frederic'],
         'Whatsapp' => ['text', '+228 90900909'],
     ] as $key => $value)
                                     <div class="col-sm-6 col-12">
@@ -36,7 +36,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="mt-4"> 
+                            <div class="mt-4">
                                 <button type="submit" class="btn col-md-3 icon icon-left btn-primary">
                                     Confirmer
                                 </button>

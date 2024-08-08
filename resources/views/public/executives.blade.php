@@ -79,7 +79,7 @@
     <div class="container-xxl py-5" id="creer-un-compte">
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <h1 class="display-6">Enregistrez-vous dès maintenant !</h1>
                     <p class="text-primary fs-5 mb-0">
                         Remplissez le formulaire pour être visible aux yeux de toutes les entreprises qui nous font
@@ -89,40 +89,77 @@
             </div>
             <div class="row g-5">
                 <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="{{ asset('assets/public/img/handshake.png') }}" class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
+                    <img src="{{ asset('assets/public/img/handshake.png') }}"
+                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
-                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
-                            href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
+                    <p class="mb-4">
+                        <span class="text-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" width="25px">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                            </svg>
+                        </span>
+                        Le nombre d'années d'expérience mimimum requis est de <span class="fw-bold text-danger"> 15 ans</span>.
+                        Toute candidature est automatique refusée si ce n'est pas le cas.
+                    </p>
+                    <form method="GET" action="{{ route('user-space.home') }}">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input required type="text" class="form-control" id="name" placeholder="Nom">
+                                    <label for="name">Nom <span class="text-primary">*</span> </label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input required type="text" class="form-control" id="name" placeholder="Prénoms">
+                                    <label for="name">Prénoms <span class="text-primary">*</span> </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input required type="email" class="form-control" id="email" placeholder="Adresse mail">
+                                    <label for="email">Courriel <span class="text-primary">*</span> </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input required type="email" class="form-control" id="email"
+                                        placeholder="Numéro de téléphone">
+                                    <label for="email">Numéro de téléphone <span class="text-primary">*</span> </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input required type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Nationnalité <span class="text-primary">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input required type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Linkedin</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                    <select id="domain" name="domain" class="form-control input-select bg-white">
+                                        <option value="1" selected>Administration</option>
+                                        <option value="2">Energie et Ressources naturelles</option>
+                                        <option value="3">Mine</option>
+                                        <option value="4">Industries</option>
+                                        <option value="5">Services</option>
+                                        <option value="6">Agriculture</option>
+                                        <option value="7">Construction et Immobilier</option>
+                                        <option value="8">Secteur Public</option>
+                                    </select>
+                                    <label for="subject">Domaine d'expertise <span class="text-primary">*</span></label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Send Message</button>
+                                <button class="btn btn-primary py-3 px-4" type="submit">Créer mon compte</button>
                             </div>
                         </div>
                     </form>

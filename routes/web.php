@@ -16,8 +16,8 @@ use App\Http\Livewire\UserSpace\Entreprises\HomePage As EntreprisesHomePage;
 use App\Http\Livewire\UserSpace\Entreprises\ProfilePage as EntreprisesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\ContractPage As EntreprisesContractPage;
 use App\Http\Livewire\UserSpace\Entreprises\DiscussionPage As EntreprisesDiscussionPage;
-use App\Http\Livewire\UserSpace\Entreprises\MarkAndReviewsPage As EntreprisesMarkAndReviewsPage;
 use App\Http\Livewire\UserSpace\Entreprises\SearchPage As EntreprisesSearchPage;
+use App\Http\Livewire\UserSpace\Entreprises\ExecutiveProfilePage As EntreprisesExecutiveProfilePage;
 
 Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     function () {
@@ -26,6 +26,7 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
             Route::get('/presentation-de-kapi-consult', 'kapi_presentation')->name('kapi-presentation');
             Route::get('/presentation-de-kbs', 'kbs_presentation')->name('kbs-presentation');
             Route::get('/informations-clés', 'key_information')->name('key-information');
+            Route::get('/candidats', 'executives')->name('executives');
             Route::get('/candidats', 'candidates')->name('candidates');
             Route::get('/entreprises', 'entreprises')->name('entreprises');
         });
@@ -47,26 +48,29 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
 
 Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
-       Route::get('/politique-de-confidentialité', fn() => view('user-space.candidates.privacy-policy-page'))->name('privacy_policy');
-        Route::get('/condition-d-utilisation', fn() => view('user-space.candidates.terms-of-use-page'))->name('terms_of_use');
+    //    Route::get('/politique-de-confidentialité', fn() => view('user-space.executives.privacy-policy-page'))->name('privacy_policy');
+    //     Route::get('/condition-d-utilisation', fn() => view('user-space.executives.terms-of-use-page'))->name('terms_of_use');
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }
 );
 
-// Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
-//     function () {
-//         Route::get('/', CandidatesHomePage::class)->name('index');
-//         Route::get('/accueil', CandidatesHomePage::class)->name('home');
-//         Route::get('/discussions', CandidatesDiscussionPage::class)->name('discussions');
-//         Route::get('/contrats', CandidatesContractPage::class)->name('contracts');
-//         Route::get('/profil', CandidatesProfilePage::class)->name('profile');
-//         Route::get('/notes-et-avis', CandidatesMarkAndReviewsPage::class)->name('mark_and_reviews');
-//         Route::get('/configurations/{config}', CandidatesConfigurations::class)->name('configurations');
-//     }
-// );
-
 Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
+    function () {
+        Route::get('/', CandidatesHomePage::class)->name('index');
+        Route::get('/accueil', CandidatesHomePage::class)->name('home');
+        Route::get('/discussions', CandidatesDiscussionPage::class)->name('discussions');
+        Route::get('/contrats', CandidatesContractPage::class)->name('contracts');
+        Route::get('/profil', CandidatesProfilePage::class)->name('profile');
+        Route::get('/notes-et-avis', CandidatesMarkAndReviewsPage::class)->name('mark_and_reviews');
+        Route::get('/configurations/{config}', CandidatesConfigurations::class)->name('configurations');
+
+        Route::get('/politique-de-confidentialité', fn() => view('user-space.executives.privacy-policy-page'))->name('privacy_policy');
+        Route::get('/condition-d-utilisation', fn() => view('user-space.executives.terms-of-use-page'))->name('terms_of_use');
+    }
+);
+
+Route::controller(UserSpaceController::class)->name('user-space.en.')->prefix('/espace-utilisateur/entreprise/')->group(
     function () {
         Route::get('/', EntreprisesHomePage::class)->name('index');
         Route::get('/accueil', EntreprisesHomePage::class)->name('home');
@@ -74,6 +78,10 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
         Route::get('/contrats', EntreprisesContractPage::class)->name('contracts');
         Route::get('/profil', EntreprisesProfilePage::class)->name('profile');
         Route::get('/recherche', EntreprisesSearchPage::class)->name('search');
+        Route::get('/recherche/gadji-maturin-kossi', EntreprisesExecutiveProfilePage::class)->name('executive_profile');
         Route::get('/configurations/{config}', EntreprisesConfigurations::class)->name('configurations');
+
+        Route::get('/politique-de-confidentialité', fn() => view('user-space.entreprises.privacy-policy-page'))->name('en.privacy_policy');
+        Route::get('/condition-d-utilisation', fn() => view('user-space.entreprises.terms-of-use-page'))->name('en.terms_of_use');
     }
 );

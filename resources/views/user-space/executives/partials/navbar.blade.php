@@ -35,7 +35,7 @@
                     <div class="d-none d-md-block d-lg-inline-block">
                         <div class="d-block">
                             <span class="d-block">
-                                Frédéric DEGBE
+                                Eric AMEDJI
                             </span>
                             <span class="w-100">
                                 <i data-feather="star" style="width: 10px; height: 10px;" fill="orange" class="text-warning p-0 m-0"></i>
