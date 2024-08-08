@@ -18,9 +18,9 @@
 <body>
     <div id="app">
         @if ($is_executive)
-            @include('user-space.executives.partials.sidebar')
+            @include('user-space.candidates.partials.sidebar')
             <div id="main">
-                @include('user-space.executives.partials.navbar')
+                @include('user-space.candidates.partials.navbar')
                 <div class="main-content container-fluid">
                     @yield('user-space.base.body')
                 </div>

@@ -45,11 +45,10 @@
                                 Informations clés</a>
                         </div>
                     </div>
-                    <a href="{{ route('public.home.executives') }}" @class([
+                    <a href="{{ route('public.home.candidates') }}" @class([
                         'dropdown-item',
-                        'active' => Route::is('public.home.executives'),
-                    ])>Administrateurs
-                        Indépendants</a>
+                        'active' => Route::is('public.home.candidates'),
+                    ])>Candidats</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([
                         'dropdown-item',
                         'active' => Route::is('public.home.entreprises'),

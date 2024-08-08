@@ -1,11 +1,11 @@
 @extends('public.layout.base')
 
-@section('public.base.title', 'Administrateurs Indépendants')
+@section('public.base.title', 'Candidats')
 
 @section('public.base.body')
     <!-- Header Start -->
     <div class="container-fluid hero-header mb-5 px-0"
-        style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/executives.png') }}');">
+        style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('{{ asset('assets/public/img/candidates.png') }}');">
         <div class="py-5 col" style="background-color: rgba(0, 0, 0, 0.50)">
             <div class="container py-5 col d-flex align-items-center justify-content-center" style="min-height: 90vh;">
                 <div class="col-md-12 col-lg-8 text-center">

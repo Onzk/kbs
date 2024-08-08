@@ -25,7 +25,7 @@
                                     <i data-feather="plus" width="20" class="mb-1"></i>
                                     Nouvelle formation
                                 </button>
-                                @include('user-space.executives.modals.add-formation-modal')
+                                @include('user-space.candidates.modals.add-formation-modal')
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                 </form>
                             @endforeach
                         </div>
-                        <div class="mt-2"> 
+                        <div class="mt-2">
                             <button type="submit" class="btn col-md-3 icon icon-left btn-primary">
                                 Sauvegarder
                             </button>

@@ -26,7 +26,7 @@
                                     <i data-feather="plus" width="20" class="mb-1"></i>
                                     Nouvel intervalle
                                 </button>
-                                @include('user-space.executives.modals.add-availability-modal')
+                                @include('user-space.candidates.modals.add-availability-modal')
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="mt-4"> 
+                        <div class="mt-4">
                             <button type="submit" class="btn col-md-3 icon icon-left btn-primary">
                                 Confirmer
                             </button>

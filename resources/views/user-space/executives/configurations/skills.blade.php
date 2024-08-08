@@ -25,7 +25,7 @@
                                     <i data-feather="plus" width="20" class="mb-1"></i>
                                     Nouvelle compétence
                                 </button>
-                                @include('user-space.executives.modals.add-skill-modal')
+                                @include('user-space.candidates.modals.add-skill-modal')
                             </div>
                         </div>
                     </div>

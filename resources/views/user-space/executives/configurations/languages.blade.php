@@ -25,7 +25,7 @@
                                     <i data-feather="plus" width="20" class="mb-1"></i>
                                     Nouvelle langue
                                 </button>
-                                @include('user-space.executives.modals.add-language-modal')
+                                @include('user-space.candidates.modals.add-language-modal')
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                             <div class="input-group col-12">
                                                 <fieldset class="form-group col-12">
                                                     <select class="form-select">
-                                                        @include('user-space.executives.others.language-select')
+                                                        @include('user-space.candidates.others.language-select')
                                                     </select>
                                                 </fieldset>
                                             </div>

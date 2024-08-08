@@ -35,7 +35,7 @@
                         <p class="col-md-5 animated slideInDown" style="font-size: 14px">
                             Des dirigeants à la recherche de postes au sein d'un conseil d'administration ?
                             <br>
-                            <a href="{{ route('public.home.executives') }}"
+                            <a href="{{ route('public.home.candidates') }}"
                                 class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                     stroke="currentColor" class="pb-1 mx-1" style="width:20px">

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create("faqs", function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("question");
+            $table->string("question")->unique();
             $table->string("answer")->nullable();
             $table->timestamps();
         });

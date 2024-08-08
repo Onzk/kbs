@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\UserSpace\Executives;
+namespace App\Http\Livewire\UserSpace\Candidates;
 
 use Livewire\Component;
 
@@ -30,7 +30,7 @@ class Configurations extends Component
 
     public function render()
     {
-        return view(".user-space.executives.configurations." . $this->roadmap[$this->config])
+        return view(".user-space.candidates.configurations." . $this->roadmap[$this->config])
             ->extends("user-space.layouts.base")
             ->section("user-space.base.body")
             ->layoutData([

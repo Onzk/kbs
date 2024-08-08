@@ -23,9 +23,9 @@ class PublicController extends Controller
     {
         return view('public.key-information');
     }
-    public function executives()
+    public function candidates()
     {
-        return view('public.executives');
+        return view('public.candidates');
     }
     public function entreprises()
     {

@@ -40,7 +40,7 @@
                                         <i class="mr-2" data-feather="eye"></i>
                                         <span class="text-xs pt-1">Détails</span>
                                     </button>
-                                    @include('user-space.executives.modals.contract-modal')
+                                    @include('user-space.candidates.modals.contract-modal')
                                 </div>
                             </td>
                         </tr>

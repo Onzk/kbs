@@ -20,7 +20,7 @@
                         <div class="input-group">
                             <fieldset class="form-group">
                                 <select class="form-select">
-                                    @include('user-space.executives.others.language-select')
+                                    @include('user-space.candidates.others.language-select')
                                 </select>
                             </fieldset>
                         </div>

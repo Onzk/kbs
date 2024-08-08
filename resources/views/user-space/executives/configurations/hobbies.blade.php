@@ -25,7 +25,7 @@
                                     <i data-feather="plus" width="20" class="mb-1"></i>
                                     Nouveau centre d'intérêt
                                 </button>
-                                @include('user-space.executives.modals.add-hobby-modal')
+                                @include('user-space.candidates.modals.add-hobby-modal')
                             </div>
                         </div>
                     </div>

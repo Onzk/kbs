@@ -5,12 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
-use App\Http\Livewire\UserSpace\Executives\Configurations As ExecutivesConfigurations;
-use App\Http\Livewire\UserSpace\Executives\HomePage As ExecutivesHomePage;
-use App\Http\Livewire\UserSpace\Executives\ProfilePage as ExecutivesProfilePage;
-use App\Http\Livewire\UserSpace\Executives\ContractPage As ExecutivesContractPage;
-use App\Http\Livewire\UserSpace\Executives\DiscussionPage As ExecutivesDiscussionPage;
-use App\Http\Livewire\UserSpace\Executives\MarkAndReviewsPage As ExecutivesMarkAndReviewsPage;
+use App\Http\Livewire\UserSpace\Candidates\Configurations As CandidatesConfigurations;
+use App\Http\Livewire\UserSpace\Candidates\HomePage As CandidatesHomePage;
+use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
+use App\Http\Livewire\UserSpace\Candidates\ContractPage As CandidatesContractPage;
+use App\Http\Livewire\UserSpace\Candidates\DiscussionPage As CandidatesDiscussionPage;
+use App\Http\Livewire\UserSpace\Candidates\MarkAndReviewsPage As CandidatesMarkAndReviewsPage;
 use App\Http\Livewire\UserSpace\Entreprises\Configurations As EntreprisesConfigurations;
 use App\Http\Livewire\UserSpace\Entreprises\HomePage As EntreprisesHomePage;
 use App\Http\Livewire\UserSpace\Entreprises\ProfilePage as EntreprisesProfilePage;
@@ -26,7 +26,7 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
             Route::get('/presentation-de-kapi-consult', 'kapi_presentation')->name('kapi-presentation');
             Route::get('/presentation-de-kbs', 'kbs_presentation')->name('kbs-presentation');
             Route::get('/informations-clés', 'key_information')->name('key-information');
-            Route::get('/administrateurs', 'executives')->name('executives');
+            Route::get('/candidats', 'candidates')->name('candidates');
             Route::get('/entreprises', 'entreprises')->name('entreprises');
         });
         Route::prefix('/a-propos')->name('about.')->group(function () {
@@ -47,8 +47,8 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
 
 Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
-       Route::get('/politique-de-confidentialité', fn() => view('user-space.executives.privacy-policy-page'))->name('privacy_policy');
-        Route::get('/condition-d-utilisation', fn() => view('user-space.executives.terms-of-use-page'))->name('terms_of_use');
+       Route::get('/politique-de-confidentialité', fn() => view('user-space.candidates.privacy-policy-page'))->name('privacy_policy');
+        Route::get('/condition-d-utilisation', fn() => view('user-space.candidates.terms-of-use-page'))->name('terms_of_use');
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }
@@ -56,13 +56,13 @@ Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/esp
 
 // Route::controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
 //     function () {
-//         Route::get('/', ExecutivesHomePage::class)->name('index');
-//         Route::get('/accueil', ExecutivesHomePage::class)->name('home');
-//         Route::get('/discussions', ExecutivesDiscussionPage::class)->name('discussions');
-//         Route::get('/contrats', ExecutivesContractPage::class)->name('contracts');
-//         Route::get('/profil', ExecutivesProfilePage::class)->name('profile');
-//         Route::get('/notes-et-avis', ExecutivesMarkAndReviewsPage::class)->name('mark_and_reviews');
-//         Route::get('/configurations/{config}', ExecutivesConfigurations::class)->name('configurations');
+//         Route::get('/', CandidatesHomePage::class)->name('index');
+//         Route::get('/accueil', CandidatesHomePage::class)->name('home');
+//         Route::get('/discussions', CandidatesDiscussionPage::class)->name('discussions');
+//         Route::get('/contrats', CandidatesContractPage::class)->name('contracts');
+//         Route::get('/profil', CandidatesProfilePage::class)->name('profile');
+//         Route::get('/notes-et-avis', CandidatesMarkAndReviewsPage::class)->name('mark_and_reviews');
+//         Route::get('/configurations/{config}', CandidatesConfigurations::class)->name('configurations');
 //     }
 // );
 
