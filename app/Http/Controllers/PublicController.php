@@ -11,7 +11,6 @@ class PublicController extends Controller
 {
     public function index()
     {
-        Auth::login(Candidate::first(), true);
         return view('public.index');
     }
     public function kapi_presentation()

@@ -33,7 +33,7 @@
         </div>
         <div class="col-6">
             <div class="form-floating">
-                <input required type="url" wire:model="state.linkedin" class="form-control" id="linkedin">
+                <input type="url" wire:model="state.linkedin" class="form-control" id="linkedin">
                 <label for="linkedin">{{ __('Linkedin') }}</label>
             </div>
         </div>

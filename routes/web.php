@@ -46,23 +46,16 @@ Route::controller(PublicController::class)->name('public.')->prefix('/')->group(
     }
 );
 
-Route::middleware("guest")->controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
-    function () {
-    //    Route::get('/politique-de-confidentialité', fn() => view('user-space.candidates.privacy-policy-page'))->name('privacy_policy');
-    //     Route::get('/condition-d-utilisation', fn() => view('user-space.candidates.terms-of-use-page'))->name('terms_of_use');
-        Route::get('/se-connecter', Login::class)->name('login');
-        Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
-    }
-);
-
-Route::middleware("guest")->controller(UserSpaceController::class)->prefix('/')->group(
+Route::middleware(["guest:web", "guest:candidates", "guest:entreprises"])
+    ->controller(UserSpaceController::class)->prefix('/')->group(
     function () {
         Route::get('/se-connecter', Login::class)->name('login');
         Route::get('/mot-de-passe-oublie', ForgotPassword::class)->name('forgot_password');
     }
 );
 
-Route::middleware("auth")->controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
+Route::middleware(["auth:candidates"])
+    ->controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
         Route::get('/', CandidatesHomePage::class)->name('index');
         Route::get('/accueil', CandidatesHomePage::class)->name('home');
@@ -77,7 +70,7 @@ Route::middleware("auth")->controller(UserSpaceController::class)->name('user-sp
     }
 );
 
-Route::middleware("auth")->controller(UserSpaceController::class)->name('user-space.en.')->prefix('/espace-utilisateur/entreprise/')->group(
+Route::middleware("auth:entreprises")->controller(UserSpaceController::class)->name('user-space.en.')->prefix('/espace-utilisateur/entreprise/')->group(
     function () {
         Route::get('/', EntreprisesHomePage::class)->name('index');
         Route::get('/accueil', EntreprisesHomePage::class)->name('home');

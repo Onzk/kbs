@@ -16,7 +16,7 @@
     <div class="form-group position-relative has-icon-left">
         <div class="clearfix">
             <label for="password">Mot de passe</label>
-            <a href="{{ route('user-space.forgot_password') }}" class='float-right text-primary fw-bold'>
+            <a href="{{ route('forgot_password') }}" class='float-right text-primary fw-bold'>
                 <small style="font-weight: bold">Mot de passe oublié ?</small>
             </a>
         </div>

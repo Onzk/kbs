@@ -15,7 +15,9 @@
             <div class="nav-item dropdown">
                 <a href="{{ route('public.home.index') }}" @class([
                     'nav-link dropdown-toggle text-white',
-                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'home'),
+                    'active border-bottom border-white border-3 px-4' => Str::contains(
+                        Route::currentRouteName(),
+                        'home'),
                 ])
                     data-bs-toggle="dropdown">Accueil</a>
                 <div class="dropdown-menu shadow-sm m-0">
@@ -55,7 +57,9 @@
             <div class="nav-item dropdown">
                 <a href="#" @class([
                     'nav-link dropdown-toggle text-white',
-                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'about'),
+                    'active border-bottom border-white border-3 px-4' => Str::contains(
+                        Route::currentRouteName(),
+                        'about'),
                 ]) data-bs-toggle="dropdown">A Propos</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <div class="">
@@ -80,7 +84,9 @@
             <div class="nav-item dropdown">
                 <a href="#" @class([
                     'nav-link dropdown-toggle text-white',
-                    'active border-bottom border-white border-3 px-4' => Str::contains(Route::currentRouteName(), 'media-news'),
+                    'active border-bottom border-white border-3 px-4' => Str::contains(
+                        Route::currentRouteName(),
+                        'media-news'),
                 ]) data-bs-toggle="dropdown">Médias & Nouvelles</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a href="{{ route('public.media-news.webinaries') }}" @class([
@@ -100,25 +106,32 @@
             </div>
             <a href="{{ route('public.faqs') }}" @class([
                 'nav-item nav-link text-white',
-                'active border-bottom border-white border-3 px-4' => Route::is('public.faqs'),
+                'active border-bottom border-white border-3 px-4' => Route::is(
+                    'public.faqs'),
             ])>FAQs</a>
             <a href="{{ route('public.data-protection') }}" @class([
                 'nav-item nav-link text-white',
-                'active border-bottom border-white border-3 px-4' => Route::is('public.data-protection'),
+                'active border-bottom border-white border-3 px-4' => Route::is(
+                    'public.data-protection'),
             ])>Protection de données</a>
-            @auth
+            @if (Auth::guard('candidates')->check() || Auth::guard('entreprises')->check())
                 <a href="{{ route('user-space.index') }}" @class([
                     'nav-item nav-link text-white',
-                    'active border-bottom border-white border-3 px-4' => Route::is('user-space.index'),
+                    'active border-bottom border-white border-3 px-4' => Route::is(
+                        'user-space.index'),
                 ])>Espace utilisateur</a>
-            @endauth
-            @guest
-                <a href="{{ route('user-space.login') }}" @class([
+            @elseif(Auth::guard('web')->check())
+                <a href="{{ route('user-space.index') }}" @class([
                     'nav-item nav-link text-white',
-                    'active border-bottom border-white border-3 px-4' => Route::is('user-space.login'),
+                    'active border-bottom border-white border-3 px-4' => Route::is(
+                        'user-space.index'),
+                ])>Espace administrateur</a>
+            @else
+                <a href="{{ route('login') }}" @class([
+                    'nav-item nav-link text-white',
+                    'active border-bottom border-white border-3 px-4' => Route::is('login'),
                 ])>Se connecter</a>
-            @endguest
-
+            @endif
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
             <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="">

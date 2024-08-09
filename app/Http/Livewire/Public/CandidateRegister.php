@@ -34,7 +34,7 @@ class CandidateRegister extends Component
             "email" => "required|email|unique:candidates,email",
             "tel" => "required|min:8|unique:candidates,tel",
             "country" => "required|min:2",
-            "linkedin" => "url|unique:candidates,linkedin",
+            "linkedin" => "url|unique:candidates,linkedin|regex:/^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$/i",
             "domain" => "required|min:2",
         ])->validate();
         $this->step++;
@@ -57,8 +57,9 @@ class CandidateRegister extends Component
         // Make api request here
         sleep(5);
         $candidate = Candidate::create($this->state);
-        Auth::login($candidate);
-        return redirect(route('user-space.home'))->with('success', __('Compte créé avec succès. Bienvenue dans votre espace utilisateur.'));
+        Auth::guard("candidates")->login($candidate);
+        return redirect(route('user-space.home'))
+        ->with('success', __('Compte créé avec succès. Bienvenue dans votre espace utilisateur.'));
     }
 
     public function render()
