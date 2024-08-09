@@ -27,6 +27,7 @@ faqs :
 
 webinaries :
     title
+    url
     image
     video?
     datetime
@@ -58,10 +59,11 @@ candidate :
     lastname
     email
     tel
+    about
     default_comment
     default_rate
     linkedin?
-    country
+    country?
     domain
     photo?
     enabled[bool]=False
@@ -73,6 +75,12 @@ educations :
     insitute
     year
     country
+
+other_educations:
+    candidate_id
+    type["ongoing_training", "certification", "accredidation"]
+    title
+    description
 
 experiences :
     candidate_id

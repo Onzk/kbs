@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer("speaking");
             $table->integer("reading");
             $table->integer("writing");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

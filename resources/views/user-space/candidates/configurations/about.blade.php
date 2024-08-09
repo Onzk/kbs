@@ -1,3 +1,4 @@
+@php($_user = Auth::guard('candidates')->user())
 <div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">

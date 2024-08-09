@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->text("photo")->nullable();
+            $table->string("photo")->default('storage/candidate/default.png');
             $table->string("lastname");
             $table->string("firstname");
             $table->string("default_comment")->nullable();
@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string("linkedin")->nullable();
             $table->string("country");
             $table->text("domain");
+            $table->text("about")->nullable();
             $table->boolean("enabled")->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("faqs", function (Blueprint $table) {
+        Schema::create("other_education", function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("question");
-            $table->string("answer")->nullable();
+            $table->foreignUuid("candidate_id");
+            $table->string("title");
+            $table->string("description");
+            $table->enum("type", ["ongoing_training", "certification", "accredidation"]);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("faqs");
+        Schema::dropIfExists("other_education");
     }
 };

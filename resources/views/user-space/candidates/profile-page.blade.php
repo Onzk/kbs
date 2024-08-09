@@ -1,3 +1,4 @@
+@php($_user = Auth::guard('candidates')->user())
 <div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
@@ -9,71 +10,123 @@
             </div>
         </div>
     </div>
-
+    @if (session()->has('success'))
+        <div class="col-12">
+            <div class="alert alert-success">
+                <span class="fw-bold text-white">
+                    <i data-feather="check" width="40"></i>
+                    {{ __(session('success')) }}
+                </span>
+            </div>
+        </div>
+    @endif
     <div class="col-12">
-        <span class="badge bg-success rounded text-xs fw-bold mb-3">
-            COMPTE ACTIF
-        </span>
-        <span class="badge bg-success rounded text-xs fw-bold mb-3">
-            AUCUN CONTRAT EN COURS
-        </span>
-        <span class="badge bg-success rounded text-xs fw-bold mb-3">
-            ACTUELLEMENT DISPONIBLE
-        </span>
+        @if ($_user->enabled)
+            <span class="badge bg-success rounded text-xs fw-bold mb-3">
+                COMPTE ACTIF
+            </span>
+        @else
+            <span class="badge bg-danger rounded text-xs fw-bold mb-3">
+                COMPTE INACTIF
+            </span>
+        @endif
     </div>
 
     <!-- Personnal Informations start -->
     <div class="col-12">
         <div class="card h-100">
-            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                <h4 class="card-title text-white">Informations personnelles</h4>
+            <div class="card-header pb-0 px-2 pt-2 mb-2 bg-dark">
+                <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                    <span class="mt-2">
+                        {{ __('Informations personnelles') }}
+                    </span>
+                    <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                        class="btn btn-success text-dark fw-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                    </a>
+                </h4>
             </div>
-            <div class="card-body pb-2 pt-3">
+            <div class="card-body pb-2 pt-3" wire:poll>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <p class="w-100">
-                                <img src="{{ asset('assets/public/img/avatar.png') }}"
-                                    class="border w-100 rounded-lg h-100" style="object-fit: cover;" alt=""
-                                    srcset="">
+                                <img src="{{ asset($_user->photo) }}" class="border w-100 rounded-lg"
+                                    style="object-fit: cover; height:25vh" alt="" srcset="">
                             </p>
                         </div>
-                        <div class="form-group h-100">
-                            <span class="badge bg-primary rounded p-2 w-100">
-                                <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
-                                <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
-                                <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
-                                <i data-feather="star" width="15" fill="orange" class="text-warning p-0 m-0"></i>
-                                <i data-feather="star" width="15" class="p-0 m-0"></i>
+                        <div class="form-group">
+                            <span class="badge bg-primary rounded p-2 w-100" wire:ignore>
+                                @php($stars = $_user->stars())
+                                <i data-feather="star" style="width: 15px; height: 15px;"
+                                    fill="{{ $stars >= 1 ? '#F8E05A' : 'white' }}" @class(['text-warning' => $stars >= 1, 'p-0 m-0'])></i>
+                                <i data-feather="star" style="width: 15px; height: 15px;"
+                                    fill="{{ $stars >= 2 ? '#F8E05A' : 'white' }}" @class(['text-warning' => $stars >= 2, 'p-0 m-0'])></i>
+                                <i data-feather="star" style="width: 15px; height: 15px;"
+                                    fill="{{ $stars >= 3 ? '#F8E05A' : 'white' }}" @class(['text-warning' => $stars >= 3, 'p-0 m-0'])></i>
+                                <i data-feather="star" style="width: 15px; height: 15px;"
+                                    fill="{{ $stars >= 4 ? '#F8E05A' : 'white' }}" @class(['text-warning' => $stars >= 4, 'p-0 m-0'])></i>
+                                <i data-feather="star" style="width: 15px; height: 15px;"
+                                    fill="{{ $stars >= 5 ? '#F8E05A' : 'white' }}" @class(['text-warning' => $stars >= 5, 'p-0 m-0'])></i>
                             </span>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="form-group">
-                            <label for="lastname">Nom</label>
-                            <p class="form-control" id="lastname">
-                                GADJI
+                            <label>{{ __('Nom') }}</label>
+                            <p class="form-control">
+                                {{ $_user->lastname }}
                             </p>
                         </div>
                         <div class="form-group">
-                            <label for="firstname">Prénoms</label>
-                            <p class="form-control" id="firstname">
-                                Maturin A.
+                            <label>{{ __('Prénoms') }}</label>
+                            <p class="form-control">
+                                {{ $_user->firstname }}
                             </p>
                         </div>
                         <div class="form-group">
-                            <label for="firstname">A Propos</label>
-                            <p class="form-control" id="firstname">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
-                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
-                                earum reiciendis aut cum quis. Dignissimos, amet.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
-                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
-                                earum reiciendis aut cum quis. Dignissimos, amet.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore cupiditate
-                                asperiores labore ratione libero rem, ut nemo, laboriosam sed recusandae esse maiores
-                                earum reiciendis aut cum quis. Dignissimos, amet.
+                            <label>{{ __("Domaine d'Expertise") }}</label>
+                            <p class="form-control">
+                                {{ $_user->domain }}
                             </p>
+                        </div>
+                        <div class="form-group">
+                            <label>{{ __('A Propos') }}</label>
+                            <p class="form-control">
+                                {{ $_user->about ?? '-' }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col">
+                            <div class="form-group">
+                                <label>{{ __('Courriel') }}</label>
+                                <p type="text" class="form-control">
+                                    {{ $_user->email }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col">
+                            <div class="form-group">
+                                <label>{{ __('Téléphone') }}</label>
+                                <p type="text" class="form-control">
+                                    {{ $_user->tel }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col">
+                            <div class="form-group">
+                                <label>{{ __('Linkedin') }}</label>
+                                <p type="text" class="form-control">
+                                    {{ $_user->linkedin }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,354 +135,322 @@
     </div>
     <!-- Personnal Informations end -->
 
-    <div class="row">
-        <div class="col-12 mb-0">
-            <!-- Contact start -->
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                            <h4 class="card-title text-white">Contacts</h4>
-                        </div>
-                        <div class="card-body pb-2">
-                            <div class="row">
-                                @foreach ([
-        'Courriel' => 'GADJI@gmail.com',
-        'Téléphone' => '+228 90900909',
-        'Linkedin' => 'https://linkedin.com/GADJI_frederic',
-        'Facebook' => 'https://facebook.com/GADJI_frederic',
-        'Twitter' => 'https://x.com/GADJI_frederic',
-        'Whatsapp' => '+228 90900909',
-    ] as $key => $value)
-                                    <div class="col-md-6 col">
-                                        <div class="form-group">
-                                            <label>{{ $key }}</label>
-                                            <p type="text" class="form-control">
-                                                {{ $value }}
-                                            </p>
-                                        </div>
-                                    </div>
+    <!-- Education start -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0 px-2 pt-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                            <span class="mt-2">
+                                {{ __('Diplômes & Formations') }}
+                            </span>
+                            <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                                class="btn btn-success text-dark fw-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="card-body pb-0 pt-3">
+                        <div class="row">
+                            @if (count($_user->educations) == 0 and count($_user->other_educations) == 0)
+                                <div class="col-lg-12 text-center mb-4">
+                                    <span class="fw-bold">
+                                        Aucun diplôme ou formation trouvé
+                                    </span>
+                                </div>
+                            @else
+                                @foreach ($_user->educations as $model)
+                                    @include('user-space.candidates.modules.agreement')
                                 @endforeach
-                            </div>
+                                @foreach ($_user->other_educations as $model)
+                                    @include('user-space.candidates.modules.other_agreement')
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Contact end -->
+        </div>
+    </div>
+    <!-- Education end -->
 
-            <!-- Availability start -->
+    <!-- Professionnal experiences start -->
+    <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Disponibilités</h4>
-                            </div>
-                            <div class="card-body pb-0">
-                                <div class="row">
-                                    @foreach (['02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '02/04/2024 - 02/05/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024'] as $value)
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <p type="text" class="form-control text-center">
-                                                    {{ $value }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    @endforeach
+                <div class="card">
+                    <div class="card-header pb-0 pt-2 px-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                            <span class="pt-2">
+                                {{ __('Expérience professionnelle') }}
+                            </span>
+                            <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                                class="btn btn-success text-dark fw-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="card-body pb-0 pt-3">
+                        <div class="row">
+                            @if ($_user->experience() == null)
+                                <div class="col-lg-12 text-center mb-4">
+                                    <span class="fw-bold">
+                                        {{ __('Expérience professionnelle non renseignée') }}
+                                    </span>
                                 </div>
-                            </div>
+                            @else
+                                <div class="col-md-4 col">
+                                    <div class="form-group">
+                                        <label>{{ __('Poste Actuel') }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->actual_position ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col">
+                                    <div class="form-group">
+                                        <label>{{ __('Entreprise Actuel') }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->actual_entreprise ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col">
+                                    <div class="form-group">
+                                        <label>{{ __("Années d'expérience totales") }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->year ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>{{ __('Descriptif des principales responsabilités et réalisations dans les postes précédents') }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->description ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <label class="mb-1">{{ __("Compétences clés et domaines d'expertise") }}</label>
+                                @foreach ($_user->skills() as $model)
+                                    @include('user-space.candidates.modules.skill_domain')
+                                @endforeach
+                                @foreach ($_user->domains() as $model)
+                                    @include('user-space.candidates.modules.skill_domain')
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Availability end -->
+        </div>
+    </div>
+    <!-- Professionnal experiences end -->
 
-            <!-- Education start -->
+    <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Education</h4>
-                            </div>
-                            <div class="card-body pb-0 pt-3">
-                                <div class="row">
-                                    @foreach ([
-        [
-            'degree' => 'Licence Professionnelle',
-            'institute' => 'ESGIS Business School',
-            'start_date' => '10 Septembre 2016',
-            'end_date' => '12 Juillet 2019',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
-        ],
-    ] as $value)
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <span
-                                                            class="badge bg-primary rounded">{{ $value['institute'] }}</span>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $value['degree'] }}</h5>
-                                                        <p class="card-text">{{ $value['description'] }}</p>
-                                                        <p class="card-text text-xs">
-                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <span
-                                                            class="badge bg-primary rounded">{{ $value['institute'] }}</span>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $value['degree'] }}</h5>
-                                                        <p class="card-text">{{ $value['description'] }}</p>
-                                                        <p class="card-text text-xs">
-                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
+                <div class="card">
+                    <div class="card-header pb-1 px-2 pt-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                            <span class="mt-2">
+                                {{ __('Expérience en matière de gouvernance') }}
+                            </span>
+                            <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                                class="btn btn-success text-dark fw-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="card-body pb-0 pt-3">
+                        <div class="row">
+                            @if ($_user->experience()?->governance_experience == null and $_user->experience()?->motivation == null)
+                                <div class="col-lg-12 text-center mb-4">
+                                    <span class="fw-bold">
+                                        Aucune expérience en matière de gouvernance
+                                    </span>
                                 </div>
-                            </div>
+                            @else
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>{{ __('Votre expérience en matière de gouvernance') }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->governance_experience ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}</label>
+                                        <p class="form-control">
+                                            {{ $_user->experience()?->motivation ?? '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Education end -->
-
-            <!-- Professionnal experiences start -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Expériences professionnelles</h4>
-                            </div>
-                            <div class="card-body pb-0 pt-3">
-                                <div class="row">
-                                    @foreach ([
-        [
-            'title' => 'Directeur commercial',
-            'organization' => 'VLISCO Africa',
-            'start_date' => '23 Mai 2020',
-            'end_date' => '9 Novembre 2023',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
-        ],
-    ] as $value)
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <span
-                                                            class="badge bg-primary rounded">{{ $value['organization'] }}</span>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $value['title'] }}</h5>
-                                                        <p class="card-text">{{ $value['description'] }}</p>
-                                                        <p class="card-text text-xs">
-                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <span
-                                                            class="badge bg-primary rounded">{{ $value['organization'] }}</span>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $value['title'] }}</h5>
-                                                        <p class="card-text">{{ $value['description'] }}</p>
-                                                        <p class="card-text text-xs">
-                                                            {{ $value['start_date'] . ' - ' . $value['end_date'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Professionnal experiences end -->
-
-            <!-- Projects start -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Projets</h4>
-                            </div>
-                            <div class="card-body pb-0 pt-3">
-                                <div class="row">
-                                    @foreach ([
-        [
-            'title' => 'Chaîne d\'approvisionnement de VLISCO',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magni fugit inventore repudiandae quos deserunt labore fugiat voluptatum suscipit eos quod animi quaerat omnis sequi delectus quia at, distinctio possimus dicta minus accusamus? Exercitationem dicta aliquam molestias modi maiores. Repellat atque nulla nihil odit sunt.',
-        ],
-    ] as $value)
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header bg-primary">
-                                                        <span
-                                                            class="text-bold text-white rounded">{{ $value['title'] }}</span>
-                                                    </div>
-                                                    <div class="card-body pt-2">
-                                                        <p class="card-text">{{ $value['description'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Projects end -->
-
-            <!-- Skills start -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Compétences</h4>
-                            </div>
-                            <div class="card-body pb-0 pt-3">
-                                <div class="row">
-                                    @foreach ([
-        [
-            'label' => 'Leadership & Management',
-            'percentage' => 99,
-        ],
-        [
-            'label' => 'Eloquence',
-            'percentage' => 80,
-        ],
-    ] as $value)
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <span class="text-bold rounded">{{ $value['label'] }}</span>
-                                                    </div>
-                                                    <div class="progress border-primary bg-gray rounded-0"
-                                                        style="height: 16px;">
-                                                        <div class="progress-bar progress-bar-striped"
-                                                            style="border-radius: 0px !important; width:{{ $value['percentage'] }}%"
-                                                            role="progressbar"
-                                                            aria-valuenow="{{ $value['percentage'] }}"
-                                                            aria-valuemin="0" aria-valuemax="100">
-                                                            {{ $value['percentage'] }}%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Skills end -->
-
-            <!-- Languages start -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Langues</h4>
-                            </div>
-                            <div class="card-body pb-2">
-                                <div class="row">
-                                    <ul class="list-group list-group-flush">
-                                        @foreach ([
-                                                [
-                                                    'label' => 'Français',
-                                                    'level' => 'native',
-                                                ],
-                                                [
-                                                    'label' => 'Anglais',
-                                                    'level' => 'advanced',
-                                                ],
-                                                [
-                                                    'label' => 'Ewe',
-                                                    'level' => 'intermediate',
-                                                ],
-                                                [
-                                                    'label' => 'Allemand',
-                                                    'level' => 'novice',
-                                                ],
-                                            ] as $value)
-                                            <li class="list-group-item">
-                                                <span class="d-flex justify-content-between align-items-center">
-                                                    {{ $value["label"] }}
-                                                    <span @class([
-                                                        "badge rounded",
-                                                        "bg-success" => $value["level"] == "advanced",
-                                                        "bg-danger" => $value["level"] == "novice",
-                                                        "bg-warning" => $value["level"] == "intermediate",
-                                                        "bg-info" => $value["level"] == "native",
-                                                        ])>
-                                                        @switch($value["level"])
-                                                            @case("advanced")Avancé @break
-                                                            @case("novice")Débutant @break
-                                                            @case("intermediate")Médium @break
-                                                            @case("native")Native @break
-                                                            @default -
-                                                        @endswitch
-                                                        </span>
-                                                </span>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                                <h4 class="card-title text-white">Centres d'intérêts</h4>
-                            </div>
-                            <div class="card-body pb-2 pt-2">
-                                <div class="">
-                                        @foreach ([
-                                                ['label' => 'Football'],
-                                                ['label' => 'Jeux Vidéos'],
-                                                ['label' => 'Tennis'],
-                                                ['label' => 'Basket'],
-                                                ['label' => 'Boxe'],
-                                            ] as $value)
-                                            <span class="badge bg-primary py-2 mb-2 px-4 rounded">
-                                                {{ $value["label"] }}
-                                            </span>
-                                        @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Languages end -->
         </div>
     </div>
 
+    <!-- Documents start -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0 px-2 pt-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                            <span class="mt-2">
+                                {{ __('Pièces Jointes & Références') }}
+                            </span>
+                            <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                                class="btn btn-success text-dark fw-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="card-body pt-3 pb-0">
+                        <div class="row">
+                            @if ($_user->document == null)
+                                <div class="col-lg-12 text-center mb-4">
+                                    <span class="fw-bold">
+                                        Aucune pièce jointe ni référence trouvée
+                                    </span>
+                                </div>
+                            @else
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>{{ __('CV Détaillé') }}</label>
+                                        <div class="form-control p-2 pb-0">
+                                            @include('user-space.candidates.modules.document', [
+                                                'title' => $_user->document->cv,
+                                                'url' => $_user->document->cv,
+                                            ])
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 d-flex align-items-stretch">
+                                    <div class="form-group w-100">
+                                        <label>{{ __('Éventuelles références ou recommandations') }}</label>
+                                        <div class="form-control p-2 pb-0 d-flex align-items-stretch">
+                                            @forelse ($_user->document->references as $model)
+                                                @include('user-space.candidates.modules.document',[
+                                                    "title" => $model['title'],
+                                                    "url" => $model['url']
+                                                ])
+                                            @empty
+                                                <span class="fw-bold">
+                                                    Aucun document trouvé
+                                                </span>
+                                            @endforelse
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>{{ __('Des exemples de réalisations ou de projets passés') }}</label>
+                                        <div class="form-control p-2 pb-0">
+                                            @forelse ($_user->document->realisations as $model)
+                                                @include('user-space.candidates.modules.document',[
+                                                    "title" => $model['title'],
+                                                    "url" => $model['url']
+                                                ])
+                                            @empty
+                                                <span class="fw-bold">
+                                                    Aucun document trouvé
+                                                </span>
+                                            @endforelse
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>{{ __('Liens vers des articles, publications ou activités en ligne démontrant votre expertise') }}</label>
+                                        <div class="form-control p-2 pb-0">
+                                            @forelse ($_user->document->links as $model)
+                                                @include('user-space.candidates.modules.document',[
+                                                    "title" => $model['title'],
+                                                    "url" => $model['url']
+                                                ])
+                                            @empty
+                                                <span class="fw-bold">
+                                                    Aucun lien trouvé
+                                                </span>
+                                            @endforelse
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Documents end -->
+
+
+    <!-- Languages start -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header pb-0 pt-2 mb-2 bg-dark">
+                <h4 class="card-title text-white d-flex justify-content-between alig-items-center">
+                    <span class="mt-2">
+                        {{ __('Langues') }}
+                    </span>
+                    <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                        class="btn btn-success text-dark fw-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                    </a>
+                </h4>
+            </div>
+            <div class="card-body pb-2">
+                <div class="row mt-2">
+                    @forelse($_user->languages as $model)
+                    @include('user-space.candidates.modules.language')
+                    @empty
+                        <div class="col-lg-12 text-center mb-4">
+                            <span class="fw-bold">
+                                Aucune langue trouvée
+                            </span>
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Languages end -->
 </div>

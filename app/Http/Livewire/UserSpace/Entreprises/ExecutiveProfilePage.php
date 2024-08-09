@@ -11,6 +11,6 @@ class ExecutiveProfilePage extends Component
         return view('user-space.entreprises.executive-profil-page')
         ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'GADJI Maturin Kossi', 'is_executive' => false]);
+            ->layoutData(['user_space_title' => 'GADJI Maturin Kossi',   ]);
     }
 }

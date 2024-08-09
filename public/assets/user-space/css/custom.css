@@ -38,37 +38,58 @@
     height: 50px;
     width: 30px;
 }
+
 .fw-bold {
     font-weight: bold;
 }
+
 .label-indic {
     text-transform: lowercase;
     font-style: italic;
 }
 
 .star-rating {
-    display:flex;
+    display: flex;
     flex-direction: row-reverse;
-    font-size:1.5em;
-    justify-content:start;
-    text-align:center;
-  }
+    font-size: 1.5em;
+    justify-content: start;
+    text-align: center;
+}
 
-  .star-rating input {
-    display:none;
-  }
+.star-rating input {
+    display: none;
+}
 
-  .star-rating label {
-    color:#000;
+.star-rating label {
+    color: #000;
     background-clip: text;
-    cursor:pointer;
-  }
+    cursor: pointer;
+}
 
-  .star-rating :checked ~ label {
-    color:var(--bs-orange);
-  }
+.star-rating :checked~label {
+    color: var(--bs-orange);
+}
 
-  .star-rating label:hover,
-  .star-rating label:hover ~ label {
-    color:var(--bs-orange);
-  }
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: var(--bs-orange);
+}
+
+.line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

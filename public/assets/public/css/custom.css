@@ -71,3 +71,10 @@
     transform: scale(1.05);
     z-index: 30;
 }
+
+.line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}

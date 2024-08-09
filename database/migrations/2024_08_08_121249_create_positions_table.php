@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("experiences");
             $table->enum("remuneration", ["salary_range", "package"]);
             $table->string("workplace");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

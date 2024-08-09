@@ -24,6 +24,7 @@ return new class extends Migration
             $table->json("links")->nullable();
             $table->string("diversity_policy");
             $table->boolean("enabled")->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->json("domains");
             $table->text("governance_experience")->nullable();
             $table->text("motivation")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

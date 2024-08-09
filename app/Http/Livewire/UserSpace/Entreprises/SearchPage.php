@@ -11,6 +11,6 @@ class SearchPage extends Component
         return view('.user-space.entreprises.search-page')
             ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'Recherche', 'is_executive' => false]);
+            ->layoutData(['user_space_title' => 'Recherche',   ]);
     }
 }

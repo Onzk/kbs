@@ -4,14 +4,22 @@ namespace App\Models;
 
 use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Document extends Model
 {
-    use HasFactory, HasUuids;
-    protected $fillable = ["candidate_id", "cv", "references", "realisations", "links"];
+    use HasFactory, HasUuids, SoftDeletes;
+    protected $fillable =
+        [
+            "candidate_id",
+            "cv",
+            "references",
+            "realisations",
+            "links",
+        ];
 
     public function candidate(): BelongsTo
     {

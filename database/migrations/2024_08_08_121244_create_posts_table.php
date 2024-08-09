@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("title")->unique();
             $table->string("description");
             $table->json("comments")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

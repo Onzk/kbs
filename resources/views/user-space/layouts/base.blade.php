@@ -17,7 +17,8 @@
 
 <body>
     <div id="app">
-        @if ($is_executive)
+        @if (Auth::guard('candidates')->check())
+            @php($_user = Auth::guard('candidates')->user())
             @include('user-space.candidates.partials.sidebar')
             <div id="main">
                 @include('user-space.candidates.partials.navbar')
@@ -26,7 +27,8 @@
                 </div>
                 @include('user-space.partials.footer')
             </div>
-        @else
+        @elseif(Auth::guard('entreprises')->check())
+            @php($_user = Auth::guard('entreprises')->user())
             @include('user-space.entreprises.partials.sidebar')
             <div id="main">
                 @include('user-space.entreprises.partials.navbar')

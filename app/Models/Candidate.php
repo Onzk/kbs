@@ -13,11 +13,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Candidate extends Authenticatable
 {
-    use HasFactory, Notifiable, HasUuids;
+    use HasFactory, Notifiable, HasUuids, SoftDeletes;
 
     protected $fillable = [
         "photo",
@@ -25,6 +26,7 @@ class Candidate extends Authenticatable
         "firstname",
         "email",
         "tel",
+        "about",
         "linkedin",
         "country",
         "domain",
@@ -32,6 +34,52 @@ class Candidate extends Authenticatable
         "default_rate",
         "enabled",
     ];
+
+    public function has_new_messages(): bool
+    {
+        return count($this->chats->whereNotNull("user_id")->where("readed", false)->toArray()) > 0;
+    }
+
+    public function rate(): float
+    {
+        if ($this->contracts()->count()) {
+            $rates = collect($this->contracts)->pluck("rates");
+            return round($rates->sum() / $rates->count(), 1);
+        }
+        return $this->default_rate ?? 0;
+    }
+
+    public function stars(): int
+    {
+        return (int) $this->rate();
+    }
+
+    public function experience()
+    {
+        return $this->experiences()->first();
+    }
+
+    public function skills(): array
+    {
+        return json_decode($this->experience()?->skills ?? '[]', true);
+    }
+    public function domains(): array
+    {
+        return json_decode($this->experience()?->domains ?? '[]', true);
+    }
+
+    public function references(): array
+    {
+        return json_decode($this->document()?->references ?? '[]', true);
+    }
+    public function realisations(): array
+    {
+        return json_decode($this->document()?->realisations ?? '[]', true);
+    }
+    public function links(): array
+    {
+        return json_decode($this->document()?->links ?? '[]', true);
+    }
 
     public function contracts(): HasMany
     {
@@ -43,20 +91,33 @@ class Candidate extends Authenticatable
         return $this->hasMany(Education::class);
     }
 
+    public function other_educations(): HasMany
+    {
+        return $this->hasMany(OtherEducation::class);
+    }
+
     public function experiences(): HasMany
     {
         return $this->hasMany(Experience::class);
     }
 
-    public function document(): HasOne {
+    public function document(): HasOne
+    {
         return $this->hasOne(Document::class);
     }
 
-    public function languages(): HasMany{
+    public function languages(): HasMany
+    {
         return $this->hasMany(Language::class);
     }
 
-    public function chats() : HasMany {
+    public function chats(): HasMany
+    {
         return $this->hasMany(Chat::class);
+    }
+
+    public function fullname(): string
+    {
+        return $this->firstname . " " . strtoupper($this->lastname);
     }
 }

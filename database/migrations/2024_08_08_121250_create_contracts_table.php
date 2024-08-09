@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text("comment")->nullable();
             $table->float("rate")->nullable();
             $table->enum("status", ["pending","ongoing","finished","aborted"]);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

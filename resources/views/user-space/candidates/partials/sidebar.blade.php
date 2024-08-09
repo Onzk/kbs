@@ -6,13 +6,10 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">Menus Principaux</li>
-                <li @class([
-                    'sidebar-item',
-                    'active' => Route::is('user-space.index') || Route::is('user-space.home'),
-                ])>
-                    <a href="{{ route('user-space.index') }}" class="sidebar-link">
-                        <i data-feather="home" width="20"></i>
-                        <span>Accueil</span>
+                <li @class(['sidebar-item', 'active' => Route::is('user-space.home')])>
+                    <a href="{{ route('user-space.home') }}" class="sidebar-link">
+                        <i data-feather="user" width="20"></i>
+                        <span>Profil</span>
                     </a>
                 </li>
                 <li @class([
@@ -31,13 +28,6 @@
                     <a href="{{ route('user-space.contracts') }}" class="sidebar-link">
                         <i data-feather="file-text" width="20"></i>
                         <span>Contrats</span>
-                    </a>
-                </li>
-                <li class="sidebar-title">Mon Compte</li>
-                <li @class(['sidebar-item', 'active' => Route::is('user-space.profile')])>
-                    <a href="{{ route('user-space.profile') }}" class="sidebar-link">
-                        <i data-feather="user" width="20"></i>
-                        <span>Profil</span>
                     </a>
                 </li>
                 <li @class([

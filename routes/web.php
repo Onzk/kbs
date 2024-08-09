@@ -57,11 +57,10 @@ Route::middleware(["guest:web", "guest:candidates", "guest:entreprises"])
 Route::middleware(["auth:candidates"])
     ->controller(UserSpaceController::class)->name('user-space.')->prefix('/espace-utilisateur/')->group(
     function () {
-        Route::get('/', CandidatesHomePage::class)->name('index');
-        Route::get('/accueil', CandidatesHomePage::class)->name('home');
+        Route::get('/', CandidatesProfilePage::class)->name('index');
+        Route::get('/profil', CandidatesProfilePage::class)->name('home');
         Route::get('/discussions', CandidatesDiscussionPage::class)->name('discussions');
         Route::get('/contrats', CandidatesContractPage::class)->name('contracts');
-        Route::get('/profil', CandidatesProfilePage::class)->name('profile');
         Route::get('/notes-et-avis', CandidatesMarkAndReviewsPage::class)->name('mark_and_reviews');
         Route::get('/configurations/{config}', CandidatesConfigurations::class)->name('configurations');
 

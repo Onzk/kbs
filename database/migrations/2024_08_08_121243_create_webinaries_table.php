@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string("title")->unique();
             $table->string("image");
             $table->string("video")->nullable();
-            $table->string("datetime");
+            $table->string("url");
+            $table->dateTime("datetime");
             $table->string("description");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -11,6 +11,6 @@ class MarkAndReviewsPage extends Component
         return view('.user-space.candidates.mark-and-reviews-page')
             ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'Notes & Avis', 'is_executive' => true]);
+            ->layoutData(['user_space_title' => 'Notes & Avis',  ]);
     }
 }

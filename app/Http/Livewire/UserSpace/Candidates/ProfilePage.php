@@ -11,6 +11,6 @@ class ProfilePage extends Component
         return view('.user-space.candidates.profile-page')
             ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'Profil', 'is_executive' => true]);
+            ->layoutData(['user_space_title' => 'Profil']);
     }
 }

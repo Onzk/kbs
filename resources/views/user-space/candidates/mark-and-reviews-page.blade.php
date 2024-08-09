@@ -1,3 +1,4 @@
+@php($_user = Auth::guard('candidates')->user())
 <div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
@@ -22,7 +23,7 @@
         </div>
     </div>
 
-    
+
 
     <!-- Reviews start -->
     <div class="col-12">

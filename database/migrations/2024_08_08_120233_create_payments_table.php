@@ -18,6 +18,7 @@ return new class extends Migration
             $table->float("amount");
             $table->json("datas");
             $table->text("object");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

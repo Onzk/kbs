@@ -11,6 +11,6 @@ class DiscussionPage extends Component
         return view('.user-space.entreprises.discussion-page')
             ->extends('user-space.layouts.base')
             ->section('user-space.base.body')
-            ->layoutData(['user_space_title' => 'Discussions', 'is_executive' => false]);
+            ->layoutData(['user_space_title' => 'Discussions',   ]);
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("insitute");
             $table->string("year");
             $table->string("country");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

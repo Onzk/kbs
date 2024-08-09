@@ -1,7 +1,8 @@
 @extends('user-space.layouts.base', ['is_executive' => Route::is('user-space.terms_of_use'), 'user_space_title' => 'Politique de confidentialité'])
 
 @section('user-space.base.body')
-    <div class="main-content container-fluid">
+    @php($_user = Auth::guard('candidates')->user())
+<div class="main-content container-fluid">
         <div class="page-title">
             <h3 class="text-primary">Conditions d'utilisation</h3>
             <p class="text-subtitle text-muted">Voici nos conditions pour l'utilisation de KBS.</p>

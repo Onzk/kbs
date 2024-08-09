@@ -18,6 +18,7 @@ return new class extends Migration
             $table->json("references")->nullable();
             $table->json("realisations")->nullable();
             $table->json("links")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

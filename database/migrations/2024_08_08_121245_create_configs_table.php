@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("linkedin")->nullable();
             $table->string("facebook")->nullable();
             $table->string("tweeter")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
