@@ -19,6 +19,7 @@ class Contract extends Model
         "candidate_id",
         "entreprise_id",
         "contract_template_id",
+        "title",
         "status",
         "comment",
         "rate",

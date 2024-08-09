@@ -6,7 +6,13 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">Menus Principaux</li>
-                <li @class(['sidebar-item', 'active' => Route::is('user-space.home')])>
+                <li @class([
+                    'sidebar-item',
+                    'active' =>
+                        Route::is('user-space.home') ||
+                        Route::is('user-space.profil') ||
+                        Route::is('user-space.index'),
+                ])>
                     <a href="{{ route('user-space.home') }}" class="sidebar-link">
                         <i data-feather="user" width="20"></i>
                         <span>Profil</span>
@@ -56,37 +62,12 @@
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'contact',
-                        ])),
-                ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'contact']) }}" class="sidebar-link">
-                        <i data-feather="at-sign" width="20"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
-                <li @class([
-                    'sidebar-item',
-                    'active' => request()->fullUrlIs(
-                        route('user-space.configurations', [
-                            'config' => 'disponibilité',
-                        ])),
-                ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'disponibilité']) }}"
-                        class="sidebar-link">
-                        <i data-feather="calendar" width="20"></i>
-                        <span>Disponibilité</span>
-                    </a>
-                </li>
-                <li @class([
-                    'sidebar-item',
-                    'active' => request()->fullUrlIs(
-                        route('user-space.configurations', [
                             'config' => 'education',
                         ])),
                 ])>
                     <a href="{{ route('user-space.configurations', ['config' => 'education']) }}" class="sidebar-link">
                         <i data-feather="award" width="20"></i>
-                        <span>Formation</span>
+                        <span>Diplômes & Formations</span>
                     </a>
                 </li>
                 <li @class([
@@ -99,7 +80,7 @@
                     <a href="{{ route('user-space.configurations', ['config' => 'expériences']) }}"
                         class="sidebar-link">
                         <i data-feather="layers" width="20"></i>
-                        <span>Expériences</span>
+                        <span>Exp. Professionnelles</span>
                     </a>
                 </li>
                 <li @class([
@@ -111,7 +92,7 @@
                 ])>
                     <a href="{{ route('user-space.configurations', ['config' => 'projets']) }}" class="sidebar-link">
                         <i data-feather="briefcase" width="20"></i>
-                        <span>Projets</span>
+                        <span>Exp. Gouvernance</span>
                     </a>
                 </li>
                 <li @class([
@@ -123,8 +104,8 @@
                 ])>
                     <a href="{{ route('user-space.configurations', ['config' => 'compétences']) }}"
                         class="sidebar-link">
-                        <i data-feather="list" width="20"></i>
-                        <span>Compétences</span>
+                        <i data-feather="file" width="20"></i>
+                        <span>Documents</span>
                     </a>
                 </li>
                 <li @class([
@@ -137,19 +118,6 @@
                     <a href="{{ route('user-space.configurations', ['config' => 'langues']) }}" class="sidebar-link">
                         <i data-feather="globe" width="20"></i>
                         <span>Langues</span>
-                    </a>
-                </li>
-                <li @class([
-                    'sidebar-item',
-                    'active' => request()->fullUrlIs(
-                        route('user-space.configurations', [
-                            'config' => 'centres-d\'intérêts',
-                        ])),
-                ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'centres-d\'intérêts']) }}"
-                        class="sidebar-link">
-                        <i data-feather="thumbs-up" width="20"></i>
-                        <span>Centres d'Intérêts</span>
                     </a>
                 </li>
                 <li class="sidebar-title">Autres</li>

@@ -13,7 +13,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                <h4 class="card-title text-white">Liste de vos contrats</h4>
+                <h4 class="card-title text-white">Vos contrats</h4>
             </div>
             <div class="card-body p-0">
                 <table class='table border-bottom table-bordered table-striped' id="table1">
@@ -23,32 +23,48 @@
                             <th class="py-1">Libellé du poste</th>
                             <th class="py-1">Entreprise</th>
                             <th class="py-1">Status</th>
-                            <th class="py-1">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="py-1">12 Juin 2024</td>
-                            <td class="py-1">Directeur des opérations</td>
-                            <td class="py-1">KOLIBRI Entreprises Lomé</td>
-                            <td class="py-1">
-                                <span class="badge w-100 rounded bg-success">En cours</span>
-                            </td>
-                            <td class="py-1">
-                                <div class="d-inline-block">
-                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                                        data-target="#exampleModalScrollable">
-                                        <i class="mr-2" data-feather="eye"></i>
-                                        <span class="text-xs pt-1">Détails</span>
-                                    </button>
-                                    @include('user-space.candidates.modals.contract-modal')
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                        @forelse ($_user->contracts as $model)
+                            <tr>
+                                <td class="py-1">{{ $model->created_at }}</td>
+                                <td class="py-1">{{ $model->title }}</td>
+                                <td class="py-1">{{ $model->entreprise->name }}</td>
+                                <td class="py-1">
+                                    @switch($model->status)
+                                        @case('pending')
+                                            <span class="badge w-100 rounded bg-warning">En attente</span>
+                                        @break
 
-    </section>
-</div>
+                                        @case('ongoing')
+                                            <span class="badge w-100 rounded bg-success">En cours</span>
+                                        @break
+
+                                        @case('finished')
+                                            <span class="badge w-100 rounded bg-info">Terminé</span>
+                                        @break
+
+                                        @case('aborted')
+                                            <span class="badge w-100 rounded bg-danger">Annulé</span>
+                                        @break
+
+                                        @default
+                                            <span class="badge w-100 rounded bg-secondary">Inconnu</span>
+                                    @endswitch
+                                </td>
+                            </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="30" class="text-center">
+                                        <span class="fw-bold">{{ __("Aucun contrat pour l'instant") }}</span>
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </div>

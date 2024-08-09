@@ -37,7 +37,17 @@ class Candidate extends Authenticatable
 
     public function has_new_messages(): bool
     {
-        return count($this->chats->whereNotNull("user_id")->where("readed", false)->toArray()) > 0;
+        return count($this->messages()->where(["readed", false], ["user_id", "!=", null])->toArray()) > 0;
+    }
+
+    public function messages()
+    {
+        return $this->chats()->where("candidate_id", $this->id)->get();
+    }
+
+    public function marked_contracts()
+    {
+        return $this->contracts->where(['comment', '!=', null], ["rate", "!=", null]);
     }
 
     public function rate(): float

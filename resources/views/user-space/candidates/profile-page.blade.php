@@ -52,7 +52,7 @@
                     </a>
                 </h4>
             </div>
-            <div class="card-body pb-2 pt-3" wire:poll>
+            <div class="card-body pb-2 pt-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">

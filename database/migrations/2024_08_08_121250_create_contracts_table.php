@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->uuid("id")->primary();
+            $table->text("title");
             $table->foreignUuid("candidate_id");
             $table->foreignUuid("entreprise_id");
             $table->foreignUuid("contract_template_id");

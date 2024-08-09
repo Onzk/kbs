@@ -87,7 +87,7 @@
             </div>
         @endif
         <div class="col-12">
-            <button class="btn btn-primary py-3 px-4 col-12" wire:loading.disaled type="submit">
+            <button class="btn btn-primary py-3 px-4 col-12" wire:loading.disabled type="submit">
                 <div class="spinner-border spinner-border-sm text-white" wire:loading role="status"></div>
                 <span wire:loading.remove>
                     @if ($this->step == 0)

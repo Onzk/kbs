@@ -23,6 +23,13 @@ class Chat extends Model
         "readed",
     ];
 
+    public function at()
+    {
+        return $this->created_at->diffInDays() >= 1
+            ? $this->created_at->locale('fr')->diffForHumans()
+            : $this->created_at;
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
