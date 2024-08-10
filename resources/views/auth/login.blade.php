@@ -1,8 +1,8 @@
-<form action="{{ route('user-space.home') }}">
+<form wire:submit="login">
     <div class="form-group position-relative has-icon-left">
         <label for="email">Courriel</label>
         <div class="position-relative">
-            <input type="email" class="form-control" placeholder="Courriel" id="email">
+            <input required required type="email" wire:model="email" class="form-control" placeholder="Courriel" id="email">
             <div class="form-control-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -21,7 +21,7 @@
             </a>
         </div>
         <div class="position-relative">
-            <input type="password" class="form-control" placeholder="Mot de passe" id="password">
+            <input required type="password" wire:model="password" class="form-control" placeholder="Mot de passe" id="password">
             <div class="form-control-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -32,7 +32,17 @@
             </div>
         </div>
     </div>
+    @session("error")
+    <div wire:loading.remove class="alert alert-danger text-white fw-bold">
+        {{ session("error") }}
+    </div>
+    @endsession
     <div class="clearfix mt-4">
-        <button class="btn btn-primary w-100">Se connecter</button>
+        <button type="submit" wire:loading.disabled wire:target="login" class="btn btn-primary w-100">
+            <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="login" role="status"></div>
+            <span wire:loading.remove wire:target="login">
+                Se connecter
+            </span>
+        </button>
     </div>
 </form>

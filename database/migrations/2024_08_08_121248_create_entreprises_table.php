@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("presentation_movie")->nullable();
             $table->json("links")->nullable();
             $table->string("diversity_policy");
+            $table->text("password");
             $table->boolean("enabled")->default(false);
             $table->softDeletes();
             $table->timestamps();

@@ -33,7 +33,32 @@ class Candidate extends Authenticatable
         "default_comment",
         "default_rate",
         "enabled",
+        "password",
     ];
+
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        "password",
+        "remember_token",
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            "email_verified_at" => "datetime",
+            "password" => "hashed",
+        ];
+    }
 
     public function has_new_messages(): bool
     {

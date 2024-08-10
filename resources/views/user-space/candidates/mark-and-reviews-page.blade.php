@@ -1,5 +1,5 @@
 @php($_user = Auth::guard('candidates')->user())
-<div class="main-content container-fluid" wire:poll>
+<div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6">

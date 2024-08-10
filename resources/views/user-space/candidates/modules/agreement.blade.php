@@ -20,7 +20,7 @@
                 </p>
                 <p class="card-footer p-0 mb-1">
                     <span class="border text-white bg-dark border-dark rounded p-1">
-                        {{ $model->insitute }}
+                        {{ $model->institute }}
                     </span>
                     &nbsp;
                     <span class="border text-white bg-dark border-dark rounded p-1">

@@ -3,66 +3,136 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3 class="text-primary">A propos</h3>
+                <h3 class="text-primary">{{ __('A propos') }}</h3>
                 <p class="text-subtitle text-muted">
-                    Configurez ici les informations personnelles vous concernant.
+                    {{ __('Configurez ici les informations personnelles vous concernant.') }}
                 </p>
             </div>
         </div>
     </div>
 
     <div class="col-12">
-        <div class="">
-            <div class="col-12">
-                <div class="card">
+        <div class="row">
+            <div class="col-lg-3 d-flex align-items-stretch" style="min-width: 200px">
+                <div class="card w-100">
                     <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                        <h4 class="card-title text-white">Informations personnelles</h4>
+                        <h4 class="card-title text-white">{{ __('Photo de profil') }}</h4>
+                    </div>
+                    <div class="card-body pt-3">
+                        <form enctype="multipart/form-data">
+                            <div class="form-group text-center">
+                                <div class="mb-2">
+                                    <img src="{{ asset($_user->photo) . '?' . rand() }}" id="imgProfile"
+                                        class="p-1 rounded-circle"
+                                        style="object-fit: cover; height: 160px; width: 160px; border: black 4px dashed"
+                                        alt="">
+                                    <input class="form-control bg-white" wire:model.live="photo" type="file"
+                                        id="profile" accept="image/*" hidden />
+                                </div>
+                                <br>
+                                <div class="spinner-border spinner-border-sm m-2 text-primary" wire:loading
+                                    wire:target="photo" role="status"></div>
+                                <div wire:loading.remove wire:target="photo">
+                                    <label for="profile" style="cursor: pointer;" class="btn icon btn-outline-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px;"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </svg>
+                                        <span style="text-transform: none">
+                                            Modifier
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white">{{ __('Informations personnelles & Contacts') }}</h4>
                     </div>
                     <div class="card-body pt-3">
                         <form>
                             <div class="form-group">
-                                <div class="w-100 mb-2">
-                                    <img src="{{ asset('assets/public/img/avatar.png') }}"
-                                        class="border w-25 rounded-lg h-25" style="object-fit: cover;" alt=""
-                                        srcset="">
-                                </div>
-                                <a href="#" class="btn w-25 icon icon-left btn-primary">
-                                    <i data-feather="camera" width="20" class="mb-1"></i>
-                                    Modifier
-                                </a>
-                            </div>
-                            <hr>
-                            <div class="form-group">
                                 <label for="lastname">
-                                    Nom
+                                    {{ __('Nom') }}
                                     <span class="text-primary label-indic">
-                                        (modification impossible)
+                                        ({{ __('modification impossible') }})
                                     </span>
                                 </label>
                                 <p class="form-control" id="lastname">
-                                    GADJI
+                                    {{ $_user->lastname }}
                                 </p>
                             </div>
                             <div class="form-group">
                                 <label for="firstname">
-                                    Prénoms
+                                    {{ __('Prénoms') }}
                                     <span class="text-primary label-indic">
-                                        (modification impossible)
+                                        ({{ __('modification impossible') }})
                                     </span>
                                 </label>
                                 <p class="form-control" id="firstname">
-                                    Maturin A.
+                                    {{ $_user->firstname }}
                                 </p>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">
+                                    {{ __('Courriel') }}
+                                    <span class="text-primary label-indic">
+                                        ({{ __('modification impossible') }})
+                                    </span>
+                                </label>
+                                <p class="form-control" id="lastname">
+                                    {{ $_user->email }}
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">
+                                    {{ __('Numéro de Téléphone') }}
+                                    <span class="text-primary label-indic">
+                                        ({{ __('modification impossible') }})
+                                    </span>
+                                </label>
+                                <p class="form-control" id="lastname">
+                                    {{ $_user->tel }}
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="card">
+                    <div class="card-header pb-1 pt-2 mb-2 bg-dark">
+                        <h4 class="card-title text-white">{{ __('Contact Professionnel & Description') }}</h4>
+                    </div>
+                    <div class="card-body pt-3">
+                        <form wire:submit="saveAbout">
+                            <div class="form-group">
+                                <label>{{ __('Profil Linkedin') }}</label>
+                                <input wire:model="about_state.linkedin" type="url"
+                                    pattern="https://[a-z]{2,3}\.linkedin\.com\/.*"
+                                    placeholder="{{ __('Lien vers votre profil linkedin') }}" required
+                                    class="form-control">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="about">A Propos</label>
-                                <textarea class="form-control" id="about" rows="6" placeholder="Donnez une brève description de vous."></textarea>
+                                <textarea required minlength="8" wire:model="about_state.about" class="form-control" id="about" rows="6"
+                                    placeholder="Donnez une brève description de vous."></textarea>
                             </div>
-                            <div class="mt-4">
-                                <button type="submit" class="btn col-md-3 icon icon-left btn-primary">
-                                    Confirmer
+                            <div class="mt-4" type="submit">
+                                <button type="submit" wire:loading.disabled wire:target="saveAbout"
+                                    class="btn col-md-3 icon icon-left btn-primary">
+                                    <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="saveAbout"
+                                        role="status"></div>
+                                    <span wire:loading.remove wire:target="saveAbout">
+                                        Confirmer
+                                    </span>
                                 </button>
-                                <button type="reset" class="btn icon icon-left btn-light">
+                                <button type="reset" wire:click.prevent="reload" wire:loading.disabled wire:target="saveAbout" class="btn icon icon-left btn-light">
                                     Annuler
                                 </button>
                             </div>
@@ -72,5 +142,13 @@
             </div>
         </div>
     </div>
-
+    @include('components.alert')
 </div>
+
+@push('live.scripts')
+    <script>
+        document.getElementById("profile").onchange = function(event) {
+            document.getElementById("imgProfile").src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+@endpush

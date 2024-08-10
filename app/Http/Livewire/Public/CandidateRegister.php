@@ -49,7 +49,7 @@ class CandidateRegister extends Component
                 Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
             ],
         ])->validate();
-        $this->state["password"] = Hash::make($this->state["password"]);
+        $this->state["password"] = bcrypt($this->state["password"]);
         $this->step++;
     }
     public function make_payment()

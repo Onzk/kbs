@@ -20,7 +20,7 @@
                 <a href="#" data-toggle="dropdown"
                     class="nav-link d-flex align-items-center dropdown-toggle nav-link-lg nav-link-user">
                     <div class="avatar mr-2">
-                        <img src="{{ asset($_user->photo ?? 'storage/candidate/default.png') }}"
+                        <img src="{{ asset($_user->photo ?? 'storage/candidate/default.png')  . "?" . rand() }}"
                             style="object-fit: cover; width: 40px; height: 40px;" alt="" srcset="">
                     </div>
                     <div class="d-none d-md-block d-lg-inline-block">
@@ -46,9 +46,11 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="{{ route('user-space.home') }}"><i data-feather="user"></i>
-                        Profil</a>
-                    <a class="dropdown-item" href="{{ route('public.home.index') }}"><i data-feather="log-out"></i> Se
-                        Déconnecter</a>
+                        Profil
+                    </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"><i data-feather="log-out"></i> Se
+                        Déconnecter
+                    </a>
                 </div>
             </li>
         </ul>

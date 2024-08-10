@@ -17,7 +17,7 @@ class Education extends Model
         "candidate_id",
         "level",
         "domain",
-        "insitute",
+        "institute",
         "year",
         "country",
     ];

@@ -46,6 +46,7 @@
     <script src="{{ asset('assets/user-space/js/main.js') }}"></script>
     <script src="{{ asset('assets/user-space/vendors/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/vendors.js') }}"></script>
+    @stack('live.scripts')
 </body>
 
 </html>

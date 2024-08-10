@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("education", function (Blueprint $table) {
+        Schema::create("educations", function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->foreignUuid("candidate_id");
             $table->string("level");
             $table->string("domain");
-            $table->string("insitute");
+            $table->string("institute");
             $table->string("year");
             $table->string("country");
             $table->softDeletes();

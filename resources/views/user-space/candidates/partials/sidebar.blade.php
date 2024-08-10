@@ -62,10 +62,10 @@
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'education',
+                            'config' => 'diplômes-et-formations',
                         ])),
                 ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'education']) }}" class="sidebar-link">
+                    <a href="{{ route('user-space.configurations', ['config' => 'diplômes-et-formations']) }}" class="sidebar-link">
                         <i data-feather="award" width="20"></i>
                         <span>Diplômes & Formations</span>
                     </a>
