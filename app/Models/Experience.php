@@ -25,6 +25,16 @@ class Experience extends Model
         "motivation",
     ];
 
+    public static function init(Candidate $candidate): static
+    {
+        if ($exp = $candidate->experience()) return $exp;
+        return Experience::create([
+            "candidate_id" => $candidate->id,
+            "skills" => json_encode([], true),
+            "domains" => json_encode([], true),
+        ]);
+    }
+
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

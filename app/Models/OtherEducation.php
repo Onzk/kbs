@@ -13,6 +13,8 @@ class OtherEducation extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
+    protected $table = "other_educations";
+
     protected $fillable = [
         "candidate_id",
         "title",

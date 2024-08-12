@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("linkedin")->nullable();
             $table->string("country");
             $table->text("domain");
+            $table->integer("nbyear");
             $table->text("password");
             $table->text("about")->nullable();
             $table->boolean("enabled")->default(false);

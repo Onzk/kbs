@@ -12,11 +12,12 @@ class Config extends Model
     use HasFactory, HasUuids, SoftDeletes;
 
     protected $fillable = [
-        "min_year",
-        "cantidate_cautious",
-        "entreprise_cautious",
-        "linkedin",
-        "facebook",
-        "tweeter",
+        "label",
+        "value",
     ];
+
+    public static function retreive(string $label, $default = null): ?string
+    {
+        return Config::firstWhere("label", $label)?->value ?? $default;
+    }
 }

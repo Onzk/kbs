@@ -1,5 +1,5 @@
 <div class="col-sm-6 d-flex align-items-stretch">
-    <div class="card w-100 shadow-none border mb-3">
+    <div class="card w-100 shadow-md border mb-3">
         <div class="row p-3">
             <div class="col-lg-2" style="max-width: 80px">
                 <span class="badge h-100 d-flex justify-content-center align-items-center bg-primary rounded"

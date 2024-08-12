@@ -13,7 +13,7 @@
 
     <div class="col-12">
         <div class="row">
-            <div class="col-lg-3 d-flex align-items-stretch" style="min-width: 200px">
+            <div class="col-lg-4 d-flex align-items-stretch" style="min-width: 200px">
                 <div class="card w-100">
                     <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                         <h4 class="card-title text-white">{{ __('Photo de profil') }}</h4>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="col-lg-8 d-flex align-items-stretch">
                 <div class="card w-100">
                     <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                         <h4 class="card-title text-white">{{ __('Informations personnelles & Contacts') }}</h4>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header pb-1 pt-2 mb-2 bg-dark">
                         <h4 class="card-title text-white">{{ __('Contact Professionnel & Description') }}</h4>

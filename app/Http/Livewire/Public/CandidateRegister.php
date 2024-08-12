@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Public;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Candidate;
+use App\Models\Config;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -18,11 +19,18 @@ class CandidateRegister extends Component
 
     public int $step = 0;
 
-    public function submition(){
+    public function submition()
+    {
         switch ($this->step) {
-            case 0 : $this->create_account(); break;
-            case 1 : $this->set_password(); break;
-            case 2 : $this->make_payment(); break;
+            case 0:
+                $this->create_account();
+                break;
+            case 1:
+                $this->set_password();
+                break;
+            case 2:
+                $this->make_payment();
+                break;
         };
     }
 
@@ -33,10 +41,12 @@ class CandidateRegister extends Component
             "firstname" => "required|min:3",
             "email" => "required|email|unique:candidates,email",
             "tel" => "required|min:8|unique:candidates,tel",
+            "year" => "required|numeric|max:99|min:" . Config::retreive("min_year"),
             "country" => "required|min:2",
             "linkedin" => "url|unique:candidates,linkedin|regex:/^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$/i",
             "domain" => "required|min:2",
         ])->validate();
+        $this->state["nbyear"] = $this->state["year"];
         $this->step++;
     }
 
@@ -59,7 +69,8 @@ class CandidateRegister extends Component
         $candidate = Candidate::create($this->state);
         Auth::guard("candidates")->login($candidate);
         return redirect(route('user-space.home'))
-        ->with('success', __('Compte créé avec succès. Bienvenue dans votre espace utilisateur.'));
+            ->with('success', __('Compte créé avec succès. Bienvenue dans votre espace utilisateur.'))
+            ->with('other-success', __("Terminez la configuration de votre compte avant l'entretien avec les experts KAPI CONSULT."));
     }
 
     public function render()

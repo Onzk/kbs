@@ -62,22 +62,22 @@
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'diplômes-et-formations',
+                            'config' => 'diplômes-et-certifications',
                         ])),
                 ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'diplômes-et-formations']) }}" class="sidebar-link">
+                    <a href="{{ route('user-space.configurations', ['config' => 'diplômes-et-certifications']) }}" class="sidebar-link">
                         <i data-feather="award" width="20"></i>
-                        <span>Diplômes & Formations</span>
+                        <span>Diplômes & Certifications</span>
                     </a>
                 </li>
                 <li @class([
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'expériences',
+                            'config' => 'expériences-professionnelles',
                         ])),
                 ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'expériences']) }}"
+                    <a href="{{ route('user-space.configurations', ['config' => 'expériences-professionnelles']) }}"
                         class="sidebar-link">
                         <i data-feather="layers" width="20"></i>
                         <span>Exp. Professionnelles</span>

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/simple-datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/quill/quill.bubble.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/user-space/vendors/quill/quill.snow.css') }}">
+
     <link href="{{ asset('assets/public/img/logo.png') }}" rel="icon">
     @livewireStyles
 </head>

@@ -34,6 +34,7 @@ class Candidate extends Authenticatable
         "default_rate",
         "enabled",
         "password",
+        "nbyear",
     ];
 
 

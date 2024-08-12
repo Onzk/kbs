@@ -25,10 +25,19 @@
                     <label for="tel">{{ __('Numéro de téléphone') }} <span class="text-primary">*</span> </label>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="form-floating">
+                    <select id="country" wire:model.live="state.country" name="country"
+                        class="form-control input-select bg-white pb-0">
+                        @include('user-space.candidates.others.country-select')
+                    </select>
+                    <label for="country">{{ __('Pays de naissance') }} <span class="text-primary">*</span></label>
+                </div>
+            </div>
             <div class="col-6">
                 <div class="form-floating">
-                    <input required type="text" wire:model="state.country" class="form-control" id="country">
-                    <label for="country">{{ __('Nationnalité') }} <span class="text-primary">*</span></label>
+                    <input type="number" min="1" max="100" wire:model="state.year" class="form-control" id="year">
+                    <label for="year">{{ __("Nombre d'années d'expériences") }} <span class="text-primary">*</span></label>
                 </div>
             </div>
             <div class="col-6">
@@ -90,9 +99,9 @@
             </div>
         @endif
         <div class="col-12">
-            <button class="btn btn-primary py-3 px-4 col-12" wire:loading.disabled type="submit">
-                <div class="spinner-border spinner-border-sm text-white" wire:loading role="status"></div>
-                <span wire:loading.remove>
+            <button class="btn btn-primary py-3 px-4 col-12" wire:loading.disabled wire:target="submition" type="submit">
+                <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="submition" role="status"></div>
+                <span wire:loading.remove wire:target="submition">
                     @if ($this->step == 0)
                         {{ __('Créer mon compte') }}
                     @elseif ($this->step == 1)

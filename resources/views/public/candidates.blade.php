@@ -92,7 +92,7 @@
             <div class="row g-5">
                 <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                     <img src="{{ asset('assets/public/img/handshake.png') }}"
-                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
+                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" style="min-height: 502px" alt="">
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">
@@ -103,8 +103,8 @@
                                     d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                             </svg>
                         </span>
-                        Le nombre d'années d'expérience mimimum requis est de <span class="fw-bold text-danger"> {{ Config::first()?->min_year ?? "15" }} ans</span>.
-                        Toute candidature est automatique refusée si ce n'est pas le cas.
+                        Le nombre d'années d'expérience mimimum requis est de <span class="fw-bold text-danger"> {{ Config::retreive("min_year") ?? "15" }} ans</span>.
+                        Toute candidature est automatiquement refusée si ce n'est pas le cas.
                     </p>
                     @livewire('public.candidate-register')
                 </div>

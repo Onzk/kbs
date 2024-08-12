@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->foreignUuid("candidate_id");
-            $table->string("actual_position");
-            $table->string("actual_entreprise");
-            $table->integer("nbyear");
-            $table->text("description");
+            $table->string("actual_position")->nullable();
+            $table->string("actual_entreprise")->nullable();
+            $table->text("description")->nullable();
             $table->json("skills");
             $table->json("domains");
             $table->text("governance_experience")->nullable();

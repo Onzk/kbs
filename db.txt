@@ -48,10 +48,8 @@ posts :
     comments[{lastname firstname email content}]
 
 configs :
-    min_year=15
-    linkedin?
-    facebook?
-    tweeter?
+    label:unique
+    value?
 
 
 candidate :
@@ -86,7 +84,6 @@ experiences :
     candidate_id
     actual_position?
     actual_entreprise?
-    year
     description:text
     skills[]
     domains[]
