@@ -87,10 +87,10 @@
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'projets',
+                            'config' => 'expériences-en-gouvernance',
                         ])),
                 ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'projets']) }}" class="sidebar-link">
+                    <a href="{{ route('user-space.configurations', ['config' => 'expériences-en-gouvernance']) }}" class="sidebar-link">
                         <i data-feather="briefcase" width="20"></i>
                         <span>Exp. Gouvernance</span>
                     </a>
@@ -99,13 +99,13 @@
                     'sidebar-item',
                     'active' => request()->fullUrlIs(
                         route('user-space.configurations', [
-                            'config' => 'compétences',
+                            'config' => 'documents-et-références',
                         ])),
                 ])>
-                    <a href="{{ route('user-space.configurations', ['config' => 'compétences']) }}"
+                    <a href="{{ route('user-space.configurations', ['config' => 'documents-et-références']) }}"
                         class="sidebar-link">
                         <i data-feather="file" width="20"></i>
-                        <span>Documents</span>
+                        <span>Documents & Références</span>
                     </a>
                 </li>
                 <li @class([

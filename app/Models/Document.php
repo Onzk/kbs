@@ -13,14 +13,22 @@ class Document extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
     protected $fillable =
-        [
-            "candidate_id",
-            "cv",
-            "references",
-            "realisations",
-            "links",
-        ];
+    [
+        "candidate_id",
+        "cv",
+        "references",
+        "realisations",
+        "links",
+    ];
 
+    public static function init(Candidate $candidate): static
+    {
+        if ($doc = $candidate->document) return $doc;
+        return Document::create([
+            "candidate_id" => $candidate->id,
+            "cv" => "",
+        ]);
+    }
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

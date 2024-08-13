@@ -36,8 +36,8 @@
             <div @class(['tab-pane fade', 'show active' => $tab == 0]) id="exp" role="tabpanel" aria-labelledby="exp-tab">
                 <div class="col-md-12">
                     <div class="card w-100">
-                        <div class="card-header p-2 mb-4 w-100 bg-dark">
-                            <h4 class="card-title pt-1 text-white px-2">Expériences</h4>
+                        <div class="card-header p-2 mb-4 w-100 bg-primary">
+                            <span class="text-sm px-2 text-white">Expériences</span>
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="updateExp">
@@ -93,14 +93,14 @@
             <div @class(['tab-pane fade', 'show active' => $tab == 1]) id="skills" role="tabpanel" aria-labelledby="skills-tab">
                 <div class="col-12">
                     <div class="card w-100">
-                        <div class="card-header p-2 mb-4 w-100 text-right bg-dark">
+                        <div class="card-header px-2 py-1 mb-4 w-100 text-right bg-primary">
                             <div class="row p-0 justify-content-between align-items-center">
-                                <div class="col-md-6 ml-3 text-left">
-                                    <h4 class="card-title pt-1 text-white">Compétences Clés</h4>
+                                <div class="col-md-6 text-left">
+                                    <span class="text-sm px-2 text-white">Compétences Clés</span>
                                 </div>
                                 <div class="col-md-4 text-right">
                                     <button type="btn" data-toggle="modal" data-target="#addskills"
-                                        class="btn mx-1 pt-2 icon icon-left btn-success">
+                                        class="btn py-1 icon icon-left btn-success">
                                         <span wire:ignore>
                                             <i data-feather="plus" width="20" class="mb-1"></i>
                                         </span>
@@ -207,7 +207,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        {{ __('Voulez-vous enregistrer vos modifications et vos suppriessions ?') }}
+                                                        {{ __('Voulez-vous enregistrer vos modifications et vos suppressions ?') }}
                                                     </div>
                                                     <div class="modal-footer">
                                                         <div>
@@ -253,14 +253,14 @@
             <div @class(['tab-pane fade', 'show active' => $tab == 2]) id="domains" role="tabpanel" aria-labelledby="domains-tab">
                 <div class="col-12">
                     <div class="card w-100">
-                        <div class="card-header p-2 mb-4 w-100 text-right bg-dark">
+                        <div class="card-header px-2 py-1 mb-4 w-100 text-right bg-primary">
                             <div class="row p-0 justify-content-between align-items-center">
-                                <div class="col-md-6 ml-3 text-left">
-                                    <h4 class="card-title pt-1 text-white">Domaines d'Expertise</h4>
+                                <div class="col-md-6 text-left">
+                                    <span class="text-sm px-2 text-white">Domaines d'Expertise</span>
                                 </div>
                                 <div class="col-md-4 text-right">
                                     <button type="btn" data-toggle="modal" data-target="#adddomains"
-                                        class="btn mx-1 pt-2 icon icon-left btn-success">
+                                        class="btn py-1 icon icon-left btn-success">
                                         <span wire:ignore>
                                             <i data-feather="plus" width="20" class="mb-1"></i>
                                         </span>
@@ -367,7 +367,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        {{ __('Voulez-vous enregistrer vos modifications et vos suppriessions ?') }}
+                                                        {{ __('Voulez-vous enregistrer vos modifications et vos suppressions ?') }}
                                                     </div>
                                                     <div class="modal-footer">
                                                         <div>

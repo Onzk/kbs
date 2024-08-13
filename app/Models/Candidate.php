@@ -99,22 +99,28 @@ class Candidate extends Authenticatable
     {
         return json_decode($this->experience()?->skills ?? '[]', true);
     }
+
     public function domains(): array
     {
         return json_decode($this->experience()?->domains ?? '[]', true);
     }
 
-    public function references(): array
+    public function get_cv()
     {
-        return json_decode($this->document()?->references ?? '[]', true);
+        $this->refresh();
+        return $this->document?->cv;
     }
-    public function realisations(): array
+    public function get_references(): array
     {
-        return json_decode($this->document()?->realisations ?? '[]', true);
+        return json_decode($this->document?->references ?? '[]', true);
     }
-    public function links(): array
+    public function get_realisations(): array
     {
-        return json_decode($this->document()?->links ?? '[]', true);
+        return json_decode($this->document?->realisations ?? '[]', true);
+    }
+    public function get_links(): array
+    {
+        return json_decode($this->document?->links ?? '[]', true);
     }
 
     public function contracts(): HasMany

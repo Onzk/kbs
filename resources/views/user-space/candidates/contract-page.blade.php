@@ -12,12 +12,12 @@
     </div>
     <section class="section">
         <div class="card">
-            <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                <h4 class="card-title text-white">Vos contrats</h4>
+            <div class="card-header p-2 mb-2 bg-primary">
+                <span class="text-sm px-2 text-white">Vos contrats</span>
             </div>
             <div class="card-body p-0">
                 <table class='table border-bottom table-bordered table-striped' id="table1">
-                    <thead class="bg-dark text-white pt-2">
+                    <thead class="bg-primary text-white pt-2">
                         <tr>
                             <th class="py-1">Fait le</th>
                             <th class="py-1">Libellé du poste</th>

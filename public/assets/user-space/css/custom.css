@@ -102,6 +102,9 @@
     -ms-animation: fadeIn ease 1s;
 }
 
+.text-sm{
+    font-size: 14px;
+}
 
 @keyframes fadeIn {
     0% {

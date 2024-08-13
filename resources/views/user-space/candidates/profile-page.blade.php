@@ -177,8 +177,8 @@
                 <h4
                     class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
                     <span class="mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
@@ -226,8 +226,8 @@
                 <h4
                     class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
                     <span class="mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
@@ -315,12 +315,12 @@
                 <h4
                     class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
                     <span class="mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
-                         {{ __('Expériences en matière de gouvernance') }}
+                        {{ __('Expériences en matière de gouvernance') }}
                     </span>
                     <a href="{{ route('user-space.configurations', ['config' => 'expériences-en-gouvernance']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
@@ -373,14 +373,14 @@
                 <h4
                     class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
                     <span class="mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
-                         {{ __('Pièces Jointes & Références') }}
+                        {{ __('Pièces Jointes & Références') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                    <a href="{{ route('user-space.configurations', ['config' => 'documents-et-références']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -407,7 +407,7 @@
                                 <label>{{ __('CV Détaillé') }}</label>
                                 <div class="form-control p-2 pb-0">
                                     @include('user-space.candidates.modules.document', [
-                                        'title' => $_user->document->cv,
+                                        'title' => 'CV',
                                         'url' => $_user->document->cv,
                                     ])
                                 </div>
@@ -417,13 +417,16 @@
                             <div class="form-group w-100">
                                 <label>{{ __('Éventuelles références ou recommandations') }}</label>
                                 <div class="form-control p-2 pb-0 d-flex align-items-stretch">
-                                    @forelse ($_user->document->references as $model)
+                                    @forelse ($_user->get_references() as $path)
                                         @include('user-space.candidates.modules.document', [
-                                            'title' => $model['title'],
-                                            'url' => $model['url'],
+                                            'title' => str_replace(
+                                                "storage/candidate/references/{$_user->id}/",
+                                                '',
+                                                $path),
+                                            'url' => $path,
                                         ])
                                     @empty
-                                        <span class="fw-bold">
+                                        <span class="fw-bold py-2">
                                             Aucun document trouvé
                                         </span>
                                     @endforelse
@@ -434,13 +437,16 @@
                             <div class="form-group">
                                 <label>{{ __('Des exemples de réalisations ou de projets passés') }}</label>
                                 <div class="form-control p-2 pb-0">
-                                    @forelse ($_user->document->realisations as $model)
+                                    @forelse ($_user->get_realisations() as $path)
                                         @include('user-space.candidates.modules.document', [
-                                            'title' => $model['title'],
-                                            'url' => $model['url'],
+                                            'title' => str_replace(
+                                                "storage/candidate/realisations/{$_user->id}/",
+                                                '',
+                                                $path),
+                                            'url' => $path,
                                         ])
                                     @empty
-                                        <span class="fw-bold">
+                                        <span class="fw-bold py-2">
                                             Aucun document trouvé
                                         </span>
                                     @endforelse
@@ -451,13 +457,10 @@
                             <div class="form-group">
                                 <label>{{ __('Liens vers des articles, publications ou activités en ligne démontrant votre expertise') }}</label>
                                 <div class="form-control p-2 pb-0">
-                                    @forelse ($_user->document->links as $model)
-                                        @include('user-space.candidates.modules.document', [
-                                            'title' => $model['title'],
-                                            'url' => $model['url'],
-                                        ])
+                                    @forelse ($_user->get_links() as $link)
+                                        @include('user-space.candidates.modules.link')
                                     @empty
-                                        <span class="fw-bold">
+                                        <span class="fw-bold py-2">
                                             Aucun lien trouvé
                                         </span>
                                     @endforelse
@@ -479,14 +482,14 @@
                 <h4
                     class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
                     <span class="mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
-                           {{ __('Langues') }}
+                        {{ __('Langues') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'education']) }}"
+                    <a href="{{ route('user-space.configurations', ['config' => 'langues']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"

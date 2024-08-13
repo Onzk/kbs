@@ -14,9 +14,9 @@
     <div class="col-12">
         <div class="row">
             <div class="col-lg-4 d-flex align-items-stretch" style="min-width: 200px">
-                <div class="card w-100">
-                    <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                        <h4 class="card-title text-white">{{ __('Photo de profil') }}</h4>
+                <div class="card border w-100">
+                    <div class="card-header p-2 bg-primary mb-2">
+                        <span class="text-sm px-2 text-white">{{ __('Photo de profil') }}</span>
                     </div>
                     <div class="card-body pt-3">
                         <form enctype="multipart/form-data">
@@ -51,8 +51,8 @@
             </div>
             <div class="col-lg-8 d-flex align-items-stretch">
                 <div class="card w-100">
-                    <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                        <h4 class="card-title text-white">{{ __('Informations personnelles & Contacts') }}</h4>
+                   <div class="card-header p-2 bg-primary mb-2">
+                        <span class="text-sm px-2 text-white">{{ __('Informations personnelles & Contacts') }}</span>
                     </div>
                     <div class="card-body pt-3">
                         <form>
@@ -106,8 +106,8 @@
             </div>
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header pb-1 pt-2 mb-2 bg-dark">
-                        <h4 class="card-title text-white">{{ __('Contact Professionnel & Description') }}</h4>
+                    <div class="card-header p-2 bg-primary mb-2">
+                        <span class="text-sm px-2 text-white">{{ __('Contact Professionnel & Description') }}</span>
                     </div>
                     <div class="card-body pt-3">
                         <form wire:submit="saveAbout">

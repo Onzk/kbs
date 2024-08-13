@@ -2,10 +2,11 @@
 <div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3 class="text-primary">Projets</h3>
+            <div class="col-12 col-md-9 order-md-1 order-last">
+                <h3 class="text-primary">Expériences en Gouvernance</h3>
                 <p class="text-subtitle text-muted">
-                    Renseignez des projets comme référence.
+                    Dites vos expériences en matière de gouvernance ainsi que comment cela vous permettra d'être
+                    efficace en entreprise.
                 </p>
             </div>
         </div>
@@ -14,55 +15,57 @@
     <div class="col-12">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header p-0 mb-4 w-100 text-right bg-dark">
-                        <div class="row p-0 justify-content-between align-items-center">
-                            <div class="col-md-5 pl-4 ml-3 py-1 text-left">
-                                <h4 class="card-title pt-1 text-white">Liste de vos projets</h4>
-                            </div>
-                            <div class="col-md-4 text-right">
-                                <button type="btn" data-toggle="modal" data-target="#addAv"
-                                    class="btn mx-1 icon icon-left btn-success">
-                                    <i data-feather="plus" width="20" class="mb-1"></i>
-                                    Nouveau projet
-                                </button>
-                                @include('user-space.candidates.modals.add-project-modal')
-                            </div>
-                        </div>
+                <div class="card w-100">
+                    <div class="card-header p-2 mb-4 w-100 bg-primary">
+                        <span class="text-sm px-2 text-white">Expériences</span>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1">
-                            @foreach (['04/06/2024 - 02/07/2024', '04/06/2024 - 02/07/2024'] as $value)
-                                <form action="#" style="position: relative" class="border rounded shadow-md mb-3">
-                                    <button style="position: absolute; top: 0px; right: 0px; scale: 95%"
-                                        class="btn float-right btn-outline-danger border-0 btn-sm icon">
-                                        <i data-feather="x" stroke-width="3px" width="30" class="mb-1"></i>
+                        <form wire:submit.prevent="updateExpGov">
+                            <div class="form-group">
+                                <label
+                                    class="alert alert-dark bg-primary text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                    for="full0">{{ __('Votre expérience en matière de gouvernance') }}
+                                    <span class="text-white">*</span>
+                                </label>
+                                <div wire:ignore>
+                                    <div id="full0"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label
+                                    class="alert alert-dark bg-primary text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                    for="full1">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
+                                    <span class="text-white">*</span>
+                                </label>
+                                <div wire:ignore>
+                                    <div id="full1"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <span wire:loading.disabled
+                                    wire:click="$set('expgov_state.governance_experience', editor0.getLength() === 1 ? null : editor0.container.querySelectorAll('.ql-editor > p')[0].innerHTML)">
+                                    <button type="submit" wire:loading.disabled wire:target="updateExpGov"
+                                        wire:click="$set('expgov_state.motivation', editor1.getLength() === 1 ? null : editor1.container.querySelectorAll('.ql-editor > p')[0].innerHTML)"
+                                        class="btn col-md-3 icon icon-left btn-primary">
+                                        <div class="spinner-border spinner-border-sm text-white" wire:loading
+                                            wire:target="updateExpGov" role="status"></div>
+                                        <span wire:loading.remove wire:target="updateExpGov">
+                                            Confirmer
+                                        </span>
                                     </button>
-                                    <div class="py-3 px-2">
-                                        <div class="form-group">
-                                            <label>Titre du projet</label>
-                                            <input type="text" placeholder="Titre du projet" required class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea type="text" rows="6" required class="form-control" placeholder="Ajouter une description du projet"></textarea>
-                                        </div>
-                                    </div>
-                                </form>
-                            @endforeach
-                        </div>
-                        <div class="mt-2">
-                            <button type="submit" class="btn col-md-3 icon icon-left btn-primary">
-                                Sauvegarder
-                            </button>
-                            <button type="reset" class="btn icon icon-left btn-light">
-                                Annuler
-                            </button>
-                        </div>
+                                </span>
+                                <button type="reset" wire:click.prevent="reload" wire:loading.disabled
+                                    wire:target="updateExpGov" class="btn icon icon-left btn-light">
+                                    Annuler
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="{{ asset('assets/user-space/vendors/quill/quill.min.js') }}"></script>
+    <script src="{{ asset('assets/user-space/js/pages/multi-form-editor.js') }}"></script>
+    @include('components.alert')
 </div>
