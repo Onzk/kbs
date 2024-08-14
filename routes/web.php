@@ -79,7 +79,6 @@ Route::middleware("auth:entreprises")
         Route::get("/discussions", EntreprisesDiscussionPage::class)->name("discussions");
         Route::get("/contrats", EntreprisesContractPage::class)->name("contracts");
         Route::get("/recherche", EntreprisesSearchPage::class)->name("search");
-        Route::get("/recherche/gadji-maturin-kossi", EntreprisesExecutiveProfilePage::class)->name("executive_profile");
         Route::get("/configurations/{config}", EntreprisesConfigurations::class)->name("configurations");
 
         Route::get("/politique-de-confidentialité", fn() => view("user-space.entreprises.privacy-policy-page"))->name("en.privacy_policy");

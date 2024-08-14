@@ -21,6 +21,7 @@ class Chat extends Model
         "entreprise_id",
         "content",
         "readed",
+        "hidden",
     ];
 
     public function at()

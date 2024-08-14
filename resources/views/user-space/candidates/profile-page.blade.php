@@ -47,7 +47,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -175,7 +175,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -224,7 +224,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -313,7 +313,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -371,7 +371,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -480,7 +480,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

@@ -48,7 +48,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -153,7 +153,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -187,14 +187,14 @@
                     @else
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>{{ __("Liens vers les réseaux sociaux") }}</label>
+                                <label>{{ __('Liens vers les réseaux sociaux') }}</label>
                                 <div class="row">
                                     @foreach ($links as $link)
-                                    <div class="col-md-6">
-                                        <div class="form-control p-2 pb-0">
-                                            @include('user-space.entreprises.modules.link')
+                                        <div class="col-md-6">
+                                            <div class="form-control p-2 pb-0">
+                                                @include('user-space.entreprises.modules.link')
+                                            </div>
                                         </div>
-                                    </div>
                                     @endforeach
 
                                 </div>
@@ -212,7 +212,7 @@
         <div class="card border border-dark h-100">
             <div class="card-header">
                 <h4
-                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between alig-items-center">
+                    class="card-title alert alert-dark bg-primary border-bottom border-2 text-white d-flex justify-content-between align-items-center">
                     <span class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -246,7 +246,10 @@
                     <div class="row w-100">
                         @foreach ($prositions as $position)
                             <div class="col-md-4 col-12">
-                                @include('user-space.entreprises.modules.position')
+                                @include('user-space.entreprises.modules.position', [
+                                    'out' => true,
+                                    'selected' => false,
+                                ])
                             </div>
                         @endforeach
                     </div>

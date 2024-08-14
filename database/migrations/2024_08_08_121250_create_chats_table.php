@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignUuid("entreprise_id")->nullable();
             $table->text("content");
             $table->boolean("readed")->default(false);
+            $table->text("hidden")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

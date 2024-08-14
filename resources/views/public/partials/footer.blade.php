@@ -18,7 +18,7 @@
                         les outils et technologies </span> qui sont susceptibles de lui conférer des <span
                         class="text-white">avantages compétitifs
                         déterminants et distinctifs</span>. C'est dans cet ordre d'idées que le <span
-                        class="text-white">projet KAPI Board Select (KBS)</span> naît
+                        class="text-white">projet KAPI Board Sourcing (KBS)</span> naît
                     dans <span class="text-white">le seul but d'optimiser les process de recrutement pour des prestations
                         de qualité optimale</span>.
                 </span>

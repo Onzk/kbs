@@ -167,7 +167,7 @@
                             <span>
                                 En tant que cabinet d'étude spécialisé dans divers domaines, dont le recrutement, KAPI
                                 Consult se fait un devoir de proposer des prestations de qualité à des clients de plus en
-                                plus exigeants C'est dans cet ordre d'idées que le projet KAPI Board Select (KBS) naît dans
+                                plus exigeants C'est dans cet ordre d'idées que le projet KAPI Board Sourcing (KBS) naît dans
                                 le seul but d'optimiser les process de
                                 recrutement pour des prestations de qualité optimale.
                             </span>

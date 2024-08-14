@@ -61,6 +61,12 @@ class Candidate extends Authenticatable
         ];
     }
 
+    public function has_governance_experience()
+    {
+        return $this->experience()?->governance_experience
+            and $this->experience()?->motivation;
+    }
+
     public function has_new_messages(): bool
     {
         return count($this->messages()->where(["readed", false], ["user_id", "!=", null])->toArray()) > 0;
