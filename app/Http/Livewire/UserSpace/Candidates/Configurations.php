@@ -82,7 +82,7 @@ class Configurations extends Component
         File::delete($this->photo->getRealPath());
         $user->update(["photo" => $path]);
         Auth::guard("candidates")->user()->refresh();
-        return redirect(route('user-space.configurations', ["config" => "a-propos"]))->with("success", __("Photo de profil modifiée avec succès."));
+        return redirect(route('candidate-space.configurations', ["config" => "a-propos"]))->with("success", __("Photo de profil modifiée avec succès."));
     }
 
 

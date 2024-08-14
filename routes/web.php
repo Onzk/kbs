@@ -56,7 +56,7 @@ Route::middleware(["guest:web", "guest:candidates", "guest:entreprises"])
 Route::get("/se-déconnecter", [UserSpaceController::class, "logout"])->name("logout");
 
 Route::middleware(["auth:candidates"])
-    ->controller(UserSpaceController::class)->name("user-space.")->prefix("/espace-utilisateur/")->group(
+    ->controller(UserSpaceController::class)->name("candidate-space.")->prefix("/espace-candidat/")->group(
     function () {
         Route::get("/", CandidatesProfilePage::class)->name("index");
         Route::get("/profil", CandidatesProfilePage::class)->name("home");
@@ -70,13 +70,14 @@ Route::middleware(["auth:candidates"])
     }
 );
 
-Route::middleware("auth:entreprises")->controller(UserSpaceController::class)->name("user-space.en.")->prefix("/espace-utilisateur/entreprise/")->group(
+Route::middleware("auth:entreprises")
+    ->controller(UserSpaceController::class)->name("entreprise-space.")->prefix("/espace-entreprise/")->group(
     function () {
-        Route::get("/", EntreprisesHomePage::class)->name("index");
-        Route::get("/accueil", EntreprisesHomePage::class)->name("home");
+        Route::get("/", EntreprisesProfilePage::class)->name("index");
+        Route::get("/accueil", EntreprisesProfilePage::class)->name("home");
+        Route::get("/profil", EntreprisesProfilePage::class)->name("profile");
         Route::get("/discussions", EntreprisesDiscussionPage::class)->name("discussions");
         Route::get("/contrats", EntreprisesContractPage::class)->name("contracts");
-        Route::get("/profil", EntreprisesProfilePage::class)->name("profile");
         Route::get("/recherche", EntreprisesSearchPage::class)->name("search");
         Route::get("/recherche/gadji-maturin-kossi", EntreprisesExecutiveProfilePage::class)->name("executive_profile");
         Route::get("/configurations/{config}", EntreprisesConfigurations::class)->name("configurations");

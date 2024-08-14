@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('entreprises', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->string("photo")->default("storage/entreprise/default.png");
-            $table->string("name")->unique();
+            $table->string("email")->unique();
+            $table->string("name");
             $table->string("sector");
             $table->integer("size");
-            $table->string("hq_address");
+            $table->string("hq_address")->unique();
             $table->string("website")->nullable();
-            $table->string("description");
+            $table->text("description");
             $table->string("presentation_movie")->nullable();
             $table->json("links")->nullable();
-            $table->string("diversity_policy");
+            $table->string("diversity_policy")->nullable();
             $table->text("password");
             $table->boolean("enabled")->default(false);
             $table->softDeletes();

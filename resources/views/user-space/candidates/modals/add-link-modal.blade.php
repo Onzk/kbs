@@ -43,8 +43,8 @@
                                     Lien
                                 </label>
                                 <input id="label" type="url" required
-                                    wire:model="doc_state.link_form.link"
-                                    placeholder="{{ __('Liens vers des articles, ou autres ...') }}" required
+                                    wire:model="{{ $state }}"
+                                    placeholder="{{ __($placeholder) }}" required
                                     class="form-control">
                             </div>
                         </div>

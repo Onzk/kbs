@@ -17,14 +17,26 @@
                         Bienvenue sur la plateforme de recherche d'administrateurs indépendants
                         et membres de conseil d'administration d'entreprises.
                     </p>
-                    <a href="#creer-un-compte" class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="pb-1 mx-1" style="width:20px">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-                        </svg>
-                        S'enregistrer maintenant !
-                    </a>
+                    @if (Auth::guard('entreprises')->check())
+                        <a href="{{ route('entreprise-space.home') }}"
+                            class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="pb-1 mx-1" style="width:20px">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                            </svg>
+                            Espace Utilisateur
+                        </a>
+                    @else
+                        <a href="#creer-un-compte" class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="pb-1 mx-1" style="width:20px">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                            </svg>
+                            S'enregistrer maintenant !
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -76,80 +88,31 @@
     @include('public.sections.kbs-why-us')
     <!-- Features End -->
 
-    <!-- Contact Start -->
-    <div class="container-xxl py-5" id="creer-un-compte">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-8">
-                    <h1 class="display-6">Enregistrez-vous dès maintenant !</h1>
-                    <p class="text-primary fs-5 mb-0">
-                        Remplissez le formulaire pour trouver facilement de nouveaux candidats !
-                    </p>
+    @if (!Auth::guard('entreprises')->check())
+        <!-- Contact Start -->
+        <div class="container-xxl py-5" id="creer-un-compte">
+            <div class="container">
+                <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-8">
+                        <h1 class="display-6">Enregistrez-vous dès maintenant !</h1>
+                        <p class="text-primary fs-5 mb-0">
+                            Remplissez le formulaire pour trouver facilement de nouveaux candidats !
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="{{ asset('assets/public/img/handshake.png') }}"
-                        class="col-lg-12 h-100 col-md-6 col-12 wow inImage" alt="">
-                </div>
-                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form method="GET" action="{{ route('user-space.en.home') }}">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="name" placeholder="Nom de l'entreprise">
-                                    <label for="name">Raison sociale <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="number" min="5" class="form-control" id="name" placeholder="Nombre d'employés">
-                                    <label for="name">Taille <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <select id="domain" name="domain" class="form-control input-select bg-white">
-                                        <option value="1">Administration</option>
-                                        <option value="2">Energie et Ressources naturelles</option>
-                                        <option value="3">Mine</option>
-                                        <option value="4">Industries</option>
-                                        <option value="5">Services</option>
-                                        <option value="6">Agriculture</option>
-                                        <option value="7">Construction et Immobilier</option>
-                                        <option value="8">Secteur Public</option>
-                                    </select>
-                                    <label for="subject">Secteur d'Activité <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="text" class="form-control" id="email" placeholder="Adresse du siège">
-                                    <label for="email">Adresse du siège <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input required type="url" class="form-control" id="email" placeholder="Site web">
-                                    <label for="email">Site web <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea required class="form-control" placeholder="Activité, Missions, Visions, Valeurs, etc..." id="message" style="height: 100px"></textarea>
-                                    <label for="description">Activité, Missions, Visions, Valeurs, etc... <span class="text-primary">*</span></label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Créer mon compte</button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="row g-5">
+                    <div class="col-12 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="{{ asset('assets/public/img/handshake.png') }}"
+                            class="col-lg-12 h-100 col-md-6 col-12 wow inImage"style="min-height: 502px" alt="">
+                    </div>
+                    <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        @livewire('public.entreprise-register')
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Contact End -->
+        <!-- Contact End -->
+    @endif
 
     <!-- Features Start -->
     @include('public.sections.facts')

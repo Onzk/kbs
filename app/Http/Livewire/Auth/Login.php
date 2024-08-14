@@ -23,11 +23,11 @@ class Login extends Component
         ];
         if (Auth::guard('candidates')->attempt($credentials)) {
             session()->regenerate();
-            return redirect()->intended("/espace-utilisateur");
+            return redirect()->intended("/espace-candidat");
         }
         if (Auth::guard('entreprises')->attempt($credentials)) {
             session()->regenerate();
-            return redirect()->intended("/espace-utilisateur");
+            return redirect()->intended("/espace-entreprise");
         }
         if (Auth::attemptWhen($credentials, fn(User $model) => $model->enabled)) {
             session()->regenerate();

@@ -2,7 +2,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <a href="{{ route('user-space.en.search') }}" class="text-primary fw-bold h3 pb-2">
+                <a href="{{ route('entreprise-space.search') }}" class="text-primary fw-bold h3 pb-2">
                     <i data-feather="arrow-left" width="20"></i>
                     retour
                 </a>

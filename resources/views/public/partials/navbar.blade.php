@@ -114,17 +114,23 @@
                 'active border-bottom border-white border-3 px-4' => Route::is(
                     'public.data-protection'),
             ])>Protection de données</a>
-            @if (Auth::guard('candidates')->check() || Auth::guard('entreprises')->check())
-                <a href="{{ route('user-space.index') }}" @class([
+            @if (Auth::guard('candidates')->check())
+                <a href="{{ route('candidate-space.index') }}" @class([
                     'nav-item nav-link text-white',
                     'active border-bottom border-white border-3 px-4' => Route::is(
-                        'user-space.index'),
+                        'candidate-space.index'),
+                ])>Espace utilisateur</a>
+            @elseif(Auth::guard('entreprises')->check())
+                <a href="{{ route('entreprise-space.index') }}" @class([
+                    'nav-item nav-link text-white',
+                    'active border-bottom border-white border-3 px-4' => Route::is(
+                        'entreprise-space.index'),
                 ])>Espace utilisateur</a>
             @elseif(Auth::guard('web')->check())
-                <a href="{{ route('user-space.index') }}" @class([
+                <a href="{{ route('admin-space.index') }}" @class([
                     'nav-item nav-link text-white',
                     'active border-bottom border-white border-3 px-4' => Route::is(
-                        'user-space.index'),
+                        'admin-space.index'),
                 ])>Espace administrateur</a>
             @else
                 <a href="{{ route('login') }}" @class([

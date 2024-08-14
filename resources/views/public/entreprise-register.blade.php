@@ -3,70 +3,54 @@
         @if ($step == 0)
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input required type="text" wire:model="state.lastname" class="form-control text-dark"
-                        id="name">
-                    <label for="name">{{ __('Nom') }} <span class="text-primary">*</span> </label>
+                    <input required wire:model="state.name" type="text" class="form-control text-dark" id="name"
+                        placeholder="Nom de l'entreprise">
+                    <label for="name">Nom de l'entreprise <span class="text-primary">*</span></label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input required type="text" wire:model="state.firstname" class="form-control text-dark"
-                        id="name">
-                    <label for="name">{{ __('Prénoms') }} <span class="text-primary">*</span> </label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input required type="email" wire:model="state.email" class="form-control text-dark"
-                        id="email">
-                    <label for="email">{{ __('Courriel') }} <span class="text-primary">*</span> </label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input required type="tel" wire:model="state.tel" class="form-control text-dark" id="tel">
-                    <label for="tel">{{ __('Numéro de téléphone') }} <span class="text-primary">*</span> </label>
+                    <input required wire:model="state.size" type="number" min="1" class="form-control text-dark"
+                        id="name" placeholder="Nombre d'employés">
+                    <label for="name">Taille <span class="text-primary">*</span></label>
                 </div>
             </div>
             <div class="col-12">
                 <div class="form-floating">
-                    <select id="country" wire:model.live="state.country" name="country"
-                        class="form-control text-dark input-select bg-white pb-0">
-                        @include('user-space.candidates.others.country-select')
+                    <select required id="sector" wire:model.live="state.sector" name="sector"
+                        class="form-control pb-1 text-dark input-select bg-white">
+                        @include('user-space.candidates.others.activity-select')
                     </select>
-                    <label for="country">{{ __('Pays de naissance') }} <span class="text-primary">*</span></label>
+                    <label for="sector">Secteur d'Activité <span class="text-primary">*</span></label>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="number" min="1" max="100" wire:model="state.year"
-                        class="form-control text-dark" id="year">
-                    <label for="year">{{ __("Nombre d'années d'expériences") }} <span
+                    <input required wire:model="state.hq_address" type="text" class="form-control text-dark"
+                        id="address" placeholder="Adresse du siège">
+                    <label for="address">Adresse du siège <span class="text-primary">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input wire:model="state.website" type="url" class="form-control text-dark" id="website"
+                        placeholder="Site web">
+                    <label for="website">Site web </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating">
+                    <input required wire:model="state.email" type="email" class="form-control text-dark"
+                        id="email" placeholder="Adresse mail">
+                    <label for="email">Adresse mail<span class="text-primary">*</span></label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating">
+                    <textarea required wire:model="state.description" class="form-control text-dark"
+                        placeholder="Activité, Missions, Visions, Valeurs, etc..." id="message" style="height: 100px"></textarea>
+                    <label for="description">Activité, Missions, Visions, Valeurs, etc... <span
                             class="text-primary">*</span></label>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="form-floating">
-                    <input type="url" wire:model="state.linkedin" class="form-control text-dark" id="linkedin">
-                    <label for="linkedin">{{ __('Linkedin') }}</label>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-floating">
-                    <select id="domain" wire:model.live="state.domain" name="domain"
-                        class="form-control text-dark input-select bg-white">
-                        <option value="Administration" selected>{{ __('Administration') }}</option>
-                        <option value="Energie et Ressources naturelles">
-                            {{ __('Energie et Ressources naturelles') }}
-                        </option>
-                        <option value="Mine">{{ __('Mine') }}</option>
-                        <option value="Industries">{{ __('Industries') }}</option>
-                        <option value="Services">{{ __('Services') }}</option>
-                        <option value="Agriculture">{{ __('Agriculture') }}</option>
-                        <option value="Construction et Immobilier">{{ __('Construction et Immobilier') }}</option>
-                        <option value="Secteur Public">{{ __('Secteur Public') }}</option>
-                    </select>
-                    <label for="subject">{{ __("Domaine d'expertise") }} <span class="text-primary">*</span></label>
                 </div>
             </div>
         @elseif ($step == 1)
@@ -87,7 +71,7 @@
             </div>
             <div class="col-6">
                 <div class="form-floating">
-                    <input required type="password" wire:model="state.password" class="form-control text-dark"
+                    <input required type="password" wire:model="state.password" class="form-control text-dark text-dark"
                         id="password">
                     <label for="password">{{ __('Mot de passe') }} <span class="text-primary">*</span></label>
                 </div>
@@ -95,7 +79,7 @@
             <div class="col-6">
                 <div class="form-floating">
                     <input required type="password" wire:model="state.password_confirmation"
-                        class="form-control text-dark" id="password_confirmation">
+                        class="form-control text-dark text-dark" id="password_confirmation">
                     <label for="password_confirmation">{{ __('Confirmer le mot de passe') }} <span
                             class="text-primary">*</span></label>
                 </div>
@@ -104,8 +88,8 @@
             <div class="col-12">
                 <div
                     class="rounded bg-primary shadow-lg text-center d-block justify-content-center align-items-center fw-bold text-white py-4 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="width: 60px" viewBox="0 0 24 24"
-                        fill="currentColor" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="width: 60px" viewBox="0 0 24 24" fill="currentColor"
+                        class="mx-2">
                         <path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" />
                         <path fill-rule="evenodd"
                             d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V9.75Z"
@@ -123,7 +107,7 @@
             <div class="col-12">
                 <div class="alert alert-success text-success fw-bold">
                     &check;
-                    {{ __("Procédez au paiement pour terminer la création de votre compte. Les frais d'inscription s'élèvent à :price FCFA.", ['price' => \App\Models\Config::retreive('candidate_autious', 30000)]) }}
+                    {{ __("Procédez au paiement pour terminer la création de votre compte. Les frais d'inscription s'élèvent à :price FCFA.", ['price' => \App\Models\Config::retreive('entreprise_autious', 30000)]) }}
                 </div>
             </div>
         @endif

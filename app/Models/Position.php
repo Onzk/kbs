@@ -23,7 +23,16 @@ class Position extends Model
         "workplace",
     ];
 
-    public function entreprise() : BelongsTo {
+    public static function parse($type)
+    {
+        return [
+            "salary_range" => "Fourchette de Salaire",
+            "package" => "Package",
+        ][$type];
+    }
+
+    public function entreprise(): BelongsTo
+    {
         return $this->belongsTo(Entreprise::class);
     }
 }

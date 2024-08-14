@@ -3,7 +3,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3 class="text-primary">Profil</h3>
+                <h3 class="text-primary">Accueil</h3>
                 <p class="text-subtitle text-muted">
                     Voici les détails professionnels vous concernant.
                 </p>
@@ -56,7 +56,7 @@
                         </svg>
                         {{ __('Informations personnelles') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'a-propos']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'a-propos']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -184,7 +184,7 @@
                         </svg>
                         {{ __('Diplômes & Formations') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'diplômes-et-certifications']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'diplômes-et-certifications']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -233,7 +233,7 @@
                         </svg>
                         {{ __('Expériences professionnelles') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'expériences-professionnelles']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'expériences-professionnelles']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -322,7 +322,7 @@
                         </svg>
                         {{ __('Expériences en matière de gouvernance') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'expériences-en-gouvernance']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'expériences-en-gouvernance']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -380,7 +380,7 @@
                         </svg>
                         {{ __('Pièces Jointes & Références') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'documents-et-références']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'documents-et-références']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -489,7 +489,7 @@
                         </svg>
                         {{ __('Langues') }}
                     </span>
-                    <a href="{{ route('user-space.configurations', ['config' => 'langues']) }}"
+                    <a href="{{ route('candidate-space.configurations', ['config' => 'langues']) }}"
                         class="btn bg-white icon text-dark fw-bold d-flex justify-content-center align-items-center"
                         style="max-height: 38px">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"

@@ -367,7 +367,10 @@
                                     </span>
                                     Ajouter
                                 </button>
-                                @include('user-space.candidates.modals.add-link-modal')
+                                @include('user-space.candidates.modals.add-link-modal', [
+                                    "state" => "doc_state.link_form.link",
+                                    "placeholder" => "Liens vers des articles, ou autres ...",
+                                ])
                             </div>
                         </div>
                     </div>

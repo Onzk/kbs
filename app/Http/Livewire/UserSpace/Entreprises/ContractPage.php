@@ -10,6 +10,6 @@ class ContractPage extends Component
     {
         return view('.user-space.entreprises.contract-page')->extends('user-space.layouts.base')
         ->section('user-space.base.body')
-        ->layoutData(['user_space_title' => 'Contrats',   ]);
+        ->layoutData(['user_space_title' => 'Contrats']);
     }
 }

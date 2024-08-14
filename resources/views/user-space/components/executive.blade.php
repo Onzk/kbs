@@ -1,4 +1,4 @@
-<a href="{{ route('user-space.en.executive_profile') }}" class="d-block col-md-4 col-12 wow fadeInUp mb-2" data-wow-delay="0.2s">
+<a href="{{ route('entreprise-space.executive_profile') }}" class="d-block col-md-4 col-12 wow fadeInUp mb-2" data-wow-delay="0.2s">
     <div class="card border-light shadow-sm hover-scale" style="border-radius: 0px;">
         <img src="{{ asset('assets/public/img/avatar.png') }}" class="card-img-top"
             style="height: 300px; object-fit: cover;" alt="team">

@@ -46,7 +46,7 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="mb-4 text-white">Autres</h5>
                 <a class="btn btn-link text-white" href="{{ route('public.faqs') }}">FAQs</a>
-                <a class="btn btn-link text-white" href="{{ route('user-space.index') }}">Espace utilisateur</a>
+                <a class="btn btn-link text-white" href="{{ route('candidate-space.index') }}">Espace utilisateur</a>
                 <a class="btn btn-link text-white" href="{{ route('public.data-protection') }}">Protection de données</a>
             </div>
             <div class="col-lg-6 col-md-6">

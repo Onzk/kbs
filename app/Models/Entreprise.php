@@ -20,6 +20,7 @@ class Entreprise extends Authenticatable
         "name",
         "sector",
         "size",
+        "email",
         "hq_address",
         "website",
         "description",
@@ -53,6 +54,21 @@ class Entreprise extends Authenticatable
             "email_verified_at" => "datetime",
             "password" => "hashed",
         ];
+    }
+
+    public function get_links(): array
+    {
+        return json_decode($this->links ?? '[]', true);
+    }
+
+    public function has_new_messages(): bool
+    {
+        return count($this->messages()->where(["readed", false], ["user_id", "!=", null])->toArray()) > 0;
+    }
+
+    public function messages()
+    {
+        return $this->chats()->where("entreprise_id", $this->id)->get();
     }
 
     public function positions(): HasMany

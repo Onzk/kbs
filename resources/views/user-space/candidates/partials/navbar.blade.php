@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
             <li class="nav-icon">
-                <a href="{{ route('user-space.discussions') }}" class="nav-link mt-2 nav-link-lg nav-link-user">
+                <a href="{{ route('candidate-space.discussions') }}" class="nav-link mt-2 nav-link-lg nav-link-user">
                     <div class="d-lg-inline-block avatar">
                         <i data-feather="mail" style="height: 30px; width: 30px"></i>
                         @if ($_user->has_new_messages())
@@ -45,7 +45,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ route('user-space.home') }}"><i data-feather="user"></i>
+                    <a class="dropdown-item" href="{{ route('candidate-space.home') }}"><i data-feather="user"></i>
                         Profil
                     </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"><i data-feather="log-out"></i> Se

@@ -2,19 +2,17 @@
 
 namespace App\Http\Livewire\Public;
 
-use App\Models\User;
 use Livewire\Component;
-use App\Models\Candidate;
+use App\Models\Entreprise;
 use App\Models\Config;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 
-class CandidateRegister extends Component
+class EntrepriseRegister extends Component
 {
     public array $state = [
-        "domain"  => "Administration",
+        "sector" => "Industrie",
     ];
 
     public int $step = 0;
@@ -37,16 +35,14 @@ class CandidateRegister extends Component
     public function create_account()
     {
         Validator::make($this->state, [
-            "lastname" => "required|min:3",
-            "firstname" => "required|min:3",
-            "email" => "required|email|unique:candidates,email|unique:entreprises,email",
-            "tel" => "required|min:8|unique:candidates,tel",
-            "year" => "required|numeric|max:99|min:" . Config::retreive("min_year", 0),
-            "country" => "required|min:2",
-            "linkedin" => "url|unique:candidates,linkedin|regex:/^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$/i",
-            "domain" => "required|min:2",
+            "name" => "required|min:3",
+            "sector" => "required|min:3",
+            "size" => "required|numeric",
+            "hq_address" => "required|min:5|unique:entreprises,hq_address",
+            "website" => "url|min:2|unique:entreprises,website",
+            "email" => "required|email|unique:entreprises,email|unique:candidates,email",
+            "description" => "required",
         ])->validate();
-        $this->state["nbyear"] = $this->state["year"];
         $this->step++;
     }
 
@@ -65,16 +61,16 @@ class CandidateRegister extends Component
     public function make_payment()
     {
         // Make api request here
-        sleep(5);
-        $candidate = Candidate::create($this->state);
-        Auth::guard("candidates")->login($candidate);
-        return redirect(route('candidate-space.home'))
+        sleep(1);
+        $candidate = Entreprise::create($this->state);
+        Auth::guard("entreprises")->login($candidate);
+        return redirect(route('entreprise-space.home'))
             ->with('success', __('Compte créé avec succès. Bienvenue dans votre espace utilisateur.'))
             ->with('other-success', __("Terminez la configuration de votre compte avant l'entretien avec les experts KAPI CONSULT."));
     }
 
     public function render()
     {
-        return view("public.candidate-register");
+        return view("public.entreprise-register");
     }
 }

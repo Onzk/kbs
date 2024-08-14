@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if (count($educations = $_user->educations))
+                        @if (count($educations = ($_user->educations ?? [])))
                             <form wire:submit="updateEducation" class="row m-1">
                                 @for ($i = 0; $i < count($educations); $i++)
                                     <div class="col-md-6 col-12">
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if (count($educations = $_user->other_educations))
+                        @if (count($educations = ($_user->other_educations ?? [])))
                             <form wire:submit="updateOtherEducation" class="row m-1">
                                 @for ($i = 0; $i < count($educations); $i++)
                                     <div class="col-md-6 col-12">

@@ -1,4 +1,4 @@
-@extends('user-space.layouts.base', ['is_executive' => Route::is('user-space.terms_of_use'), 'user_space_title' => 'Politique de confidentialité'])
+@extends('user-space.layouts.base', ['user_space_title' => 'Politique de confidentialité'])
 
 @section('user-space.base.body')
     @php($_user = Auth::guard('candidates')->user())
