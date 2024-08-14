@@ -21,6 +21,16 @@ class Language extends Model
         "writing",
     ];
 
+    public function toSimpleString()
+    {
+        return join(" ", [
+            $this->title,
+            "parlé ". $this->parse($this->speaking),
+            "lire ". $this->parse($this->reading),
+            "écrit ". $this->parse($this->writing),
+        ]);
+    }
+
     public function parse($value): string
     {
         return ["Débutant", "Intermédiaire", "Avancé"][$value - 1];

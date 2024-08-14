@@ -43,7 +43,7 @@
                         </span>
                         @if ($candidate->has_governance_experience())
                             <span class="badge text-xs rounded me-2 mb-1 bg-succes">
-                                Pas d'expérience en gouvernance
+                                A d'expérience en gouvernance
                             </span>
                         @else
                             <span class="badge text-xs rounded me-2 mb-1 bg-danger">

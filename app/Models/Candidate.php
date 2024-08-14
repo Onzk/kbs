@@ -61,6 +61,24 @@ class Candidate extends Authenticatable
         ];
     }
 
+    public function matchesWith(Position $position)
+    {
+        $in_string = strtolower(trim(join(" ", [
+            $this->country ?? "",
+            $this->about ?? "",
+            $this->domain,
+            $this->nbyear . " ans years",
+            join("", collect($this->educations)->map(fn($model) => $model->toSimpleString())->toArray()),
+            join("", collect($this->other_educations)->map(fn($model) => $model->toSimpleString())->toArray()),
+            join("", collect($this->languages)->map(fn($model) => $model->toSimpleString())->toArray()),
+            join("", collect($this->experiences)->map(fn($model) => $model->toSimpleString())->toArray()),
+            $this->document?->toSimpleString() ?? "",
+        ])));
+        $in_string_position = strtolower(trim(join(" ", array_values($position->toArray()))));
+        $count = similar_text($in_string, $in_string_position, $percent);
+        return ($count * 100 / strlen($in_string_position)) + $percent >= 30;
+    }
+
     public function has_governance_experience()
     {
         return $this->experience()?->governance_experience

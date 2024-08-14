@@ -22,6 +22,19 @@ class OtherEducation extends Model
         "type",
     ];
 
+    public function toSimpleString()
+    {
+        return join(" ", [
+            $this->title,
+            $this->description,
+            [
+                "ongoing_training" => "Formation Continue",
+                "certification" => "Certification",
+                "accredidation" => "Accrédidation"
+            ][$this->type],
+        ]);
+    }
+
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

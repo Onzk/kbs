@@ -29,6 +29,20 @@ class Document extends Model
             "cv" => "",
         ]);
     }
+
+    public function toSimpleString()
+    {
+        return join(" ", [
+            join(" ", array_values(collect($this->get_realisations())
+                ->map(fn($m) => str_replace("storage/candidate/realisations/$this->candidate_id/", "", $m))
+                ->toArray())),
+            join(" ", array_values(collect($this->get_references())
+                ->map(fn($m) => str_replace("storage/candidate/references/$this->candidate_id/", "", $m))
+                ->toArray())),
+            join(" ", array_values(collect($this->get_links())->pluck("link")->toArray())),
+        ]);
+    }
+
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

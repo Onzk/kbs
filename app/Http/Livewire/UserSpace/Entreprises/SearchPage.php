@@ -64,7 +64,12 @@ class SearchPage extends Component
 
     public function retreive_matched()
     {
-        return Candidate::all();
+        if($this->position){
+            $candidates = collect(Candidate::all())
+                ->filter(fn(Candidate $candidate) => $candidate->matchesWith($this->position));
+            return $candidates;
+        }
+        return [];
     }
 
     public function render()

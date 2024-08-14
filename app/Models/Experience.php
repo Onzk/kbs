@@ -35,6 +35,19 @@ class Experience extends Model
         ]);
     }
 
+    public function toSimpleString()
+    {
+        return join(" ", [
+            $this->actual_position ?? "",
+            $this->actual_entreprise ?? "",
+            strip_tags($this->description),
+            join(" ", array_values(collect($this->get_skills())->pluck("label")->toArray())),
+            join(" ", array_values(collect($this->get_domains())->pluck("label")->toArray())),
+            strip_tags($this->governance_experience),
+            strip_tags($this->motivation),
+        ]);
+    }
+
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

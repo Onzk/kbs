@@ -24,6 +24,17 @@ class Education extends Model
         "country",
     ];
 
+    public function toSimpleString()
+    {
+        return join(" ", [
+            $this->level,
+            $this->domain,
+            $this->institute,
+            $this->year,
+            $this->country,
+        ]);
+    }
+
     public function candidate(): BelongsTo
     {
         return $this->belongsTo(Candidate::class);

@@ -346,17 +346,23 @@
                     @else
                         <div class="col-12">
                             <div class="form-group">
-                                <label>{{ __('Votre expérience en matière de gouvernance') }}</label>
+                                <label
+                                    class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                    for="full">{{ __('Votre expérience en matière de gouvernance') }}
+                                </label>
                                 <p class="form-control">
-                                    {{ $_user->experience()?->governance_experience ?? '-' }}
+                                    {!! $_user->experience()?->governance_experience ?? '-' !!}
                                 </p>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label>{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}</label>
+                                <label
+                                    class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                    for="full">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
+                                </label>
                                 <p class="form-control">
-                                    {{ $_user->experience()?->motivation ?? '-' }}
+                                    {!! $_user->experience()?->motivation ?? '-' !!}
                                 </p>
                             </div>
                         </div>
