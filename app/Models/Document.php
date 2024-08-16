@@ -21,7 +21,7 @@ class Document extends Model
         "links",
     ];
 
-    public static function init(Candidate $candidate): static
+    public static function init($candidate): static
     {
         if ($doc = $candidate->document) return $doc;
         return Document::create([

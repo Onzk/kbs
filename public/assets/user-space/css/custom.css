@@ -167,7 +167,12 @@
     scrollbar-width: none;
 }
 
-label {
+label,
+div.dataTable-info,
+div.dataTable-input,
+div.dataTable-search,
+p.small.text-muted,
+td.dataTables-empty {
     color: black !important;
     font-weight: 800 !important;
 }

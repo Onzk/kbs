@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create("webinaries", function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->string("title")->unique();
-            $table->string("image");
+            $table->string("photo");
             $table->string("video")->nullable();
             $table->string("url");
             $table->dateTime("datetime");

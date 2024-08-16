@@ -79,11 +79,9 @@
                                     </td>
                                 </tr>
                             @endforelse
-                            </tr>
                         </tbody>
-                    </table>
-                </div>
+                </table>
             </div>
-
-        </section>
-    </div>
+        </div>
+    </section>
+</div>

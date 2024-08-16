@@ -25,7 +25,7 @@ class Experience extends Model
         "motivation",
     ];
 
-    public static function init(Candidate $candidate): static
+    public static function init($candidate): static
     {
         if ($exp = $candidate->experience()) return $exp;
         return Experience::create([

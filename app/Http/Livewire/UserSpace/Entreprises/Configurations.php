@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\UserSpace\Entreprises;
 
-use App\Models\Position;
 use Livewire\Component;
+use App\Models\Position;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Url;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class Configurations extends Component
 {
@@ -18,6 +19,8 @@ class Configurations extends Component
     public $photo;
 
     public $movie;
+
+    public string $password = "", $password_confirmation = "";
 
     public array $about_state = [];
 
@@ -105,6 +108,21 @@ class Configurations extends Component
         $user->refresh();
         $this->reload();
         session()->flash("success", __("Modifications sauvegardées avec succès."));
+    }
+
+    public function savePassword()
+    {
+        $this->validate([
+            "password" => [
+                "required",
+                "confirmed",
+                Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
+            ],
+        ]);
+        Auth::guard("entreprises")->user()->update(["password" => bcrypt($this->password)]);
+        $this->password = "";
+        $this->password_confirmation = "";
+        session()->flash('success', __('Mot de passe modifié avec succès.'));
     }
 
     public function saveAbout()

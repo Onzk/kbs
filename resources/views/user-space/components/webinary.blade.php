@@ -1,11 +1,11 @@
 <div class="col-12 col-md-4">
     <div class="card mb-4">
-        @if ($webinary->video == null)
-            <img src="{{ asset($webinary->image) }}" style="width:100%; height:200px; object-fit: cover"
+        @if ($webinary->movie == null)
+            <img src="{{ asset($webinary->photo) . '?' . rand() }}" style="width:100%; height:200px; object-fit: cover"
                 class="card-img-top" alt="">
         @else
             <div class="embed-responsive embed-responsive-item embed-responsive-16by9">
-                <iframe src="{{ asset($webinary->video) }}" width="100%" height="300px" allowfullscreen></iframe>
+                <iframe src="{{ asset($webinary->movie) . '?' . rand() }}" width="100%" height="300px" allowfullscreen></iframe>
             </div>
         @endif
         <div class="card-body">
@@ -14,7 +14,7 @@
                     {{ $webinary->datetime }}</span>
             </h5>
             <p class="card-text line-clamp">{{ $webinary->description }}</p>
-            @if ($webinary->video == null)
+            @if ($webinary->movie == null)
                 <p class="card-text text-primary link">
                     <a href="{{ $webinary->url }}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

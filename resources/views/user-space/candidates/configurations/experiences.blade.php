@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="mt-4">
                                     <button type="submit" wire:loading.disabled wire:target="updateExp"
-                                        wire:click="$set('exp_state.description', editor.getLength() === 1 ? null : editor.container.querySelectorAll('.ql-editor > p')[0].innerHTML)"
+                                        wire:click="$set('exp_state.description', editor.getLength() === 1 ? null : editor.container.querySelectorAll('.ql-editor')[0].innerHTML)"
                                         class="btn col-md-3 icon icon-left btn-primary">
                                         <div class="spinner-border spinner-border-sm text-white" wire:loading
                                             wire:target="updateExp" role="status"></div>
@@ -189,7 +189,7 @@
                                         <div class="modal fade text-left" wire:ignore.self id="confirmSkillsUpdate"
                                             tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
                                             aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-xs modal-dialog-scrollable"
+                                            <div class="modal-dialog modal-dialog-centered modal-xs  "
                                                 role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-dark">
@@ -349,7 +349,7 @@
                                         <div class="modal fade text-left" wire:ignore.self id="confirmDomainsUpdate"
                                             tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
                                             aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-xs modal-dialog-scrollable"
+                                            <div class="modal-dialog modal-dialog-centered modal-xs  "
                                                 role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-dark">

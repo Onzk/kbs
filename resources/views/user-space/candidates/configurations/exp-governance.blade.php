@@ -43,9 +43,9 @@
                             </div>
                             <div class="mt-4">
                                 <span wire:loading.disabled
-                                    wire:click="$set('expgov_state.governance_experience', editor0.getLength() === 1 ? null : editor0.container.querySelectorAll('.ql-editor > p')[0].innerHTML)">
+                                    wire:click="$set('expgov_state.governance_experience', editor0.getLength() === 1 ? null : editor0.container.querySelectorAll('.ql-editor')[0].innerHTML)">
                                     <button type="submit" wire:loading.disabled wire:target="updateExpGov"
-                                        wire:click="$set('expgov_state.motivation', editor1.getLength() === 1 ? null : editor1.container.querySelectorAll('.ql-editor > p')[0].innerHTML)"
+                                        wire:click="$set('expgov_state.motivation', editor1.getLength() === 1 ? null : editor1.container.querySelectorAll('.ql-editor')[0].innerHTML)"
                                         class="btn col-md-3 icon icon-left btn-primary">
                                         <div class="spinner-border spinner-border-sm text-white" wire:loading
                                             wire:target="updateExpGov" role="status"></div>

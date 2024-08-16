@@ -50,7 +50,7 @@
                                             wire:target="photo" role="status"></div>
                                         <div wire:loading.remove wire:target="photo">
                                             <label for="profile" style="cursor: pointer;"
-                                                class="btn icon btn-outline-primary">
+                                                class="btn icon btn-primary text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     style="width: 30px;" viewBox="0 0 24 24" stroke-width="1.5"
                                                     stroke="currentColor" class="size-6">
@@ -103,7 +103,7 @@
                                             wire:target="movie" role="status"></div>
                                         <div wire:loading.remove wire:target="movie">
                                             <label for="movie" style="cursor: pointer;"
-                                                class="btn icon btn-outline-primary">
+                                                class="btn icon btn-primary text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     style="width: 30px;" viewBox="0 0 24 24" stroke-width="1.5"
                                                     stroke="currentColor" class="size-6">
@@ -153,8 +153,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="card">
+                    <div class="col-lg-8 d-flex align-items-stretch">
+                        <div class="card w-100">
                             <div class="card-header p-2 bg-primary mb-2">
                                 <span
                                     class="text-sm px-2 text-white">{{ __('Contact Professionnel & Description') }}</span>
@@ -162,7 +162,7 @@
                             <div class="card-body pt-3">
                                 <form wire:submit="saveAbout">
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>{{ __("Secteur d'Activité") }}</label>
                                                 <select required id="sector" wire:model="about_state.sector"
@@ -172,7 +172,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="size">{{ __("Taille (nombre d'employés)") }}</label>
                                                 <input wire:model="about_state.size" type="numeric" min="1"
@@ -180,7 +180,7 @@
                                                     class="form-control" id="size">
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="hq">{{ __('Adresse du Siège social') }}</label>
                                                 <input wire:model="about_state.hq_address" type="text"
@@ -188,11 +188,14 @@
                                                     required class="form-control" id="hq">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="website">{{ __('Site Web') }}</label>
-                                        <input wire:model="about_state.website" type="url"
-                                            placeholder="{{ __('Site web') }}" class="form-control" id="website">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="website">{{ __('Site Web') }}</label>
+                                                <input wire:model="about_state.website" type="url"
+                                                    placeholder="{{ __('Site web') }}" class="form-control"
+                                                    id="website">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label
@@ -216,6 +219,42 @@
                                         </button>
                                         <button type="reset" wire:click.prevent="reload" wire:loading.disabled
                                             wire:target="saveAbout" class="btn icon icon-left btn-light">
+                                            Annuler
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card w-100">
+                            <div class="card-header p-2 bg-primary mb-2">
+                                <span class="text-sm px-2 text-white">{{ __('Mot de passe') }}</span>
+                            </div>
+                            <div class="card-body pt-3">
+                                <form wire:submit="savePassword">
+                                    <div class="form-group">
+                                        <label>{{ __('Nouveau mot de passe') }}</label>
+                                        <input wire:model="password" type="password"
+                                            placeholder="{{ __('Nouveau mot de passe') }}" required
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ __('Confirmer mot de passe') }}</label>
+                                        <input wire:model="password_confirmation" type="password"
+                                            placeholder="{{ __('Confirmer nouveau mot de passe') }}" required
+                                            class="form-control">
+                                    </div>
+                                    <div class="mt-4" type="submit">
+                                        <button type="submit" wire:loading.disabled wire:target="savePassword"
+                                            class="btn icon icon-left btn-primary">
+                                            <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="savePassword"
+                                                role="status"></div>
+                                            <span wire:loading.remove wire:target="savePassword">
+                                                Confirmer
+                                            </span>
+                                        </button>
+                                        <button type="reset" wire:loading.disabled wire:target="savePassword" class="btn icon icon-left btn-light">
                                             Annuler
                                         </button>
                                     </div>
@@ -306,7 +345,7 @@
                                     <div class="modal fade text-left" wire:ignore.self id="confirmLinksUpdate"
                                         tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
                                         aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-xs modal-dialog-scrollable"
+                                        <div class="modal-dialog modal-dialog-centered modal-xs  "
                                             role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-dark">

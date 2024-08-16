@@ -4,9 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Chat;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -50,4 +52,25 @@ class User extends Authenticatable
             "password" => "hashed",
         ];
     }
+
+    public function fullname(): string
+    {
+        return $this->firstname . " " . strtoupper($this->lastname);
+    }
+
+    public function has_new_messages(): bool
+    {
+        return count($this->messages()->where(["readed", false], ["user_id", null])->toArray()) > 0;
+    }
+
+    public function messages()
+    {
+        return $this->chats()->where("user_id", $this->id)->get();
+    }
+
+    public function chats(): HasMany
+    {
+        return $this->hasMany(Chat::class);
+    }
+
 }

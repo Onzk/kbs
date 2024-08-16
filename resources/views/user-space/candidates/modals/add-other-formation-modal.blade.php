@@ -1,6 +1,6 @@
 <div class="modal fade text-left" id="addAvOther" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
     aria-hidden="true" wire:ignore.self>
-    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg  " role="document">
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h4 class="modal-title text-white" id="myModalLabel33">

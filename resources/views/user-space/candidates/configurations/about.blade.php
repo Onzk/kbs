@@ -33,7 +33,7 @@
                                 <div class="spinner-border spinner-border-sm m-2 text-primary" wire:loading
                                     wire:target="photo" role="status"></div>
                                 <div wire:loading.remove wire:target="photo">
-                                    <label for="profile" style="cursor: pointer;" class="btn icon btn-outline-primary">
+                                    <label for="profile" style="cursor: pointer;" class="btn icon btn-primary text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 30px;"
                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -104,8 +104,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="card">
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="card w-100">
                     <div class="card-header p-2 bg-primary mb-2">
                         <span class="text-sm px-2 text-white">{{ __('Contact Professionnel & Description') }}</span>
                     </div>
@@ -133,6 +133,42 @@
                                     </span>
                                 </button>
                                 <button type="reset" wire:click.prevent="reload" wire:loading.disabled wire:target="saveAbout" class="btn icon icon-left btn-light">
+                                    Annuler
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-header p-2 bg-primary mb-2">
+                        <span class="text-sm px-2 text-white">{{ __('Mot de passe') }}</span>
+                    </div>
+                    <div class="card-body pt-3">
+                        <form wire:submit="savePassword">
+                            <div class="form-group">
+                                <label>{{ __('Nouveau mot de passe') }}</label>
+                                <input wire:model="password" type="password"
+                                    placeholder="{{ __('Nouveau mot de passe') }}" required
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>{{ __('Confirmer mot de passe') }}</label>
+                                <input wire:model="password_confirmation" type="password"
+                                    placeholder="{{ __('Confirmer nouveau mot de passe') }}" required
+                                    class="form-control">
+                            </div>
+                            <div class="mt-4" type="submit">
+                                <button type="submit" wire:loading.disabled wire:target="savePassword"
+                                    class="btn icon icon-left btn-primary">
+                                    <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="savePassword"
+                                        role="status"></div>
+                                    <span wire:loading.remove wire:target="savePassword">
+                                        Confirmer
+                                    </span>
+                                </button>
+                                <button type="reset" wire:loading.disabled wire:target="savePassword" class="btn icon icon-left btn-light">
                                     Annuler
                                 </button>
                             </div>

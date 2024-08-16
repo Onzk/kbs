@@ -20,4 +20,9 @@ class Expert extends Model
         "linkedin",
         "tweeter",
     ];
+
+    public function fullname(): string
+    {
+        return $this->firstname . " " . strtoupper($this->lastname);
+    }
 }

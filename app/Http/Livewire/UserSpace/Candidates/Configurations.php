@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire\UserSpace\Candidates;
 
-use App\Models\Document;
 use Livewire\Component;
+use App\Models\Document;
+use App\Models\Language;
 use App\Models\Education;
 use App\Models\Experience;
-use App\Models\Language;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Url;
 use Livewire\WithFileUploads;
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class Configurations extends Component
 {
@@ -31,6 +32,8 @@ class Configurations extends Component
     public $realdocs = [];
 
     public $realdoc_id;
+
+    public string $password = "", $password_confirmation = "";
 
     public array $about_state = [];
 
@@ -85,6 +88,20 @@ class Configurations extends Component
         return redirect(route('candidate-space.configurations', ["config" => "a-propos"]))->with("success", __("Photo de profil modifiée avec succès."));
     }
 
+    public function savePassword()
+    {
+        $this->validate([
+            "password" => [
+                "required",
+                "confirmed",
+                Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
+            ],
+        ]);
+        Auth::guard("candidates")->user()->update(["password" => bcrypt($this->password)]);
+        $this->password = "";
+        $this->password_confirmation = "";
+        session()->flash('success', __('Mot de passe modifié avec succès.'));
+    }
 
     public function saveAbout()
     {
@@ -457,7 +474,7 @@ class Configurations extends Component
                 "link_form" => [],
                 "link_remove" => "",
             ];
-        }elseif($this->config == "langues"){
+        } elseif ($this->config == "langues") {
             $this->lang_state = [
                 "lang" => $user->languages?->toArray() ?? [],
                 "lang_form" => [

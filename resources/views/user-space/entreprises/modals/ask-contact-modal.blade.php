@@ -1,6 +1,6 @@
 <div class="modal fade text-left" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
     aria-hidden="true" wire:ignore.self>
-    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg  " role="document">
         <div class="modal-content border-top border-success rounded-lg" style="border-width: 8px !important">
             <div class="modal-header bg-white">
                 <h4 class="modal-title text-dark" id="myModalLabel33">

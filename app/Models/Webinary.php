@@ -14,8 +14,8 @@ class Webinary extends Model
     protected $fillable = [
         "title",
         "url",
-        "image",
-        "video",
+        "photo",
+        "movie",
         "datetime",
         "description",
     ];

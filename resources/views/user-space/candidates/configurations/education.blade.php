@@ -133,7 +133,7 @@
                                         <div class="modal fade text-left" wire:ignore.self id="confirmUpdate"
                                             tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
                                             aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-xs modal-dialog-scrollable"
+                                            <div class="modal-dialog modal-dialog-centered modal-xs  "
                                                 role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-dark">
@@ -292,7 +292,7 @@
                                     <div class="modal fade text-left" wire:ignore.self id="confirmUpdateOther"
                                         tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
                                         aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-xs modal-dialog-scrollable"
+                                        <div class="modal-dialog modal-dialog-centered modal-xs  "
                                             role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-dark">

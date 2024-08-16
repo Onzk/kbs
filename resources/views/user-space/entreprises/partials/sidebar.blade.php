@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item text-danger">
-                    <a href="{{ route('public.home.index') }}" class="text-danger sidebar-link">
+                    <a href="{{ route('logout') }}" class="text-danger sidebar-link">
                         <i class="text-danger" data-feather="log-out" width="20"></i>
                         <span class="text-danger">Se Déconnecter</span>
                     </a>

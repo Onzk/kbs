@@ -57,11 +57,15 @@ function load() {
 }
 let editor = load();
 
+function retreive(quilly){
+    alert(quilly);
+}
+
 document.addEventListener('livewire:init', () => {
     Livewire.on('quillReload', (event) => {
-        var qlEditor =  document.querySelectorAll('.ql-editor > p')[0]
+        var qlEditor =  document.querySelectorAll('.ql-editor')[0]
         var content = event[0]?.contents ?? "";
         var nHtml = (new DOMParser().parseFromString(content, 'text/html'));
-        qlEditor.innerHTML = nHtml.body.innerHTML
+        qlEditor.innerHTML = nHtml.body.innerHTML;
     });
 });
