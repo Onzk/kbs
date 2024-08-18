@@ -87,6 +87,7 @@
     <!-- Features Start -->
     @include('public.sections.kbs-why-us')
     <!-- Features End -->
+
     @if (!Auth::guard('candidates')->check())
         <!-- Contact Start -->
         <div class="container-xxl py-5" id="creer-un-compte">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,10 @@ class PublicController extends Controller
     public function blog()
     {
         return view('public.blog');
+    }
+    public function blog_show(Request $request, Post $post)
+    {
+        return view('public.blog-show', ["post" => $post]);
     }
     public function recruitment()
     {

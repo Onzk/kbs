@@ -57,7 +57,7 @@
                                     {{ __('Description') }}
                                 </label>
                                 <div wire:ignore
-                                    onkeypress="document.getElementById('confirmBtn').disabled = editor.getLength() < 30">
+                                    onkeyup="document.getElementById('confirmBtn').disabled = editor.getLength() < 30">
                                     <div id="full"></div>
                                 </div>
                             </div>
@@ -77,8 +77,7 @@
                                 <span class="d-none d-sm-block">Créer</span>
                             </button>
                         @else
-                            <button type="submit" wire:click="addOrUpdatePost" class="btn btn-warning ml-1"
-                                data-dismiss="modal" id="confirmBtn"
+                            <button type="submit" class="btn btn-warning ml-1" id="confirmBtn"
                                 wire:click="$set('model_form.description', editor.getLength() === 1 ? null : editor.container.querySelectorAll('.ql-editor')[0].innerHTML)">
                                 <span wire:ignore><i class="bx bx-check d-block d-sm-none"></i></span>
                                 <span class="d-none d-sm-block">Modifier</span>

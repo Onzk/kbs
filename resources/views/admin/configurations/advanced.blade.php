@@ -85,7 +85,7 @@
                                 {{ __('Politique de confidentialité') }}
                             </td>
                             <td>
-                                <textarea rows="40" id="candidate_privacy_policy" wire:model="config_form.candidate_privacy_policy"
+                                <textarea rows="10" id="candidate_privacy_policy" wire:model="config_form.candidate_privacy_policy"
                                     placeholder="{{ __('Valeur') }}" class="form-control"></textarea>
                             </td>
                         </tr>
@@ -94,7 +94,7 @@
                                 {{ __("Conditions d'Utilisation") }}
                             </td>
                             <td>
-                                <textarea rows="40" id="candidate_terms" wire:model="config_form.candidate_terms" placeholder="{{ __('Valeur') }}"
+                                <textarea rows="10" id="candidate_terms" wire:model="config_form.candidate_terms" placeholder="{{ __('Valeur') }}"
                                     class="form-control"></textarea>
                             </td>
                         </tr>
@@ -118,7 +118,7 @@
                                 {{ __('Politique de confidentialité') }}
                             </td>
                             <td>
-                                <textarea rows="40" id="entreprise_privacy_policy" wire:model="config_form.entreprise_privacy_policy"
+                                <textarea rows="10" id="entreprise_privacy_policy" wire:model="config_form.entreprise_privacy_policy"
                                     placeholder="{{ __('Valeur') }}" class="form-control"></textarea>
                             </td>
                         </tr>
@@ -127,7 +127,7 @@
                                 {{ __("Conditions d'Utilisation") }}
                             </td>
                             <td>
-                                <textarea rows="40" id="entreprise_terms" wire:model="config_form.entreprise_terms"
+                                <textarea rows="10" id="entreprise_terms" wire:model="config_form.entreprise_terms"
                                     placeholder="{{ __('Valeur') }}" class="form-control"></textarea>
                             </td>
                         </tr>
@@ -182,9 +182,13 @@
                             class="btn col-md-3 icon icon-left btn-primary">
                             Sauvegarder
                         </a>
-                        <div class="modal fade text-left" wire:ignore.self id="confirmSaveConfig" tabindex="-1"
+                        <button wire:click.prevent="reload" class="btn icon icon-left btn-light">
+                            Annuler
+                        </button>
+                    </div>
+                    <div class="modal fade text-left" wire:ignore.self id="confirmSaveConfig" tabindex="-1"
                             role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-xs  " role="document">
+                            <div class="modal-dialog modal-dialog-centered modal-xs" role="document">
                                 <form wire:submit="saveConfig" class="modal-content">
                                     <div class="modal-header bg-danger">
                                         <h4 class="modal-title text-white" id="myModalLabel33">
@@ -238,7 +242,7 @@
                                     <div class="modal-footer">
                                         <div wire:loading wire:target="saveConfig" class="btn" disabled
                                             style="pointer-events: none">
-                                            <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                            <div class="spinner-border spinner-border-sm text-danger" role="status">
                                             </div>
                                         </div>
                                         <div wire:loading.remove wire:target="saveConfig">
@@ -255,10 +259,6 @@
                                 </form>
                             </div>
                         </div>
-                        <button wire:click.prevent="reload" class="btn icon icon-left btn-light">
-                            Annuler
-                        </button>
-                    </div>
                 </div>
                 @include('components.alert')
             </div>

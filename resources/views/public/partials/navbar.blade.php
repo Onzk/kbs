@@ -100,7 +100,9 @@
                         réponses</a>
                     <a href="{{ route('public.media-news.blog') }}" @class([
                         'dropdown-item',
-                        'active' => Route::is('public.media-news.blog'),
+                        'active' =>
+                            Route::is('public.media-news.blog') ||
+                            Route::is('public.media-news.blog-show'),
                     ])>Blog</a>
                 </div>
             </div>

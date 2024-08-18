@@ -32,7 +32,7 @@ class Configurations extends Component
 
     public array $config_form = [];
 
-    public string $current_model = "", $current_id = "";
+    public string $current_model = "", $current_id = "", $current_show_comment_id = "";
 
     #[Url(keep: true)]
     public $tab = 0;
@@ -78,6 +78,19 @@ class Configurations extends Component
         $user->update(["photo" => $path]);
         $user->refresh();
         return redirect(route('admin-space.configurations', ["config" => "profil"]))->with("success", __("Photo de profil modifiée avec succès."));
+    }
+
+    public function deleteComment($id)
+    {
+        $model = $this->current_model::find($this->current_show_comment_id);
+        if ($model)
+        {
+            $comments = $model->get_comments();
+            unset($comments[$id]);
+            $model->update(["comments" => json_encode(array_values($comments), true)]);
+            $model->refresh();
+            session()->flash('success', 'Commentaire supprimé avec succès');
+        }
     }
 
     public function updatedModelPhoto()
@@ -178,8 +191,9 @@ class Configurations extends Component
         {
             Validator::make($this->model_form, [
                 "title" => "required|min:4|max:120|unique:posts,title,{$model->id},id",
-                "description" => "required",
+                "description" => "required|min:4",
             ])->validate();
+
             $model->update($this->model_form);
             session()->flash('success', __('Modification effectuée avec succès.'));
         } else
@@ -268,9 +282,10 @@ class Configurations extends Component
             {
                 Config::firstWhere("label", $label)?->update(["value" => $value]);
             }
-            session()->flash('success', 'Configurations sauvegardées avec succès.');
-            return;
+            return redirect(route('admin-space.configurations', ["config" => "advanced"]))
+                ->with("success", __("Configurations sauvegardées avec succès."));
         }
+        $this->password = "";
         session()->flash('error', 'Mot de passe erronné.');
     }
 

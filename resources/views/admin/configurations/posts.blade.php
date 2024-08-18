@@ -61,7 +61,7 @@
                     <tbody class="text-center fw-bold text-dark">
                         @forelse ($models as $model)
                             <tr>
-                                <td class="py-1" style="width: 100px">
+                                <td class="p-0" style="width: 100px">
                                     @if ($model->id == $current_id)
                                         <div wire:loading wire:target="model_photo"
                                             class="py-2 mx-0 pagination rounded w-100 text-center"
@@ -75,8 +75,9 @@
                                         <label for="photo{{ $model->id }}"
                                             wire:click="$set('current_id', '{{ $model->id }}')"
                                             style="cursor: pointer">
-                                            <img src="{{ asset($model->photo) . '?' . rand() }}" class="rounded-circle"
-                                                style="width: 50px; height: 50px; object-fit: cover" alt="image" />
+                                            <img src="{{ asset($model->photo) . '?' . rand() }}" class=""
+                                                style="width: 250px; height: 150px; object-fit: contain"
+                                                alt="image" />
                                         </label>
                                         <input type="file" accept="image/*" hidden wire:model.live="model_photo"
                                             id="photo{{ $model->id }}" />
@@ -128,8 +129,7 @@
                                             </svg>
                                         </button>
                                         <button type="button" class="px-2 btn btn-primary btn-group"
-                                            data-toggle="modal" data-target="#showComments"
-                                            wire:click="$set('current_id', '{{ $model->id }}')">
+                                        wire:click="$set('current_show_comment_id', '{{ $model->id == $current_show_comment_id ? "" : $model->id }}')">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -142,6 +142,74 @@
                                     </div>
                                 </td>
                             </tr>
+                            @if ($model->id == $current_show_comment_id)
+                                <tr class="border-bottom border py-0">
+                                <tr class="bg-primary text-white text-center">
+                                    <th class="py-1 bg-transparent"></th>
+                                    <th class="py-1">Nom & Prénoms</th>
+                                    <th class="py-1">Email</th>
+                                    <th class="py-1">Contenu</th>
+                                    <th class="py-1">Action</th>
+                                </tr>
+                                @forelse ($model->get_comments() as $index => $comment)
+                                    <tr>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-corner-down-right">
+                                                <polyline points="15 10 20 15 15 20"></polyline>
+                                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                                            </svg>
+                                        </td>
+                                        <td>{{ $comment['lastname'] . ' ' . $comment['firstname'] }}</td>
+                                        <td>{{ $comment['email'] }}</td>
+                                        <td>{{ $comment['content'] }}</td>
+                                        <td>
+                                            <div class="btn-group rounded-lg dropup">
+                                                <button type="button" class="btn btn-danger rounded icon"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-trash-2">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                        <path
+                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                        </path>
+                                                        <line x1="10" y1="11" x2="10"
+                                                            y2="17">
+                                                        </line>
+                                                        <line x1="14" y1="11" x2="14"
+                                                            y2="17">
+                                                        </line>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="px-2 py-2 pt-0 text-center">
+                                                        <div class="form-group text-dark fw-bold">
+                                                            {{ __('Voulez-vous vraiment supprimer ce commentaire ?') }}
+                                                        </div>
+                                                        <button type="button"
+                                                            wire:click="deleteComment('{{ $index }}')"
+                                                            class="btn btn-danger btn-sm">Confirmer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="32">
+                                            <span class="fw-bold text-center">
+                                                {{ __('Aucun commentaire pour le moment') }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforelse
+                                </tr>
+                            @endif
                         @empty
                             <tr>
                                 <td colspan="30" class="text-center">
@@ -160,7 +228,7 @@
             </div>
         </div>
     </section>
-    @include('admin.modals.post-show-comments-modal')
+    {{-- @include('admin.modals.post-show-comments-modal') --}}
     @include('admin.modals.post-form-modal')
     <script src="{{ asset('assets/user-space/vendors/quill/quill.min.js') }}"></script>
     <script src="{{ asset('assets/user-space/js/pages/form-editor.js') }}"></script>

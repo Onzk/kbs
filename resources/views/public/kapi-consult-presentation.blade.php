@@ -198,21 +198,23 @@
     </div>
     <!-- Features End -->
 
-     <!-- Team Start -->
-     <div class="section md-padding">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Experts</h1>
-                <p class="text-primary fs-5 mb-5">Nos Experts De Chez KAPI Consult</p>
-            </div>
-            <div class="row mx-4">
-                @for ($i = 0; $i < 3; $i++)
-                    @include('public.components.team')
-                @endfor
+    @if (count($experts = \App\Models\Expert::all()))
+        <!-- Team Start -->
+        <div class="section md-padding">
+            <div class="container">
+                <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-6">Experts</h1>
+                    <p class="text-primary fs-5 mb-5">Nos Experts De Chez KAPI Consult</p>
+                </div>
+                <div class="row justify-content-center mx-4">
+                    @foreach ($experts as $model)
+                        @include('public.components.team')
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Team End -->
+        <!-- Team End -->
+    @endif
 
     <!-- Contact Start -->
     @include('public.sections.kapi-contact')

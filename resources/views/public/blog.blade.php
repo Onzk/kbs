@@ -28,12 +28,25 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">Blog</h1>
-                <p class="text-primary fs-5 mb-5">Nos Posts Les Plus Récents</p>
+                <p class="text-primary fs-5 mb-5">Nos Articles Les Plus Récents</p>
             </div>
             <div class="row col-md-8 mx-auto">
-                @for ($i = 0; $i < 3; $i++)
+                @forelse (\App\Models\Post::all()->reverse() as $model)
                     @include('public.components.post')
-                @endfor
+                @empty
+                    <span class="text-center fw-bold text-dark my-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-hash">
+                            <line x1="4" y1="9" x2="20" y2="9"></line>
+                            <line x1="4" y1="15" x2="20" y2="15"></line>
+                            <line x1="10" y1="3" x2="8" y2="21"></line>
+                            <line x1="16" y1="3" x2="14" y2="21"></line>
+                        </svg>
+                        <br><br>
+                        {{ __('Aucun article enregistré pour le moment.') }}
+                    </span>
+                @endforelse
             </div>
         </div>
     </div>

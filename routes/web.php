@@ -2,11 +2,12 @@
 
 use App\Http\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Public\DetailBlog;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
-use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
+use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\SearchPage as EntreprisesSearchPage;
 use App\Http\Livewire\UserSpace\Candidates\ContractPage as CandidatesContractPage;
@@ -37,6 +38,7 @@ Route::controller(PublicController::class)->name("public.")->prefix("/")->group(
             Route::get("/webinaires", "webinaries")->name("webinaries");
             Route::get("/questions-réponses", "questions")->name("questions");
             Route::get("/blog", "blog")->name("blog");
+            Route::get("/blog/details/{post:title}", "blog_show")->name("blog-show");
         });
         Route::get("/recrutement", "recruitment")->name("recruitment");
         Route::get("/faqs", "faqs")->name("faqs");

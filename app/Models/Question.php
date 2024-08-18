@@ -19,4 +19,9 @@ class Question extends Model
         "description",
         "answer",
     ];
+
+    public function fullname(): string
+    {
+        return $this->firstname . " " . strtoupper($this->lastname);
+    }
 }

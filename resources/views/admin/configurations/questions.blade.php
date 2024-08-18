@@ -56,14 +56,33 @@
                             <th class="">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="fw-bold">
+                    <tbody class="fw-bold text-center">
                         @forelse ($models as $model)
                             <tr>
-                                <td class="py-1">{{ $model->lastname . " " . $model->firstname }}</td>
+                                <td class="py-1">{{ $model->lastname . ' ' . $model->firstname }}</td>
                                 <td class="py-1">{{ $model->email }}</td>
                                 <td class="py-1">{{ $model->title }}</td>
                                 <td class="py-1">{{ $model->description }}</td>
-                                <td class="py-1">{{ $model->answer }}</td>
+                                @if ($model->answer)
+                                    <td class="py-1">{{ $model->answer }}</td>
+                                @else
+                                    <td class="py-1">
+                                        <a href="#" data-toggle="modal" data-target="#addOrUpdateModal"
+                                            wire:click="$set('current_id', '{{ $model->id }}')"
+                                            class="text-primary fw-bold d-flex justify-content-center align-items-center"
+                                            style="text-decoration: underline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-arrow-down-right">
+                                                <line x1="7" y1="7" x2="17" y2="17">
+                                                </line>
+                                                <polyline points="17 7 17 17 7 17"></polyline>
+                                            </svg>
+                                            {{ __('Répondre') }}
+                                        </a>
+                                    </td>
+                                @endif
                                 <td class="py-1" style="width: 150px;">
                                     <div class="d-inline-block w-100">
                                         <div class="btn-group rounded-lg dropup">
@@ -113,7 +132,7 @@
                         @empty
                             <tr>
                                 <td colspan="30" class="text-center">
-                                    <span class="fw-bold">{{ __("Aucune question-réponse trouvée") }}</span>
+                                    <span class="fw-bold">{{ __('Aucune question-réponse trouvée') }}</span>
                                 </td>
                             </tr>
                         @endforelse
@@ -128,4 +147,5 @@
             </div>
         </div>
     </section>
+    @include('admin.modals.question-form-modal')
 </div>

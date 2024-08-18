@@ -4,7 +4,7 @@
         <h3 class="text-primary">Tableau de Bord</h3>
         <p class="text-subtitle text-muted">Bon retour sur l'espace administrateur de {{ config('app.name') }}.</p>
     </div>
-    <section class="section" wire:poll>
+    <section class="section">
         <div class="page-title mt-4">
             <p class="text-muted fw-bold">Statistiques principales</p>
         </div>
@@ -207,10 +207,8 @@
                 <div class="card-body">
                     @if (count($webinaries = \App\Models\Webinary::latest()->take(10)->get()))
                         <div class="row m-1">
-                            @foreach ($webinaries as $webinary)
-                                <div class="col-md-6 col-12">
-                                    @include('public.components.webinary')
-                                </div>
+                            @foreach ($webinaries as $model)
+                                @include('public.components.webinary')
                             @endforeach
                         </div>
                     @else
@@ -248,7 +246,7 @@
                 <div class="card-body">
                     @if (count($posts = \App\Models\Post::latest()->take(10)->get()))
                         <div class="row m-1">
-                            @foreach ($posts as $post)
+                            @foreach ($posts as $model)
                                 <div class="col-md-6 col-12">
                                     @include('public.components.post')
                                 </div>

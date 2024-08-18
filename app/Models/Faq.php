@@ -15,4 +15,9 @@ class Faq extends Model
         "question",
         "answer",
     ];
+
+    public static function allValids()
+    {
+        return static::all()->filter(fn($e) => strlen(trim($e->answer)));
+    }
 }

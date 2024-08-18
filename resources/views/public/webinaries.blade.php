@@ -29,41 +29,22 @@
                 <h1 class="display-6">Webinaires</h1>
                 <p class="text-primary fs-5 mb-5">Nos Webinaires Les Plus Récents</p>
             </div>
-            <div class="row mx-4">
+            <div class="row justify-content-center mx-4">
                 <div class="card-group">
-                    @for ($i = 0; $i < 3; $i++)
+                    @forelse (\App\Models\Webinary::all() as $model)
                         @include('public.components.webinary')
-                    @endfor
-                </div>
-                <div class="card-group">
-                    @for ($i = 0; $i < 3; $i++)
-                        <div class="card hover-scale wow fadeInUp mb-4" data-wow-delay="0.2s">
-                            <div class="embed-responsive embed-responsive-item embed-responsive-16by9">
-                                <iframe src="https://www.youtube.com/embed/1La4QzGeaaQ" width="100%" height="300px"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Présentation de KBS - <span class="fw-bold text-primary"
-                                        style="font-size: 16px">24 Juin 2024 11H00</span></h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer...</p>
-                                <p class="card-text text-primary link">
-                                    <a href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="text-primary"
-                                            style="width: 20px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                                        </svg>
-                                        S'inscrire
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="card-footer bg-primary">
-                                <small class="text-white">Il y a 10min</small>
-                            </div>
-                        </div>
-                    @endfor
+                    @empty
+                        <span class="text-center fw-bold text-dark my-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-video">
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                            <br><br>
+                            {{ __('Aucun Webinaire enregistré pour le moment.') }}
+                        </span>
+                    @endforelse
                 </div>
             </div>
         </div>
