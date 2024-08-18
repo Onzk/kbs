@@ -119,9 +119,9 @@
                                 <span class="d-none d-sm-block">Modifier</span>
                             </button>
                         @endif
-                        <button type="reset" class="btn btn-light-secondary">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-light-secondary">
                             <span wire:ignore><i class="bx bx-x d-block d-sm-none"></i></span>
-                            <span class="d-none d-sm-block">Effacer</span>
+                            <span class="d-none d-sm-block">Annuler</span>
                         </button>
                     </div>
                 </div>
