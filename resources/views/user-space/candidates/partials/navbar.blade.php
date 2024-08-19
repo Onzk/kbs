@@ -10,9 +10,7 @@
                 <a href="{{ route('candidate-space.discussions') }}" class="nav-link mt-2 nav-link-lg nav-link-user">
                     <div class="d-lg-inline-block avatar">
                         <i data-feather="mail" style="height: 30px; width: 30px"></i>
-                        @if ($_user->has_new_messages())
-                            <span class="avatar-status pulse"></span>
-                        @endif
+                        <livewire:components.chat-badge :user="$_user" />
                     </div>
                 </a>
             </li>

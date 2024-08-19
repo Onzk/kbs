@@ -15,6 +15,7 @@ class CandidateRegister extends Component
 {
     public array $state = [
         "domain"  => "Administration",
+        "country" => "Togo",
     ];
 
     public int $step = 0;

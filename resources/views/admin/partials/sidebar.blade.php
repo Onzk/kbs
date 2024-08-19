@@ -8,9 +8,7 @@
                 <li class="sidebar-title">Menus Principaux</li>
                 <li @class([
                     'sidebar-item',
-                    'active' =>
-                        Route::is('admin-space.home') ||
-                        Route::is('admin-space.index'),
+                    'active' => Route::is('admin-space.home') || Route::is('admin-space.index'),
                 ])>
                     <a href="{{ route('admin-space.home') }}" class="sidebar-link">
                         <i data-feather="activity" width="20"></i>
@@ -19,11 +17,16 @@
                 </li>
                 <li @class([
                     'sidebar-item',
-                    'active' => Route::is('candidate-space.discussions'),
+                    'active' => Route::is('admin-space.discussions'),
                 ])>
-                    <a href="{{ route('candidate-space.discussions') }}" class="sidebar-link">
+                    <a href="{{ route('admin-space.discussions') }}" class="sidebar-link">
                         <i data-feather="message-circle" width="20"></i>
-                        <span>Discussions</span>
+                        <span class="d-flex w-100 justify-content-between align-items-center">
+                            <span class="col">
+                                Discussions
+                            </span>
+                            <livewire:components.chat-badge :user="$_user" :simple="false" />
+                        </span>
                     </a>
                 </li>
                 <li @class([
@@ -59,11 +62,10 @@
                     'active' =>
                         url()->current() ==
                         route('admin-space.configurations', [
-                            'config' => 'experts',
+                            'config' => 'experts-kapi',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'experts']) }}"
-                        class="sidebar-link">
+                    <a href="{{ route('admin-space.configurations', ['config' => 'experts-kapi']) }}" class="sidebar-link">
                         <i data-feather="user-check" width="20"></i>
                         <span>Experts KAPI</span>
                     </a>
@@ -73,10 +75,10 @@
                     'active' =>
                         url()->current() ==
                         route('admin-space.configurations', [
-                            'config' => 'webinaries',
+                            'config' => 'webinaires',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'webinaries']) }}"
+                    <a href="{{ route('admin-space.configurations', ['config' => 'webinaires']) }}"
                         class="sidebar-link">
                         <i data-feather="airplay" width="20"></i>
                         <span>Webinaires</span>
@@ -90,8 +92,7 @@
                             'config' => 'faqs',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'faqs']) }}"
-                        class="sidebar-link">
+                    <a href="{{ route('admin-space.configurations', ['config' => 'faqs']) }}" class="sidebar-link">
                         <i data-feather="info" width="20"></i>
                         <span>FAQs</span>
                     </a>
@@ -115,11 +116,10 @@
                     'active' =>
                         url()->current() ==
                         route('admin-space.configurations', [
-                            'config' => 'posts',
+                            'config' => 'blog',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'posts']) }}"
-                        class="sidebar-link">
+                    <a href="{{ route('admin-space.configurations', ['config' => 'blog']) }}" class="sidebar-link">
                         <i data-feather="hash" width="20"></i>
                         <span>Blog</span>
                     </a>
@@ -132,8 +132,7 @@
                             'config' => 'advanced',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'advanced']) }}"
-                        class="sidebar-link">
+                    <a href="{{ route('admin-space.configurations', ['config' => 'advanced']) }}" class="sidebar-link">
                         <i data-feather="command" width="20"></i>
                         <span>Avancées</span>
                     </a>
@@ -153,8 +152,7 @@
                             'config' => 'profil',
                         ]),
                 ])>
-                    <a href="{{ route('admin-space.configurations', ['config' => 'profil']) }}"
-                        class="sidebar-link">
+                    <a href="{{ route('admin-space.configurations', ['config' => 'profil']) }}" class="sidebar-link">
                         <i data-feather="user" width="20"></i>
                         <span>Profil</span>
                     </a>

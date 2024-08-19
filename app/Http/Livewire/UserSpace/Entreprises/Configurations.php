@@ -61,6 +61,7 @@ class Configurations extends Component
         Auth::guard("entreprises")->user()->refresh();
         return redirect(route('entreprise-space.configurations', ["config" => "a-propos"]))->with("success", __("Photo de profil modifiée avec succès."));
     }
+
     public function updatedMovie()
     {
         if (!Str::endsWith(strtolower($this->movie->getRealPath()), ["mp4", "avi"])) {
@@ -204,6 +205,7 @@ class Configurations extends Component
             ];
         }
     }
+
     public function render()
     {
         return view(".user-space.entreprises.configurations." . $this->roadmap[$this->config])

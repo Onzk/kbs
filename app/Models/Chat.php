@@ -26,9 +26,14 @@ class Chat extends Model
 
     public function at()
     {
-        return $this->created_at->diffInDays() >= 1
+        return $this->created_at->diffInDays() <= 5
             ? $this->created_at->locale('fr')->diffForHumans()
             : $this->created_at;
+    }
+
+    public function is_new()
+    {
+        return $this->updated_at->diffInSeconds() < 60 and $this->readed;
     }
 
     public function user(): BelongsTo

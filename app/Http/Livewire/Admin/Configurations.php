@@ -34,9 +34,6 @@ class Configurations extends Component
 
     public string $current_model = "", $current_id = "", $current_show_comment_id = "";
 
-    #[Url(keep: true)]
-    public $tab = 0;
-
 
     #[Url(except: "")]
     public $search = "";
@@ -45,11 +42,11 @@ class Configurations extends Component
 
     public array $roadmap = [
         "profil" => "profil",
-        "experts" => "experts",
+        "experts-kapi" => "experts",
         "faqs" => "faqs",
         "questions" => "questions",
-        "webinaries" => "webinaries",
-        "posts" => "posts",
+        "webinaires" => "webinaries",
+        "blog" => "posts",
         "advanced" => "advanced",
     ];
 
@@ -264,16 +261,6 @@ class Configurations extends Component
         }
     }
 
-    public function toggleDelete($id, $state, $key)
-    {
-        $remove = trim(($this->$state)[$key] ?? "");
-        if (str_contains($remove, $id))
-            ($this->$state)[$key] = str_replace($id, "", $remove);
-        else
-            ($this->$state)[$key] .= " $id";
-        ($this->$state)[$key] = trim(($this->$state)[$key]);
-    }
-
     public function saveConfig()
     {
         if (Hash::check($this->password, Auth::user()->getAuthPassword()))
@@ -288,7 +275,6 @@ class Configurations extends Component
         $this->password = "";
         session()->flash('error', 'Mot de passe erronné.');
     }
-
 
     public function loadData()
     {
@@ -305,7 +291,7 @@ class Configurations extends Component
 
     public function reload()
     {
-        if ($this->config == "experts")
+        if ($this->config == "experts-kapi")
         {
             $this->current_model = Expert::class;
         } elseif ($this->config == "faqs")
@@ -314,10 +300,10 @@ class Configurations extends Component
         } elseif ($this->config == "questions")
         {
             $this->current_model = Question::class;
-        } elseif ($this->config == "webinaries")
+        } elseif ($this->config == "webinaires")
         {
             $this->current_model = Webinary::class;
-        } elseif ($this->config == "posts")
+        } elseif ($this->config == "blog")
         {
             $this->current_model = Post::class;
             $this->dispatch("quillReload", ["contents" => ""]);
@@ -352,11 +338,11 @@ class Configurations extends Component
             ->layoutData([
                 "admin_space_title" => [
                     "profil" => "Profil",
-                    "experts" => "Experts KAPI",
+                    "experts-kapi" => "Experts KAPI",
                     "faqs" => "FAQs",
                     "questions" => "Questions Réponses",
-                    "webinaries" => "Webinaires",
-                    "posts" => "Blog",
+                    "webinaires" => "Webinaires",
+                    "blog" => "Blog",
                     "advanced" => "Avancées",
                 ][$this->config],
             ]);

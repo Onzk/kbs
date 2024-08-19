@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-body pt-0 bg-grey" id="box" style="height: 70vh; overflow-y: auto">
                     <div class="chat-content pb-4">
-                        @forelse ($_user->messages() as $model)
+                        @forelse ($_user->messages(true) as $model)
                             @if ($model->user_id == null)
                                 <div class="chat my-4">
                                     <div class="chat-body">
@@ -33,7 +33,7 @@
                                             <p>
                                                 {{ $model->content }}
                                             </p>
-                                            <span class='text-xs' style="font-weight: bold">
+                                            <span class='text-xs text-dark border-bottom'>
                                                 {{ $model->at() }} -
                                                 @if ($model->readed)
                                                     <span class="fw-bold text-success">vu</span>
@@ -51,10 +51,10 @@
                                             <p>
                                                 {{$model->content}}
                                             </p>
-                                            <span class='text-xs' style="font-weight: bold">
-                                                {{ $model->at() }} -
-                                                @if ($model->readed)
-                                                    <span class="fw-bold text-success">nouveau</span>
+                                            <span class='text-xs border-bottom'>
+                                                {{ $model->at() }}
+                                                @if ($model->is_new())
+                                                    - <span class="fw-bold text-success">nouveau</span>
                                                 @endif
                                             </span>
                                         </div>
@@ -82,16 +82,16 @@
                 <div class="card-footer px-0">
                     <form wire:submit="send" class="px-4 input-group d-flex flex-direction-column align-items-center">
                         <div class="d-flex flex-grow-1">
-                            <input type="text" required wire:model="message" min="1"
-                                class="form-control form-control-lg fw-bold"
+                            <input type="text" required wire:model="message" minlength="1"
+                                class="form-control" style="font-size: 16px"
                                 placeholder="{{ __('Entrez votre message') }}...">
                         </div>
-                        <button type="submit" class="btn btn-icon btn-lg btn-primary" wire:loading.disabled
+                        <button type="submit" class="btn py-2 mx-2 rounded btn-icon btn-primary" wire:loading.disabled
                             wire:target="send">
                             <div class="spinner-border spinner-border-sm text-white" wire:loading wire:target="send"
                                 role="status"></div>
                             <svg xmlns="http://www.w3.org/2000/svg" style="width: 30px" wire:loading.remove
-                                wire:target="send" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                wire:target="send" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                 stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />

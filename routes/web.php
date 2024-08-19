@@ -6,6 +6,7 @@ use App\Http\Livewire\Public\DetailBlog;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
+use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
 use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
@@ -93,5 +94,6 @@ Route::middleware(["auth:web"])
             Route::get("/", AdminHomePage::class)->name("index");
             Route::get("/home", AdminHomePage::class)->name("home");
             Route::get("/configurations/{config}", AdminConfigurations::class)->name("configurations");
+            Route::get("/discussions", AdminDiscussionsPage::class)->name("discussions");
         }
     );

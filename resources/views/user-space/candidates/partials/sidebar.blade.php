@@ -24,7 +24,12 @@
                 ])>
                     <a href="{{ route('candidate-space.discussions') }}" class="sidebar-link">
                         <i data-feather="message-circle" width="20"></i>
-                        <span>Discussions</span>
+                        <span class="d-flex w-100 justify-content-between align-items-center">
+                            <span class="col">
+                                Discussions
+                            </span>
+                            <livewire:components.chat-badge :user="$_user" :simple="false" />
+                        </span>
                     </a>
                 </li>
                 <li @class([

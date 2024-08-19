@@ -56,6 +56,11 @@ class Entreprise extends Authenticatable
         ];
     }
 
+    public function fullname(): string
+    {
+        return $this->name;
+    }
+
     public function get_links(): array
     {
         return json_decode($this->links ?? '[]', true);
@@ -63,12 +68,27 @@ class Entreprise extends Authenticatable
 
     public function has_new_messages(): bool
     {
-        return count($this->messages()->where(["readed", false], ["user_id", "!=", null])->toArray()) > 0;
+        return $this->count_new_messages() > 0;
     }
 
-    public function messages()
+    public function count_new_messages(): int
     {
-        return $this->chats()->where("entreprise_id", $this->id)->get();
+        return $this->messages()->where(["readed", false], ["user_id", "!=", null])->count();
+    }
+
+    public function get_last_message()
+    {
+        return $this->chats->reverse()->first();
+    }
+
+    public function messages($make_readed = false)
+    {
+        $chats = $this->chats()->where("entreprise_id", $this->id);
+        if($make_readed){
+            (clone $chats)->where("readed", false)->whereNull("user_id")
+            ->each(fn($m) => $m->update(["readed" => true]));
+        }
+        return $chats->get();
     }
 
     public function positions(): HasMany

@@ -60,12 +60,36 @@ class User extends Authenticatable
 
     public function has_new_messages(): bool
     {
-        return count($this->messages()->where(["readed", false], ["user_id", null])->toArray()) > 0;
+        return $this->count_new_messages() > 0;
+    }
+
+    public function count_new_messages(): int
+    {
+        return Chat::all()->whereNull("user_id")->where("readed", false)->count();
+    }
+
+    public function count_new_messages_from(string $key, $value): int
+    {
+        return Chat::all()
+            ->whereNull("user_id")
+            ->where("readed", false)
+            ->where("{$key}_id", $value)
+            ->count();
+    }
+
+    public function count_new_messages_from_category(string $key): int
+    {
+        return Chat::all()
+            ->whereNull("user_id")
+            ->where("readed", false)
+            ->whereNotNull("{$key}_id")
+            ->groupBy("{$key}_id")
+            ->count();
     }
 
     public function messages()
     {
-        return $this->chats()->where("user_id", $this->id)->get();
+        return $this->chats()->whereNull("user_id")->get();
     }
 
     public function chats(): HasMany
