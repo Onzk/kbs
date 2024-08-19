@@ -48,101 +48,103 @@
                         </button>
                     </div>
                 </div>
-                <table class="table mb-0 border-bottom table-bordered table-striped shadow-md">
-                    <thead class="bg-primary text-white pt-2 border border-dark text-center">
-                        <tr>
-                            <th class="">Photo</th>
-                            <th class="">Nom & Prénoms</th>
-                            <th class="">Spécialité</th>
-                            <th class="">Facebook</th>
-                            <th class="">Linkedin</th>
-                            <th class="">Tweeter</th>
-                            <th class="">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center fw-bold text-dark">
-                        @forelse ($models as $model)
+                <div class="table-responsive">
+                    <table class="table mb-0 border-bottom table-bordered table-striped shadow-md">
+                        <thead class="bg-primary text-white pt-2 border border-dark text-center">
                             <tr>
-                                <td class="py-1" style="width: 100px">
-                                    @if ($model->id == $current_id)
-                                        <div wire:loading wire:target="model_photo"
-                                            class="py-2 mx-0 pagination rounded w-100 text-center" style="width: 50px; height: 50px; object-fit: cover">
-                                            <div class="spinner-border text-primary"
-                                                role="status">
+                                <th class="">Photo</th>
+                                <th class="">Nom & Prénoms</th>
+                                <th class="">Spécialité</th>
+                                <th class="">Facebook</th>
+                                <th class="">Linkedin</th>
+                                <th class="">Tweeter</th>
+                                <th class="">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center fw-bold text-dark">
+                            @forelse ($models as $model)
+                                <tr>
+                                    <td class="py-1" style="width: 100px">
+                                        @if ($model->id == $current_id)
+                                            <div wire:loading wire:target="model_photo"
+                                                class="py-2 mx-0 pagination rounded w-100 text-center" style="width: 50px; height: 50px; object-fit: cover">
+                                                <div class="spinner-border text-primary"
+                                                    role="status">
+                                                </div>
                                             </div>
+                                        @endif
+                                        <div @if ($model->id == $current_id) wire:loading.remove wire:target="model_photo" @endif>
+                                            <label for="photo{{ $model->id }}"
+                                                wire:click="$set('current_id', '{{ $model->id }}')"
+                                                style="cursor: pointer">
+                                                <img src="{{ asset($model->photo) . '?' . rand() }}" class="rounded-circle"
+                                                    style="width: 50px; height: 50px; object-fit: cover" alt="image" />
+                                            </label>
+                                            <input type="file" accept="image/*" hidden wire:model.live="model_photo"
+                                                id="photo{{ $model->id }}" />
                                         </div>
-                                    @endif
-                                    <div @if ($model->id == $current_id) wire:loading.remove wire:target="model_photo" @endif>
-                                        <label for="photo{{ $model->id }}"
-                                            wire:click="$set('current_id', '{{ $model->id }}')"
-                                            style="cursor: pointer">
-                                            <img src="{{ asset($model->photo) . '?' . rand() }}" class="rounded-circle"
-                                                style="width: 50px; height: 50px; object-fit: cover" alt="image" />
-                                        </label>
-                                        <input type="file" accept="image/*" hidden wire:model.live="model_photo"
-                                            id="photo{{ $model->id }}" />
-                                    </div>
-                                </td>
-                                <td class="py-1">{{ $model->fullname() }}</td>
-                                <td class="py-1">{{ $model->speciality }}</td>
-                                <td class="py-1">{{ $model->facebook ?? '-' }}</td>
-                                <td class="py-1">{{ $model->linkedin ?? '-' }}</td>
-                                <td class="py-1">{{ $model->tweeter ?? '-' }} </td>
-                                <td class="py-1" style="width: 150px;">
-                                    <div class="d-inline-block w-100">
-                                        <div class="btn-group rounded-lg dropup">
-                                            <button type="button" class="btn btn-danger rounded icon"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </td>
+                                    <td class="py-1">{{ $model->fullname() }}</td>
+                                    <td class="py-1">{{ $model->speciality }}</td>
+                                    <td class="py-1">{{ $model->facebook ?? '-' }}</td>
+                                    <td class="py-1">{{ $model->linkedin ?? '-' }}</td>
+                                    <td class="py-1">{{ $model->tweeter ?? '-' }} </td>
+                                    <td class="py-1" style="width: 150px;">
+                                        <div class="d-inline-block w-100">
+                                            <div class="btn-group rounded-lg dropup">
+                                                <button type="button" class="btn btn-danger rounded icon"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-trash-2">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                        <path
+                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                        </path>
+                                                        <line x1="10" y1="11" x2="10"
+                                                            y2="17">
+                                                        </line>
+                                                        <line x1="14" y1="11" x2="14"
+                                                            y2="17">
+                                                        </line>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="px-2 py-2 pt-0 text-center">
+                                                        <div class="form-group text-dark fw-bold">
+                                                            {{ __('Voulez-vous vraiment supprimer cet élément ?') }}
+                                                        </div>
+                                                        <button type="button"
+                                                            wire:click="deleteModel('{{ $model->id }}')"
+                                                            class="btn btn-danger btn-sm">Confirmer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="px-2 btn btn-warning btn-group"
+                                                data-toggle="modal" data-target="#addOrUpdateModal"
+                                                wire:click="$set('current_id', '{{ $model->id }}')">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-trash-2">
-                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                    <path
-                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                    class="feather feather-edit-2">
+                                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
                                                     </path>
-                                                    <line x1="10" y1="11" x2="10"
-                                                        y2="17">
-                                                    </line>
-                                                    <line x1="14" y1="11" x2="14"
-                                                        y2="17">
-                                                    </line>
                                                 </svg>
                                             </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="px-2 py-2 pt-0 text-center">
-                                                    <div class="form-group text-dark fw-bold">
-                                                        {{ __('Voulez-vous vraiment supprimer cet élément ?') }}
-                                                    </div>
-                                                    <button type="button"
-                                                        wire:click="deleteModel('{{ $model->id }}')"
-                                                        class="btn btn-danger btn-sm">Confirmer</button>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <button type="button" class="px-2 btn btn-warning btn-group"
-                                            data-toggle="modal" data-target="#addOrUpdateModal"
-                                            wire:click="$set('current_id', '{{ $model->id }}')">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-edit-2">
-                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
-                                                </path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="30" class="text-center">
-                                    <span class="fw-bold">{{ __("Aucun expert KAPI trouvé") }}</span>
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="30" class="text-center">
+                                        <span class="fw-bold">{{ __("Aucun expert KAPI trouvé") }}</span>
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
                 @if (strlen(trim($search)) >= 15)
                     <div class="p-4 pb-2">
                         {{ $models->links() }}

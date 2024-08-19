@@ -51,11 +51,14 @@ class DiscussionsPage extends Component
     public function loadData()
     {
         $models = $this->class_map[$this->tab]::all()
+            ->forget("chats")
             ->sortBy(fn($m) => $m->get_last_message()?->created_at, descending: true);
         if (strlen(trim($this->search)))
         {
             return $models->filter(function ($model) {
-                $model_string = join(" ", array_values($model->toArray()));
+                $values = $model->toArray();
+                unset($values["chats"]);
+                $model_string = join(" ", array_values($values));
                 return Str::contains(strtolower($model_string), explode(" ", strtolower(trim($this->search))));
             });
         }

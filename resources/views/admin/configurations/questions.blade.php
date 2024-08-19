@@ -45,99 +45,101 @@
                         </button>
                     </div>
                 </div>
-                <table class="table mb-0 border-bottom table-bordered table-striped shadow-md">
-                    <thead class="bg-primary text-white pt-2 border border-dark text-center">
-                        <tr>
-                            <th class="">Nom & Prénoms</th>
-                            <th class="">Adresse mail</th>
-                            <th class="">Libellé</th>
-                            <th class="">Description</th>
-                            <th class="">Réponse</th>
-                            <th class="">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fw-bold text-center">
-                        @forelse ($models as $model)
+                <div class="table-responsive">
+                    <table class="table mb-0 border-bottom table-bordered table-striped shadow-md">
+                        <thead class="bg-primary text-white pt-2 border border-dark text-center">
                             <tr>
-                                <td class="py-1">{{ $model->lastname . ' ' . $model->firstname }}</td>
-                                <td class="py-1">{{ $model->email }}</td>
-                                <td class="py-1">{{ $model->title }}</td>
-                                <td class="py-1">{{ $model->description }}</td>
-                                @if ($model->answer)
-                                    <td class="py-1">{{ $model->answer }}</td>
-                                @else
-                                    <td class="py-1">
-                                        <a href="#" data-toggle="modal" data-target="#addOrUpdateModal"
-                                            wire:click="$set('current_id', '{{ $model->id }}')"
-                                            class="text-primary fw-bold d-flex justify-content-center align-items-center"
-                                            style="text-decoration: underline">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-down-right">
-                                                <line x1="7" y1="7" x2="17" y2="17">
-                                                </line>
-                                                <polyline points="17 7 17 17 7 17"></polyline>
-                                            </svg>
-                                            {{ __('Répondre') }}
-                                        </a>
-                                    </td>
-                                @endif
-                                <td class="py-1" style="width: 150px;">
-                                    <div class="d-inline-block w-100">
-                                        <div class="btn-group rounded-lg dropup">
-                                            <button type="button" class="btn btn-danger rounded icon"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <th class="">Nom & Prénoms</th>
+                                <th class="">Adresse mail</th>
+                                <th class="">Libellé</th>
+                                <th class="">Description</th>
+                                <th class="">Réponse</th>
+                                <th class="">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fw-bold text-center">
+                            @forelse ($models as $model)
+                                <tr>
+                                    <td class="py-1">{{ $model->lastname . ' ' . $model->firstname }}</td>
+                                    <td class="py-1">{{ $model->email }}</td>
+                                    <td class="py-1">{{ $model->title }}</td>
+                                    <td class="py-1">{{ $model->description }}</td>
+                                    @if ($model->answer)
+                                        <td class="py-1">{{ $model->answer }}</td>
+                                    @else
+                                        <td class="py-1">
+                                            <a href="#" data-toggle="modal" data-target="#addOrUpdateModal"
+                                                wire:click="$set('current_id', '{{ $model->id }}')"
+                                                class="text-primary fw-bold d-flex justify-content-center align-items-center"
+                                                style="text-decoration: underline">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-trash-2">
-                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                    <path
-                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                    </path>
-                                                    <line x1="10" y1="11" x2="10"
-                                                        y2="17">
+                                                    class="feather feather-arrow-down-right">
+                                                    <line x1="7" y1="7" x2="17" y2="17">
                                                     </line>
-                                                    <line x1="14" y1="11" x2="14"
-                                                        y2="17">
-                                                    </line>
+                                                    <polyline points="17 7 17 17 7 17"></polyline>
                                                 </svg>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="px-2 py-2 pt-0 text-center">
-                                                    <div class="form-group text-dark fw-bold">
-                                                        {{ __('Voulez-vous vraiment supprimer cet élément ?') }}
+                                                {{ __('Répondre') }}
+                                            </a>
+                                        </td>
+                                    @endif
+                                    <td class="py-1" style="width: 150px;">
+                                        <div class="d-inline-block w-100">
+                                            <div class="btn-group rounded-lg dropup">
+                                                <button type="button" class="btn btn-danger rounded icon"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-trash-2">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                        <path
+                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                        </path>
+                                                        <line x1="10" y1="11" x2="10"
+                                                            y2="17">
+                                                        </line>
+                                                        <line x1="14" y1="11" x2="14"
+                                                            y2="17">
+                                                        </line>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="px-2 py-2 pt-0 text-center">
+                                                        <div class="form-group text-dark fw-bold">
+                                                            {{ __('Voulez-vous vraiment supprimer cet élément ?') }}
+                                                        </div>
+                                                        <button type="button"
+                                                            wire:click="deleteModel('{{ $model->id }}')"
+                                                            class="btn btn-danger btn-sm">Confirmer</button>
                                                     </div>
-                                                    <button type="button"
-                                                        wire:click="deleteModel('{{ $model->id }}')"
-                                                        class="btn btn-danger btn-sm">Confirmer</button>
                                                 </div>
                                             </div>
+                                            <button type="button" class="px-2 btn btn-warning btn-group"
+                                                data-toggle="modal" data-target="#addOrUpdateModal"
+                                                wire:click="$set('current_id', '{{ $model->id }}')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-edit-2">
+                                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                    </path>
+                                                </svg>
+                                            </button>
                                         </div>
-                                        <button type="button" class="px-2 btn btn-warning btn-group"
-                                            data-toggle="modal" data-target="#addOrUpdateModal"
-                                            wire:click="$set('current_id', '{{ $model->id }}')">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-edit-2">
-                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
-                                                </path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="30" class="text-center">
-                                    <span class="fw-bold">{{ __('Aucune question-réponse trouvée') }}</span>
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="30" class="text-center">
+                                        <span class="fw-bold">{{ __('Aucune question-réponse trouvée') }}</span>
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
                 @if (strlen(trim($search)) >= 15)
                     <div class="p-4 pb-2">
                         {{ $models->links() }}

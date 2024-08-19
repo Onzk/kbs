@@ -35,6 +35,7 @@ class Candidate extends Authenticatable
         "enabled",
         "password",
         "nbyear",
+        "deleted_at",
     ];
 
 

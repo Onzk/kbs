@@ -55,52 +55,86 @@
                         <span class="text-sm px-2 text-white">{{ __('Informations personnelles & Contacts') }}</span>
                     </div>
                     <div class="card-body pt-3">
-                        <form>
-                            <div class="form-group">
-                                <label for="lastname">
-                                    {{ __('Nom') }}
-                                    <span class="text-primary label-indic">
-                                        ({{ __('modification impossible') }})
-                                    </span>
-                                </label>
-                                <p class="form-control" id="lastname">
-                                    {{ $_user->lastname }}
-                                </p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="lastname">
+                                        {{ __('Nom') }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="lastname">
+                                        {{ $_user->lastname }}
+                                    </p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="firstname">
-                                    {{ __('Prénoms') }}
-                                    <span class="text-primary label-indic">
-                                        ({{ __('modification impossible') }})
-                                    </span>
-                                </label>
-                                <p class="form-control" id="firstname">
-                                    {{ $_user->firstname }}
-                                </p>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="firstname">
+                                        {{ __('Prénoms') }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="firstname">
+                                        {{ $_user->firstname }}
+                                    </p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="lastname">
-                                    {{ __('Courriel') }}
-                                    <span class="text-primary label-indic">
-                                        ({{ __('modification impossible') }})
-                                    </span>
-                                </label>
-                                <p class="form-control" id="lastname">
-                                    {{ $_user->email }}
-                                </p>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="lastname">
+                                        {{ __('Courriel') }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="lastname">
+                                        {{ $_user->email }}
+                                    </p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="lastname">
-                                    {{ __('Numéro de Téléphone') }}
-                                    <span class="text-primary label-indic">
-                                        ({{ __('modification impossible') }})
-                                    </span>
-                                </label>
-                                <p class="form-control" id="lastname">
-                                    {{ $_user->tel }}
-                                </p>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="lastname">
+                                        {{ __('Numéro de Téléphone') }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="lastname">
+                                        {{ $_user->tel }}
+                                    </p>
+                                </div>
                             </div>
-                        </form>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="domain">
+                                        {{ __("Domaine d'Expertise") }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="domain">
+                                        {{ $_user->domain }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="country">
+                                        {{ __("Pays de Naissance") }}
+                                        <span class="text-primary label-indic">
+                                            ({{ __('modification impossible') }})
+                                        </span>
+                                    </label>
+                                    <p class="form-control" id="country">
+                                        {{ $_user->country }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="col-lg-4">
                 <div class="card w-100">
                     <div class="card-header p-2 bg-primary mb-2">
                         <span class="text-sm px-2 text-white">{{ __('Mot de passe') }}</span>

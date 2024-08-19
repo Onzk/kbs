@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="name flex-grow-1">
                                     <h6 class="mb-1 text-white">{{ $current_model->fullname() }}</h6>
-                                    <span class="text-white">Domaine :
+                                    <span class="text-white text-xs">Domaine :
                                         {{ $current_model->domain ?? $current_model->sector }}</span>
                                 </div>
                             </div>
@@ -119,8 +119,8 @@
                                 @forelse ($this->loadChats() as $model)
                                     @if ($model->user_id == null)
                                         <div class="chat chat-left my-4">
-                                            <div class="chat-body mb-4">
-                                                <div class="chat-message col-12 col-md-4">
+                                            <div class="chat-body mb-4 col-12">
+                                                <div class="chat-message col-12 col-md-8 col-lg-6">
                                                     <p>
                                                         {{ $model->content }}
                                                     </p>

@@ -17,7 +17,7 @@
                     <span class="text-sm px-2 text-white">Configurations</span>
                 </div>
             </div>
-            <div class="card-body px-0 pb-0 pt-0 mb-0">
+            <div class="card-body table-responsive px-0 pb-0 pt-0 mb-0">
                 <table class="table mb-0 border-bottom table-bordered shadow-md">
                     <thead class="bg-primary text-white pt-2 border border-dark text-center">
                         <tr>
