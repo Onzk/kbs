@@ -40,9 +40,9 @@
                 </li>
                 <li @class([
                     'sidebar-item',
-                    'active' => Route::is('candidate-space.contracts'),
+                    'active' => Route::is('admin-space.entreprise-board'),
                 ])>
-                    <a href="{{ route('candidate-space.contracts') }}" class="sidebar-link">
+                    <a href="{{ route('admin-space.entreprise-board') }}" class="sidebar-link">
                         <i data-feather="bar-chart-2" width="20"></i>
                         <span>Planche Entreprise</span>
                     </a>

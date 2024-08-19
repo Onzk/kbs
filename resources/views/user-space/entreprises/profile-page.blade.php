@@ -141,6 +141,16 @@
                                 </p>
                             </div>
                         </div>
+                        @if ($_user->presentation_movie)
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>{{ __('Vidéo de Présentation') }}</label>
+                                    <video src="{{ asset($_user->presentation_movie) . '?' . rand() }}"
+                                        class="p-1 form-control" style="object-fit: cover; height: 350px; width: 100%;"
+                                        alt="" controls></video>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

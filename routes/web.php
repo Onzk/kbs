@@ -6,10 +6,11 @@ use App\Http\Livewire\Public\DetailBlog;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
-use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
-use App\Http\Livewire\Admin\CandidateBoard as AdminCandidateBoard;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
+use App\Http\Livewire\Admin\EntrepriseBoard as AdminEntrepriseBoard;
+use App\Http\Livewire\Admin\CandidateBoard as AdminCandidateBoard;
 use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
+use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
 use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\SearchPage as EntreprisesSearchPage;
 use App\Http\Livewire\UserSpace\Candidates\ContractPage as CandidatesContractPage;
@@ -96,6 +97,7 @@ Route::middleware(["auth:web"])
             Route::get("/home", AdminHomePage::class)->name("home");
             Route::get("/configurations/{config}", AdminConfigurations::class)->name("configurations");
             Route::get("/discussions", AdminDiscussionsPage::class)->name("discussions");
-            Route::get("/planche-candidat", AdminCandidateBoard::class)->name("candidate-board")->withTrashed();
+            Route::get("/planche-candidats", AdminCandidateBoard::class)->name("candidate-board")->withTrashed();
+            Route::get("/planche-entreprises", AdminEntrepriseBoard::class)->name("entreprise-board")->withTrashed();
         }
     );

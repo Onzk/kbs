@@ -85,6 +85,23 @@
                                     'stars' => $candidate->stars(),
                                 ])
                             </span>
+                            @if ($candidate->default_comment)
+                                <div style="max-height: 150px; overflow-y: auto"
+                                    class="text-white hide-scrollbar bg-primary rounded p-2 my-2">
+                                    <span class="fw-bold text-xs text-white">Avis de : {{ config('app.name') }}</span>
+                                    <br>
+                                    @include('user-space.components.stars', [
+                                        'default' => 'white',
+                                        'size' => 15,
+                                        'stars' => $candidate->default_rate,
+                                    ])
+                                    <br>
+                                    {{ $candidate->default_comment }} Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Laboriosam natus error, nam possimus minima eveniet deserunt ullam nesciunt
+                                    dolores est quidem fuga! Culpa temporibus necessitatibus repudiandae sequi sed
+                                    libero molestiae inventore porro!
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="col-12 col-lg-9 col-md-12">
@@ -289,28 +306,28 @@
                                 </span>
                             </div>
                         @else
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label
-                                    class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
-                                    for="full">{{ __('Votre expérience en matière de gouvernance') }}
-                                </label>
-                                <p class="form-control">
-                                    {!! $candidate->experience()?->governance_experience ?? '-' !!}
-                                </p>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label
+                                        class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                        for="full">{{ __('Votre expérience en matière de gouvernance') }}
+                                    </label>
+                                    <p class="form-control">
+                                        {!! $candidate->experience()?->governance_experience ?? '-' !!}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label
-                                    class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
-                                    for="full">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
-                                </label>
-                                <p class="form-control">
-                                    {!! $candidate->experience()?->motivation ?? '-' !!}
-                                </p>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label
+                                        class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
+                                        for="full">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
+                                    </label>
+                                    <p class="form-control">
+                                        {!! $candidate->experience()?->motivation ?? '-' !!}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
                         @endif
                     </div>
                 </div>
@@ -448,7 +465,9 @@
                         <span class="fw-bold text-sm d-flex justify-content-between align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 25px"
                                 fill="currentColor" class="text-primary mr-2">
-                                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                    clip-rule="evenodd" />
                             </svg>
                             {{ __('Notes & Avis') }}
                         </span>
@@ -457,10 +476,10 @@
                 <div class="card-body pt-3 pb-0">
                     <div class="row">
                         @forelse ($contracts as $model)
-                        @include("user-space.candidates.modules.review")
+                            @include('user-space.candidates.modules.review')
                         @empty
                             <div class="col-12 pb-4 text-center d-block justify-content-center align-items-center">
-                                <span class="fw-bold">{{ __("Aucune note ni avis pour le moment") }}</span>
+                                <span class="fw-bold">{{ __('Aucune note ni avis pour le moment') }}</span>
                             </div>
                         @endforelse
                     </div>
@@ -474,20 +493,20 @@
                         </span>
                     </div>
                     <button data-toggle="modal" data-target="#sendMessage" style=""
-                    class="btn btn-success icon mt-lg-0 mt-2 text-dark fw-bold mx-1 px-1 d-flex justify-content-center align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather text-white feather-git-merge mr-2">
-                        <circle cx="18" cy="18" r="3"></circle>
-                        <circle cx="6" cy="6" r="3"></circle>
-                        <path d="M6 21V9a9 9 0 0 0 9 9"></path>
-                    </svg>
-                    {{ __('Satisfait de ce candidat ? Demander une mise en contact !') }}
-                </button>
+                        class="btn btn-success icon mt-lg-0 mt-2 text-dark fw-bold mx-1 px-1 d-flex justify-content-center align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather text-white feather-git-merge mr-2">
+                            <circle cx="18" cy="18" r="3"></circle>
+                            <circle cx="6" cy="6" r="3"></circle>
+                            <path d="M6 21V9a9 9 0 0 0 9 9"></path>
+                        </svg>
+                        {{ __('Satisfait de ce candidat ? Demander une mise en contact !') }}
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    @include("user-space.entreprises.modals.ask-contact-modal")
+    @include('user-space.entreprises.modals.ask-contact-modal')
     @include('components.alert')
 </div>

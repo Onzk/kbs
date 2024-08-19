@@ -29,6 +29,7 @@ class Entreprise extends Authenticatable
         "links",
         "diversity_policy",
         "enabled",
+        "deleted_at",
         "password",
     ];
 

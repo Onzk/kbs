@@ -2,9 +2,9 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3 class="text-primary">Planche Candidat</h3>
+                <h3 class="text-primary">Planche Entreprise</h3>
                 <p class="text-subtitle text-muted">
-                    Voici la liste de tous les candidats enregitrés.
+                    Voici la liste de toutes les entreprises enregitrées.
                 </p>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="card pb-0  border-0">
             <div class="card-header px-2 py-3 w-100 bg-primary">
                 <span class="text-sm px-2 text-white">
-                    Candidats Administrateurs Indépendants
+                    Entreprises à la recherche d'Administrateurs Indépendants
                 </span>
             </div>
             <div class="card-body px-0 pb-0 pt-0 mb-0">
@@ -45,12 +45,12 @@
                         <thead class="bg-primary text-white pt-2 border border-dark text-center">
                             <tr>
                                 <th class="">Photo</th>
-                                <th class="">Nom & Prénoms</th>
-                                <th class="">Domaine</th>
-                                <th class="">Années d'Expériences</th>
-                                <th class="">Pays de Naissance</th>
+                                <th class="">Raison Sociale</th>
+                                <th class="">Secteur d'Activité</th>
+                                <th class="">Adresse du Siège</th>
                                 <th class="">Courriel</th>
                                 <th class="">Date de Création</th>
+                                <th class="">Profils Recherchés</th>
                                 <th class="">Status</th>
                                 <th class="">Actions</th>
                             </tr>
@@ -63,11 +63,11 @@
                                             style="width: 50px; height: 50px; object-fit: cover" alt="image" />
                                     </td>
                                     <td class="py-1">{{ $model->fullname() }}</td>
-                                    <td class="py-1">{{ $model->domain }}</td>
-                                    <td class="py-1">{{ $model->nbyear }}</td>
-                                    <td class="py-1">{{ $model->country }}</td>
+                                    <td class="py-1">{{ $model->sector }}</td>
+                                    <td class="py-1">{{ $model->hq_address }}</td>
                                     <td class="py-1">{{ $model->email }}</td>
                                     <td class="py-1">{{ \Carbon\Carbon::parse($model->created_at) }}</td>
+                                    <td class="py-1">{{ count($model->positions) }}</td>
                                     @if ($model->trashed())
                                         <td class="py-1 fw-bold text-dark">BLOQUE</td>
                                     @elseif ($model->enabled)
@@ -78,7 +78,7 @@
                                     <td class="py-1" style="width: 300px;">
                                         <div class="d-inline-block w-100">
                                             <button type="button" class="px-2 btn btn-primary btn-group"
-                                                data-toggle="modal" data-target="#showCandidate"
+                                                data-toggle="modal" data-target="#showEntreprise"
                                                 wire:click="$set('current_id', '{{ $model->id }}')">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -91,7 +91,7 @@
                                                     </line>
                                                 </svg>
                                             </button>
-                                            <a href="{{ route('admin-space.discussions', ['tab' => 0, 'q' => $model->fullname()]) }}"
+                                            <a href="{{ route('admin-space.discussions', ['tab' => 1, 'q' => $model->fullname()]) }}"
                                                 class="px-2 btn btn-info btn-group">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -110,18 +110,6 @@
                                                     class="feather feather-edit-2">
                                                     <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
                                                     </path>
-                                                </svg>
-                                            </button>
-                                            <button type="button" class="px-2 btn border border-warning btn-group" data-toggle="modal"
-                                                data-target="#setDefaultMR"
-                                                wire:click="$set('current_id', '{{ $model->id }}')">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="orange" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-star text-warning">
-                                                    <polygon
-                                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                    </polygon>
                                                 </svg>
                                             </button>
                                             @if ($model->trashed())
@@ -251,7 +239,7 @@
                             @empty
                                 <tr>
                                     <td colspan="30" class="text-center">
-                                        <span class="fw-bold">{{ __('Aucun candidat trouvé') }}</span>
+                                        <span class="fw-bold">{{ __('Aucune entreprise trouvée') }}</span>
                                     </td>
                                 </tr>
                             @endforelse
@@ -267,11 +255,6 @@
             </div>
         </div>
     </section>
-    @include('admin.modals.show-candidate-modal')
-    @include('admin.modals.candidate-form-modal')
-    @include('admin.modals.candidate-default-mark-modal')
-    {{-- @include('admin.modals.confirm-delete-modal', [
-        'message' => 'Voulez-vous vraiment supprimer cet Expert KAPI ?',
-        'model' => \App\Models\Expert::class,
-    ]) --}}
+    @include('admin.modals.show-entreprise-modal')
+    @include('admin.modals.entreprise-form-modal')
 </div>

@@ -64,6 +64,19 @@
                                                         'stars' => $candidate->stars(),
                                                     ])
                                                 </span>
+                                                @if($candidate->default_comment)
+                                                <div style="max-height: 150px; overflow-y: auto" class="text-white hide-scrollbar bg-primary rounded p-2 my-2">
+                                                    <span class="fw-bold text-xs text-white">Avis de : {{ config("app.name") }}</span>
+                                                    <br>
+                                                    @include('user-space.components.stars', [
+                                                        'default' => 'white',
+                                                        'size' => 15,
+                                                        'stars' => $candidate->default_rate,
+                                                    ])
+                                                    <br>
+                                                    {{ $candidate->default_comment }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam natus error, nam possimus minima eveniet deserunt ullam nesciunt dolores est quidem fuga! Culpa temporibus necessitatibus repudiandae sequi sed libero molestiae inventore porro!
+                                                </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-9 col-md-12">
