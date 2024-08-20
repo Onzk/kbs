@@ -52,6 +52,15 @@
                         <span>Contrats</span>
                     </a>
                 </li>
+                <li @class([
+                    'sidebar-item',
+                    'active' => Route::is('entreprise-space.contract-template-page'),
+                ])>
+                    <a href="{{ route('entreprise-space.contract-template-page') }}" class="sidebar-link">
+                        <i data-feather="layout" width="20"></i>
+                        <span>Modèles Contrat</span>
+                    </a>
+                </li>
                 <li class="sidebar-title">Configurations</li>
                 <li @class([
                     'sidebar-item',

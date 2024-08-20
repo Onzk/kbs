@@ -7,14 +7,15 @@ use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
-use App\Http\Livewire\Admin\EntrepriseBoard as AdminEntrepriseBoard;
-use App\Http\Livewire\Admin\ContractTemplateBoard as AdminContractTemplateBoard;
 use App\Http\Livewire\Admin\CandidateBoard as AdminCandidateBoard;
 use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
+use App\Http\Livewire\Admin\EntrepriseBoard as AdminEntrepriseBoard;
+use App\Http\Livewire\Admin\ContractTemplateBoard as AdminContractTemplateBoard;
 use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\SearchPage as EntreprisesSearchPage;
 use App\Http\Livewire\UserSpace\Candidates\ContractPage as CandidatesContractPage;
+use App\Http\Livewire\UserSpace\Entreprises\ContractTemplatePage as EntreprisesContractTemplatePage;
 use App\Http\Livewire\UserSpace\Entreprises\ProfilePage as EntreprisesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\ContractPage as EntreprisesContractPage;
 use App\Http\Livewire\UserSpace\Candidates\Configurations as CandidatesConfigurations;
@@ -84,6 +85,7 @@ Route::middleware("auth:entreprises")
             Route::get("/discussions", EntreprisesDiscussionPage::class)->name("discussions");
             Route::get("/contrats", EntreprisesContractPage::class)->name("contracts");
             Route::get("/recherche", EntreprisesSearchPage::class)->name("search");
+            Route::get("/modèles-de-contrat", EntreprisesContractTemplatePage::class)->name("contract-template-page");
             Route::get("/configurations/{config}", EntreprisesConfigurations::class)->name("configurations");
 
             Route::get("/politique-de-confidentialité", fn() => view("user-space.entreprises.privacy-policy-page"))->name("en.privacy_policy");

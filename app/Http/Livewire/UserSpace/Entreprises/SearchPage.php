@@ -14,7 +14,7 @@ class SearchPage extends Component
 {
 
     #[Url(except: "")]
-    // #[Session(key: "searchProfil")]
+    #[Session(key: "searchProfil")]
     public string $search = "";
 
     public string $description = "";
