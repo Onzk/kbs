@@ -115,14 +115,15 @@ class Candidate extends Authenticatable
 
     public function marked_contracts()
     {
-        return $this->contracts->where(['comment', '!=', null], ["rate", "!=", null]);
+        return $this->contracts->whereNotNull('comment')->whereNotNull('rate');
     }
 
     public function rate(): float
     {
-        if ($this->contracts()->count())
+        $contracts = $this->marked_contracts();
+        if ($contracts->count())
         {
-            $rates = collect($this->contracts)->pluck("rates");
+            $rates = $contracts->pluck("rate");
             return round($rates->sum() / $rates->count(), 1);
         }
         return $this->default_rate ?? 0;

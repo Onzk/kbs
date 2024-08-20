@@ -22,39 +22,11 @@
             </div>
             <hr>
             <p class="align-middle">
-                <span class="badge rounded" wire:ignore>
-                    @php($stars = (int) $model->rate)
-                    <i data-feather="star" style="height: 20px; width: 20px;"
-                        fill="{{ $stars >= 1 ? '#F8E05A' : 'white' }}" @class([
-                            'text-warning' => $stars >= 1,
-                            'text-muted' => $stars < 1,
-                            'p-0 m-0',
-                        ])></i>
-                    <i data-feather="star" style="height: 20px; width: 20px;"
-                        fill="{{ $stars >= 2 ? '#F8E05A' : 'white' }}" @class([
-                            'text-warning' => $stars >= 2,
-                            'text-muted' => $stars < 2,
-                            'p-0 m-0',
-                        ])></i>
-                    <i data-feather="star" style="height: 20px; width: 20px;"
-                        fill="{{ $stars >= 3 ? '#F8E05A' : 'white' }}" @class([
-                            'text-warning' => $stars >= 3,
-                            'text-muted' => $stars < 3,
-                            'p-0 m-0',
-                        ])></i>
-                    <i data-feather="star" style="height: 20px; width: 20px;"
-                        fill="{{ $stars >= 4 ? '#F8E05A' : 'white' }}" @class([
-                            'text-warning' => $stars >= 4,
-                            'text-muted' => $stars < 4,
-                            'p-0 m-0',
-                        ])></i>
-                    <i data-feather="star" style="height: 20px; width: 20px;"
-                        fill="{{ $stars >= 5 ? '#F8E05A' : 'white' }}" @class([
-                            'text-warning' => $stars >= 5,
-                            'text-muted' => $stars < 5,
-                            'p-0 m-0',
-                        ])></i>
-                </span>
+                @include('user-space.components.stars', [
+                    'default' => 'dark',
+                    'size' => 15,
+                    'stars' => (int) $model->rate,
+                ])
             </p>
             <p>
                 {{ $model->comment }}

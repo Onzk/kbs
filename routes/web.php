@@ -2,11 +2,11 @@
 
 use App\Http\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Public\DetailBlog;
 use App\Http\Controllers\PublicController;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
+use App\Http\Livewire\Admin\ContractBoard as AdminContractBoard;
 use App\Http\Livewire\Admin\CandidateBoard as AdminCandidateBoard;
 use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
@@ -15,7 +15,6 @@ use App\Http\Livewire\Admin\ContractTemplateBoard as AdminContractTemplateBoard;
 use App\Http\Livewire\UserSpace\Candidates\ProfilePage as CandidatesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\SearchPage as EntreprisesSearchPage;
 use App\Http\Livewire\UserSpace\Candidates\ContractPage as CandidatesContractPage;
-use App\Http\Livewire\UserSpace\Entreprises\ContractTemplatePage as EntreprisesContractTemplatePage;
 use App\Http\Livewire\UserSpace\Entreprises\ProfilePage as EntreprisesProfilePage;
 use App\Http\Livewire\UserSpace\Entreprises\ContractPage as EntreprisesContractPage;
 use App\Http\Livewire\UserSpace\Candidates\Configurations as CandidatesConfigurations;
@@ -23,6 +22,7 @@ use App\Http\Livewire\UserSpace\Candidates\DiscussionPage as CandidatesDiscussio
 use App\Http\Livewire\UserSpace\Entreprises\Configurations as EntreprisesConfigurations;
 use App\Http\Livewire\UserSpace\Entreprises\DiscussionPage as EntreprisesDiscussionPage;
 use App\Http\Livewire\UserSpace\Candidates\MarkAndReviewsPage as CandidatesMarkAndReviewsPage;
+use App\Http\Livewire\UserSpace\Entreprises\ContractTemplatePage as EntreprisesContractTemplatePage;
 
 Route::controller(PublicController::class)->name("public.")->prefix("/")->group(
     function () {
@@ -102,6 +102,7 @@ Route::middleware(["auth:web"])
             Route::get("/discussions", AdminDiscussionsPage::class)->name("discussions");
             Route::get("/planche-candidats", AdminCandidateBoard::class)->name("candidate-board")->withTrashed();
             Route::get("/planche-entreprises", AdminEntrepriseBoard::class)->name("entreprise-board")->withTrashed();
+            Route::get("/planche-contrats", AdminContractBoard::class)->name("contract-board");
             Route::get("/planche-modèles-contrat", AdminContractTemplateBoard::class)->name("contract-template-board");
         }
     );

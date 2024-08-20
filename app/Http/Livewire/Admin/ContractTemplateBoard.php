@@ -63,7 +63,8 @@ class ContractTemplateBoard extends Component
         }
         $model = ContractTemplate::find($this->current_id);
         if($model){
-            $fileName = "$model->id.pdf";
+            $value = explode(".", $this->file->getRealPath());
+            $fileName = "$model->id." . end($value);
             $path = "storage/contract-template/file/$fileName";
             $this->main_file->storeAs("public/contract-template/file", $fileName);
             File::delete($this->main_file->getRealPath());

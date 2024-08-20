@@ -49,9 +49,9 @@
                 </li>
                 <li @class([
                     'sidebar-item',
-                    'active' => Route::is('candidate-space.contracts'),
+                    'active' => Route::is('admin-space.contract-board'),
                 ])>
-                    <a href="{{ route('candidate-space.contracts') }}" class="sidebar-link">
+                    <a href="{{ route('admin-space.contract-board') }}" class="sidebar-link">
                         <i data-feather="file-text" width="20"></i>
                         <span>Contrats</span>
                     </a>

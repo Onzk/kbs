@@ -91,6 +91,7 @@
                                                     </line>
                                                 </svg>
                                             </button>
+                                            @if (!$model->trashed())
                                             <a href="{{ route('admin-space.discussions', ['tab' => 0, 'q' => $model->fullname()]) }}"
                                                 class="px-2 btn btn-info btn-group">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -112,6 +113,7 @@
                                                     </path>
                                                 </svg>
                                             </button>
+                                            @endif
                                             <button type="button" class="px-2 btn border border-warning btn-group" data-toggle="modal"
                                                 data-target="#setDefaultMR"
                                                 wire:click="$set('current_id', '{{ $model->id }}')">
@@ -258,7 +260,7 @@
                         </tbody>
                     </table>
                 </div>
-                @if (strlen(trim($search)) >= 15)
+                @if (!strlen(trim($search)) and count($models) >= 15)
                     <div class="p-4 pb-2">
                         {{ $models->links() }}
                     </div>

@@ -103,10 +103,7 @@
                                         'stars' => $_user->default_rate,
                                     ])
                                     <br>
-                                    {{ $_user->default_comment }} Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Laboriosam natus error, nam possimus minima eveniet deserunt ullam
-                                    nesciunt dolores est quidem fuga! Culpa temporibus necessitatibus repudiandae sequi
-                                    sed libero molestiae inventore porro!
+                                    {{ $_user->default_comment }}
                                 </div>
                             @endif
                         </div>
@@ -302,9 +299,9 @@
                                     class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
                                     for="full">{{ __('Descriptif des principales responsabilités et réalisations dans les postes précédents') }}
                                 </label>
-                                <p id="desc" class="form-control">
+                                <div id="desc" class="form-control">
                                     {!! $_user->experience()?->description ?? '-' !!}
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <label class="mb-1">{{ __("Compétences clés et domaines d'expertise") }}</label>
@@ -367,9 +364,9 @@
                                     class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
                                     for="full">{{ __('Votre expérience en matière de gouvernance') }}
                                 </label>
-                                <p class="form-control">
+                                <div class="form-control">
                                     {!! $_user->experience()?->governance_experience ?? '-' !!}
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
@@ -378,9 +375,9 @@
                                     class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
                                     for="full">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
                                 </label>
-                                <p class="form-control">
+                                <div class="form-control">
                                     {!! $_user->experience()?->motivation ?? '-' !!}
-                                </p>
+                                </div>
                             </div>
                         </div>
                     @endif

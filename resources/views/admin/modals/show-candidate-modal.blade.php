@@ -74,7 +74,7 @@
                                                         'stars' => $candidate->default_rate,
                                                     ])
                                                     <br>
-                                                    {{ $candidate->default_comment }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam natus error, nam possimus minima eveniet deserunt ullam nesciunt dolores est quidem fuga! Culpa temporibus necessitatibus repudiandae sequi sed libero molestiae inventore porro!
+                                                    {{ $candidate->default_comment }}
                                                 </div>
                                                 @endif
                                             </div>
@@ -233,9 +233,9 @@
                                                 <div class="col-md-4 col-12">
                                                     <div class="form-group">
                                                         <label>{{ __('Poste Actuel') }}</label>
-                                                        <p class="form-control">
+                                                        <div class="form-control">
                                                             {{ $candidate->experience()?->actual_position ?? '-' }}
-                                                        </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-12">
@@ -318,9 +318,9 @@
                                                             class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
                                                             for="full">{{ __('Votre expérience en matière de gouvernance') }}
                                                         </label>
-                                                        <p class="form-control">
+                                                        <div class="form-control">
                                                             {!! $candidate->experience()?->governance_experience ?? '-' !!}
-                                                        </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -329,9 +329,9 @@
                                                             class="alert alert-dark bg-dark text-white text-center fw-bold w-100 mb-0 rounded-none"
                                                             for="full">{{ __("Comment votre expérience et vos compétences vous permettraient-elles de contribuer au succès de l'entreprise ?") }}
                                                         </label>
-                                                        <p class="form-control">
+                                                        <div class="form-control">
                                                             {!! $candidate->experience()?->motivation ?? '-' !!}
-                                                        </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             @endif

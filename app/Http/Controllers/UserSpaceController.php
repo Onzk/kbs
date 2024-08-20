@@ -24,9 +24,9 @@ class UserSpaceController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        Auth::guard("entreprises")->logout();
+        Auth::guard("candidates")->logout();
+        Auth::guard("web")->logout();
         return redirect(route('public.home.index'));
     }
 

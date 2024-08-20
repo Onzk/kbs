@@ -25,20 +25,34 @@ class Contract extends Model
         "status",
         "comment",
         "rate",
+        "deleted_at",
     ];
+
+    public function getStateAttribute()
+    {
+        return $this->trashed() ? "SUPPRIME" : [
+            "pending" => "EN ATTENTE",
+            "ongoing" => "EN COURS",
+            "finished" => "TERMINE",
+            "aborted" => "ANNULE",
+        ][$this->status];
+    }
+
+    public function getCanOngoAttribute()
+    {
+        return $this->entreprise_file
+            and $this->admin_file
+            and $this->candidate_file;
+    }
 
     public function candidate(): BelongsTo
     {
-        return $this->belongsTo(Candidate::class);
+        return $this->belongsTo(Candidate::class)->withTrashed();
     }
+
 
     public function entreprise(): BelongsTo
     {
-        return $this->belongsTo(Entreprise::class);
-    }
-
-    public function contractTemplate(): BelongsTo
-    {
-        return $this->belongsTo(ContractTemplate::class);
+        return $this->belongsTo(Entreprise::class)->withTrashed();
     }
 }

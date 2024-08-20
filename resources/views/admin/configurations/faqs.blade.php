@@ -118,7 +118,7 @@
                         </tbody>
                     </table>
                 </div>
-                @if (strlen(trim($search)) >= 15)
+                @if (!strlen(trim($search)) and count($models) >= 15)
                     <div class="p-4 pb-2">
                         {{ $models->links() }}
                     </div>

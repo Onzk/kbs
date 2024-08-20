@@ -23,15 +23,15 @@ class Login extends Component
         ];
         if (Auth::guard('candidates')->attempt($credentials)) {
             session()->regenerate();
-            return redirect()->intended("/espace-candidat");
+            return redirect()->route("candidate-space.home");
         }
         if (Auth::guard('entreprises')->attempt($credentials)) {
             session()->regenerate();
-            return redirect()->intended("/espace-entreprise");
+            return redirect()->route("entreprise-space.home");
         }
         if (Auth::attemptWhen($credentials, fn(User $model) => $model->enabled)) {
             session()->regenerate();
-            return redirect()->intended("/espace-administrateur");
+            return redirect()->route("admin-space.home");
         }
         session()->flash("error", __("Email ou mot de passe errorné(s)."));
     }

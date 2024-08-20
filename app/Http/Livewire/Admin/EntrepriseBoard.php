@@ -73,8 +73,8 @@ class EntrepriseBoard extends Component
             session()->flash(
                 'success',
                 $model->trashed()
-                ? __("Compte entreprise récupéré avec succés.")
-                : __("Compte entreprise supprimé avec succés.")
+                ? __("Compte entreprise supprimé avec succés.")
+                : __("Compte entreprise récupéré avec succés.")
             );
         }
     }

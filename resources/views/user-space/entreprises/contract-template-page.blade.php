@@ -15,8 +15,8 @@
         <div class="card">
             <div class="card-header p-2 mb-2 bg-primary">
                 <div class="text-sm mt-2 px-2 mb-3 text-white fw-bold">Total {{ count($models) }} modèle(s)</div>
-                <div class="m-2 mt-2 form-group d-flex">
-                    <input type="text" class="form-control col pb-1 text-dark" wire:model.live="search"
+                <div class="m-2 mt-2 input-group d-flex">
+                    <input type="text" class="form-control col text-dark" wire:model.live="search"
                         placeholder="Rechercher..." />
                     <button disabled wire:loading wire:target="search"
                         class="input-group-text icon bg-primary border-0 rounded">
@@ -28,27 +28,6 @@
             <div class="card-body">
                 <div class="row mt-4 mb-2 gx-3">
                     @forelse ($models as $model)
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
-                        <div class="col-md-4 col-12">
-                            @include('user-space.entreprises.modules.contract-template')
-                        </div>
                         <div class="col-md-4 col-12">
                             @include('user-space.entreprises.modules.contract-template')
                         </div>

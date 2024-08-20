@@ -61,7 +61,7 @@ class CandidateBoard extends Component
             ])->validate();
             $model->update($this->state);
             $this->reload();
-            session()->flash('success', __('Avis par défaut définie avec succès.'));
+            session()->flash('success', __('Avis par défaut défini avec succès.'));
         }
         $this->reload();
     }
@@ -97,8 +97,8 @@ class CandidateBoard extends Component
             session()->flash(
                 'success',
                 $model->trashed()
-                ? __("Compte candidat récupéré avec succés.")
-                : __("Compte candidat supprimé avec succés.")
+                ? __("Compte candidat supprimé avec succés.")
+                : __("Compte candidat récupéré avec succés.")
             );
         }
     }

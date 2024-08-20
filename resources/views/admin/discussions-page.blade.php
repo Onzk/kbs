@@ -12,8 +12,8 @@
                 <div class="card rounded-0 shadow-none w-100 mb-0 border-right">
                     <div class="card-header rounded-0 px-2 py-1 w-100 text-left bg-primary">
                         <div class="text-sm mt-2 px-2 mb-2 text-white">Contacts</div>
-                        <div class="m-2 mt-2 form-group d-flex">
-                            <input type="text" class="form-control col pb-1 text-dark" wire:model.live="search"
+                        <div class="m-2 mt-2 d-flex">
+                            <input type="text" class="form-control col text-dark" wire:model.live="search"
                                 placeholder="Rechercher..." />
                             <button disabled wire:loading wire:target="search,tab"
                                 class="input-group-text icon bg-primary border-0 rounded">
@@ -102,7 +102,7 @@
             <div class="col-12 col-md-8 d-lg-flex pb-0 mb-0" wire:poll>
                 @if (strlen(trim($current_id)))
                     <div class="card w-100 rounded-0 shadow-none mb-0" wire:loading.remove wire:target="current_id">
-                        <div class="card-header bg-primary">
+                        <div class="card-header rounded-0 bg-primary">
                             <div class="media d-flex align-items-center">
                                 <div class="avatar mr-3">
                                     <img src="{{ asset($current_model->photo) . '?' . rand() }}" alt=""
