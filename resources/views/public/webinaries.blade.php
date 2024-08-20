@@ -30,11 +30,11 @@
                 <p class="text-primary fs-5 mb-5">Nos Webinaires Les Plus Récents</p>
             </div>
             <div class="row justify-content-center mx-4">
-                <div class="card-group">
+                <div class="card-group text-center">
                     @forelse (\App\Models\Webinary::all() as $model)
                         @include('public.components.webinary')
                     @empty
-                        <span class="text-center fw-bold text-dark my-2">
+                        <div class="text-center fw-bold text-dark w-100 my-2">
                             <svg xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-video">
@@ -43,7 +43,7 @@
                             </svg>
                             <br><br>
                             {{ __('Aucun Webinaire enregistré pour le moment.') }}
-                        </span>
+                        </div>
                     @endforelse
                 </div>
             </div>
