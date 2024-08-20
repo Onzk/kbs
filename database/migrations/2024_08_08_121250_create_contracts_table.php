@@ -16,7 +16,9 @@ return new class extends Migration
             $table->text("title");
             $table->foreignUuid("candidate_id");
             $table->foreignUuid("entreprise_id");
-            $table->foreignUuid("contract_template_id");
+            $table->text("entreprise_file")->nullable();
+            $table->text("admin_file")->nullable();
+            $table->text("candidate_file")->nullable();
             $table->text("comment")->nullable();
             $table->float("rate")->nullable();
             $table->enum("status", ["pending","ongoing","finished","aborted"]);

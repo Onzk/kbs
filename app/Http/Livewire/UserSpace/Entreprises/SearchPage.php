@@ -65,7 +65,7 @@ class SearchPage extends Component
     public function retreive_matched()
     {
         if($this->position){
-            $candidates = collect(Candidate::all())
+            $candidates = collect(Candidate::all()->where("enabled", true))
                 ->filter(fn(Candidate $candidate) => $candidate->matchesWith($this->position));
             return $candidates;
         }

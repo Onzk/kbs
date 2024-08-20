@@ -18,7 +18,9 @@ class Contract extends Model
     protected $fillable = [
         "candidate_id",
         "entreprise_id",
-        "contract_template_id",
+        "entreprise_file",
+        "admin_file",
+        "candidate_file",
         "title",
         "status",
         "comment",

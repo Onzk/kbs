@@ -45,7 +45,7 @@ class CandidateBoard extends Component
             unset($this->state["default_comment"]);
             $model->update($this->state);
             $this->reload();
-            session()->flash('success', __('Modification effectuée avec succès.'));
+            session()->flash('success', __('Modifications effectuées avec succès.'));
         }
         $this->reload();
     }
@@ -84,7 +84,7 @@ class CandidateBoard extends Component
             $state =  (bool) $model->enabled;
             $model->update(['enabled' => !$state]);
             $model->refresh();
-            session()->flash('success', __("Compte candidat  " . ($state ? "désactivé" : "activé") . " avec succés."));
+            session()->flash('success', __("Compte candidat " . ($state ? "désactivé" : "activé") . " avec succés."));
         }
     }
 
@@ -98,7 +98,7 @@ class CandidateBoard extends Component
                 'success',
                 $model->trashed()
                 ? __("Compte candidat récupéré avec succés.")
-                : __("Compte candidat supprimé  avec succés.")
+                : __("Compte candidat supprimé avec succés.")
             );
         }
     }

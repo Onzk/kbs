@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('contract_templates', function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("file");
-            $table->string("title");
-            $table->string("description")->nullable();
+            $table->string("title")->unique();
+            $table->string("file")->nullable();
+            $table->string("description");
+            $table->string("demo")->nullable();
+            $table->float("price")->default(0);
+            $table->json("buyers")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -2,14 +2,15 @@
 <div class="main-content container-fluid">
     <div class="page-title">
         <h3 class="text-primary">Discussions</h3>
-        <p class="text-subtitle text-muted">Envoyez et recevez des messages aux Candidats ou Entreprises en temps-réel.
+        <p class="text-subtitle text-muted">
+            Envoyez ou recevez des messages des Candidats ou Entreprises en temps-réel.
         </p>
     </div>
     <section class="section">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <div class="card-header px-2 py-1 w-100 text-left bg-primary">
+        <div class="row g-0 shadow-none border rounded-0">
+            <div class="col-12 col-md-4 d-lg-flex pb-0 mb-0">
+                <div class="card rounded-0 shadow-none w-100 mb-0 border-right">
+                    <div class="card-header rounded-0 px-2 py-1 w-100 text-left bg-primary">
                         <div class="text-sm mt-2 px-2 mb-2 text-white">Contacts</div>
                         <div class="m-2 mt-2 form-group d-flex">
                             <input type="text" class="form-control col pb-1 text-dark" wire:model.live="search"
@@ -52,7 +53,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent" style="height: 72vh; overflow-y: auto">
+                        <div class="tab-content" id="myTabContent" style="height: 60vh; overflow-y: auto">
                             <div @class(['tab-pane fade', 'show active' => $tab == 0]) id="candidate" role="tabpanel"
                                 aria-labelledby="candidate-tab">
                                 <div class="col-md-12">
@@ -60,7 +61,7 @@
                                         @include('admin.modules.chat-contact', ['key' => 'candidate'])
                                         <hr class="divider py-0 my-0" />
                                     @empty
-                                        <div class="text-center fw-bold text-primary m-4 w-100">
+                                        <div class="text-center fw-bold text-primary my-4 w-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                 style="width: 50px; height: 50px;" fill="currentColor"
                                                 class="m-2 text-primary">
@@ -80,7 +81,7 @@
                                     @forelse ($this->loadData() as $model)
                                         @include('admin.modules.chat-contact', ['key' => 'entreprise'])
                                     @empty
-                                        <div class="text-center fw-bold text-primary m-4 w-100">
+                                        <div class="text-center fw-bold text-primary my-4 w-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                 style="width: 50px; height: 50px;" fill="currentColor"
                                                 class="m-2 text-primary">
@@ -98,9 +99,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-8" wire:poll>
+            <div class="col-12 col-md-8 d-lg-flex pb-0 mb-0" wire:poll>
                 @if (strlen(trim($current_id)))
-                    <div class="card" wire:loading.remove wire:target="current_id">
+                    <div class="card w-100 rounded-0 shadow-none mb-0" wire:loading.remove wire:target="current_id">
                         <div class="card-header bg-primary">
                             <div class="media d-flex align-items-center">
                                 <div class="avatar mr-3">
@@ -194,10 +195,10 @@
                         </div>
                     </div>
                 @else
-                    <div class="card border" wire:loading.remove wire:target="current_id">
+                    <div class="card w-100 rounded-0 shadow-none mb-0" wire:loading.remove wire:target="current_id">
                         <div class="card-body">
                             <div class="fw-bold w-100 text-center col-12 d-flex align-items-center text-primary justify-content-center"
-                                style="height: 62vh">
+                                style="height: 72vh">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 50px" fill="none"
                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -208,10 +209,10 @@
                         </div>
                     </div>
                 @endif
-                <div class="card border w-100" wire:loading wire:target="current_id">
+                <div class="card rounded-0 shadow-none w-100 mb-0" wire:loading wire:target="current_id">
                     <div class="card-body w-100">
                         <div class="fw-bold w-100 text-center col-12 d-flex align-items-center text-primary justify-content-center"
-                            style="height: 62vh">
+                            style="height: 72vh">
                             <div>
                                 <div class="spinner-border spinner-border-sm text-primary p-4" role="status">
                                 </div>

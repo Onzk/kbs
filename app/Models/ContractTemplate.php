@@ -15,11 +15,16 @@ class ContractTemplate extends Model
 
     protected $fillable = [
         "file",
+        "demo",
         "title",
         "description",
+        "price",
+        "buyers",
     ];
 
-    public function contracts(): HasMany{
-        return $this->hasMany(Contract::class);
+    public function get_buyers(): array
+    {
+        return json_decode($this->buyers ?? '[]', true);
     }
+
 }

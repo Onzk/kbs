@@ -152,7 +152,7 @@
                                             @if (count($links) == 0)
                                                 <div class="col-lg-12 text-center mb-4">
                                                     <span class="fw-bold">
-                                                        Aucun lien vers un réseau social trouvée
+                                                        Aucun lien vers un réseau social trouvé
                                                     </span>
                                                 </div>
                                             @else

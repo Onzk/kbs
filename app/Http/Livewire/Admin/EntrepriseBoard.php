@@ -38,7 +38,7 @@ class EntrepriseBoard extends Component
             ])->validate();
             $model->update($this->state);
             $this->reload();
-            session()->flash('success', __('Modification effectuée avec succès.'));
+            session()->flash('success', __('Modifications effectuées avec succès.'));
         }
         $this->reload();
     }
@@ -60,7 +60,7 @@ class EntrepriseBoard extends Component
             $state = (bool) $model->enabled;
             $model->update(['enabled' => !$state]);
             $model->refresh();
-            session()->flash('success', __("Compte entreprise  " . ($state ? "désactivé" : "activé") . " avec succés."));
+            session()->flash('success', __("Compte entreprise " . ($state ? "désactivé" : "activé") . " avec succés."));
         }
     }
 
@@ -74,7 +74,7 @@ class EntrepriseBoard extends Component
                 'success',
                 $model->trashed()
                 ? __("Compte entreprise récupéré avec succés.")
-                : __("Compte entreprise supprimé  avec succés.")
+                : __("Compte entreprise supprimé avec succés.")
             );
         }
     }

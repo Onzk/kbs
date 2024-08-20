@@ -8,6 +8,7 @@ use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Controllers\UserSpaceController;
 use App\Http\Livewire\Admin\HomePage as AdminHomePage;
 use App\Http\Livewire\Admin\EntrepriseBoard as AdminEntrepriseBoard;
+use App\Http\Livewire\Admin\ContractTemplateBoard as AdminContractTemplateBoard;
 use App\Http\Livewire\Admin\CandidateBoard as AdminCandidateBoard;
 use App\Http\Livewire\Admin\Configurations as AdminConfigurations;
 use App\Http\Livewire\Admin\DiscussionsPage as AdminDiscussionsPage;
@@ -99,5 +100,6 @@ Route::middleware(["auth:web"])
             Route::get("/discussions", AdminDiscussionsPage::class)->name("discussions");
             Route::get("/planche-candidats", AdminCandidateBoard::class)->name("candidate-board")->withTrashed();
             Route::get("/planche-entreprises", AdminEntrepriseBoard::class)->name("entreprise-board")->withTrashed();
+            Route::get("/planche-modèles-contrat", AdminContractTemplateBoard::class)->name("contract-template-board");
         }
     );

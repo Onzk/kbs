@@ -161,7 +161,7 @@ class Configurations extends Component
                 "tweeter" => "url|unique:experts,tweeter,{$model->id},id",
             ])->validate();
             $model->update($this->model_form);
-            session()->flash('success', __('Modification effectuée avec succès.'));
+            session()->flash('success', __('Modifications effectuées avec succès.'));
         } else
         {
             Validator::make($this->model_form, [
@@ -192,7 +192,7 @@ class Configurations extends Component
             ])->validate();
 
             $model->update($this->model_form);
-            session()->flash('success', __('Modification effectuée avec succès.'));
+            session()->flash('success', __('Modifications effectuées avec succès.'));
         } else
         {
             Validator::make($this->model_form, [
@@ -215,7 +215,7 @@ class Configurations extends Component
         if ($model)
         {
             $model->update($this->model_form);
-            session()->flash('success', __('Modification effectuée avec succès.'));
+            session()->flash('success', __('Modifications effectuées avec succès.'));
         } else
         {
             $model = $this->current_model::create([
