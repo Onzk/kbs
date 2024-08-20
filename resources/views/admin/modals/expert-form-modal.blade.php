@@ -94,12 +94,12 @@
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label for="tweeter">
+                                <label for="twitter">
                                     {{ __('Tweeter') }}
                                 </label>
-                                <input id="tweeter" type="url" min="2"
+                                <input id="twitter" type="url" min="2"
                                     pattern="http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)"
-                                    wire:model="model_form.tweeter" placeholder="{{ __('Tweeter') }}"
+                                    wire:model="model_form.twitter" placeholder="{{ __('Tweeter') }}"
                                     class="form-control">
                             </div>
                         </div>

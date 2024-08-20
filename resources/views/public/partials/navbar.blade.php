@@ -121,13 +121,13 @@
                     'nav-item nav-link text-white',
                     'active border-bottom border-white border-3 px-4' => Route::is(
                         'candidate-space.index'),
-                ])>Espace utilisateur</a>
+                ])>Espace candidat</a>
             @elseif(Auth::guard('entreprises')->check())
                 <a href="{{ route('entreprise-space.index') }}" @class([
                     'nav-item nav-link text-white',
                     'active border-bottom border-white border-3 px-4' => Route::is(
                         'entreprise-space.index'),
-                ])>Espace utilisateur</a>
+                ])>Espace entreprise</a>
             @elseif(Auth::guard('web')->check())
                 <a href="{{ route('admin-space.index') }}" @class([
                     'nav-item nav-link text-white',
@@ -141,16 +141,22 @@
                 ])>Se connecter</a>
             @endif
         </div>
-        <div class="h-100 d-lg-inline-flex align-items-center d-none">
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="">
+        <div class="h-100 d-lg-inline-flex align-items-center d-none justify-content-end" style="min-width: 200px">
+            @if($url = \App\Models\Config::retreive("facebook"))
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="{{ $url }}">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="">
+            @endif
+            @if($url = \App\Models\Config::retreive("twitter"))
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="{{ $url }}">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-0" href="">
+            @endif
+            @if($url = \App\Models\Config::retreive("linkedin"))
+            <a class="btn btn-square rounded-circle bg-light text-primary me-0" href="{{ $url }}">
                 <i class="fab fa-linkedin-in"></i>
             </a>
+            @endif
         </div>
     </div>
 </nav>

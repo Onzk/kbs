@@ -88,7 +88,7 @@
                                     <td class="py-1">{{ $model->speciality }}</td>
                                     <td class="py-1">{{ $model->facebook ?? '-' }}</td>
                                     <td class="py-1">{{ $model->linkedin ?? '-' }}</td>
-                                    <td class="py-1">{{ $model->tweeter ?? '-' }} </td>
+                                    <td class="py-1">{{ $model->twitter ?? '-' }} </td>
                                     <td class="py-1" style="width: 150px;">
                                         <div class="d-inline-block w-100">
                                             <div class="btn-group rounded-lg dropup">

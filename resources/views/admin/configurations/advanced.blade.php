@@ -143,7 +143,7 @@
                             <td>
                                 <input id="facebook" type="url" min="2"
                                     pattern="(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?"
-                                    wire:model="config_form.facebook" placeholder="{{ __('Valeur') }}"
+                                    wire:model="config_form.facebook" placeholder="{{ __('Url') }}"
                                     class="form-control">
                             </td>
                         </tr>
@@ -152,20 +152,20 @@
                                 {{ __('Page Linkedin') }}
                             </td>
                             <td>
-                                <input id="facebook" type="url" min="2"
-                                    pattern="(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?"
-                                    wire:model="config_form.facebook" placeholder="{{ __('Valeur') }}"
+                                <input id="linkedin" type="url" min="2"
+                                    pattern="https://[a-z]{2,3}\.linkedin\.com\/.*"
+                                    wire:model="config_form.linkedin" placeholder="{{ __('Url') }}"
                                     class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 350px" class="py-1">
-                                {{ __('Lien Tweeter') }}
+                                {{ __('Page Twitter') }}
                             </td>
                             <td>
-                                <input id="tweeter" type="url" min="2"
+                                <input id="twitter" type="url" min="2"
                                     pattern="http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)"
-                                    wire:model="config_form.tweeter" placeholder="{{ __('Tweeter') }}"
+                                    wire:model="config_form.twitter" placeholder="{{ __('Url') }}"
                                     class="form-control">
                             </td>
                         </tr>

@@ -19,7 +19,7 @@ experts :
     speciality
     facebook?
     linkedin?
-    tweeter?
+    twitter?
 
 faqs :
     question

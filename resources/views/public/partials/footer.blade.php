@@ -10,16 +10,19 @@
                 <span>
                     En tant que <span class="text-white">cabinet d'étude spécialisé dans divers domaines</span>, dont le
                     recrutement, KAPI Consult se
-                    fait un devoir de <span class="text-white">proposer des prestations de qualité à des clients</span> de
+                    fait un devoir de <span class="text-white">proposer des prestations de qualité à des clients</span>
+                    de
                     plus en plus exigeants dont
                     les besoins varient en fonction de leur nature, de leurs profils, et de leurs besoins. À cet effet,
-                    il convient pour une entreprise qui veut <span class="text-white"> rester compétitive de s'adapter à la
+                    il convient pour une entreprise qui veut <span class="text-white"> rester compétitive de s'adapter à
+                        la
                         demande et d'adopter
                         les outils et technologies </span> qui sont susceptibles de lui conférer des <span
                         class="text-white">avantages compétitifs
                         déterminants et distinctifs</span>. C'est dans cet ordre d'idées que le <span
                         class="text-white">projet KAPI Board Sourcing (KBS)</span> naît
-                    dans <span class="text-white">le seul but d'optimiser les process de recrutement pour des prestations
+                    dans <span class="text-white">le seul but d'optimiser les process de recrutement pour des
+                        prestations
                         de qualité optimale</span>.
                 </span>
             </div>
@@ -27,8 +30,10 @@
                 <h5 class="mb-4 text-white">Accueil</h5>
                 <a class="btn btn-link text-white" href="{{ route('public.home.kapi-presentation') }}">Présentation KAPI
                     Consult</a>
-                <a class="btn btn-link text-white" href="{{ route('public.home.kbs-presentation') }}">Présentation de KBS</a>
-                <a class="btn btn-link text-white" href="{{ route('public.home.key-information') }}">Informations clés</a>
+                <a class="btn btn-link text-white" href="{{ route('public.home.kbs-presentation') }}">Présentation de
+                    KBS</a>
+                <a class="btn btn-link text-white" href="{{ route('public.home.key-information') }}">Informations
+                    clés</a>
                 <a class="btn btn-link text-white" href="{{ route('public.home.candidates') }}">Section Candidats</a>
                 <a class="btn btn-link text-white" href="{{ route('public.home.entreprises') }}">Section Entreprises</a>
             </div>
@@ -40,14 +45,16 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="mb-4 text-white">Media & Nouvelles</h5>
                 <a class="btn btn-link text-white" href="{{ route('public.media-news.webinaries') }}">Webinaires</a>
-                <a class="btn btn-link text-white" href="{{ route('public.media-news.questions') }}">Questions réponses</a>
+                <a class="btn btn-link text-white" href="{{ route('public.media-news.questions') }}">Questions
+                    réponses</a>
                 <a class="btn btn-link text-white" href="{{ route('public.media-news.blog') }}">Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="mb-4 text-white">Autres</h5>
                 <a class="btn btn-link text-white" href="{{ route('public.faqs') }}">FAQs</a>
                 <a class="btn btn-link text-white" href="{{ route('candidate-space.index') }}">Espace utilisateur</a>
-                <a class="btn btn-link text-white" href="{{ route('public.data-protection') }}">Protection de données</a>
+                <a class="btn btn-link text-white" href="{{ route('public.data-protection') }}">Protection de
+                    données</a>
             </div>
             <div class="col-lg-6 col-md-6">
                 <h5 class="mb-4 text-white">Entrer en contact</h5>
@@ -59,14 +66,27 @@
                 <p class="text-white"><i class="fa fa-phone-alt me-3"></i>+228 93 17 01 01</p>
                 <p class="text-white"><i class="fa fa-envelope me-3"></i>info@kapiconsult.tg</p>
             </div>
+            @php($facebook = \App\Models\Config::retreive('facebook'))
+            @php($twitter = \App\Models\Config::retreive('twitter'))
+            @php($linkedin = \App\Models\Config::retreive('linkedin'))
             <div class="col-lg-6 col-md-6">
-                <h5 class="mb-4 text-white">Nous suivre</h5>
-                <div class="d-flex">
-                    <a class="btn btn-light btn-square rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-light btn-square rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-light btn-square rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-light btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                @if ($facebook or $twitter or $linkedin)
+                    <h5 class="mb-4 text-white">Nous suivre</h5>
+                    <div class="d-flex">
+                        @if ($facebook)
+                            <a class="btn btn-light btn-square rounded-circle me-1" href="{{ $facebook }}"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        @endif
+                        @if ($twitter)
+                            <a class="btn btn-light btn-square rounded-circle me-1" href="{{ $twitter }}"><i
+                                    class="fab fa-twitter"></i></a>
+                        @endif
+                        @if ($linkedin)
+                            <a class="btn btn-light btn-square rounded-circle me-1" href="{{ $linkedin }}"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -75,7 +95,8 @@
             <div class="row">
                 <div class="col-md-12 text-center text-md-center mb-3 mb-md-0">
                     {{ \Carbon\Carbon::now()->year }}
-                    &copy; <a href="{{ route('public.home.index') }}" class="text-white fw-bold">{{ config('app.name') }}</a>, Tout droit réservé.
+                    &copy; <a href="{{ route('public.home.index') }}"
+                        class="text-white fw-bold">{{ config('app.name') }}</a>, Tout droit réservé.
                 </div>
                 <div class="col-md-6 text-center text-md-end d-none">
                     <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

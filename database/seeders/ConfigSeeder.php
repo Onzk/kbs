@@ -24,6 +24,6 @@ class ConfigSeeder extends Seeder
         Config::create(["label" => "entreprise_terms", "value" => null]);
         Config::create(["label" => "linkedin", "value" => null]);
         Config::create(["label" => "facebook", "value" => null]);
-        Config::create(["label" => "tweeter", "value" => null]);
+        Config::create(["label" => "twitter", "value" => null]);
     }
 }

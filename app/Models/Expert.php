@@ -18,7 +18,7 @@ class Expert extends Model
         "speciality",
         "facebook",
         "linkedin",
-        "tweeter",
+        "twitter",
     ];
 
     public function fullname(): string

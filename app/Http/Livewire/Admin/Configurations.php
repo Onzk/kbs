@@ -158,7 +158,7 @@ class Configurations extends Component
                 "speciality" => "required|min:2|max:30",
                 "facebook" => "url|unique:experts,facebook,{$model->id},id",
                 "linkedin" => "url|unique:experts,linkedin,{$model->id},id",
-                "tweeter" => "url|unique:experts,tweeter,{$model->id},id",
+                "twitter" => "url|unique:experts,twitter,{$model->id},id",
             ])->validate();
             $model->update($this->model_form);
             session()->flash('success', __('Modifications effectuées avec succès.'));
@@ -170,7 +170,7 @@ class Configurations extends Component
                 "speciality" => "required|min:2|max:30",
                 "facebook" => "url|unique:experts,facebook",
                 "linkedin" => "url|unique:experts,linkedin",
-                "tweeter" => "url|unique:experts,tweeter",
+                "twitter" => "url|unique:experts,twitter",
             ])->validate();
             $model = $this->current_model::create([
                 "photo" => "storage/user/default.png",
@@ -323,7 +323,7 @@ class Configurations extends Component
                 "entreprise_terms" => Config::retreive("entreprise_terms"),
                 "linkedin" => Config::retreive("linkedin"),
                 "facebook" => Config::retreive("facebook"),
-                "tweeter" => Config::retreive("tweeter"),
+                "twitter" => Config::retreive("twitter"),
             ];
         }
         $this->current_id = "";
