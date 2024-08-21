@@ -32,7 +32,6 @@ Route::controller(PublicController::class)->name("public.")->prefix("/")->group(
             Route::get("/presentation-de-kbs", "kbs_presentation")->name("kbs-presentation");
             Route::get("/informations-clés", "key_information")->name("key-information");
             Route::get("/candidats", "candidates")->name("candidates");
-            Route::get("/candidats", "candidates")->name("candidates");
             Route::get("/entreprises", "entreprises")->name("entreprises");
         });
         Route::prefix("/a-propos")->name("about.")->group(function () {
@@ -59,6 +58,7 @@ Route::middleware(["guest:web", "guest:candidates", "guest:entreprises"])
             Route::get("/mot-de-passe-oublie", ForgotPassword::class)->name("forgot_password");
         }
     );
+
 Route::get("/se-déconnecter", [UserSpaceController::class, "logout"])->name("logout");
 
 Route::middleware(["auth:candidates"])

@@ -272,6 +272,7 @@ class Configurations extends Component
             return redirect(route('admin-space.configurations', ["config" => "advanced"]))
                 ->with("success", __("Configurations sauvegardées avec succès."));
         }
+        sleep(1);
         $this->password = "";
         session()->flash('error', 'Mot de passe erronné.');
     }

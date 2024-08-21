@@ -179,7 +179,7 @@
                     </div>
                     <div class="mt-2" wire:loading.remove wire:target="saveConfig,reload">
                         <a data-toggle="modal" data-target="#confirmSaveConfig"
-                            class="btn col-md-3 icon icon-left btn-primary">
+                            class="btn icon icon-left btn-primary">
                             Sauvegarder
                         </a>
                         <button wire:click.prevent="reload" class="btn icon icon-left btn-light">
