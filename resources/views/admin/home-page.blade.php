@@ -197,7 +197,7 @@
                             <span class="text-sm px-2 text-white">Webinaires récents</span>
                         </div>
                         <div class="col-md-4 text-right">
-                            <a href="{{ route('admin-space.configurations', ['config' => 'webinaries']) }}"
+                            <a href="{{ route('admin-space.configurations', ['config' => 'webinaires']) }}"
                                 class="btn py-1 icon icon-left btn-success">
                                 Gérer
                             </a>
@@ -236,7 +236,7 @@
                             <span class="text-sm px-2 text-white">Posts récents</span>
                         </div>
                         <div class="col-md-4 text-right">
-                            <a href="{{ route('admin-space.configurations', ['config' => 'posts']) }}"
+                            <a href="{{ route('admin-space.configurations', ['config' => 'blog']) }}"
                                 class="btn py-1 icon icon-left btn-success">
                                 Gérer
                             </a>

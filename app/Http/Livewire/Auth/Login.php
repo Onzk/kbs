@@ -33,6 +33,7 @@ class Login extends Component
             session()->regenerate();
             return redirect()->route("admin-space.home");
         }
+        sleep(1);
         session()->flash("error", __("Email ou mot de passe errorné(s)."));
     }
 
