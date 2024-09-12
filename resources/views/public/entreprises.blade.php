@@ -43,51 +43,6 @@
     </div>
     <!-- Header End -->
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <h1 class="display-6">A Propos de nous</h1>
-                        <p class="text-primary fs-5 mb-4">Plateforme de recrutement d'administrateurs indépendants</p>
-                        <p>
-                            Notre plateforme de recrutement spécialisée dans les membres de conseil d'administration
-                            est conçue pour vous aider à identifier, évaluer et attirer les leaders stratégiques
-                            dont votre entreprise a besoin pour prospérer dans un environnement professionnel compétitif.
-                        </p>
-                        <p class="mb-4">
-                            Confiez-nous votre recherche de vos futurs membres de conseil d'administration,
-                            nous vous trouverons les talents les plus brillants du marché.
-                        </p>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Fiablité</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Transparence</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Partialité</span>
-                        </div>
-                        <a class="btn btn-primary py-3 px-4" href="{{ route('public.home.kapi-presentation') }}">Lire
-                            plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Features Start -->
-    @include('public.sections.kbs-why-us')
-    <!-- Features End -->
-
     @if (!Auth::guard('entreprises')->check())
         <!-- Contact Start -->
         <div class="container-xxl py-5" id="creer-un-compte">
@@ -113,6 +68,15 @@
         </div>
         <!-- Contact End -->
     @endif
+
+
+    <!-- About Start -->
+    @include('public.sections.about')
+    <!-- About End -->
+
+    <!-- Features Start -->
+    @include('public.sections.kbs-why-us')
+    <!-- Features End -->
 
     <!-- Features Start -->
     @include('public.sections.facts')

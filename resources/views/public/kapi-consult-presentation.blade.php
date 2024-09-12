@@ -35,7 +35,7 @@
     <div class="container-xxl py-5">
         <div class="text-center pb-4">
             <h1 class="display-6 text-center">Nous connaître</h1>
-            <p class="text-primary fs-5 mb-4">Cabinet d'études et de conseils</p>
+            <p class="text-primary fs-5 mb-4 fw-bold">Cabinet d'études et de conseils</p>
         </div>
         <br>
         <div class="row g-5 align-items-start">
@@ -46,7 +46,7 @@
             <div class="col-lg-3 wow fadeInUp my-3" data-wow-delay="0.1s">
                 <div class="h-100">
                     <p class="text-primary fs-5">Présentation</p>
-                    <p>
+                    <p class="j-text">
                         KAPI CONSULT est un cabinet d'études et de conseil en management, organisation et compétitivité
                         orienté dans les métiers de productions et d'infrastructures.
                         A notre actif, sont des centaines d'études réalisées - Des centaines de projets évalués - Plus de
@@ -63,7 +63,7 @@
             <div class="col-lg-3 wow fadeInUp my-3" data-wow-delay="0.1s">
                 <div class="h-100">
                     <p class="text-primary fs-5">Domaines d'activités</p>
-                    <p>
+                    <p class="j-text">
                         Sans être limitatifs, nos domaines de compétences couvrent les secteurs productifs et
                         technologiques : Analyse & Compétitivité - Infrastructures & Développement - Management &
                         Organisation - Formation & développement humain - Etudes de faisabilité et Evaluation de projets
@@ -79,7 +79,7 @@
             <div class="col-lg-3 wow fadeInUp my-3" data-wow-delay="0.1s">
                 <div class="h-100">
                     <p class="text-primary fs-5">Notre Processus d'intervention</p>
-                    <p>
+                    <p class="j-text">
                         Basée sur un ensemble de cinq valeurs et une charte pour le développement durable et la diversité,
                         notre approche dans toutes nos activités suit un cycle en sept étapes qui permet à nos RESULTANTS de
                         circonscrire entièrement l'objet et l'objectif de nos missions pour une solution optimale.
@@ -93,7 +93,7 @@
             <div class="col-lg-3 wow fadeInUp my-3" data-wow-delay="0.1s">
                 <div class="h-100">
                     <p class="text-primary fs-5">Nos valeurs</p>
-                    <p>
+                    <p class="j-text">
                         Nous nous engageons à prendre des actions pour contribuer au Développement Soutenu et Durable de nos
                         Clients et des Communautés dans lesquelles se déroulent nos missions.
                     </p>
@@ -118,7 +118,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-7.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">Conseils en Investissement.</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 Nous accompagnons nos partenaires pour leur décision d'investissement à travers des analyses
                                 sectorielles et benchmarking, des enquêtes et sondages, des études d'opportunités, des
                                 simulations financières afin d'optimiser leurs rendements pérenniser leur activités.
@@ -131,7 +131,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-6.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">Management et Compétivité</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 Nous analysons ensemble votre organisation, diagnostiquons et proposons en collaboration
                                 avec vos équipes des recommandations pertinentes pour améliorer la performance de votre
                                 structure.
@@ -144,7 +144,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-5.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">Audit et Gouvernance</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 Bénéficiez de l'expertise de nos équipes pour l'évaluation du système de gouvernance et de
                                 contrôle de votre société, des procédures, et réglementations qui affectent l'évolution de
                                 votre entreprise afin de détecter ses dysfonctionnements et l'optimiser.
@@ -157,7 +157,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-4.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">Recrutement et developpement du capital humain</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 Parce que les Hommes constituent la première ressource de votre entreprise, nous mettons à
                                 votre disposition des outils adéquats pour améliorer les compétences et les performances de
                                 votre équipe et faciliter l'atteinte de vos objectifs.
@@ -170,7 +170,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-3.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">Amélioration du process de recutement</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 En tant que cabinet d'étude spécialisé dans divers domaines, dont le recrutement, KAPI
                                 Consult se fait un devoir de proposer des prestations de qualité à des clients de plus en
                                 plus exigeants C'est dans cet ordre d'idées que le projet KAPI Board Sourcing (KBS) naît dans
@@ -185,7 +185,7 @@
                         <img class="img-fluid flex-shrink-0" src="img/icon-8.png" alt="">
                         <div class="ps-4">
                             <h5 class="mb-3">En général</h5>
-                            <span>
+                            <span class="j-text d-block">
                                 Nous contribuons au développement de nos clients en leur apportant des services
                                 d'optimisation stratégique, technologique, industrielle et financière pour favoriser leur
                                 pérennité et leur succès.

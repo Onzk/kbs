@@ -2,7 +2,7 @@
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-6">Pourquoi nous ?</h1>
-            <p class="text-primary fs-5 mb-5">Recrutez des administrateurs indépendants exceptionnels</p>
+            <p class="text-primary fs-5 mb-5">Recrutez des membres de conseils d'administrateurs exceptionnels</p>
         </div>
         <div class="row g-5">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -14,7 +14,7 @@
                     </svg>
                     <div class="ps-4">
                         <h5 class="mb-3">Expertise Professionnelle</h5>
-                        <span>
+                        <span class="j-text d-block">
                             Notre plateforme offre une expertise professionnelle dans le recrutement d'administrateurs
                             indépendants, avec une compréhension approfondie des attentes et des enjeux spécifiques à
                             chaque poste.
@@ -31,7 +31,7 @@
                     </svg>
                     <div class="ps-4">
                         <h5 class="mb-3">Accès à un Réseau Exclusif</h5>
-                        <span>
+                        <span class="j-text d-block">
                             En recourant à notre plateforme, vous bénéficiez d'un accès à un réseau exclusif de talents,
                             vous permettant de trouver des profils de haut niveau pour des postes stratégiques au sein
                             de votre organisation.
@@ -48,7 +48,7 @@
                     </svg>
                     <div class="ps-4">
                         <h5 class="mb-3">Gain de Temps et d'Effort </h5>
-                        <span>
+                        <span class="j-text d-block">
                             Ne perdez pas de temps à chercher un nouveau candidat. En utilisant notre plateforme, vous
                             pouvez vous concentrer sur le développement de votre entreprise, tandis que nous nous
                             chargeons de trouver les bons candidats pour vous.
@@ -65,7 +65,7 @@
                     </svg>
                     <div class="ps-4">
                         <h5 class="mb-3">Processus de Recrutement Amélioré</h5>
-                        <span>
+                        <span class="j-text d-block">
                             Notre approche personnalisée et nos méthodes de recrutement efficaces garantissent que vous
                             trouverez des candidats qui non seulement répondent à vos exigences professionnelles, mais
                             qui incarnent également la culture et les valeurs de votre entreprise.
@@ -82,7 +82,7 @@
                     </svg>
                     <div class="ps-4">
                         <h5 class="mb-3">Accompagnement et Suivi</h5>
-                        <span>
+                        <span class="j-text d-block">
                             Les candidats bénéficient d'un accompagnement tout au long du processus de recrutement,
                             ainsi qu'un suivi durant leurs premiers mois dans l'entreprise, ce qui renforce leur
                             engagement et fidélité envers votre organisation.
@@ -100,7 +100,7 @@
 
                     <div class="ps-4">
                         <h5 class="mb-3">Adaptabilité aux Nouveaux Modes de Travail</h5>
-                        <span>
+                        <span class="j-text d-block">
                             Nous comprenons l'importance pour les entreprises de prouver leur adaptabilité aux besoins
                             et aux nouveaux modes de travail, en proposant par exemple du télétravail et des horaires
                             flexibles, ce qui est essentiel pour attirer les meilleurs talents sur le marché actuel.

@@ -33,27 +33,40 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6">Vos données sont protégées !</h1>
-                        <p class="text-primary fs-5 mb-4">Que ce soit vos données en tant qu'entreprises ou candidat
+                        <p class="text-primary fs-5 mb-4 fw-bold j-text">Que ce soit vos données en tant qu'entreprises ou
+                            candidat
                             , vos données sont sécurisées.</p>
-                        <p>
+                        <p class="j-text">
                             Notre plateforme de recrutement stocke uniquement les informations nécessaires à son
                             fonctionnement et dans l'atteinte de ses objectifs. De ce fait, nous ne gardons que l'essentiel
                             des informations vous concernant et ce, sur une durée limité.
                         </p>
-                        <p class="mb-4">
-                            Parce que, n'oubliez pas nos compétences !
+                        <p class="mb-4 j-text">
+                            Pourquoi ? Parce que n'oubliez pas nos compétences !
                         </p>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Fiablité</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Transparence</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Partialité</span>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i
+                                        class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                                    <span>Fiablité</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i
+                                        class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                                    <span>Transparence</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center mb-4">
+                                    <i
+                                        class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                                    <span>Partialité</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

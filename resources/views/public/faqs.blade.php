@@ -40,15 +40,16 @@
                             @php($i += 1)
                             <div class="accordion-item wow fadeInUp" data-wow-delay="{{ $i / 10 }}s">
                                 <h2 class="accordion-header" id="heading{{ $i }}">
-                                    <button @class(["accordion-button" , "collapsed" => $i > 1]) type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse{{ $i }}" aria-expanded="{{ $i == 1 ? "true" : "false" }}"
+                                    <button @class(['accordion-button j-text', 'collapsed' => $i > 1]) type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ $i }}"
+                                        aria-expanded="{{ $i == 1 ? 'true' : 'false' }}"
                                         aria-controls="collapse{{ $i }}">
                                         {{ $model->question }}
                                     </button>
                                 </h2>
-                                <div id="collapse{{ $i }}" @class(["accordion-collapse collapse", "show" => $i == 1])
-                                aria-labelledby="heading{{ $i }}" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-start text-dark fw-bold px-4 pb-4 border shadow-lg">
+                                <div id="collapse{{ $i }}" @class(['accordion-collapse collapse', 'show' => $i == 1])
+                                    aria-labelledby="heading{{ $i }}" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body j-text text-dark fw-bold px-4 pb-4 border shadow-lg">
                                         {{ $model->answer }}
                                     </div>
                                 </div>

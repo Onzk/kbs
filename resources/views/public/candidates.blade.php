@@ -19,7 +19,8 @@
                         et membres de conseil d'administration d'entreprises.
                     </p>
                     @if (Auth::guard('candidates')->check())
-                        <a href="{{ route('candidate-space.home') }}" class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
+                        <a href="{{ route('candidate-space.home') }}"
+                            class="btn btn-primary py-3 px-4 m-2 animated slideInDown">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                 stroke="currentColor" class="pb-1 mx-1" style="width:20px">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -43,51 +44,6 @@
     </div>
     <!-- Header End -->
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid inImage" src="{{ asset('assets/public/img/about.png') }}" alt="">
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <h1 class="display-6">A Propos de nous</h1>
-                        <p class="text-primary fs-5 mb-4">Plateforme de recrutement d'administrateurs indépendants</p>
-                        <p>
-                            Notre plateforme de recrutement spécialisée dans les membres de conseil d'administration
-                            est conçue pour vous aider à identifier, évaluer et attirer les leaders stratégiques
-                            dont votre entreprise a besoin pour prospérer dans un environnement professionnel compétitif.
-                        </p>
-                        <p class="mb-4">
-                            Confiez-nous votre recherche de vos futurs membres de conseil d'administration,
-                            nous vous trouverons les talents les plus brillants du marché.
-                        </p>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Fiablité</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Transparence</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Partialité</span>
-                        </div>
-                        <a class="btn btn-primary py-3 px-4" href="{{ route('public.home.kapi-presentation') }}">Lire
-                            plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Features Start -->
-    @include('public.sections.kbs-why-us')
-    <!-- Features End -->
-
     @if (!Auth::guard('candidates')->check())
         <!-- Contact Start -->
         <div class="container-xxl py-5" id="creer-un-compte">
@@ -107,7 +63,7 @@
                             class="col-lg-12 h-100 col-md-6 col-12 wow inImage" style="min-height: 502px" alt="">
                     </div>
                     <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <p class="mb-4">
+                        <p class="mb-4 j-text">
                             <span class="text-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" width="25px">
@@ -125,7 +81,14 @@
             </div>
         </div>
     @endif
-    <!-- Contact End -->
+
+    <!-- About Start -->
+    @include('public.sections.about')
+    <!-- About End -->
+
+    <!-- Features Start -->
+    @include('public.sections.kbs-why-us')
+    <!-- Features End -->
 
     <!-- Features Start -->
     @include('public.sections.facts')

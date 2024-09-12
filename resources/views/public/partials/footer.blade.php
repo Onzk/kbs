@@ -7,7 +7,7 @@
                         style="width: 85px;">
                     {{ config('app.name') }}
                 </h1>
-                <span>
+                <span class="j-text d-block">
                     En tant que <span class="text-white">cabinet d'étude spécialisé dans divers domaines</span>, dont le
                     recrutement, KAPI Consult se
                     fait un devoir de <span class="text-white">proposer des prestations de qualité à des clients</span>

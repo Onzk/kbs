@@ -26,30 +26,27 @@
                         <div>
                             <a href="{{ route('public.home.kapi-presentation') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
+                                    'dropdown-item border-left fw-bold',
                                     'active' => Route::is('public.home.kapi-presentation'),
-                                ])>-
-                                Présentation KAPI Consult</a>
+                                ])>Présentation KAPI Consult</a>
                             <a href="{{ route('public.home.kbs-presentation') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
+                                    'dropdown-item border-left fw-bold',
                                     'active' => Route::is('public.home.kbs-presentation'),
-                                ])>-
-                                Présentation de KBS</a>
+                                ])>Présentation de KBS</a>
                             <a href="{{ route('public.home.key-information') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
+                                    'dropdown-item border-left fw-bold',
                                     'active' => Route::is('public.home.key-information'),
-                                ])>-
-                                Informations clés</a>
+                                ])>Informations clés</a>
                         </div>
                     </div>
                     <a href="{{ route('public.home.candidates') }}" @class([
-                        'dropdown-item',
+                        'dropdown-item fw-bold',
                         'active' => Route::is('public.home.candidates'),
                     ])>Candidats</a>
                     <a href="{{ route('public.home.entreprises') }}" @class([
-                        'dropdown-item',
+                        'dropdown-item fw-bold',
                         'active' => Route::is('public.home.entreprises'),
                     ])>Entreprises</a>
                 </div>
@@ -67,16 +64,14 @@
                         <div>
                             <a href="{{ route('public.about.mvv') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
+                                    'dropdown-item fw-bold border-left',
                                     'active' => Route::is('public.about.mvv'),
-                                ])>-
-                                Mission - Vision - Valeurs</a>
+                                ])>Mission - Vision - Valeurs</a>
                             <a href="{{ route('public.about.teams') }}"
                                 style="padding-left: 32px; border-left:solid 1px grey" @class([
-                                    'dropdown-item border-left',
+                                    'dropdown-item fw-bold border-left',
                                     'active' => Route::is('public.about.teams'),
-                                ])>-
-                                Equipe</a>
+                                ])>Equipe</a>
                         </div>
                     </div>
                 </div>
@@ -90,16 +85,16 @@
                 ]) data-bs-toggle="dropdown">Médias & Nouvelles</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a href="{{ route('public.media-news.webinaries') }}" @class([
-                        'dropdown-item',
+                        'dropdown-item fw-bold',
                         'active' => Route::is('public.media-news.webinaries'),
                     ])>Webinaires</a>
                     <a href="{{ route('public.media-news.questions') }}" @class([
-                        'dropdown-item',
+                        'dropdown-item fw-bold',
                         'active' => Route::is('public.media-news.questions'),
                     ])>Questions
                         réponses</a>
                     <a href="{{ route('public.media-news.blog') }}" @class([
-                        'dropdown-item',
+                        'dropdown-item fw-bold',
                         'active' =>
                             Route::is('public.media-news.blog') ||
                             Route::is('public.media-news.blog-show'),
